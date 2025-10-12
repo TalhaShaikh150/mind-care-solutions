@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+
 * {
   font-family: "Inter", sans-serif;
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
 }
 
 :root {
   --color-bg-light: #DDEBDE;
   /* 🌿 Brand Colors */
-  --color-brand-primary: #D9FF9A;
+  --color-brand-primary: #d9ff9a;
+  --color-brand-primary-light: #d2eaac;
+  --color-brand-hover:#769641;
   /* light green accent used for buttons, highlights */
   --color-brand-primary-dark: #6BA60D;
   --color-brand-dark: #222222;
@@ -28,9 +32,8 @@
   --color-gray-700: #4A4A4A;
   /* Paragraph text */
   --color-gray-500: #9E9E9E;
-  /* Muted text, subheadings */
+  --color-gray-300: #bfbfbf82;
   --color-gray-200: #EEEEEE;
-  /* Divider lines, light backgrounds */
   --color-white: #FFFFFF;
 
   /* ✨ Supporting Colors */
@@ -48,7 +51,15 @@
   --font-size-h2: 36px;
   --font-size-h3: 28px;
   --font-size-h4: 22px;
-  --font-size-small: 14px;
+
+  --font-size-small: 20px;
+  --font-size-medium: 22px;
+  --font-size-large: 32px;
+  --font-size-xl: 3em;
+
+  /*Font Weights*/
+  --font-weight-normal: normal;
+  --font-weight-light: 200;
 
   /* 🧱 Spacing Scale */
   --spacing-xxs: 4px;
@@ -58,21 +69,40 @@
   --spacing-lg: 24px;
   --spacing-xl: 32px;
   --spacing-xxl: 48px;
-
+  --mx-auto: auto;
+  /*Gap*/
+  --gap-1: 1em;
+  --gap-2: 2em;
   /* 🧭 Border Radius & Shadows */
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 20px;
+  --radius-xl: 30px;
 
   --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+
+  --transition:all ease 0.3s;
 }
 
-.brand-dark {
-  color: var(--color-brand-dark);
+
+
+.btn-primary {
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--color-brand-primary);
+  font-size: var(--font-size-small);
+  border-radius: var(--radius-xl);
+  transition: var(--transition);
+  cursor: pointer;
+}
+.btn-primary:hover{
+  background: var(--color-brand-hover);
 }
 
-.brand-primary {
-  color: var(--color-brand-primary);
+.line{
+  background: var(--color-white);
+  width:100%;
+  height: 2px;
 }
