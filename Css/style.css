@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+  font-family: "Inter", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --color-bg-light: #DDEBDE;
+  /* 🌿 Brand Colors */
+  --color-brand-primary: #D9FF9A;
+  /* light green accent used for buttons, highlights */
+  --color-brand-primary-dark: #6BA60D;
+  --color-brand-dark: #222222;
+  /* dark forest green (logo, headings) */
+
+  /* Darker green (hover states, emphasis) */
+  --color-primary-light: #DFF2E1;
+  /* Very light green background sections */
+
+  /* 🌑 Neutral Colors */
+  --color-black: #000000;
+  --color-dark: #1E1E1E;
+  /* Hero background overlay, dark sections */
+  --color-gray-900: #212121;
+  /* Headings, strong text */
+  --color-gray-700: #4A4A4A;
+  /* Paragraph text */
+  --color-gray-500: #9E9E9E;
+  /* Muted text, subheadings */
+  --color-gray-200: #EEEEEE;
+  /* Divider lines, light backgrounds */
+  --color-white: #FFFFFF;
+
+  /* ✨ Supporting Colors */
+  --color-accent-yellow: #F7F48B;
+  /* For subtle highlights or icons if needed */
+
+  /* 🌈 Gradients & Effects */
+  --gradient-hero: linear-gradient(rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.55));
+
+  /* ✍️ Typography */
+  --font-family-base: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-size-base: 16px;
+  --font-size-h1: 48px;
+  --font-size-h2: 36px;
+  --font-size-h3: 28px;
+  --font-size-h4: 22px;
+  --font-size-small: 14px;
+
+  /* 🧱 Spacing Scale */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  /* 🧭 Border Radius & Shadows */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+.brand-dark {
+  color: var(--color-brand-dark);
+}
+
+.brand-primary {
+  color: var(--color-brand-primary);
+}
