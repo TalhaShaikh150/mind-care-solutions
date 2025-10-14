@@ -2,37 +2,40 @@ nav {
   display: flex;
   justify-content: space-between;
   width: 90%;
-  margin: var(--spacing-md) var(--mx-auto);
+  padding: 16px 0px;
+  margin: auto;
   align-items: center;
 }
-.logo{
+
+.logo {
   width: 50%;
 }
+
 .nav-link {
-  margin: var(--spacing-sm);
+  margin: 12px;
   color: var(--color-white);
   font-size: var(--font-size-h4);
   text-decoration: none;
 }
 
-.nav-link:hover{
+.nav-link:hover {
   color: var(--color-brand-primary);
 }
 
-.active-link{
+.active-link {
   color: var(--color-brand-primary);
 }
 
 .all-nav-links i {
-  font-size:var(--font-size-h5);
-  margin: var(--spacing-xs);
+  font-size: var(--font-size-h5);
+  margin: 8px   ;
   border-radius: var(--radius-xl);
   border: 2px solid var(--color-white);
-  padding: var(--spacing-sm);
-  color: var(--color-white);  
+  padding: 12px;
+  color: var(--color-white);
   cursor: pointer;
 }
 
-.all-nav-links i:hover{
- background: var(--color-gray-300);
+.all-nav-links i:hover {
+  background: var(--color-gray-300);
 }
