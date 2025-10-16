@@ -122,24 +122,36 @@ img {
   max-width: 100%;
   height: auto;
 }
-a{
+
+a {
   text-decoration: none;
 }
+
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
 }
-.flex{
+
+.flex {
   display: flex;
 }
-.flex-col{
+
+.flex-center {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.flex-col {
   display: flex;
   flex-direction: column;
 }
-.flex-reverse{
+
+.flex-reverse {
   flex-direction: row-reverse;
 }
+
 .flex-space {
   display: flex;
   justify-content: space-between;
@@ -251,4 +263,8 @@ a{
   background: var(--color-white);
   width: 100%;
   height: 2px;
+}
+
+.rounded {
+  border-radius: var(--radius-xxl);
 }
