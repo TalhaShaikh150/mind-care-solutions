@@ -130,7 +130,16 @@ a{
   max-width: 1200px;
   margin: 0 auto;
 }
-
+.flex{
+  display: flex;
+}
+.flex-col{
+  display: flex;
+  flex-direction: column;
+}
+.flex-reverse{
+  flex-direction: row-reverse;
+}
 .flex-space {
   display: flex;
   justify-content: space-between;
