@@ -9,7 +9,7 @@
 
 :root {
   /* 🌿 Brand Colors */
-  --color-bg-light: #ddebde;
+  --color-bg-light: #DDEBDE;
   --color-brand-primary: #d9ff9a;
   --color-brand-primary-light: #d2eaac;
   --color-brand-hover: #769641;
@@ -24,6 +24,7 @@
   --color-gray-500: #9e9e9e;
   --color-gray-300: #bfbfbf82;
   --color-gray-200: #eeeeee;
+  --color-gray-100: #f0f0f0;
   --color-white: #ffffff;
 
   /* ✨ Supporting Colors */
@@ -46,27 +47,13 @@
   --font-size-xl: 2.5em;
   --font-size-xxl: 3em;
 
-  /*Font Weights*/
-  --font-weight-semibold: 600;
-  --font-weight-normal: normal;
-  --font-weight-light: 200;
-
-  /* 🧱 Spacing Scale */
-  --spacing-xxs: 4px;
-  --spacing-xs: 8px;
-  --spacing-sm: 12px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-  --spacing-xxl: 48px;
-  --mx-auto: auto;
-
   /* 🧭 Border Radius & Shadows */
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-xl: 30px;
   --radius-xxl: 50px;
+  --radius-full: 80px;
 
   --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
@@ -93,19 +80,21 @@ h3,
 h4,
 h5 {
   line-height: 1.2;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 16px;
 }
 
 h1 {
-  font-size: var(--font-size-h1);
+  font-size: var(--font-size-large);
 }
 
 h2 {
   font-size: var(--font-size-h2);
+  font-weight: 500;
 }
 
 h3 {
   font-size: var(--font-size-h3);
+  font-weight: 400;
 }
 
 h5 {
@@ -114,7 +103,7 @@ h5 {
 }
 
 p {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 16px;
   color: var(--color-gray-700);
 }
 
@@ -125,6 +114,12 @@ img {
 
 a {
   text-decoration: none;
+}
+
+.bg-light {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .container {
@@ -156,7 +151,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: var(--spacing-xxl) 0px;
+  margin: 48px 0px;
 }
 
 .btn {
@@ -243,11 +238,11 @@ a {
 }
 
 .btn-dark {
-  font-weight: var(--font-weight-semibold);
+  font-weight: 600;
   color: var(--color-brand-primary-dark);
-  padding: 12px 24px;
+  padding: 12px 28px;
   background: var(--color-dark);
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-base);
   border-radius: var(--radius-sm);
   transition: var(--transition);
   border: 2px solid var(--color-black);
