@@ -1,0 +1,247 @@
+        /* Define custom colors based on the image */
+        :root {
+          --zenlift-bg: #edf7eb;
+          /* Light mint background */
+          --zenlift-accent: #87a85d;
+          /* Darker green for accents (button, logo icon) */
+          --zenlift-dark-text: #374151;
+          /* Gray-700 for headings/copyright */
+          --zenlift-light-text: #6b7280;
+          /* Gray-500 for links/contact text */
+          --zenlift-button-bg: #c9f086;
+          /* Light lime background for the SUBSCRIBE button */
+        }
+
+     
+        .footer-bg {
+          background-color: var(--color-gray-200);
+        }
+
+        .text-accent {
+          color: var(--color-brand-primary-dark);
+        }        
+
+        /* Custom style for the subtle shadow on the subscription input */
+        .input-shadow {
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Main content placeholder */
+        .main-content {
+          flex-grow: 1;
+          padding: 2rem;
+          text-align: center;
+          color: #6b7280;
+        }
+
+        /* Footer styling */
+        footer {
+          padding-top: 3rem;
+        }
+
+        .footer-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 1rem;
+        }
+
+        .footer-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+          padding-bottom: 3rem;
+        }
+
+        @media (min-width: 768px) {
+          .footer-grid {
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 1.5rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .footer-grid {
+            gap: 5rem;
+          }
+        }
+
+        /* Logo section */
+        .logo-section {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .logo-icon {
+          width: 1.5rem;
+          height: 1.5rem;
+          color: var(--color-brand-primary-dark);
+        }
+
+        .logo-text {
+          font-size: 1.875rem;
+          font-weight: bold;
+          color: var(--color-gray-700);
+        }
+        
+        .contact-text {
+          font-size: 0.875rem;
+          color: var(--color-gray-700);
+          margin-bottom: 1rem;
+          line-height: 1.5;
+        }
+
+        .social-icons {
+          display: flex;
+          gap: 0.75rem;
+          margin-top: 0.5rem;
+        }
+
+        .social-icon {
+          width: 2rem;
+          height: 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          background-color: var(--color-brand-primary-dark);
+          transition: opacity 0.3s;
+        }
+
+        .social-icon:hover {
+          opacity: 0.8;
+        }
+
+        .social-icon i {
+          width: 1rem;
+          height: 1rem;
+          color: white;
+        }
+
+        /* Footer links */
+        .footer-heading {
+          font-size: 1.125rem;
+          font-weight: 600;
+          margin-bottom: 1rem;
+          color: var(--color-gray-700);
+        }
+
+        .footer-links {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .footer-links li {
+          margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+          font-size: 0.875rem;
+          color: var(--color-gray-700);
+          text-decoration: none;
+          transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+          color: var(--color-brand-primary-dark);
+        }
+
+        /* Newsletter section */
+        .newsletter-form {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .newsletter-input {
+          width: 100%;
+          padding: 0.75rem;
+          border-radius: 0.75rem;
+          border: 1px solid #d1d5db;
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+          font-size: 0.875rem;
+          color: var(--color-gray-700);
+          transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .newsletter-input:focus {
+          outline: none;
+          border-color: var(--color-brand-primary-dark);
+          box-shadow: 0 0 0 3px rgba(135, 168, 93, 0.1);
+        }
+
+        .newsletter-input::placeholder {
+          color: #9ca3af;
+        }
+
+        .subscribe-btn {
+          padding: 0.75rem 1.5rem;
+          border-radius: 0.75rem;
+          background-color: var(--color-brand-primary);
+          color: var(--color-gray-700);
+          font-weight: 500;
+          font-size: 0.875rem;
+          border: none;
+          cursor: pointer;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+          transition: box-shadow 0.3s;
+        }
+
+        .subscribe-btn:hover {
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer bottom section */
+        .footer-divider {
+          border-top: 1px solid #d1d5db;
+          opacity: 0.5;
+          margin: 1.5rem 0;
+        }
+
+        .footer-bottom {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 0;
+          font-size: 0.75rem;
+          color: var(--color-gray-700);
+        }
+
+        @media (min-width: 768px) {
+          .footer-bottom {
+            flex-direction: row;
+          }
+        }
+
+        .copyright {
+          margin-bottom: 0.5rem;
+        }
+
+        @media (min-width: 768px) {
+          .copyright {
+            margin-bottom: 0;
+          }
+        }
+
+        .legal-links {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .legal-links a {
+          color: var(--color-gray-700);
+          text-decoration: none;
+          transition: color 0.3s;
+        }
+
+        .legal-links a:hover {
+          color: var(--color-brand-primary-dark);
+        }
+
+        .separator {
+          opacity: 0.5;
+        }

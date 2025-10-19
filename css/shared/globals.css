@@ -71,7 +71,6 @@
 
 body {
   color: var(--color-gray-900);
-  line-height: 1.6;
 }
 
 h1,
@@ -103,8 +102,7 @@ h5 {
 }
 
 p {
-  margin-bottom: 16px;
-  color: var(--color-gray-700);
+  margin-bottom: 8px;
 }
 
 img {
@@ -221,6 +219,14 @@ a {
   }
 }
 
+.btn-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1em;
+  gap: 1em;
+}
 .btn-primary {
   border: none;
   padding: 12px 24px;
@@ -229,11 +235,11 @@ a {
   border-radius: var(--radius-xl);
   transition: var(--transition);
   cursor: pointer;
+  color: var(--color-black);
 }
 
 .btn-primary:hover {
   transform: scale(1.04);
-  color: var(--color-white);
   background: var(--color-brand-hover);
 }
 
@@ -262,4 +268,8 @@ a {
 
 .rounded {
   border-radius: var(--radius-xxl);
+}
+
+.none{
+  border: none;
 }

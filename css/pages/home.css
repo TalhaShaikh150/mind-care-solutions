@@ -658,6 +658,19 @@ main {
   background-repeat: no-repeat;
   height: 100vh;
 }
+.cta-section{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.cta-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: var(--color-white);
+}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
