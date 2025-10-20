@@ -261,7 +261,7 @@ a {
 }
 
 .rounded {
-  border-radius: var(--radius-xxl);
+  border-radius: 80px;
 }
 
 .none{
