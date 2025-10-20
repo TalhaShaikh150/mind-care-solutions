@@ -3,22 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mind Care Solutions</title>
 
+    <!-- SEO Meta Tags -->
+    <title>Mind Care Solutions | Mental Health & Wellness Services</title>
+    <meta
+      name="description"
+      content="Professional mental health services including therapy, counseling, and psychiatric care. Find compassionate support for anxiety, PTSD, and other mental health conditions."
+    />
+    <meta
+      name="keywords"
+      content="mental health, therapy, counseling, anxiety treatment, PTSD, psychiatric care, wellness"
+    />
+    <meta name="author" content="Mind Care Solutions" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Mind Care Solutions | Mental Health & Wellness Services"
+    />
+    <meta
+      property="og:description"
+      content="Professional mental health services including therapy, counseling, and psychiatric care."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.mindcare.com" />
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/shared/globals.css" as="style" />
+    <link rel="preload" href="css/shared/navbar.css" as="style" />
+    <link rel="preload" href="css/pages/home.css" as="style" />
+    <link rel="preload" href="css/shared/footer.css" as="style" />
+
+    <!-- CSS Files -->
     <link rel="stylesheet" href="css/shared/navbar.css" />
     <link rel="stylesheet" href="css/shared/footer.css" />
     <link rel="stylesheet" href="css/pages/home.css" />
     <link rel="stylesheet" href="css/shared/globals.css" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.mindcare.com" />
+
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalOrganization",
+        "name": "Mind Care Solutions",
+        "description": "Professional mental health services including therapy, counseling, and psychiatric care.",
+        "url": "https://www.mindcare.com",
+        "telephone": "+1234567890",
+        "email": "info@mindcare.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "City",
+          "addressRegion": "State",
+          "postalCode": "ZIP Code",
+          "addressCountry": "US"
+        },
+        "serviceType": "Mental Health Services",
+        "medicalSpecialty": "Psychiatry, Psychology"
+      }
+    </script>
   </head>
   <body>
     <main>
       <nav>
         <div class="nav-left">
-          <a href="index.html">
+          <a href="index.html" aria-label="Mind Care Solutions Home">
             <img
               src="assets/Images/logo.png"
               alt="Mind Care Solutions Logo"
               class="logo"
+              width="150"
+              height="50"
             />
           </a>
         </div>
@@ -42,7 +99,11 @@
           </div>
 
           <!-- Hamburger menu on the right -->
-          <div class="hamburger" id="hamburger">
+          <div
+            class="hamburger"
+            id="hamburger"
+            aria-label="Toggle navigation menu"
+          >
             <span></span>
             <span></span>
             <span></span>
@@ -53,15 +114,15 @@
       <section class="hero-section">
         <div class="hero-left">
           <p class="hero-subtitle">Zenlift - Mental Health</p>
-          <h2 class="hero-heading">Your Path to Mental Wellness Starts Here</h2>
+          <h1 class="hero-heading">Your Path to Mental Wellness Starts Here</h1>
           <div class="line"></div>
           <p class="hero-paragraph">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-            temporibus minima delectus inventore vero quis dolor assumenda
-            laudantium nobis numquam.
+            Discover compassionate mental health care tailored to your needs.
+            Our licensed professionals provide therapy, counseling, and
+            psychiatric services to support your journey to wellness.
           </p>
           <div class="col">
-            <a class="btn" href="#">
+            <a class="btn" href="contact.html">
               <span class="text">Book Now</span>
               <svg
                 width="18"
@@ -69,6 +130,7 @@
                 viewBox="0 0 16 16"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <path
                   d="M4.66669 11.3334L11.3334 4.66669"
@@ -94,7 +156,10 @@
               <img
                 src="assets/Images/card.webp"
                 class="card-img"
-                alt="Therapy session"
+                alt="Therapy session with a mental health professional"
+                width="300"
+                height="200"
+                loading="lazy"
               />
             </div>
             <div class="card-bottom">
@@ -106,58 +171,67 @@
         </div>
       </section>
     </main>
+
     <section class="conditions">
       <div class="bg-light">
-      <div class="flex-space">
-        <h2>Conditions We Treat</h2>
-        <button class="btn-dark">Learn More</button>
-      </div>
-      <div class="conditions-container">
-        <div class="conditions-col-left">
-          <div>
-            <h3>Anxiety Disorder</h3>
+        <div class="flex-space">
+          <h2>Conditions We Treat</h2>
+          <a href="services.html" class="btn-dark">Learn More</a>
+        </div>
+        <div class="conditions-container">
+          <div class="conditions-col-left">
+            <div>
+              <h3>Anxiety Disorder</h3>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. A
-                eligendi quos libero obcaecati reprehenderit distinctio numquam
-                fugit nulla doloremque.
+                Our specialized therapists help manage anxiety symptoms through
+                evidence-based techniques like CBT, mindfulness, and exposure
+                therapy tailored to your needs.
               </p>
             </div>
             <div>
               <h3>Post-Traumatic Stress Disorder</h3>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. A
-                eligendi quos libero obcaecati reprehenderit distinctio numquam
-                fugit nulla doloremque.
+                We provide trauma-informed care using proven methods like EMDR
+                and trauma-focused CBT to help process and heal from traumatic
+                experiences.
               </p>
             </div>
             <div>
-              <h3>Eating disorder</h3>
+              <h3>Eating Disorders</h3>
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. A
-                eligendi quos libero obcaecati reprehenderit distinctio numquam
-                fugit nulla doloremque.
+                Our multidisciplinary approach addresses the psychological,
+                emotional, and behavioral aspects of eating disorders with
+                compassion and expertise.
               </p>
             </div>
           </div>
           <div class="conditions-col-right">
-            <img src="assets/Images/condition.webp" alt="" />
+            <img
+              src="assets/Images/condition.webp"
+              alt="Mental health professional discussing treatment options"
+              width="500"
+              height="400"
+              loading="lazy"
+            />
           </div>
         </div>
-         </div>
-      </section>
-      <div class="container">
-      
+      </div>
+    </section>
+
+    <div class="container">
       <section class="services">
         <div class="flex-space">
-          <h5><i class="fa-solid fa-star"></i>Our Services</h5>
-          <button class="btn-dark">All Services</button>
+          <h5>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>Our Services
+          </h5>
+          <a href="services.html" class="btn-dark">All Services</a>
         </div>
-        <h2>Holistic Mental Health Solutions</h1>
+        <h2>Holistic Mental Health Solutions</h2>
         <div class="services-container">
           <div class="services-row">
             <div class="service-card">
               <div class="service-icon-container">
-                <i class="fa-solid fa-user service-icon"></i>
+                <i class="fa-solid fa-user service-icon" aria-hidden="true"></i>
               </div>
               <h3>Individual Therapy</h3>
               <p>
@@ -168,7 +242,10 @@
             </div>
             <div class="service-card">
               <div class="service-icon-container">
-                <i class="fa-solid fa-users service-icon"></i>
+                <i
+                  class="fa-solid fa-users service-icon"
+                  aria-hidden="true"
+                ></i>
               </div>
               <h3>Group Therapy</h3>
               <p>
@@ -179,7 +256,10 @@
             </div>
             <div class="service-card">
               <div class="service-icon-container">
-                <i class="fa-solid fa-stethoscope service-icon"></i>
+                <i
+                  class="fa-solid fa-stethoscope service-icon"
+                  aria-hidden="true"
+                ></i>
               </div>
               <h3>Psychiatric Care</h3>
               <p>
@@ -192,7 +272,10 @@
           <div class="services-row">
             <div class="service-card">
               <div class="service-icon-container">
-                <i class="fa-solid fa-heart service-icon"></i>
+                <i
+                  class="fa-solid fa-heart service-icon"
+                  aria-hidden="true"
+                ></i>
               </div>
               <h3>Couples Counseling</h3>
               <p>
@@ -203,7 +286,10 @@
             </div>
             <div class="service-card">
               <div class="service-icon-container">
-                <i class="fa-solid fa-child service-icon"></i>
+                <i
+                  class="fa-solid fa-child service-icon"
+                  aria-hidden="true"
+                ></i>
               </div>
               <h3>Child & Adolescent Therapy</h3>
               <p>
@@ -214,7 +300,10 @@
             </div>
             <div class="service-card">
               <div class="service-icon-container">
-                <i class="fa-solid fa-brain service-icon"></i>
+                <i
+                  class="fa-solid fa-brain service-icon"
+                  aria-hidden="true"
+                ></i>
               </div>
               <h3>Mindfulness & Stress Reduction</h3>
               <p>
@@ -232,9 +321,9 @@
 
         <div class="intro-text">
           <p>
-            Majoutate bibendum enst motb interdum diam at. Eu et dator vel
-            societes sed nibh ut. Ac fringilla liamae eget a aliquet. Gravita
-            placerat vivena purua sed ac ultricies sem nulla.
+            We offer flexible mental health care packages designed to meet
+            different needs and budgets. All plans include access to our
+            licensed professionals and evidence-based treatments.
           </p>
         </div>
 
@@ -242,97 +331,104 @@
           <div class="plan-card">
             <h2 class="plan-title">Standard Plan</h2>
             <p class="plan-description">
-              Vulputate bibendum enst motb i literaturi diam at, kurat dolor
-              vel.
+              Individual-focused therapy with access to core mental health
+              services and resources.
             </p>
 
-            <div class="plan-price">$200 <span>Anveth</span></div>
+            <div class="plan-price">$200 <span>Monthly</span></div>
 
-            <h3 class="plan-subtitle">Sense: Isolabeli</h3>
+            <h3 class="plan-subtitle">Core Services Included</h3>
 
             <ul class="plan-features">
-              <li>Sensores: A sensores literatuït</li>
-              <li>Duration: 50 minutes</li>
-              <li>Individual Therapy:</li>
-              <li>Feminists: Diffine Resources</li>
+              <li>Individual Therapy Sessions</li>
+              <li>Duration: 50 minutes per session</li>
+              <li>Monthly Progress Assessment</li>
+              <li>Digital Wellness Resources</li>
             </ul>
 
-            <button class="cta-button">Get Started</button>
+            <a href="contact.html" class="cta-button">Get Started</a>
           </div>
 
           <div class="plan-card">
             <h2 class="plan-title">Premium Plan</h2>
             <p class="plan-description">
-              Majoutate bibendum va par mot bibendum o diam at, kurat dolor vel.
+              Comprehensive care including both individual and group therapy
+              with extended support.
             </p>
 
-            <div class="plan-price">$500 <span>Inserte</span></div>
+            <div class="plan-price">$500 <span>Monthly</span></div>
 
-            <h3 class="plan-subtitle">Sense: Isolabeli</h3>
+            <h3 class="plan-subtitle">Enhanced Services Included</h3>
 
             <ul class="plan-features">
-              <li>Sensores: Universitat Iberoamericana</li>
-              <li>Duration: 50 minutes</li>
-              <li>Individual & Group:</li>
-              <li>Feminists: 24/7 Support</li>
+              <li>Individual & Group Therapy</li>
+              <li>Extended Session Duration</li>
+              <li>Psychiatric Consultation</li>
+              <li>24/7 Crisis Support Line</li>
             </ul>
 
-            <button class="cta-button">Get Started</button>
+            <a href="contact.html" class="cta-button">Get Started</a>
           </div>
 
           <div class="plan-card">
             <h2 class="plan-title">Family Plan</h2>
             <p class="plan-description">
-              Vulputate bibendum enst motb i literaturi diam at, kurat dolor
-              vel.
+              Family-centered care with sessions for multiple family members and
+              specialized workshops.
             </p>
 
-            <div class="plan-price">$600 <span>Inserte</span></div>
+            <div class="plan-price">$600 <span>Monthly</span></div>
 
-            <h3 class="plan-subtitle">Sense: Isolabeli</h3>
+            <h3 class="plan-subtitle">Family Services Included</h3>
 
             <ul class="plan-features">
-              <li>Sensores: Sensores literatuït</li>
-              <li>Duration: 50 minutes</li>
-              <li>Family & Group:</li>
-              <li>Feminists: Drug Workshops</li>
+              <li>Family Therapy Sessions</li>
+              <li>Individual Sessions for 2 Members</li>
+              <li>Parenting Workshops</li>
+              <li>Communication Skill Building</li>
             </ul>
 
-            <button class="cta-button">Get Started</button>
+            <a href="contact.html" class="cta-button">Get Started</a>
           </div>
         </div>
       </section>
-      <!--Statistic Section-->
 
+      <!--Statistic Section-->
       <section class="statistic-section">
         <div class="statistic-row">
           <div class="statistic-col-left">
-            <img src="assets/Images/statistic-1.webp" alt="Mental health awareness" />
+            <img
+              src="assets/Images/statistic-1.webp"
+              alt="Mental health awareness statistics and information"
+              width="500"
+              height="400"
+              loading="lazy"
+            />
           </div>
           <div class="statistic-col-right">
             <h2 class="section-title">Mental Health by the Numbers</h2>
             <p class="section-text">
-              National healthcare will most have been met in. But a dose will
-              always be added, and we should know that a unique, flexible
-              patient therapy may not be a clinical reminder.
+              Our evidence-based approach has helped thousands achieve better
+              mental wellness. We're committed to providing accessible,
+              effective care with measurable results.
             </p>
 
             <div class="stats-container">
               <div class="stat-item">
                 <div class="stat-number">500+</div>
-                <div class="stat-label">Sambridge Punt</div>
+                <div class="stat-label">Patients Helped</div>
               </div>
               <div class="stat-item">
                 <div class="stat-number">1,200+</div>
-                <div class="stat-label">Business Punt</div>
+                <div class="stat-label">Therapy Sessions</div>
               </div>
               <div class="stat-item">
                 <div class="stat-number">200+</div>
-                <div class="stat-label">Numeration With</div>
+                <div class="stat-label">Workshops Conducted</div>
               </div>
               <div class="stat-item">
                 <div class="stat-number">1,800+</div>
-                <div class="stat-label">Firmedy Punt</div>
+                <div class="stat-label">Hours of Care</div>
               </div>
             </div>
           </div>
@@ -342,58 +438,72 @@
 
         <div class="statistic-row flex-reverse">
           <div class="statistic-col-left">
-            <img src="assets/Images/statistic-2.webp" alt="Mental health support" />
+            <img
+              src="assets/Images/statistic-2.webp"
+              alt="Mental health support principles and values"
+              width="500"
+              height="400"
+              loading="lazy"
+            />
           </div>
           <div class="statistic-col-right">
             <h2 class="section-title">The Zenith Guiding Principles</h2>
             <div class="principles-container">
               <div class="principle-item">
                 <div class="principle-icon">
-                  <i class="fa-solid fa-hand-holding-heart"></i>
+                  <i
+                    class="fa-solid fa-hand-holding-heart"
+                    aria-hidden="true"
+                  ></i>
                 </div>
                 <div class="principle-content">
                   <h3 class="principle-title">Compassion</h3>
                   <p class="principle-text">
-                    Increased health care costs and increased risk of cancer and
-                    other diseases.
+                    We approach every individual with empathy, understanding,
+                    and unconditional positive regard in a safe, non-judgmental
+                    environment.
                   </p>
                 </div>
               </div>
 
               <div class="principle-item">
                 <div class="principle-icon">
-                  <i class="fa-solid fa-medal"></i>
+                  <i class="fa-solid fa-medal" aria-hidden="true"></i>
                 </div>
                 <div class="principle-content">
                   <h3 class="principle-title">Excellence</h3>
                   <p class="principle-text">
-                    Increased health care costs and increased risk of cancer and
-                    other diseases.
+                    Our licensed professionals maintain the highest standards of
+                    care through ongoing training and evidence-based treatment
+                    approaches.
                   </p>
                 </div>
               </div>
 
               <div class="principle-item">
                 <div class="principle-icon">
-                  <i class="fa-solid fa-gears"></i>
+                  <i class="fa-solid fa-gears" aria-hidden="true"></i>
                 </div>
                 <div class="principle-content">
                   <h3 class="principle-title">Integrity</h3>
                   <p class="principle-text">
-                    Low levels of care are used to reduce the risk of cancer and
-                    other diseases.
+                    We uphold the highest ethical standards, ensuring
+                    confidentiality, transparency, and respect in all our
+                    interactions.
                   </p>
                 </div>
               </div>
 
               <div class="principle-item">
                 <div class="principle-icon">
-                  <i class="fa-solid fa-handshake"></i>
+                  <i class="fa-solid fa-handshake" aria-hidden="true"></i>
                 </div>
                 <div class="principle-content">
                   <h3 class="principle-title">Collaboration</h3>
                   <p class="principle-text">
-                    Increase the risk of cancer and other diseases.
+                    We work together with clients, families, and other
+                    professionals to create comprehensive, personalized
+                    treatment plans.
                   </p>
                 </div>
               </div>
@@ -401,18 +511,25 @@
           </div>
         </div>
       </section>
+
       <!--Stories Section-->
       <section class="stories-section">
         <div class="flex-space">
-          <h2>Real Stories,Real Impact</h2>
-          <button class="btn-dark">See All</button>
+          <h2>Real Stories, Real Impact</h2>
+          <a href="testimonials.html" class="btn-dark">See All</a>
         </div>
 
         <div class="stories-container">
           <div class="story-images">
-            <img src="assets/Images/story-1.webp" alt="" />
+            <img
+              src="assets/Images/story-1.webp"
+              alt="Client sharing experience with anxiety treatment"
+              width="400"
+              height="300"
+              loading="lazy"
+            />
             <div class="flex-center">
-              <i class="fa-solid fa-play"></i>
+              <i class="fa-solid fa-play" aria-hidden="true"></i>
               <div class="flex-col">
                 <span>Overcoming Anxiety and</span>
                 <span>Finding Peace</span>
@@ -421,127 +538,154 @@
           </div>
 
           <div class="story-images">
-            <img src="assets/Images/story-2.webp" alt="" />
+            <img
+              src="assets/Images/story-2.webp"
+              alt="Couple discussing relationship counseling benefits"
+              width="400"
+              height="300"
+              loading="lazy"
+            />
             <div class="flex-center">
-              <i class="fa-solid fa-play"></i>
+              <i class="fa-solid fa-play" aria-hidden="true"></i>
               <div class="flex-col">
                 <span>Strengthening Our</span>
                 <span>Relationship</span>
               </div>
             </div>
           </div>
-          
         </div>
       </section>
     </div>
-      <section class="cta-section">
-          <div class="cta-container">
-            <p>Start Your Journey</p>
-            <h2>Begin Your Path to Wellness</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente nihil consectetur laboriosam natus ratione?</p>
-            <div class="btn-container">
-              <div class="btn-primary">Schedule Consultaion</div>
-              <div class="btn-dark rounded none">Contact Us</div>
+
+    <section class="cta-section">
+      <div class="cta-container">
+        <p>Start Your Journey</p>
+        <h2>Begin Your Path to Wellness</h2>
+        <p>
+          Take the first step toward improved mental health. Our compassionate
+          team is ready to support you with personalized care and evidence-based
+          treatments.
+        </p>
+        <div class="btn-container">
+          <a href="contact.html" class="btn-primary">Schedule Consultation</a>
+          <a href="contact.html" class="btn-dark rounded none">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-bg">
+      <div class="footer-container">
+        <!-- Main Content Grid -->
+        <div class="footer-grid">
+          <!-- Column 1: Logo, Contact Info, Social Icons -->
+          <div>
+            <div class="logo-section">
+              <!-- Logo Icon -->
+              <svg
+                class="logo-icon"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 17.935V4.065A8.008 8.008 0 0 1 19.935 12 8.008 8.008 0 0 1 13 19.935zM11 4.065v15.87A8.008 8.008 0 0 0 4.065 12 8.008 8.008 0 0 0 11 4.065zM12 11h11v2H12z"
+                />
+              </svg>
+              <span class="logo-text">ZENLIFT</span>
+            </div>
+
+            <p class="contact-text">
+              Feel free to call us in working hours Mon - Fri 09:00 - 16:00. Our
+              team will be happy to help answer your queries.
+            </p>
+
+            <div class="social-icons">
+              <!-- Social Icons -->
+              <a
+                href="#"
+                class="social-icon"
+                aria-label="Follow us on Instagram"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="social-icon"
+                aria-label="Follow us on Facebook"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="social-icon"
+                aria-label="Follow us on LinkedIn"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Follow us on Twitter">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
             </div>
           </div>
-      </section>
 
-      <footer class="footer-bg">
-        <div class="footer-container">
-            <!-- Main Content Grid -->
-            <div class="footer-grid">
-                <!-- Column 1: Logo, Contact Info, Social Icons -->
-                <div>
-                    <div class="logo-section">
-                        <!-- Logo Icon -->
-                        <svg class="logo-icon" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 17.935V4.065A8.008 8.008 0 0 1 19.935 12 8.008 8.008 0 0 1 13 19.935zM11 4.065v15.87A8.008 8.008 0 0 0 4.065 12 8.008 8.008 0 0 0 11 4.065zM12 11h11v2H12z"/>
-                        </svg>
-                        <span class="logo-text">ZENLIFT</span>
-                    </div>
-                    
-                    <p class="contact-text">
-                        Feel free to call us in working hours Mon - Fri 09:00 - 16:00. Our team will be happy to help answer your queries.
-                    </p>
+          <!-- Column 2: Company Links -->
+          <div>
+            <h4 class="footer-heading">Company</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
 
-                    <div class="social-icons">
-                        <!-- Social Icons -->
-                        <a href="#" class="social-icon">
-<i class="fa-brands fa-instagram"></i>                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                           <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                           <i class="fa-brands fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
+          <!-- Column 3: Services Links -->
+          <div>
+            <h4 class="footer-heading">Services</h4>
+            <ul class="footer-links">
+              <li><a href="services.html#individual">Individual Therapy</a></li>
+              <li><a href="services.html#group">Group Therapy</a></li>
+              <li><a href="services.html#family">Family Counseling</a></li>
+              <li><a href="services.html#couples">Couples Counseling</a></li>
+            </ul>
+          </div>
 
-                <!-- Column 2: Company Links -->
-                <div>
-                    <h4 class="footer-heading">Company</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Courses</a></li>
-                        <li><a href="#">Programs</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3: Services Links -->
-                <div>
-                    <h4 class="footer-heading">Services</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Individual Therapy</a></li>
-                        <li><a href="#">Group Therapy</a></li>
-                        <li><a href="#">Family Counseling</a></li>
-                        <li><a href="#">Couples Counseling</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 4: Subscribe To Newsletter -->
-                <div>
-                    <h4 class="footer-heading">Subscribe To Newsletter</h4>
-                    <form class="newsletter-form">
-                        <input 
-                            type="email" 
-                            placeholder="Enter your mail" 
-                            class="newsletter-input"
-                            aria-label="Enter your email"
-                        >
-                        <button 
-                            type="submit" 
-                            class="subscribe-btn"
-                        >
-                            SUBSCRIBE
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <!-- End Main Content Grid -->
-
-            <!-- Horizontal Separator Line -->
-            <div class="footer-divider"></div>
-
-            <!-- Copyright and Legal Links -->
-            <div class="footer-bottom">
-                <p class="copyright">
-                    Copyright &copy; 2024 Zenlift | Design by TotaFema
-                </p>
-                <div class="legal-links">
-                    <a href="#">Terms of Use</a>
-                    <span class="separator">|</span>
-                    <a href="#">Privacy Policy</a>
-                </div>
-            </div>
+          <!-- Column 4: Subscribe To Newsletter -->
+          <div>
+            <h4 class="footer-heading">Subscribe To Newsletter</h4>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                placeholder="Enter your mail"
+                class="newsletter-input"
+                aria-label="Enter your email"
+                required
+              />
+              <button type="submit" class="subscribe-btn">SUBSCRIBE</button>
+            </form>
+          </div>
         </div>
+        <!-- End Main Content Grid -->
+
+        <!-- Horizontal Separator Line -->
+        <div class="footer-divider"></div>
+
+        <!-- Copyright and Legal Links -->
+        <div class="footer-bottom">
+          <p class="copyright">
+            Copyright &copy; 2024 Zenlift | Design by TotaFema
+          </p>
+          <div class="legal-links">
+            <a href="terms.html">Terms of Use</a>
+            <span class="separator" aria-hidden="true">|</span>
+            <a href="privacy.html">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
     </footer>
 
-      
-    <script src="js/pages/home.js"></script>
-    <script src="js/shared/navbar.js"></script>
+    <!-- Defer non-critical JavaScript -->
+    <script src="js/pages/home.js" defer></script>
+    <script src="js/shared/navbar.js" defer></script>
   </body>
 </html>
