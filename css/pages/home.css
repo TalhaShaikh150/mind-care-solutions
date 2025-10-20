@@ -62,7 +62,7 @@ main {
   display: flex;
   flex-direction: column;
   background: var(--color-white);
-  border-radius: var(--radius-lg);
+  border-radius: 20px;
   max-width: 380px;
   width: 100%;
   overflow: hidden;
@@ -118,7 +118,7 @@ main {
 
 .card-points {
   padding: 14px 16px;
-  border-radius: var(--radius-xl);
+  border-radius: 30px;
   color: var(--color-white);
   background: var(--color-brand-primary-dark);
   margin: 10px 0;
@@ -175,7 +175,7 @@ main {
 
 .conditions-col-left>div {
   padding: 18px 0px;
-  border-radius: var(--radius-lg);
+  border-radius: 20px;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
@@ -209,12 +209,12 @@ main {
   width: 100%;
   height: 100%;
   background: var(--color-brand-primary-light);
-  border-radius: var(--radius-lg);
+  border-radius: 20px;
   z-index: -1;
 }
 
 .conditions-col-right img {
-  border-radius: var(--radius-lg);
+  border-radius: 20px;
   width: 100%;
   height: auto;
   box-shadow: var(--shadow-md);
@@ -284,7 +284,7 @@ main {
 
 .service-card {
   background: var(--color-gray-200);
-  border-radius: var(--radius-lg);
+  border-radius: 20px;
   padding: 32px;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
@@ -305,7 +305,7 @@ main {
   align-items: center;
   justify-content: center;
   background: var(--color-brand-primary-dark);
-  border-radius: var(--radius-full);
+  border-radius: 80px;
   margin-bottom: 24px;
 }
 
@@ -335,7 +335,7 @@ main {
   text-align: center;
   padding: 48px;
   background: var(--color-bg-light);
-  border-radius: var(--radius-lg);
+  border-radius: 20px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -369,7 +369,7 @@ main {
 }
 
 .plan-card {
-  background: var(--color-gray-100);
+  background: var(--color-gray-200);
   border-radius: 12px;
   padding: 30px;
   flex: 1;
@@ -498,7 +498,7 @@ main {
 .statistic-row img {
   width: 100%;
   height: auto;
-  border-radius: var(--radius-md);
+  border-radius: 12px;
 }
 
 .section-title {
@@ -561,7 +561,7 @@ main {
   display: flex;
   gap: 20px;
   padding: 16px 0px;
-  border-radius: var(--radius-md);
+  border-radius: 12px;
   transition: all 0.3s ease;
 }
 
@@ -624,7 +624,7 @@ main {
   max-width: 500px;
   cursor: pointer;
   object-fit: cover;
-  border-radius: var(--radius-md);
+  border-radius: 12px;
   transition: 0.5s all ease;
 }
 
@@ -640,7 +640,7 @@ main {
   align-content: center;
   cursor: pointer;
   transition: 0.3s all ease;
-  border-radius: var(--radius-xl);
+  border-radius: 30px;
   background: var(--color-brand-primary);
 }
 

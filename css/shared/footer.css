@@ -12,14 +12,14 @@
           /* Light lime background for the SUBSCRIBE button */
         }
 
-     
+
         .footer-bg {
           background-color: var(--color-gray-200);
         }
 
         .text-accent {
           color: var(--color-brand-primary-dark);
-        }        
+        }
 
         /* Custom style for the subtle shadow on the subscription input */
         .input-shadow {
@@ -84,7 +84,7 @@
           font-weight: bold;
           color: var(--color-gray-700);
         }
-        
+
         .contact-text {
           font-size: 0.875rem;
           color: var(--color-gray-700);
