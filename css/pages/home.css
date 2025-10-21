@@ -51,7 +51,6 @@ main {
   width: 80px;
   height: 3px;
   background-color: var(--color-brand-primary);
-  margin: 12px 0;
 }
 
 .hero-right {
@@ -110,7 +109,7 @@ main {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 40px;
+  width: 100%;
   height: 3px;
   background: var(--color-brand-primary-dark);
   border-radius: 2px;
@@ -118,9 +117,9 @@ main {
 
 .card-points {
   padding: 14px 16px;
-  border-radius: 30px;
+  border-radius: 8px;
   color: var(--color-white);
-  background: var(--color-brand-primary-dark);
+  background: #154633;
   margin: 10px 0;
   cursor: pointer;
   transition: var(--transition);
@@ -129,17 +128,15 @@ main {
   font-weight: 500;
 }
 
-.card-points:hover {
-  transform: translateX(8px);
-  background: var(--color-brand-primary-light);
+.card-points i {
+  margin-right: 4px;
 }
 
-.card-points::before {
-  content: '→';
-  margin-right: 10px;
-  font-weight: bold;
-  transition: var(--transition);
+.card-points:hover {
+  transform: translateX(8px);
+  background: var(--color-brand-hover);
 }
+
 
 .card-points:hover::before {
   transform: translateX(4px);
@@ -155,7 +152,7 @@ main {
 
 /* Conditions Section */
 .conditions {
-  background-color: var(--color-gray-200);
+  background-color: var(--color-bg-light);
   margin: 48px 0px;
   padding: 32px 0px;
 }
@@ -192,8 +189,13 @@ main {
 }
 
 .conditions-col-left p {
+  color: var(--color-paragraph);
   position: relative;
   z-index: 1;
+}
+
+.conditions-col-left h3 {
+  font-size: 1.6em;
 }
 
 .conditions-col-right {
@@ -283,7 +285,7 @@ main {
 }
 
 .service-card {
-  background: var(--color-gray-200);
+  background: var(--color-bg-light);
   border-radius: 20px;
   padding: 32px;
   box-shadow: var(--shadow-sm);
@@ -291,6 +293,10 @@ main {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+.service-card p {
+  color: var(--color-paragraph)
 }
 
 .service-card:hover {
@@ -369,7 +375,7 @@ main {
 }
 
 .plan-card {
-  background: var(--color-gray-200);
+  background: var(--color-bg-light);
   border-radius: 12px;
   padding: 30px;
   flex: 1;
@@ -510,7 +516,6 @@ main {
 }
 
 .section-text {
-  color: var(--color-gray);
   font-size: 17px;
   line-height: 1.7;
   margin-bottom: 16px;
@@ -544,7 +549,6 @@ main {
 
 .stat-label {
   font-size: 14px;
-  color: var(--color-gray);
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 500;
@@ -594,7 +598,6 @@ main {
 
 .principle-text {
   font-size: 15px;
-  color: var(--color-gray);
   line-height: 1.6;
 }
 
@@ -621,11 +624,15 @@ main {
 }
 
 .stories-container img {
-  max-width: 500px;
+  width: 100%;
   cursor: pointer;
   object-fit: cover;
   border-radius: 12px;
   transition: 0.5s all ease;
+}
+
+.story-images {
+  width: 50%;
 }
 
 
@@ -658,19 +665,23 @@ main {
   background-repeat: no-repeat;
   height: 100vh;
 }
-.cta-section{
+
+.cta-section {
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
 }
-.cta-container{
+
+.cta-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: var(--color-white);
 }
+
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -744,6 +755,22 @@ main {
 @media (max-width: 768px) {
   .services-col {
     width: 100%;
+  }
+
+  .service-icon-container {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-brand-primary-dark);
+    border-radius: 80px;
+    margin-bottom: 24px;
+  }
+
+  .service-icon {
+    color: var(--color-white);
+    font-size: 22px;
   }
 
   .hero-left,
@@ -821,11 +848,28 @@ main {
   }
 
   .flex-space h2 {
+    font-size: 2em;
     margin-bottom: 0;
+  }
+
+  .stories-section h2 {
+    font-size: 1.8em;
+  }
+
+  .cta-container h2 {
+    font-size: 2em;
+  }
+
+  .cta-container p {
+    font-size: 0.94em;
+    margin: 0.6em 0.5em;
   }
 }
 
 @media (max-width: 480px) {
+  .card {
+    max-width: 200;
+  }
 
   .btn,
   .btn-dark {
@@ -836,5 +880,14 @@ main {
   .statistic-section {
     padding: 16px 12px;
   }
-}
 
+  .hero-paragraph {
+    color: var(--color-white);
+    text-align: center;
+    width: 96%;
+  }
+
+  .line {
+    margin: 0px;
+  }
+}

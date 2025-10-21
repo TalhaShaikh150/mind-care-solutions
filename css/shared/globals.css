@@ -9,7 +9,7 @@
 
 :root {
   /* 🌿 Brand Colors */
-  --color-bg-light: #DDEBDE;
+  --color-bg-light: #f2f2f294;
   --color-brand-primary: #d9ff9a;
   --color-brand-primary-light: #d2eaac;
   --color-brand-hover: #769641;
@@ -20,11 +20,6 @@
   --color-black: #000000;
   --color-dark: #1e1e1e;
   --color-gray-900: #212121;
-  --color-gray-700: #4a4a4a;
-  --color-gray-500: #9e9e9e;
-  --color-gray-300: #bfbfbf82;
-  --color-gray-200: #eeeeee;
-  --color-gray-100: #f0f0f0;
   --color-white: #ffffff;
 
   /* ✨ Supporting Colors */
@@ -147,7 +142,7 @@ a {
 }
 
 .btn {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   background-color: #154633;
   padding: 20px 24px 20px 32px;
@@ -213,7 +208,7 @@ a {
   }
 }
 
-.btn-container{
+.btn-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,11 +216,12 @@ a {
   margin: 1em;
   gap: 1em;
 }
+
 .btn-primary {
   border: none;
   padding: 12px 24px;
   background: var(--color-brand-primary);
-  font-size: var(--font-size-small);
+  font-size: 1em;
   border-radius: var(--radius-xl);
   transition: var(--transition);
   cursor: pointer;
@@ -264,6 +260,6 @@ a {
   border-radius: 80px;
 }
 
-.none{
+.none {
   border: none;
 }
