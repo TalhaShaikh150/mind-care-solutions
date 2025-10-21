@@ -250,3 +250,27 @@ nav.scrolled {
 .mobile-overlay.active {
   display: block;
 }
+
+/* Prevent horizontal overflow on all devices */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Make sure nav and its children don't overflow */
+nav, .nav-left, .nav-right, .all-nav-links {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure images and icons scale properly */
+img, i {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent nav-links from pushing layout on small screens */
+.nav-link {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

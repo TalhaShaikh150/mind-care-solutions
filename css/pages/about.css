@@ -139,14 +139,46 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin: 2em auto;
+}
+
+.experience-row h2 {
+  font-weight: 400;
+  line-height: 1em;
+}
+
+.experience-row .date {
+  font-weight: 500;
+  font-size: 1.6em;
+}
+
+.experience-row i {
+  width: 50px;
+  height: 50px;
+  align-content: center;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  border-radius: 30px;
+  background: var(--color-brand-primary);
+}
+
+.experience-row i:hover {
+  transform: scale(1.15);
+  background: var(--color-brand-dark);
+  color: var(--color-white);
 }
 
 .experience-col {
   display: flex;
-  width: 60%;
   align-items: center;
-  text-align: center;
   flex-direction: column;
+  width: 60%;
+}
+
+.experience-col p {
+  width: 60%;
+  line-height: 1.3em;
+  color: var(--color-gray-700);
 }
 
 /* Tablet Responsive */
@@ -199,6 +231,30 @@
 
   .about-points {
     gap: 2em;
+  }
+
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .experience-row {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .experience-row .date {
+    order: -1;
+  }
+
+  .experience-col {
+    width: 100%;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+  .experience-col p {
+    width: 100%;
   }
 }
 
