@@ -3,357 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mind Care Solutions - Conditions</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <style>
-      :root {
-        /* 🌿 Brand Colors */
-        --color-bg-light: #ddebde;
-        --color-brand-primary: #d9ff9a;
-        --color-brand-primary-light: #d2eaac;
-        --color-brand-hover: #769641;
-        --color-brand-primary-dark: #6ba60d;
-        --color-brand-dark: #222222;
-
-        /* 🌑 Neutral Colors */
-        --color-gray-900: #212121;
-        --color-gray-700: #4a4a4a;
-        --color-gray-500: #9e9e9e;
-        --color-gray-200: #eeeeee;
-        --color-white: #ffffff;
-
-        /* ✍️ Typography */
-        --font-family-base: "Inter", "Helvetica Neue", Arial, sans-serif;
-        --font-size-h1: 48px;
-        --font-size-h2: 36px;
-        --font-size-h3: 28px;
-        --font-size-h4: 22px;
-
-        /* 🧱 Spacing Scale */
-        --spacing-xs: 8px;
-        --spacing-sm: 16px;
-        --spacing-md: 24px;
-        --spacing-lg: 32px;
-        --spacing-xl: 48px;
-        --spacing-xxl: 64px;
-
-        /* 🧭 Border Radius & Shadows */
-        --radius-sm: 6px;
-        --radius-md: 12px;
-        --radius-lg: 20px;
-        --radius-xl: 30px;
-
-        --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.08);
-        --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
-        --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
-
-        --transition: all ease 0.3s;
-      }
-
-      * {
-        font-family: var(--font-family-base);
-        padding: 0px;
-        margin: 0px;
-        box-sizing: border-box;
-      }
-
-      body {
-        color: var(--color-gray-900);
-        line-height: 1.6;
-        background-color: #f9f9f9;
-        padding: var(--spacing-lg);
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5 {
-        line-height: 1.2;
-        margin-bottom: var(--spacing-md);
-      }
-
-      h1 {
-        font-size: var(--font-size-h1);
-        font-weight: 600;
-        color: var(--color-brand-dark);
-      }
-
-      h2 {
-        font-size: var(--font-size-h2);
-        font-weight: 600;
-        color: var(--color-brand-dark);
-        margin-bottom: var(--spacing-sm);
-      }
-
-      p {
-        margin-bottom: var(--spacing-md);
-        color: var(--color-gray-700);
-        line-height: 1.7;
-        font-size: 1.1rem;
-      }
-
-      .container {
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .flex-space {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: var(--spacing-xl);
-      }
-
-      /* Conditions Section */
-      .conditions {
-        margin: var(--spacing-xxl) 0;
-        padding: var(--spacing-xl) 0;
-      }
-
-      .conditions-container {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: var(--spacing-xxl);
-      }
-
-      .conditions-col-left {
-        display: flex;
-        gap: var(--spacing-xl);
-        width: 55%;
-        flex-direction: column;
-      }
-
-      .conditions-col-left > div {
-        padding: var(--spacing-xl);
-        border-radius: var(--radius-lg);
-        transition: var(--transition);
-        background: var(--color-white);
-        box-shadow: var(--shadow-sm);
-        border-left: 4px solid var(--color-brand-primary-dark);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .conditions-col-left > div::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          135deg,
-          var(--color-brand-primary-light) 0%,
-          transparent 70%
-        );
-        opacity: 0;
-        transition: var(--transition);
-        z-index: 0;
-      }
-
-      .conditions-col-left > div:hover::before {
-        opacity: 0.1;
-      }
-
-      .conditions-col-left > div:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-md);
-      }
-
-      .conditions-col-left h2 {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-sm);
-      }
-
-      .conditions-col-left h2::before {
-        content: "";
-        display: block;
-        width: 8px;
-        height: 8px;
-        background: var(--color-brand-primary-dark);
-        border-radius: 50%;
-      }
-
-      .conditions-col-left p {
-        position: relative;
-        z-index: 1;
-      }
-
-      .conditions-col-right {
-        width: 42%;
-        position: relative;
-      }
-
-      .conditions-col-right::before {
-        content: "";
-        position: absolute;
-        top: -20px;
-        right: -20px;
-        width: 100%;
-        height: 100%;
-        background: var(--color-brand-primary-light);
-        border-radius: var(--radius-lg);
-        z-index: -1;
-      }
-
-      .conditions-col-right img {
-        border-radius: var(--radius-lg);
-        width: 100%;
-        height: auto;
-        box-shadow: var(--shadow-md);
-        transition: var(--transition);
-      }
-
-      .conditions-col-right:hover img {
-        transform: scale(1.02);
-      }
-
-      .btn-dark {
-        display: inline-flex;
-        align-items: center;
-        gap: var(--spacing-xs);
-        padding: var(--spacing-sm) var(--spacing-lg);
-        border-radius: var(--radius-md);
-        text-decoration: none;
-        font-weight: 500;
-        transition: var(--transition);
-        cursor: pointer;
-        border: none;
-        font-size: 1.1rem;
-        background-color: var(--color-brand-primary-dark);
-        color: var(--color-white);
-      }
-
-      .btn-dark:hover {
-        background-color: var(--color-brand-hover);
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-md);
-      }
-
-      /* Responsive Design */
-      @media (max-width: 1024px) {
-        .conditions-container {
-          gap: var(--spacing-xl);
-        }
-
-        .conditions-col-left {
-          width: 52%;
-        }
-
-        .conditions-col-right {
-          width: 45%;
-        }
-
-        h1 {
-          font-size: 2.5rem;
-        }
-
-        h2 {
-          font-size: 1.8rem;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .conditions-container {
-          flex-direction: column;
-          gap: var(--spacing-xl);
-        }
-
-        .conditions-col-left,
-        .conditions-col-right {
-          width: 100%;
-        }
-
-        .conditions-col-right::before {
-          display: none;
-        }
-
-        .flex-space {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: var(--spacing-md);
-        }
-
-        h1 {
-          font-size: 2rem;
-        }
-
-        .conditions-col-left > div {
-          padding: var(--spacing-lg);
-        }
-      }
-
-      @media (max-width: 480px) {
-        body {
-          padding: var(--spacing-md);
-        }
-
-        .conditions {
-          margin: var(--spacing-xl) 0;
-        }
-
-        .conditions-col-left > div {
-          padding: var(--spacing-md);
-        }
-
-        .btn-dark {
-          width: 100%;
-          justify-content: center;
-        }
-      }
-    </style>
+    <title>Mind Care Solutions Services</title>
+    <link rel="stylesheet" href="css/shared/navbar.css" />
+    <link rel="stylesheet" href="css/shared/footer.css" />
+    <link rel="stylesheet" href="css/pages/services.css" />
+    <link rel="stylesheet" href="css/shared/globals.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="conditions">
-        <div class="flex-space">
-          <h1>Conditions We Treat</h1>
-          <button class="btn-dark">Learn More</button>
+    <nav>
+      <div class="nav-left">
+        <a href="index.html">
+          <img
+            src="assets/Images/logo.png"
+            alt="Mind Care Solutions Logo"
+            class="logo"
+          />
+        </a>
+      </div>
+
+      <div class="nav-right">
+        <!-- Navigation links -->
+        <div class="all-nav-links" id="navLinks">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link active-link" href="services.html">Services</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+
+          <div class="nav-icons">
+            <a href="tel:+1234567890" aria-label="Call us">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+            <a href="mailto:info@mindcare.com" aria-label="Email us">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+          </div>
         </div>
-        <div class="conditions-container">
-          <div class="conditions-col-left">
-            <div>
-              <h2>Anxiety Disorder</h2>
-              <p>
-                We provide evidence-based treatments for anxiety disorders,
-                helping you manage symptoms and regain control of your life
-                through personalized therapy approaches.
-              </p>
-            </div>
-            <div>
-              <h2>Post-Traumatic Stress Disorder</h2>
-              <p>
-                Our trauma-informed care helps process and heal from traumatic
-                experiences using proven therapeutic techniques tailored to your
-                unique needs.
-              </p>
-            </div>
-            <div>
-              <h2>Eating Disorders</h2>
-              <p>
-                We offer compassionate support for individuals struggling with
-                eating disorders, focusing on developing healthy relationships
-                with food and body image.
-              </p>
-            </div>
-          </div>
-          <div class="conditions-col-right">
-            <img
-              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-              alt="Therapist and client in session"
-            />
-          </div>
+
+        <!-- Hamburger menu on the right -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
-    </div>
+    </nav>
+
+     <!-- banner -->
+    <section class="services-banner">
+      <div class="banner-content">
+        <h1>About Us</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam,
+          maxime!
+        </p>
+      </div>
+    </section>
+
   </body>
 </html>

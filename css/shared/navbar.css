@@ -8,11 +8,11 @@ nav {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  position: fixed;
-  width: 100%;
+  position: sticky;
   top: 0;
   z-index: 1000;
   transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.815);
 }
 
 nav.scrolled {
@@ -215,7 +215,7 @@ nav.scrolled {
 
 @media (max-width: 480px) {
   .logo {
-    height: 35px;
+    height: 25px;
   }
 
   .hamburger {
@@ -249,4 +249,33 @@ nav.scrolled {
 
 .mobile-overlay.active {
   display: block;
+}
+
+/* Prevent horizontal overflow on all devices */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Make sure nav and its children don't overflow */
+nav,
+.nav-left,
+.nav-right,
+.all-nav-links {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure images and icons scale properly */
+img,
+i {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent nav-links from pushing layout on small screens */
+.nav-link {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
