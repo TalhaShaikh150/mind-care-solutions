@@ -1,7 +1,7 @@
 /* Main/Hero Section */
 main {
   background-image: var(--gradient-hero),
-    url("/assets/Images/background.webp");
+    url("/assets/Images/background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -9,7 +9,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 80px;
 }
 
 .hero-section {
@@ -227,28 +226,6 @@ main {
   transform: scale(1.02);
 }
 
-
-/* Services Section */
-.services {
-  margin: 48px 0;
-}
-
-.services h5 {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--color-brand-primary-dark);
-  font-weight: 500;
-}
-
-.services h5 i {
-  color: var(--color-brand-primary-dark);
-}
-
-.services h1 {
-  margin-bottom: 32px;
-  color: var(--color-brand-dark);
-}
 
 
 /* Services Section */
@@ -516,6 +493,7 @@ main {
 }
 
 .section-text {
+  color: var(--color-paragraph);
   font-size: 17px;
   line-height: 1.7;
   margin-bottom: 16px;
@@ -659,7 +637,7 @@ main {
 
 .cta-section {
   background-image: var(--gradient-hero),
-    url("../../assets/Images/cta.webp");
+    url("../../assets/Images/cta.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

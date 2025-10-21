@@ -9,7 +9,7 @@
 
 :root {
   /* 🌿 Brand Colors */
-  --color-bg-light: #f2f2f294;
+  --color-bg-light: #e8e8e8;
   --color-brand-primary: #d9ff9a;
   --color-brand-primary-light: #d2eaac;
   --color-brand-hover: #769641;
@@ -21,7 +21,7 @@
   --color-dark: #1e1e1e;
   --color-gray-900: #212121;
   --color-white: #ffffff;
-
+  --color-paragraph: #676363;
   /* ✨ Supporting Colors */
   --color-accent-yellow: #f7f48b;
 
@@ -66,7 +66,6 @@ h2,
 h3,
 h4,
 h5 {
-  line-height: 1.2;
   margin-bottom: 16px;
 }
 

@@ -1,7 +1,7 @@
 /* Banner */
 .about-us-banner {
   position: relative;
-  background: url("../../assets/images/about-us-banner.webp");
+  background: url("../../assets/images/about-us-banner.jpg");
   width: 100%;
   height: 50vh;
   background-size: cover;
@@ -55,15 +55,14 @@
 }
 
 .about-us-left {
-  width: 50%;
+  width: 60%;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
 }
 
 .about-left-header h2 {
-  width: 100%;
-  font-size: 3em;
+  font-size: 2.6em;
   font-weight: 400;
   line-height: 1.2;
 }
@@ -76,6 +75,7 @@
 
 .about-left-header p {
   display: flex;
+  font-size: 1.2em;
   align-items: center;
   gap: 10px;
   font-weight: 600;
@@ -90,9 +90,10 @@
   background: var(--color-brand-primary-dark);
   width: fit-content;
   padding: 0.5em 1em;
-  border-radius: 12px;
+  border-radius: 50px;
   transition: var(--transition);
   color: white;
+  font-size: 1.5em;
   margin-bottom: 30px;
 }
 
@@ -143,6 +144,12 @@
   margin: 2em auto;
 }
 
+#experience-heading {
+  font-size: 2em;
+}
+
+
+
 .experience-row h2 {
   font-weight: 400;
   line-height: 1em;
@@ -182,56 +189,128 @@
   color: var(--color-paragraph);
 }
 
-.approach {
+.approach-container {
   width: 90%;
   display: flex;
-  margin: 4em auto;
+  margin: 6em auto;
   justify-content: space-between;
   max-width: 1200px;
 }
 
-.approach-left p {
-  width: 80%;
+.approach-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+}
+
+.about-left {
+  width: 100%;
+  font-size: 3em;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.approach-para {
+  display: flex;
+  font-size: 1.2em;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
 }
 
 .approach-right img {
+  border-radius: 22px;
+}
 
-  max-width: 400px;
+.approach-left p {
+  font-size: 1.2em;
+  color: var(--color-paragraph);
+  line-height: 1.3em;
+}
+
+.approach-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  width: 90%;
+  gap: 2em;
+}
+
+.approach-icon-container {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-brand-primary-dark);
+  border-radius: 80px;
+  margin-bottom: 24px;
+}
+
+.approach-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.approach-col span {
+  font-size: 1em;
+  color: var(--color-paragraph);
+}
+
+.approach-col p {
+  margin: 1em 0px;
+  font-weight: bold;
+  font-size: 1.05em;
+}
+
+.approach-col i {
+  color: var(--color-white);
+  font-size: 1.2em;
 }
 
 /* Tablet Responsive */
 @media screen and (max-width: 1024px) {
   .about-us {
-    flex-direction: column;
     height: auto;
-    gap: 50px;
-  }
-
-  .about-us-left,
-  .about-us-right {
-    width: 100%;
   }
 
   .about-left-header h2 {
-    font-size: 2.5em;
+    font-size: 2em;
     width: 80%;
   }
 
-  .consultant-card {
-    justify-content: center;
+  .about-us-right {
+    width: 60%;
   }
 
   .consultant-card img {
-    width: 70%;
+    width: 100%;
   }
 }
 
 /* Mobile Responsive */
 @media screen and (max-width: 768px) {
   .about-us {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
     width: 95%;
     padding: 30px 0;
     gap: 40px;
+  }
+
+
+  .about-us-left,
+  .about-us-right {
+    width: 100%;
+  }
+
+  .about-left-header {
+    align-items: center;
   }
 
   .about-left-header h2 {
@@ -241,6 +320,14 @@
 
   .about-point h3 {
     font-size: 1.4em;
+  }
+
+  .our-misson-heading {
+    font-size: 1.1em;
+    width: 50%;
+    padding: 0.6em;
+    margin: 1em auto;
+    text-align: center;
   }
 
   .consultant-card img {
@@ -275,6 +362,14 @@
   .experience-col p {
     width: 100%;
   }
+
+  .flex-space {
+    flex-direction: column;
+  }
+
+  #experience-heading {
+    text-align: center;
+  }
 }
 
 /* Small Mobile */
@@ -289,23 +384,27 @@
 
   .our-misson-heading {
     font-size: 1.1em;
-    width: 100%;
+    width: 70%;
     text-align: center;
   }
 
   .about-points {
     gap: 1.8em;
   }
+
+  #experience-heading {
+    text-align: center;
+  }
 }
 
 /* Large Desktop */
 @media screen and (min-width: 1400px) {
   .consultant-card img {
-    width: 50%;
+    width: 70%;
   }
 
-  .about-left-header h2 {
-    width: 60%;
+  .approach-row {
+    width: 70%;
   }
 
   .about-us {
