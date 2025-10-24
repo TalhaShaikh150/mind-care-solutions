@@ -3,679 +3,688 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- SEO Meta Tags -->
-    <title>Mind Care Solutions | Mental Health & Wellness Services</title>
-    <meta
-      name="description"
-      content="Professional mental health services including therapy, counseling, and psychiatric care. Find compassionate support for anxiety, PTSD, and other mental health conditions."
+    <title>Therapy.io | Professional Online Counseling & Therapy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
     />
-    <meta
-      name="keywords"
-      content="mental health, therapy, counseling, anxiety treatment, PTSD, psychiatric care, wellness"
-    />
-    <meta name="author" content="Mind Care Solutions" />
-
-    <!-- Open Graph Meta Tags -->
-    <meta
-      property="og:title"
-      content="Mind Care Solutions | Mental Health & Wellness Services"
-    />
-    <meta
-      property="og:description"
-      content="Professional mental health services including therapy, counseling, and psychiatric care."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.mindcare.com" />
-
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="css/shared/globals.css" as="style" />
-    <link rel="preload" href="css/shared/navbar.css" as="style" />
-    <link rel="preload" href="css/pages/home.css" as="style" />
-    <link rel="preload" href="css/shared/footer.css" as="style" />
-
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="css/shared/navbar.css" />
-    <link rel="stylesheet" href="css/shared/footer.css" />
-    <link rel="stylesheet" href="css/pages/home.css" />
-    <link rel="stylesheet" href="css/shared/globals.css" />
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.mindcare.com" />
-
-    <!-- Structured Data for Local Business -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "MedicalOrganization",
-        "name": "Mind Care Solutions",
-        "description": "Professional mental health services including therapy, counseling, and psychiatric care.",
-        "url": "https://www.mindcare.com",
-        "telephone": "+1234567890",
-        "email": "info@mindcare.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "City",
-          "addressRegion": "State",
-          "postalCode": "ZIP Code",
-          "addressCountry": "US"
-        },
-        "serviceType": "Mental Health Services",
-        "medicalSpecialty": "Psychiatry, Psychology"
-      }
-    </script>
+   <link rel="stylesheet" href="css/main.css">
   </head>
-  <body>
-    <nav>
-      <div class="nav-left">
-        <a href="index.html" aria-label="Mind Care Solutions Home">
-          <img
-            src="assets/Images/logo.png"
-            alt="Mind Care Solutions Logo"
-            class="logo"
-            width="150"
-            height="50"
-          />
-        </a>
+  <body class="bg-cream min-h-screen flex flex-col text-gray-800">
+    <header
+      class="sticky top-0 z-50 h-16 flex items-center justify-between px-4 sm:px-6 bg-white shadow-md border-b border-gray-100"
+    >
+      <div class="text-2xl font-extrabold text-dark-green tracking-tight">
+        <a href="index.html">Therapy.io</a>
       </div>
-
-      <div class="nav-right">
-        <!-- Navigation links -->
-        <div class="all-nav-links" id="navLinks">
-          <a class="nav-link active-link" href="index.html">Home</a>
-          <a class="nav-link" href="about.html">About</a>
-          <a class="nav-link" href="services.html">Services</a>
-          <a class="nav-link" href="contact.html">Contact</a>
-
-          <div class="nav-icons">
-            <a href="tel:+1234567890" aria-label="Call us">
-              <i class="fa-solid fa-phone"></i>
-            </a>
-            <a href="mailto:info@mindcare.com" aria-label="Email us">
-              <i class="fa-regular fa-envelope"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Hamburger menu on the right -->
-        <div
-          class="hamburger"
-          id="hamburger"
-          aria-label="Toggle navigation menu"
+      <nav class="hidden md:flex space-x-8 text-sm font-medium">
+        <a
+          href="index.html"
+          class="text-gray-600 hover:text-dark-green transition duration-150 font-extrabold border-b-2 border-light-green"
+          >Home</a
         >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </nav>
-    <main>
-      <section class="hero-section">
-        <div class="hero-left">
-          <p class="hero-subtitle">Zenlift - Mental Health</p>
-          <h1 class="hero-heading">Your Path to Mental Wellness Starts Here</h1>
-          <div class="line"></div>
-          <p class="hero-paragraph">
-            Discover compassionate mental health care tailored to your needs.
-            Our licensed professionals provide therapy.
+        <a
+          href="about.html"
+          class="text-gray-600 hover:text-dark-green transition duration-150"
+          >About Us</a
+        >
+        <a
+          href="services.html"
+          class="text-gray-600 hover:text-dark-green transition duration-150"
+          >Services</a
+        >
+        <a
+          href="contact.html"
+          class="text-gray-600 hover:text-dark-green transition duration-150"
+          >Contact</a
+        >
+      </nav>
+      <button
+        class="py-2 px-4 bg-light-green text-white text-sm font-semibold rounded-lg shadow-md hover:bg-light-green/90 transition duration-150"
+      >
+        Get Started
+      </button>
+      <button
+        class="text-sm font-semibold text-dark-green hover:opacity-80 md:hidden transition duration-150"
+      >
+        Menu
+      </button>
+    </header>
+
+    <div class="flex-grow">
+      <div id="home-page">
+        <main
+          class="flex-grow flex flex-col items-center justify-start pt-16 sm:pt-24 px-4 sm:px-6 md:px-10 text-center bg-white pb-20 shadow-2xl"
+        >
+          <div
+            class="mb-8 flex items-center justify-center space-x-1 p-2 bg-cream rounded-full shadow-inner border border-light-green/40"
+          >
+            <div class="flex text-light-green">
+              <i
+                data-lucide="star"
+                class="w-4 h-4 fill-light-green icon-star"
+              ></i>
+              <i
+                data-lucide="star"
+                class="w-4 h-4 fill-light-green icon-star"
+              ></i>
+              <i
+                data-lucide="star"
+                class="w-4 h-4 fill-light-green icon-star"
+              ></i>
+              <i
+                data-lucide="star"
+                class="w-4 h-4 fill-light-green icon-star"
+              ></i>
+              <i
+                data-lucide="star-half"
+                class="w-4 h-4 fill-light-green icon-star"
+              ></i>
+            </div>
+            <p class="text-xs font-bold text-gray-700">
+             Serving the Calgary Community since 2018
+            </p>
+          </div>
+
+          <h1
+            class="text-5xl sm:text-6xl md:text-7xl font-extrabold text-dark-green max-w-3xl mb-6 leading-tight"
+          >
+            <span class="text-light-green">Accessible.</span> Effective. <br />
+            Professional Online Therapy.
+          </h1>
+
+          <p
+            class="text-xl sm:text-2xl text-gray-600 max-w-2xl mb-12 font-light"
+          >
+            Connect with a licensed, experienced therapist from the comfort of
+            your home. Your path to emotional well-being starts here.
           </p>
-          <div class="col">
-            <a class="btn" href="contact.html">
-              <span class="text">Book Now</span>
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
+
+          <a
+            href="#"
+            class="w-full max-w-sm py-4 px-8 bg-light-green text-white font-bold text-xl rounded-xl shadow-2xl shadow-light-green/50 transition-all duration-300 hover:bg-darker-green hover:shadow-dark-green/50 active:scale-95 transform"
+          >
+            Find Your Therapist Today
+          </a>
+
+          <p class="text-xs mt-4 text-gray-500 font-medium">
+            Trusted by over 1,000,000 members worldwide.
+          </p>
+        </main>
+
+        <section class="py-16 sm:py-24 px-4 sm:px-6 md:px-10 bg-cream">
+          <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-dark-green mb-12">
+              Why Choose Online with Therapy.io?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div class="p-4 rounded-xl">
+                <i
+                  data-lucide="pocket"
+                  class="w-8 h-8 text-light-green mb-3 mx-auto"
+                ></i>
+                <h3 class="text-lg font-semibold text-dark-green mb-1">
+                  Affordability
+                </h3>
+                <p class="text-gray-600 text-sm">
+                  Up to 40% less than traditional in-person therapy.
+                </p>
+              </div>
+              <div class="p-4 rounded-xl">
+                <i
+                  data-lucide="calendar-check"
+                  class="w-8 h-8 text-light-green mb-3 mx-auto"
+                ></i>
+                <h3 class="text-lg font-semibold text-dark-green mb-1">
+                  Flexibility
+                </h3>
+                <p class="text-gray-600 text-sm">
+                  Schedule sessions that fit your busy life, 7 days a week.
+                </p>
+              </div>
+              <div class="p-4 rounded-xl">
+                <i
+                  data-lucide="lock"
+                  class="w-8 h-8 text-light-green mb-3 mx-auto"
+                ></i>
+                <h3 class="text-lg font-semibold text-dark-green mb-1">
+                  Privacy & Comfort
+                </h3>
+                <p class="text-gray-600 text-sm">
+                  Talk from anywhere you feel safe and secure.
+                </p>
+              </div>
+              <div class="p-4 rounded-xl">
+                <i
+                  data-lucide="users-round"
+                  class="w-8 h-8 text-light-green mb-3 mx-auto"
+                ></i>
+                <h3 class="text-lg font-semibold text-dark-green mb-1">
+                  Expert Matching
+                </h3>
+                <p class="text-gray-600 text-sm">
+                  Access to a network of 30,000+ licensed specialists.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--Services-->
+        <section class="py-16 sm:py-24 px-4 sm:px-6 md:px-10 bg-white">
+          <div class="max-w-6xl mx-auto">
+            <h2
+              class="text-3xl sm:text-4xl font-bold text-dark-green text-center mb-12"
+            >
+              Dedicated Support for a Wide Range of Needs
+            </h2>
+            <div
+              class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8"
+            >
+              <div
+                class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
               >
-                <path
-                  d="M4.66669 11.3334L11.3334 4.66669"
-                  stroke="white"
-                  stroke-width="1.33333"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M4.66669 4.66669H11.3334V11.3334"
-                  stroke="white"
-                  stroke-width="1.33333"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="hero-right">
-          <div class="card">
-            <div class="card-top">
-              <img
-                src="assets/Images/card.webp"
-                class="card-img"
-                alt="Therapy session with a mental health professional"
-                width="300"
-                height="200"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-bottom">
-              <p class="card-subtitle">Core Services</p>
-              <p class="card-points">
-                <i class="fa-solid fa-arrow-right"></i>Therapy Sessions
-              </p>
-              <p class="card-points">
-                <i class="fa-solid fa-arrow-right"></i>Psychiatric Consultations
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <section class="conditions">
-      <div class="bg-light">
-        <div class="flex-space">
-          <h2>Conditions We Treat</h2>
-          <a href="services.html" class="btn-dark">Learn More</a>
-        </div>
-        <div class="conditions-container">
-          <div class="conditions-col-left">
-            <div>
-              <h3>Anxiety Disorder</h3>
-              <p>
-                Our specialized therapists help manage anxiety symptoms through
-                evidence-based techniques like CBT, mindfulness, and exposure
-                therapy tailored to your needs.
-              </p>
-            </div>
-            <div>
-              <h3>Post-Traumatic Stress Disorder</h3>
-              <p>
-                We provide trauma-informed care using proven methods like EMDR
-                and trauma-focused CBT to help process and heal from traumatic
-                experiences.
-              </p>
-            </div>
-            <div>
-              <h3>Eating Disorders</h3>
-              <p>
-                Our multidisciplinary approach addresses the psychological,
-                emotional, and behavioral aspects of eating disorders with
-                compassion and expertise.
-              </p>
-            </div>
-          </div>
-          <div class="conditions-col-right">
-            <img
-              src="assets/Images/condition.webp"
-              alt="Mental health professional discussing treatment options"
-              width="500"
-              height="400"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="container">
-      <section class="services">
-        <div class="flex-space">
-          <h5>
-            <i class="fa-solid fa-star" aria-hidden="true"></i>Our Services
-          </h5>
-          <a href="services.html" class="btn-dark">All Services</a>
-        </div>
-        <h2>Holistic Mental Health Solutions</h2>
-        <div class="services-container">
-          <div class="services-row">
-            <div class="service-card">
-              <div class="service-icon-container">
-                <i class="fa-solid fa-user service-icon" aria-hidden="true"></i>
-              </div>
-              <h3>Individual Therapy</h3>
-              <p>
-                One-on-one sessions with licensed therapists to address personal
-                challenges, develop coping strategies, and work toward your
-                mental health goals.
-              </p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon-container">
                 <i
-                  class="fa-solid fa-users service-icon"
-                  aria-hidden="true"
+                  data-lucide="cloud-lightning"
+                  class="w-6 h-6 text-dark-green mb-2 mx-auto"
                 ></i>
+                <p class="text-base sm:text-lg font-bold text-dark-green">
+                  Stress & Anxiety
+                </p>
               </div>
-              <h3>Group Therapy</h3>
-              <p>
-                Connect with others facing similar challenges in a supportive,
-                professionally-facilitated group setting to share experiences
-                and learn together.
-              </p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon-container">
+              <div
+                class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+              >
                 <i
-                  class="fa-solid fa-stethoscope service-icon"
-                  aria-hidden="true"
+                  data-lucide="frown"
+                  class="w-6 h-6 text-dark-green mb-2 mx-auto"
                 ></i>
+                <p class="text-base sm:text-lg font-bold text-dark-green">
+                  Depression & Mood
+                </p>
               </div>
-              <h3>Psychiatric Care</h3>
-              <p>
-                Comprehensive psychiatric evaluations and medication management
-                provided by board-certified psychiatrists when appropriate for
-                your treatment plan.
-              </p>
-            </div>
-          </div>
-          <div class="services-row">
-            <div class="service-card">
-              <div class="service-icon-container">
+              <div
+                class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+              >
                 <i
-                  class="fa-solid fa-heart service-icon"
-                  aria-hidden="true"
+                  data-lucide="users"
+                  class="w-6 h-6 text-dark-green mb-2 mx-auto"
                 ></i>
+                <p class="text-base sm:text-lg font-bold text-dark-green">
+                  Relationship Issues
+                </p>
               </div>
-              <h3>Couples Counseling</h3>
-              <p>
-                Improve communication, resolve conflicts, and strengthen your
-                relationship with guided sessions designed for couples at any
-                stage.
-              </p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon-container">
+              <div
+                class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+              >
                 <i
-                  class="fa-solid fa-child service-icon"
-                  aria-hidden="true"
+                  data-lucide="trending-up"
+                  class="w-6 h-6 text-dark-green mb-2 mx-auto"
                 ></i>
+                <p class="text-base sm:text-lg font-bold text-dark-green">
+                  Grief & Trauma
+                </p>
               </div>
-              <h3>Child & Adolescent Therapy</h3>
-              <p>
-                Specialized therapeutic approaches for children and teenagers
-                addressing developmental challenges, school issues, and family
-                dynamics.
-              </p>
-            </div>
-            <div class="service-card">
-              <div class="service-icon-container">
+              <div
+                class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+              >
                 <i
-                  class="fa-solid fa-brain service-icon"
-                  aria-hidden="true"
+                  data-lucide="sun"
+                  class="w-6 h-6 text-dark-green mb-2 mx-auto"
                 ></i>
+                <p class="text-base sm:text-lg font-bold text-dark-green">
+                  Self-Esteem & Confidence
+                </p>
               </div>
-              <h3>Mindfulness & Stress Reduction</h3>
-              <p>
-                Learn evidence-based mindfulness techniques to manage stress,
-                increase emotional regulation, and cultivate greater peace in
-                daily life.
-              </p>
+              <div
+                class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+              >
+                <i
+                  data-lucide="dumbbell"
+                  class="w-6 h-6 text-dark-green mb-2 mx-auto"
+                ></i>
+                <p class="text-base sm:text-lg font-bold text-dark-green">
+                  Parenting Support
+                </p>
+              </div>
+              <div
+                class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+              >
+                <i
+                  data-lucide="moon"
+                  class="w-6 h-6 text-dark-green mb-2 mx-auto"
+                ></i>
+                <p class="text-base sm:text-lg font-bold text-dark-green">
+                  Career & Life Transitions
+                </p>
+              </div>
+              <div
+                class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+              >
+                <i
+                  data-lucide="hand-heart"
+                  class="w-6 h-6 text-dark-green mb-2 mx-auto"
+                ></i>
+                <p class="text-base sm:text-lg font-bold text-dark-green">
+                  Addiction & Recovery
+                </p>
+              </div>
+            </div>
+
+            <div class="text-center mt-12">
+              <button
+                class="py-3 px-8 text-lg font-semibold text-white bg-dark-green border-2 border-dark-green rounded-full hover:bg-light-green hover:border-light-green transition duration-250 shadow-lg"
+              >
+                View All Specialty Areas
+              </button>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="pricing-section">
-        <h1>Affordable Care Packages</h1>
-
-        <div class="intro-text">
-          <p>
-            We offer flexible mental health care packages designed to meet
-            different needs and budgets. All plans include access to our
-            licensed professionals and evidence-based treatments.
-          </p>
-        </div>
-
-        <div class="plans-container">
-          <div class="plan-card">
-            <h2 class="plan-title">Standard Plan</h2>
-            <p class="plan-description">
-              Individual-focused therapy with access to core mental health
-              services and resources.
-            </p>
-
-            <div class="plan-price">$200 <span>Monthly</span></div>
-
-            <h3 class="plan-subtitle">Core Services Included</h3>
-
-            <ul class="plan-features">
-              <li>Individual Therapy Sessions</li>
-              <li>Duration: 50 minutes per session</li>
-              <li>Monthly Progress Assessment</li>
-              <li>Digital Wellness Resources</li>
-            </ul>
-
-            <a href="contact.html" class="cta-button">Get Started</a>
-          </div>
-
-          <div class="plan-card">
-            <h2 class="plan-title">Premium Plan</h2>
-            <p class="plan-description">
-              Comprehensive care including both individual and group therapy
-              with extended support.
-            </p>
-
-            <div class="plan-price">$500 <span>Monthly</span></div>
-
-            <h3 class="plan-subtitle">Enhanced Services Included</h3>
-
-            <ul class="plan-features">
-              <li>Individual & Group Therapy</li>
-              <li>Extended Session Duration</li>
-              <li>Psychiatric Consultation</li>
-              <li>24/7 Crisis Support Line</li>
-            </ul>
-
-            <a href="contact.html" class="cta-button">Get Started</a>
-          </div>
-
-          <div class="plan-card">
-            <h2 class="plan-title">Family Plan</h2>
-            <p class="plan-description">
-              Family-centered care with sessions for multiple family members and
-              specialized workshops.
-            </p>
-
-            <div class="plan-price">$600 <span>Monthly</span></div>
-
-            <h3 class="plan-subtitle">Family Services Included</h3>
-
-            <ul class="plan-features">
-              <li>Family Therapy Sessions</li>
-              <li>Individual Sessions for 2 Members</li>
-              <li>Parenting Workshops</li>
-              <li>Communication Skill Building</li>
-            </ul>
-
-            <a href="contact.html" class="cta-button">Get Started</a>
-          </div>
-        </div>
-      </section>
-
-      <!--Statistic Section-->
-      <section class="statistic-section">
-        <div class="statistic-row">
-          <div class="statistic-col-left">
-            <img
-              src="assets/Images/statistic-1.webp"
-              alt="Mental health awareness statistics and information"
-              width="500"
-              height="400"
-              loading="lazy"
-            />
-          </div>
-          <div class="statistic-col-right">
-            <h2 class="section-title">Mental Health by the Numbers</h2>
-            <p class="section-text">
-              Our evidence-based approach has helped thousands achieve better
-              mental wellness. We're committed to providing accessible,
-              effective care with measurable results.
-            </p>
-
-            <div class="stats-container">
-              <div class="stat-item">
-                <div class="stat-number">500+</div>
-                <div class="stat-label">Patients Helped</div>
+        </section>
+        <!--Simple Steps-->
+        <section class="py-16 sm:py-24 px-4 sm:px-6 md:px-10 bg-cream">
+          <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-dark-green mb-12">
+              Simple Steps to Feeling Better
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+              <!-- Step 1 -->
+              <div
+                class="p-6 bg-white rounded-xl shadow-xl border border-light-green/20 transform transition duration-300 hover:scale-[1.02]"
+              >
+                <i
+                  data-lucide="clipboard-list"
+                  class="w-8 h-8 text-light-green mb-4 mx-auto"
+                ></i>
+                <h3 class="text-xl font-semibold text-dark-green mb-3">
+                  1. Complete a Questionnaire
+                </h3>
+                <p class="text-gray-600 text-sm">
+                  Tell us about your background, needs, and preferences so we
+                  can match you with the right therapist.
+                </p>
               </div>
-              <div class="stat-item">
-                <div class="stat-number">1,200+</div>
-                <div class="stat-label">Therapy Sessions</div>
+
+              <!-- Step 2 -->
+              <div
+                class="p-6 bg-white rounded-xl shadow-xl border border-light-green/20 transform transition duration-300 hover:scale-[1.02]"
+              >
+                <i
+                  data-lucide="user-check"
+                  class="w-8 h-8 text-light-green mb-4 mx-auto"
+                ></i>
+                <h3 class="text-xl font-semibold text-dark-green mb-3">
+                  2. Get Matched to a Therapist
+                </h3>
+                <p class="text-gray-600 text-sm">
+                  Connect with one of our 30,000 licensed, accredited, and
+                  experienced therapists in your area.
+                </p>
               </div>
-              <div class="stat-item">
-                <div class="stat-number">200+</div>
-                <div class="stat-label">Workshops Conducted</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-number">1,800+</div>
-                <div class="stat-label">Hours of Care</div>
+
+              <!-- Step 3 -->
+              <div
+                class="p-6 bg-white rounded-xl shadow-xl border border-light-green/20 transform transition duration-300 hover:scale-[1.02]"
+              >
+                <i
+                  data-lucide="message-square"
+                  class="w-8 h-8 text-light-green mb-4 mx-auto"
+                ></i>
+                <h3 class="text-xl font-semibold text-dark-green mb-3">
+                  3. Begin Your Journey
+                </h3>
+                <p class="text-gray-600 text-sm">
+                  Start communicating via text, phone, or video sessions from
+                  the comfort of your home.
+                </p>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div class="divider"></div>
+        <!--Testimonials-->
+        <section class="py-16 sm:py-24 px-4 sm:px-6 md:px-10 bg-white">
+          <div class="max-w-6xl mx-auto">
+            <h2
+              class="text-3xl sm:text-4xl font-bold text-dark-green text-center mb-12"
+            >
+              Real Transformation. Real Results.
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div
+                class="bg-cream p-6 rounded-xl shadow-lg border-t-4 border-light-green"
+              >
+                <i
+                  data-lucide="quote"
+                  class="w-8 h-8 text-light-green mb-4"
+                ></i>
+                <p class="text-lg text-gray-700 italic mb-4">
+                  "Therapy.io has been truly life-changing. My therapist is
+                  exceptionally professional, supportive, and helped me find a
+                  new perspective on my stress management. The flexibility is a
+                  huge plus."
+                </p>
+                <p class="font-bold text-dark-green">- Liam M., 34</p>
+                <p class="text-xs text-gray-500">
+                  Focus Area:
+                  <span class="font-semibold">Generalized Anxiety</span>
+                </p>
+              </div>
 
-        <div class="statistic-row flex-reverse">
-          <div class="statistic-col-left">
-            <img
-              src="assets/Images/statistic-2.webp"
-              alt="Mental health support principles and values"
-              width="500"
-              height="400"
-              loading="lazy"
-            />
+              <div
+                class="bg-cream p-6 rounded-xl shadow-lg border-t-4 border-light-green"
+              >
+                <i
+                  data-lucide="quote"
+                  class="w-8 h-8 text-light-green mb-4"
+                ></i>
+                <p class="text-lg text-gray-700 italic mb-4">
+                  "The matching process was instant and accurate. For the first
+                  time, I felt heard and understood. The video sessions are
+                  high-quality, and the price is manageable. It's a fantastic
+                  service."
+                </p>
+                <p class="font-bold text-dark-green">- Sarah P., 41</p>
+                <p class="text-xs text-gray-500">
+                  Focus Area:
+                  <span class="font-semibold">Postpartum Depression</span>
+                </p>
+              </div>
+
+              <div
+                class="bg-cream p-6 rounded-xl shadow-lg border-t-4 border-light-green"
+              >
+                <i
+                  data-lucide="quote"
+                  class="w-8 h-8 text-light-green mb-4"
+                ></i>
+                <p class="text-lg text-gray-700 italic mb-4">
+                  "I appreciate the level of expertise. My therapist specialized
+                  in couples counseling, which made all the difference. Our
+                  relationship has improved dramatically since we started using
+                  Therapy.io."
+                </p>
+                <p class="font-bold text-dark-green">- Jessica L., 29</p>
+                <p class="text-xs text-gray-500">
+                  Focus Area:
+                  <span class="font-semibold">Relationship Dynamics</span>
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="statistic-col-right">
-            <h2 class="section-title">The Zenith Guiding Principles</h2>
-            <div class="principles-container">
-              <div class="principle-item">
-                <div class="principle-icon">
+        </section>
+
+        <!--FAQ's-->
+        <section class="py-16 sm:py-24 px-4 sm:px-6 md:px-10 bg-cream">
+          <div class="max-w-4xl mx-auto">
+            <h2
+              class="text-3xl sm:text-4xl font-bold text-dark-green text-center mb-12"
+            >
+              Insurance & Billing FAQs
+            </h2>
+            <div class="space-y-6">
+              <div
+                class="p-5 bg-white rounded-xl shadow-lg border-l-4 border-light-green"
+              >
+                <h3
+                  class="text-lg font-bold text-dark-green mb-2 flex justify-between items-center"
+                >
+                  Do you accept my health insurance plan?
                   <i
-                    class="fa-solid fa-hand-holding-heart"
-                    aria-hidden="true"
+                    data-lucide="chevron-down"
+                    class="w-5 h-5 text-light-green"
                   ></i>
-                </div>
-                <div class="principle-content">
-                  <h3 class="principle-title">Compassion</h3>
-                  <p class="principle-text">
-                    We approach every individual with empathy, understanding,
-                    and unconditional positive regard in a safe, non-judgmental
-                    environment.
-                  </p>
-                </div>
+                </h3>
+                <p class="text-gray-700 text-sm">
+                  **Therapy.io is in-network with many major insurance
+                  providers** nationwide. During the sign-up process, you can
+                  easily verify your eligibility and co-pay amount by entering
+                  your insurance details. For out-of-network benefits, we
+                  provide super-bills you can submit for reimbursement.
+                </p>
               </div>
-
-              <div class="principle-item">
-                <div class="principle-icon">
-                  <i class="fa-solid fa-medal" aria-hidden="true"></i>
-                </div>
-                <div class="principle-content">
-                  <h3 class="principle-title">Excellence</h3>
-                  <p class="principle-text">
-                    Our licensed professionals maintain the highest standards of
-                    care through ongoing training and evidence-based treatment
-                    approaches.
-                  </p>
-                </div>
+              <div
+                class="p-5 bg-white rounded-xl shadow-lg border-l-4 border-light-green"
+              >
+                <h3
+                  class="text-lg font-bold text-dark-green mb-2 flex justify-between items-center"
+                >
+                  How does the weekly billing work?
+                  <i
+                    data-lucide="chevron-down"
+                    class="w-5 h-5 text-light-green"
+                  ></i>
+                </h3>
+                <p class="text-gray-700 text-sm">
+                  Our plans are billed every four weeks. This covers all
+                  services included in your chosen plan (unlimited messaging,
+                  group sessions, and 1-2 live sessions, depending on the tier).
+                  The price displayed is the *average weekly cost* for
+                  convenience.
+                </p>
               </div>
-
-              <div class="principle-item">
-                <div class="principle-icon">
-                  <i class="fa-solid fa-gears" aria-hidden="true"></i>
-                </div>
-                <div class="principle-content">
-                  <h3 class="principle-title">Integrity</h3>
-                  <p class="principle-text">
-                    We uphold the highest ethical standards, ensuring
-                    confidentiality, transparency, and respect in all our
-                    interactions.
-                  </p>
-                </div>
-              </div>
-
-              <div class="principle-item">
-                <div class="principle-icon">
-                  <i class="fa-solid fa-handshake" aria-hidden="true"></i>
-                </div>
-                <div class="principle-content">
-                  <h3 class="principle-title">Collaboration</h3>
-                  <p class="principle-text">
-                    We work together with clients, families, and other
-                    professionals to create comprehensive, personalized
-                    treatment plans.
-                  </p>
-                </div>
+              <div
+                class="p-5 bg-white rounded-xl shadow-lg border-l-4 border-light-green"
+              >
+                <h3
+                  class="text-lg font-bold text-dark-green mb-2 flex justify-between items-center"
+                >
+                  Can I use my FSA/HSA account for payment?
+                  <i
+                    data-lucide="chevron-down"
+                    class="w-5 h-5 text-light-green"
+                  ></i>
+                </h3>
+                <p class="text-gray-700 text-sm">
+                  Yes, mental health services are typically eligible for
+                  reimbursement through Flexible Spending Accounts (FSA) and
+                  Health Savings Accounts (HSA). You can use your FSA/HSA card
+                  directly during checkout.
+                </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!--Stories Section-->
-      <section class="stories-section">
-        <div class="flex-space">
-          <h2>Real Stories, Real Impact</h2>
-          <a href="testimonials.html" class="btn-dark">See All</a>
-        </div>
-
-        <div class="stories-container">
-          <div class="story-images">
-            <img
-              src="assets/Images/story-1.webp"
-              alt="Client sharing experience with anxiety treatment"
-              width="400"
-              height="300"
-              loading="lazy"
-            />
-            <div class="flex-center">
-              <i class="fa-solid fa-play" aria-hidden="true"></i>
-              <div class="flex-col">
-                <span>Overcoming Anxiety and</span>
-                <span>Finding Peace</span>
-              </div>
+            <div class="text-center mt-12">
+              <button
+                class="py-3 px-8 text-lg font-semibold text-white bg-light-green border-2 border-light-green rounded-full hover:bg-dark-green hover:border-dark-green transition duration-250 shadow-lg"
+              >
+                Check Insurance Eligibility
+              </button>
             </div>
           </div>
-
-          <div class="story-images">
-            <img
-              src="assets/Images/story-2.webp"
-              alt="Couple discussing relationship counseling benefits"
-              width="400"
-              height="300"
-              loading="lazy"
-            />
-            <div class="flex-center">
-              <i class="fa-solid fa-play" aria-hidden="true"></i>
-              <div class="flex-col">
-                <span>Strengthening Our</span>
-                <span>Relationship</span>
-              </div>
+        </section>
+        <div
+          id="get-started"
+          class="w-full bg-dark-green py-20 relative overflow-hidden"
+        >
+          <div
+            class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left h-auto"
+          >
+            <div
+              class="md:w-1/2 flex flex-col items-center md:items-start mb-10 md:mb-0"
+            >
+              <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">
+                It's Time to Invest in Yourself.
+              </h2>
+              <p class="text-xl text-gray-200 mb-8 max-w-lg">
+                Don't wait to start feeling better. Take our simple,
+                confidential questionnaire and get matched with a therapist
+                today.
+              </p>
+              <a
+                href="#"
+                class="py-4 px-10 bg-accent-orange text-dark-green font-bold text-xl rounded-xl shadow-2xl shadow-accent-orange/20 transition-all duration-300 hover:bg-white active:scale-95"
+              >
+                Start Your Confidential Match
+              </a>
             </div>
+            <svg
+              class="w-full h-auto max-w-sm md:w-1/2"
+              viewBox="0 0 400 350"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="0"
+                y="290"
+                width="400"
+                height="60"
+                fill="#d69e2e"
+                class="opacity-70 rounded-t-lg"
+              />
+              <circle cx="200" cy="110" r="25" fill="#f9e6d4" />
+              <rect
+                x="150"
+                y="135"
+                width="100"
+                height="100"
+                fill="#2d523b"
+                rx="10"
+              />
+              <path
+                d="M120 150 C 130 180, 160 180, 150 235 L 250 235 C 240 180, 270 180, 280 150 Z"
+                fill="#90c65d"
+                opacity="0.8"
+              />
+              <rect
+                x="170"
+                y="235"
+                width="60"
+                height="55"
+                fill="#5c8a6e"
+                rx="5"
+              />
+              <path d="M0 300 H 400 V 350 H 0 Z" fill="#f9f8f4" />
+            </svg>
           </div>
         </div>
-      </section>
-    </div>
+      </div>  
+    <!--Footer-->
+    <footer class="bg-darker-green py-16">
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-5 gap-8 border-b border-gray-700 pb-10 mb-8"
+      >
+        <div class="col-span-2 md:col-span-2">
+          <h3
+            class="text-3xl font-extrabold text-light-green mb-3 tracking-tight"
+          >
+            Calgary<span class="text-white">Wellness</span>
+          </h3>
+          <p class="text-sm text-gray-300 max-w-xs">
+            Professional virtual counseling serving the well-being of the
+            Alberta community.
+          </p>
+          <div class="flex space-x-4 mt-4 text-white">
+            <a href="#" class="hover:text-light-green transition duration-150"
+              ><i data-lucide="facebook" class="w-5 h-5"></i
+            ></a>
+            <a href="#" class="hover:text-light-green transition duration-150"
+              ><i data-lucide="instagram" class="w-5 h-5"></i
+            ></a>
+            <a href="#" class="hover:text-light-green transition duration-150"
+              ><i data-lucide="linkedin" class="w-5 h-5"></i
+            ></a>
+          </div>
+        </div>
 
-    <section class="cta-section">
-      <div class="cta-container">
-        <p>Start Your Journey</p>
-        <h2>Begin Your Path to Wellness</h2>
-        <p>
-          Take the first step toward improved mental health. Our compassionate
-          team is ready to support you with personalized care and evidence-based
-          treatments.
-        </p>
-        <div class="btn-container">
-          <a href="contact.html" class="btn-primary">Schedule Consultation</a>
-          <a href="contact.html" class="btn-dark rounded none">Contact Us</a>
+        <div>
+          <h4 class="text-lg font-bold text-white mb-4">Support</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li>
+              <a
+                href="#"
+                class="hover:text-light-green transition duration-150"
+                >Book a Consult</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >FAQs</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Insurance & Billing</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Crisis Resources</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-bold text-white mb-4">Practice</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li>
+              <a
+                href="#"
+                class="hover:text-light-green transition duration-150"
+                >About Me</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Rates & Fees</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Blog (Coming Soon)</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Accessibility</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-bold text-white mb-4">Legal</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Terms of Service</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Consent Forms</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Licensing</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
 
-    <footer class="footer-bg">
-      <div class="footer-container">
-        <!-- Main Content Grid -->
-        <div class="footer-grid">
-          <div>
-            <div class="logo-section">
-              <!-- Logo Icon -->
-              <span class="logo-text">ZENLIFT</span>
-            </div>
-
-            <p class="contact-text">
-              Feel free to call us in working hours Mon - Fri 09:00 - 16:00. Our
-              team will be happy to help answer your queries.
-            </p>
-
-            <div class="social-icons">
-              <!-- Social Icons -->
-              <a
-                href="#"
-                class="social-icon"
-                aria-label="Follow us on Instagram"
-              >
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a
-                href="#"
-                class="social-icon"
-                aria-label="Follow us on Facebook"
-              >
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-              <a
-                href="#"
-                class="social-icon"
-                aria-label="Follow us on LinkedIn"
-              >
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
-              <a href="#" class="social-icon" aria-label="Follow us on Twitter">
-                <i class="fa-brands fa-twitter"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Column 2: Company Links -->
-          <div>
-            <h4 class="footer-heading">Company</h4>
-            <ul class="footer-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-
-          <!-- Column 3: Services Links -->
-          <div>
-            <h4 class="footer-heading">Services</h4>
-            <ul class="footer-links">
-              <li><a href="services.html#individual">Individual Therapy</a></li>
-              <li><a href="services.html#group">Group Therapy</a></li>
-              <li><a href="services.html#family">Family Counseling</a></li>
-              <li><a href="services.html#couples">Couples Counseling</a></li>
-            </ul>
-          </div>
-
-          <!-- Column 4: Subscribe To Newsletter -->
-          <div>
-            <h4 class="footer-heading">Subscribe To Newsletter</h4>
-            <form class="newsletter-form">
-              <input
-                type="email"
-                placeholder="Enter your mail"
-                class="newsletter-input"
-                aria-label="Enter your email"
-                required
-              />
-              <button type="submit" class="btn-primary">Subscribe</button>
-            </form>
-          </div>
-        </div>
-
-        <!-- Horizontal Separator Line -->
-        <div class="footer-divider"></div>
-
-        <!-- Copyright and Legal Links -->
-        <div class="footer-bottom">
-          <p class="copyright">
-            Copyright &copy; 2025 Zenlift | Design by TotaFema
-          </p>
-          <div class="legal-links">
-            <a href="terms.html">Terms of Use</a>
-            <span class="separator" aria-hidden="true">|</span>
-            <a href="privacy.html">Privacy Policy</a>
-          </div>
-        </div>
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 text-center text-xs text-gray-500"
+      >
+        <p class="mb-2">
+          **Important Note:** This practice operates virtually within Alberta,
+          Canada. If you are experiencing an emergency, please call 911 or the
+          Canada Suicide Crisis Helpline at 988.
+        </p>
+        <p>
+          &copy; 2024 CalgaryWellness. All rights reserved. Registered
+          Psychologist in Alberta.
+        </p>
       </div>
     </footer>
+   
 
-    <!-- Defer non-critical JavaScript -->
-    <script src="js/pages/home.js" defer></script>
-    <script src="js/shared/navbar.js" defer></script>
+    <script src="tailwind-config.js"></script>
   </body>
 </html>
