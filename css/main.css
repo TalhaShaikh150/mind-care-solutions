@@ -1,0 +1,11 @@
+ .icon-star {
+   display: inline-block;
+   vertical-align: middle;
+   margin-right: 0.25rem;
+ }
+
+ /* Base typography and aesthetics */
+ body {
+   font-family: "Inter", sans-serif;
+   overflow-x: hidden;
+ }

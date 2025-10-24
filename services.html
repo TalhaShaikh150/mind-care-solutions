@@ -3,61 +3,446 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mind Care Solutions Services</title>
-    <link rel="stylesheet" href="css/shared/navbar.css" />
-    <link rel="stylesheet" href="css/shared/footer.css" />
-    <link rel="stylesheet" href="css/pages/services.css" />
-    <link rel="stylesheet" href="css/shared/globals.css" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+         <link rel="stylesheet" href="css/main.css">
+
   </head>
   <body>
-    <nav>
-      <div class="nav-left">
-        <a href="index.html">
-          <img
-            src="assets/Images/logo.png"
-            alt="Mind Care Solutions Logo"
-            class="logo"
-          />
-        </a>
+    <header
+      class="sticky top-0 z-50 h-16 flex items-center justify-between px-4 sm:px-6 bg-white shadow-md border-b border-gray-100"
+    >
+      <div class="text-2xl font-extrabold text-dark-green tracking-tight">
+        <a href="index.html">Therapy.io</a>
       </div>
+      <nav class="hidden md:flex space-x-8 text-sm font-medium">
+        <a
+          href="index.html"
+          class="text-gray-600 hover:text-dark-green transition duration-150"
+          >Home</a
+        >
+        <a
+          href="about.html"
+          class="text-gray-600 hover:text-dark-green transition duration-150"
+          >About Us</a
+        >
+        <a
+          href="services.html"
+          class="text-gray-600 hover:text-dark-green transition duration-150 font-extrabold border-b-2 border-light-green"
+          >Services</a
+        >
+        <a
+          href="contact.html"
+          class="text-gray-600 hover:text-dark-green transition duration-150"
+          >Contact</a
+        >
+      </nav>
+      <button
+        class="py-2 px-4 bg-light-green text-white text-sm font-semibold rounded-lg shadow-md hover:bg-light-green/90 transition duration-150"
+      >
+        Get Started
+      </button>
+      <button
+        class="text-sm font-semibold text-dark-green hover:opacity-80 md:hidden transition duration-150"
+      >
+        Menu
+      </button>
+    </header>
+    <div id="services-page" class="page-content">
+      <section class="py-20 sm:py-32 px-4 sm:px-6 md:px-10 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-5xl font-extrabold text-dark-green mb-6">
+            Our Online Therapy Services
+          </h1>
+          <p class="text-xl text-gray-600 mb-12">
+            Flexible, confidential therapy tailored to your life. Get the
+            support you need, when and how you need it.
+          </p>
+        </div>
+      </section>
 
-      <div class="nav-right">
-        <!-- Navigation links -->
-        <div class="all-nav-links" id="navLinks">
-          <a class="nav-link" href="index.html">Home</a>
-          <a class="nav-link" href="about.html">About</a>
-          <a class="nav-link active-link" href="services.html">Services</a>
-          <a class="nav-link" href="contact.html">Contact</a>
+      <section class="py-16 sm:py-24 px-4 sm:px-6 md:px-10 bg-cream">
+        <div class="max-w-6xl mx-auto">
+          <h2
+            class="text-3xl sm:text-4xl font-bold text-dark-green text-center mb-12"
+          >
+            Dedicated Support for a Wide Range of Needs
+          </h2>
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8"
+          >
+            <div
+              class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+            >
+              <i
+                data-lucide="cloud-lightning"
+                class="w-6 h-6 text-dark-green mb-2 mx-auto"
+              ></i>
+              <p class="text-base sm:text-lg font-bold text-dark-green">
+                Stress & Anxiety
+              </p>
+            </div>
+            <div
+              class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+            >
+              <i
+                data-lucide="frown"
+                class="w-6 h-6 text-dark-green mb-2 mx-auto"
+              ></i>
+              <p class="text-base sm:text-lg font-bold text-dark-green">
+                Depression & Mood
+              </p>
+            </div>
+            <div
+              class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+            >
+              <i
+                data-lucide="users"
+                class="w-6 h-6 text-dark-green mb-2 mx-auto"
+              ></i>
+              <p class="text-base sm:text-lg font-bold text-dark-green">
+                Relationship Issues
+              </p>
+            </div>
+            <div
+              class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+            >
+              <i
+                data-lucide="trending-up"
+                class="w-6 h-6 text-dark-green mb-2 mx-auto"
+              ></i>
+              <p class="text-base sm:text-lg font-bold text-dark-green">
+                Grief & Trauma
+              </p>
+            </div>
+            <div
+              class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+            >
+              <i
+                data-lucide="sun"
+                class="w-6 h-6 text-dark-green mb-2 mx-auto"
+              ></i>
+              <p class="text-base sm:text-lg font-bold text-dark-green">
+                Self-Esteem & Confidence
+              </p>
+            </div>
+            <div
+              class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+            >
+              <i
+                data-lucide="dumbbell"
+                class="w-6 h-6 text-dark-green mb-2 mx-auto"
+              ></i>
+              <p class="text-base sm:text-lg font-bold text-dark-green">
+                Parenting Support
+              </p>
+            </div>
+            <div
+              class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+            >
+              <i
+                data-lucide="moon"
+                class="w-6 h-6 text-dark-green mb-2 mx-auto"
+              ></i>
+              <p class="text-base sm:text-lg font-bold text-dark-green">
+                Career & Life Transitions
+              </p>
+            </div>
+            <div
+              class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+            >
+              <i
+                data-lucide="hand-heart"
+                class="w-6 h-6 text-dark-green mb-2 mx-auto"
+              ></i>
+              <p class="text-base sm:text-lg font-bold text-dark-green">
+                Addiction & Recovery
+              </p>
+            </div>
+          </div>
 
-          <div class="nav-icons">
-            <a href="tel:+1234567890" aria-label="Call us">
-              <i class="fa-solid fa-phone"></i>
-            </a>
-            <a href="mailto:info@mindcare.com" aria-label="Email us">
-              <i class="fa-regular fa-envelope"></i>
-            </a>
+          <div class="text-center mt-12">
+            <button
+              class="py-3 px-8 text-lg font-semibold text-white bg-dark-green border-2 border-dark-green rounded-full hover:bg-light-green hover:border-light-green transition duration-250 shadow-lg"
+            >
+              View All Specialty Areas
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 sm:py-24 px-4 sm:px-6 md:px-10 bg-white">
+        <div class="max-w-6xl mx-auto text-center">
+          <h2 class="text-3xl sm:text-4xl font-bold text-dark-green mb-6">
+            Simple, Transparent Pricing
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
+            Choose the plan that best fits your communication preferences and
+            budget. All plans include unlimited messaging.
+          </p>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div
+              class="bg-cream p-8 rounded-xl shadow-2xl border-2 border-light-green/50"
+            >
+              <h3 class="text-2xl font-bold text-dark-green mb-2">
+                Messaging Focused
+              </h3>
+              <p class="text-sm text-gray-500 mb-6">Text and Group Support</p>
+              <p class="text-5xl font-extrabold text-light-green mb-1">$65</p>
+              <p class="text-base text-gray-500 mb-8">per week*</p>
+              <ul class="text-left space-y-4 mb-10 text-gray-700 font-medium">
+                <li class="flex items-start">
+                  <i
+                    data-lucide="message-square-more"
+                    class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
+                  ></i
+                  >Unlimited messaging
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-lucide="users-2"
+                    class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
+                  ></i
+                  >1 Live Group Session / week
+                </li>
+                <li class="flex items-start text-gray-400">
+                  <i
+                    data-lucide="video-off"
+                    class="w-5 h-5 text-gray-400 mr-3 mt-1 shrink-0"
+                  ></i
+                  >No scheduled live 1:1 sessions
+                </li>
+              </ul>
+              <button
+                class="w-full py-3 bg-dark-green text-white font-semibold rounded-lg hover:bg-darker-green transition duration-150 shadow-md"
+              >
+                Select Plan
+              </button>
+            </div>
+
+            <div
+              class="bg-dark-green p-8 rounded-xl shadow-2xl border-4 border-accent-orange relative"
+            >
+              <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent-orange text-dark-green text-sm font-bold py-1 px-4 rounded-full uppercase tracking-wider shadow-lg"
+              >
+                Recommended
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2">Standard Live</h3>
+              <p class="text-sm text-gray-200 mb-6">
+                Our best value for live support
+              </p>
+              <p class="text-6xl font-extrabold text-light-green mb-1">$95</p>
+              <p class="text-base text-gray-300 mb-8">per week*</p>
+              <ul class="text-left space-y-4 mb-10 text-white font-medium">
+                <li class="flex items-start">
+                  <i
+                    data-lucide="message-square-more"
+                    class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
+                  ></i
+                  >Unlimited messaging
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-lucide="video"
+                    class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
+                  ></i
+                  ><span class="font-bold">1 Live 45-min Session</span> / week
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-lucide="users-2"
+                    class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
+                  ></i
+                  >Unlimited Live Group Sessions
+                </li>
+              </ul>
+              <button
+                class="w-full py-3 bg-accent-orange text-dark-green font-bold text-xl rounded-lg shadow-xl hover:bg-accent-orange/90 transition duration-150"
+              >
+                Start Now
+              </button>
+            </div>
+
+            <div
+              class="bg-cream p-8 rounded-xl shadow-2xl border-2 border-light-green/50"
+            >
+              <h3 class="text-2xl font-bold text-dark-green mb-2">
+                Advanced Support
+              </h3>
+              <p class="text-sm text-gray-500 mb-6">
+                Higher frequency live sessions
+              </p>
+              <p class="text-5xl font-extrabold text-light-green mb-1">$130</p>
+              <p class="text-base text-gray-500 mb-8">per week*</p>
+              <ul class="text-left space-y-4 mb-10 text-gray-700 font-medium">
+                <li class="flex items-start">
+                  <i
+                    data-lucide="message-square-more"
+                    class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
+                  ></i
+                  >Unlimited messaging
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-lucide="video"
+                    class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
+                  ></i
+                  ><span class="font-bold">2 Live 45-min Sessions</span> / week
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-lucide="users-2"
+                    class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
+                  ></i
+                  >Unlimited Live Group Sessions
+                </li>
+              </ul>
+              <button
+                class="w-full py-3 bg-dark-green text-white font-semibold rounded-lg hover:bg-darker-green transition duration-150 shadow-md"
+              >
+                Select Plan
+              </button>
+            </div>
+          </div>
+          <p class="text-sm text-gray-500 mt-8">
+            *Billed every 4 weeks. Exact rates depend on your location,
+            therapist's availability, and are subject to change.
+          </p>
+        </div>
+      </section>
+    </div>
+    <!--Footer-->
+    <footer class="bg-darker-green py-16">
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-5 gap-8 border-b border-gray-700 pb-10 mb-8"
+      >
+        <div class="col-span-2 md:col-span-2">
+          <h3
+            class="text-3xl font-extrabold text-light-green mb-3 tracking-tight"
+          >
+            Calgary<span class="text-white">Wellness</span>
+          </h3>
+          <p class="text-sm text-gray-300 max-w-xs">
+            Professional virtual counseling serving the well-being of the
+            Alberta community.
+          </p>
+          <div class="flex space-x-4 mt-4 text-white">
+            <a href="#" class="hover:text-light-green transition duration-150"
+              ><i data-lucide="facebook" class="w-5 h-5"></i
+            ></a>
+            <a href="#" class="hover:text-light-green transition duration-150"
+              ><i data-lucide="instagram" class="w-5 h-5"></i
+            ></a>
+            <a href="#" class="hover:text-light-green transition duration-150"
+              ><i data-lucide="linkedin" class="w-5 h-5"></i
+            ></a>
           </div>
         </div>
 
-        <!-- Hamburger menu on the right -->
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div>
+          <h4 class="text-lg font-bold text-white mb-4">Support</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li>
+              <a
+                href="#"
+                class="hover:text-light-green transition duration-150"
+                >Book a Consult</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >FAQs</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Insurance & Billing</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Crisis Resources</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-bold text-white mb-4">Practice</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li>
+              <a
+                href="#"
+                class="hover:text-light-green transition duration-150"
+                >About Me</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Rates & Fees</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Blog (Coming Soon)</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Accessibility</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-bold text-white mb-4">Legal</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Terms of Service</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Consent Forms</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Licensing</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
-    </nav>
 
-     <!-- banner -->
-    <section class="services-banner">
-      <div class="banner-content">
-        <h1>About Us</h1>
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 text-center text-xs text-gray-500"
+      >
+        <p class="mb-2">
+          **Important Note:** This practice operates virtually within Alberta,
+          Canada. If you are experiencing an emergency, please call 911 or the
+          Canada Suicide Crisis Helpline at 988.
+        </p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam,
-          maxime!
+          &copy; 2024 CalgaryWellness. All rights reserved. Registered
+          Psychologist in Alberta.
         </p>
       </div>
-    </section>
-
+    </footer>
+    
+    <script src="tailwind-config.js"></script>
   </body>
 </html>

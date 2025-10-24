@@ -3,526 +3,272 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- SEO Meta Tags -->
-    <title>
-      About Mind Care Solutions | Expert Mental Health Services in Calgary
-    </title>
-    <meta
-      name="description"
-      content="Discover Mind Care Solutions' mission, story, and expertise in providing compassionate, evidence-based mental health care for individuals, couples, and families."
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
     />
-    <meta
-      name="keywords"
-      content="mental health Calgary, therapy services, about mental health clinic, mental wellness center, counseling Calgary"
-    />
-    <meta name="author" content="Mind Care Solutions" />
-
-    <!-- Open Graph Meta Tags -->
-    <meta
-      property="og:title"
-      content="About Mind Care Solutions | Trusted Mental Health Professionals"
-    />
-    <meta
-      property="og:description"
-      content="Learn about Mind Care Solutions’ mission to provide compassionate, evidence-based mental health care in Calgary and beyond."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.mindcare.com/about.html" />
-    <meta
-      property="og:image"
-      content="https://www.mindcare.com/assets/Images/logo.png"
-    />
-
-    <!-- Preload Critical Resources -->
-    <link rel="preload" href="css/shared/globals.css" as="style" />
-    <link rel="preload" href="css/shared/navbar.css" as="style" />
-    <link rel="preload" href="css/pages/about.css" as="style" />
-
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="css/shared/globals.css" />
-    <link rel="stylesheet" href="css/shared/navbar.css" />
-    <link rel="stylesheet" href="css/pages/about.css" />
-    <link rel="stylesheet" href="css/shared/footer.css" />
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.mindcare.com/about.html" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "MedicalOrganization",
-        "name": "Mind Care Solutions",
-        "description": "Professional mental health services in Calgary offering therapy, counseling, and psychiatric care.",
-        "url": "https://www.mindcare.com",
-        "telephone": "+1234567890",
-        "email": "info@mindcare.com",
-        "foundingDate": "2010",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Calgary",
-          "addressRegion": "Alberta",
-          "postalCode": "T1Y 0L3",
-          "addressCountry": "CA"
-        },
-        "sameAs": [
-          "https://www.facebook.com/mindcare",
-          "https://www.instagram.com/mindcare",
-          "https://www.linkedin.com/company/mindcare"
-        ],
-        "medicalSpecialty": ["Psychiatry", "Psychology", "Counseling"]
-      }
-    </script>
-
-    <!-- Performance Optimizations -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <meta
-      http-equiv="Cache-Control"
-      content="max-age=31536000, must-revalidate"
-    />
+    <link rel="stylesheet" href="css/main.css">
   </head>
 
-  <body>
-    <nav role="navigation" aria-label="Main navigation">
-      <div class="nav-left">
-        <a href="index.html" aria-label="Mind Care Solutions Home">
-          <img
-            src="assets/Images/logo.png"
-            alt="Mind Care Solutions Logo - Professional Mental Health Services"
-            class="logo"
-            width="150"
-            height="50"
-            loading="eager"
-          />
-        </a>
+      <body>
+    <header
+      class="sticky top-0 z-50 h-16 flex items-center justify-between px-4 sm:px-6 bg-white shadow-md border-b border-gray-100"
+    >
+      <div class="text-2xl font-extrabold text-dark-green tracking-tight">
+        <a href="#">Therapy.io</a>
       </div>
-
-      <div class="nav-right">
-        <div class="all-nav-links" id="navLinks">
-          <a class="nav-link" href="index.html">Home</a>
-          <a class="nav-link active-link" href="about.html" aria-current="page"
-            >About</a
-          >
-          <a class="nav-link" href="services.html">Services</a>
-          <a class="nav-link" href="contact.html">Contact</a>
-          <div class="nav-icons">
-            <a href="tel:+1234567890" aria-label="Call Mind Care Solutions">
-              <i class="fa-solid fa-phone" aria-hidden="true"></i>
-            </a>
-            <a
-              href="mailto:info@mindcare.com"
-              aria-label="Email Mind Care Solutions"
-            >
-              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-        <button
-          class="hamburger"
-          id="hamburger"
-          aria-label="Toggle navigation menu"
-          aria-expanded="false"
-          aria-controls="navLinks"
+      <nav class="hidden md:flex space-x-8 text-sm font-medium">
+        <a
+          href="index.html"
+          class="text-gray-600 hover:text-dark-green transition duration-150"
+          >Home</a
         >
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </nav>
-
-    <main id="main-content">
-      <section class="about-us-banner" aria-labelledby="banner-heading">
-        <div class="banner-content">
-          <h1 id="banner-heading">About Mind Care Solutions</h1>
-          <p>
-            Over 10 years of helping individuals and families achieve mental
-            wellness through compassionate, evidence-based care.
+        <a
+          href="about.html"
+          class="text-gray-600 hover:text-dark-green transition duration-150 font-extrabold border-b-2 border-light-green"
+          >About Us</a
+        >
+        <a
+          href="services.html"
+          class="text-gray-600 hover:text-dark-green transition duration-150"
+          >Services</a
+        >
+        <a
+          href="contact.html"
+          class="text-gray-600 hover:text-dark-green transition duration-150"
+          >Contact</a
+        >
+      </nav>
+      <button
+        class="py-2 px-4 bg-light-green text-white text-sm font-semibold rounded-lg shadow-md hover:bg-light-green/90 transition duration-150"
+      >
+        Get Started
+      </button>
+      <button
+        class="text-sm font-semibold text-dark-green hover:opacity-80 md:hidden transition duration-150"
+      >
+        Menu
+      </button>
+    </header>
+    <div id="about-page" class="page-content">
+      <section class="py-20 sm:py-32 px-4 sm:px-6 md:px-10 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-5xl font-extrabold text-dark-green mb-6">
+            Our Mission: Your Well-being
+          </h1>
+          <p class="text-xl text-gray-600 mb-12">
+            **Therapy.io** was founded on the belief that professional mental
+            health care should be **accessible, affordable, and stigma-free**
+            for everyone, everywhere.
           </p>
         </div>
-      </section>
 
-      <section class="about-us" aria-labelledby="about-heading">
-        <div class="about-us-left">
-          <div class="about-left-header">
-            <p class="about-pre-heading">
-              <span class="dot"></span>
-              Our Story
-            </p>
-            <h2 class="about-heading">
-              Transforming Lives Through Compassionate Care
+        <div
+          class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-12"
+        >
+          <div>
+            <h2 class="text-3xl font-bold text-light-green mb-4">
+              A Global Network of Care
             </h2>
+            <p class="text-gray-700 text-lg mb-6">
+              Since launching in 2018, we have grown into the world's leading
+              online mental health platform, serving over a million users. We
+              connect you with a network of **30,000+ licensed therapists**
+              across various specialties, ensuring you get the *right* help, not
+              just the *available* help.
+            </p>
+            <p class="text-gray-700 text-lg">
+              We use advanced matching technology combined with strict
+              professional vetting to maintain the **highest standards of
+              clinical excellence** and ensure a strong therapeutic alliance
+              from day one.
+            </p>
           </div>
-          <div class="consultant-card">
-            <img
-              src="assets/images/statistic-1.jpg"
-              alt=""
-              width="400"
-              height="300"
-              loading="lazy"
-            />
-          </div>
-        </div>
-        <div class="about-us-right">
-          <h3 class="our-misson-heading">Our Mission & Values</h3>
-          <div class="about-points">
-            <div class="about-point">
-              <h3>Promoting Mental Wellness</h3>
-              <p>
-                We provide holistic, evidence-based treatments designed to
-                nurture mind, body, and spirit helping individuals achieve
-                long-term mental wellness.
-              </p>
-            </div>
-            <div class="about-point">
-              <h3>Empowering Individuals</h3>
-              <p>
-                Our approach focuses on empowering clients through education,
-                resilience-building, and self-awareness to take charge of their
-                mental health journey.
-              </p>
-            </div>
-            <div class="about-point">
-              <h3>Supporting Personal Growth</h3>
-              <p>
-                We create a safe, supportive space that encourages
-                self-discovery, emotional growth, and stronger relationships.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="experience" aria-labelledby="experience-heading">
-        <div class="flex-space">
-          <h2 id="experience-heading">Our Journey in Mental Health Care</h2>
-          <a
-            href="services.html"
-            class="btn-dark rounded"
-            aria-label="Explore Mental Health Services"
-            >Explore Services</a
+          <div
+            class="h-64 bg-cream rounded-xl shadow-xl flex items-center justify-center border-2 border-dark-green/30"
           >
+            <i
+              data-lucide="users-2"
+              class="w-16 h-16 text-dark-green opacity-40"
+            ></i>
+          </div>
         </div>
 
-        <div class="experience-row">
-          <p class="date" aria-label="Founded in 2010">2010</p>
-          <div class="experience-col">
-            <h3>Foundation of Mind Care Solutions</h3>
-            <p>
-              Established with a mission to make compassionate mental health
-              services accessible to everyone. Started with a small, dedicated
-              team committed to impactful care.
-            </p>
-          </div>
-          <i class="fa-solid fa-play" aria-hidden="true"></i>
-        </div>
-        <div class="experience-row">
-          <p class="date" aria-label="Expanded in 2012">2012</p>
-          <div class="experience-col">
-            <h3>Community Expansion</h3>
-            <p>
-              Introduced specialized programs in trauma recovery, anxiety
-              management, and family counseling serving a wider range of
-              communities.
-            </p>
-          </div>
-          <i class="fa-solid fa-play" aria-hidden="true"></i>
-        </div>
-        <div class="experience-row">
-          <p class="date" aria-label="Awarded in 2015">2015</p>
-          <div class="experience-col">
-            <h3>Recognized for Innovation</h3>
-            <p>
-              Honored with the Innovation in Mental Health Award for pioneering
-              telehealth services and expanding access to remote clients.
-            </p>
-          </div>
-          <i class="fa-solid fa-play" aria-hidden="true"></i>
-        </div>
-      </section>
-      <!-- 
-      <section class="approach">
-        <div class="approach-container">
-          <div class="approach-left">
-            <p class="approach-para">
+        <div class="max-w-6xl mx-auto mt-24">
+          <h2 class="text-3xl font-bold text-dark-green text-center mb-10">
+            Our Core Values
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+            <div class="p-6 bg-cream rounded-lg shadow-md">
               <i
-                class="fa-solid fa-sun"
-                style="color: var(--color-brand-primary-dark)"
-                aria-hidden="true"
+                data-lucide="handshake"
+                class="w-8 h-8 text-light-green mb-3 mx-auto"
               ></i>
-              How It Works
-            </p>
-            <h2>Our Holistic Approach</h2>
-            <p>
-              We combine evidence-based therapies with compassionate,
-              personalized care. Each client’s journey is guided by
-              collaboration, trust, and continuous progress toward mental
-              well-being.
-            </p>
-          </div>
-          <div class="approach-right">
-            <img
-              src="assets/Images/condition.jpg"
-              alt="Therapy session illustrating Mind Care Solutions approach"
-              width="400"
-              height="300"
-              loading="lazy"
-            />
-          </div>
-        </div>
-        <div class="approach-row">
-          <div class="approach-col">
-            <div class="approach-icon-container">
-              <i class="fa-solid fa-sun"></i>
-            </div>
-            <span>Step 1</span>
-            <p>Consultation and Assesment</p>
-          </div>
-          <div class="approach-col">
-            <div class="approach-icon-container">
-              <i class="fa-solid fa-sun"></i>
-            </div>
-            <span>Step 2</span>
-            <p>Personalized Treatment Plan</p>
-          </div>
-          <div class="approach-col">
-            <div class="approach-icon-container">
-              <i class="fa-solid fa-sun"></i>
-            </div>
-            <span>Step 3</span>
-            <p>Therapeutic Interventions</p>
-          </div>
-          <div class="approach-col">
-            <div class="approach-icon-container">
-              <i class="fa-solid fa-sun"></i>
-            </div>
-            <span>Step 4</span>
-            <p>Ongoing Support and Progres</p>
-          </div>
-        </div>
-      </section> -->
-
-      <section class="approach-section">
-        <div class="approach-wrapper">
-          <!-- Top Content (Text & Image) -->
-          <div class="approach-content-top">
-            <!-- Left Text Content -->
-            <div class="approach-text">
-              <p class="approach-pre-heading">
-                <span class="dot"></span>
-                How It Works
-              </p>
-
-              <!-- Title -->
-              <h2 class="approach-heading">Understanding Our Approach</h2>
-
-              <!-- Description -->
-              <p class="approach-description">
-                Vulputate bibendum erat morbi interdum diam sit. Eu sit dolor
-                vel sodales sed nibh ut. Ac fringilla fames egesta a aliquet.
-                Gravida placerat viverra purus sed ac ultricies sem nulla.
+              <h3 class="font-bold text-dark-green mb-2">
+                Trust & Confidentiality
+              </h3>
+              <p class="text-sm text-gray-600">
+                We adhere to strict HIPAA and global privacy standards. Your
+                privacy is non-negotiable.
               </p>
             </div>
-
-            <!-- Right Image -->
-            <div class="approach-image">
-              <img
-                src="assets/Images/condition.jpg"
-                alt="Therapy session illustrating holistic approach"
-                onerror="this.onerror=null; this.src='https://placehold.co/600x400/86efac/1f2937?text=Image+Unavailable'"
-                loading="lazy"
-              />
+            <div class="p-6 bg-cream rounded-lg shadow-md">
+              <i
+                data-lucide="lightbulb"
+                class="w-8 h-8 text-light-green mb-3 mx-auto"
+              ></i>
+              <h3 class="font-bold text-dark-green mb-2">
+                Clinical Excellence
+              </h3>
+              <p class="text-sm text-gray-600">
+                Only experienced, licensed professionals who meet our 2,000-hour
+                minimum requirement.
+              </p>
             </div>
-          </div>
-
-          <!-- Step Flowchart Section -->
-          <div class="approach-steps">
-            <!-- Step 1 -->
-            <div class="approach-step-col">
-              <div class="approach-icon-container">
-                <i class="fa-solid fa-star"></i>
-              </div>
-              <span class="approach-step-label">Step 1</span>
-              <p class="approach-step-title">Consultation and Assessment</p>
-            </div>
-
-            <!-- Arrow 1 (Desktop Only) -->
-            <div class="approach-arrow">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="approach-step-col">
-              <div class="approach-icon-container">
-                <i class="fa-solid fa-star"></i>
-              </div>
-              <span class="approach-step-label">Step 2</span>
-              <p class="approach-step-title">Personalized Treatment Plan</p>
-            </div>
-
-            <!-- Arrow 2 (Desktop Only) -->
-            <div class="approach-arrow">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="approach-step-col">
-              <div class="approach-icon-container">
-                <i class="fa-solid fa-star"></i>
-              </div>
-              <span class="approach-step-label">Step 3</span>
-              <p class="approach-step-title">Therapeutic Interventions</p>
-            </div>
-
-            <!-- Arrow 3 (Desktop Only) -->
-            <div class="approach-arrow">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="approach-step-col">
-              <div class="approach-icon-container">
-                <i class="fa-solid fa-star"></i>
-              </div>
-              <span class="approach-step-label">Step 4</span>
-              <p class="approach-step-title">Ongoing Support and Progress</p>
+            <div class="p-6 bg-cream rounded-lg shadow-md">
+              <i
+                data-lucide="globe"
+                class="w-8 h-8 text-light-green mb-3 mx-auto"
+              ></i>
+              <h3 class="font-bold text-dark-green mb-2">Accessibility</h3>
+              <p class="text-sm text-gray-600">
+                We break down barriers of location, cost, and scheduling to make
+                care possible.
+              </p>
             </div>
           </div>
         </div>
       </section>
-    </main>
-
-    <footer class="footer-bg">
-      <div class="footer-container">
-        <div class="footer-grid">
-          <div>
-            <div class="logo-section">
-              <!-- Logo Icon -->
-              <span class="logo-text">ZENLIFT</span>
-            </div>
-
-            <p class="contact-text">
-              Feel free to call us in working hours Mon - Fri 09:00 - 16:00. Our
-              team will be happy to help answer your queries.
-            </p>
-
-            <div class="social-icons">
-              <!-- Social Icons -->
-              <a
-                href="#"
-                class="social-icon"
-                aria-label="Follow us on Instagram"
-              >
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a
-                href="#"
-                class="social-icon"
-                aria-label="Follow us on Facebook"
-              >
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-              <a
-                href="#"
-                class="social-icon"
-                aria-label="Follow us on LinkedIn"
-              >
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
-              <a href="#" class="social-icon" aria-label="Follow us on Twitter">
-                <i class="fa-brands fa-twitter"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Column 2: Company Links -->
-          <div>
-            <h4 class="footer-heading">Company</h4>
-            <ul class="footer-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-
-          <!-- Column 3: Services Links -->
-          <div>
-            <h4 class="footer-heading">Services</h4>
-            <ul class="footer-links">
-              <li><a href="services.html#individual">Individual Therapy</a></li>
-              <li><a href="services.html#group">Group Therapy</a></li>
-              <li><a href="services.html#family">Family Counseling</a></li>
-              <li><a href="services.html#couples">Couples Counseling</a></li>
-            </ul>
-          </div>
-
-          <!-- Column 4: Subscribe To Newsletter -->
-          <div>
-            <h4 class="footer-heading">Subscribe To Newsletter</h4>
-            <form class="newsletter-form">
-              <input
-                type="email"
-                placeholder="Enter your mail"
-                class="newsletter-input"
-                aria-label="Enter your email"
-                required
-              />
-              <button type="submit" class="btn-primary">Subscribe</button>
-            </form>
-          </div>
-        </div>
-
-        <div class="footer-divider"></div>
-
-        <!-- Copyright and Legal Links -->
-        <div class="footer-bottom">
-          <p class="copyright">
-            Copyright &copy; 2025 Zenlift | Design by TotaFema
+    </div>
+    <!--Footer-->
+    <footer class="bg-darker-green py-16">
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-5 gap-8 border-b border-gray-700 pb-10 mb-8"
+      >
+        <div class="col-span-2 md:col-span-2">
+          <h3
+            class="text-3xl font-extrabold text-light-green mb-3 tracking-tight"
+          >
+            Calgary<span class="text-white">Wellness</span>
+          </h3>
+          <p class="text-sm text-gray-300 max-w-xs">
+            Professional virtual counseling serving the well-being of the
+            Alberta community.
           </p>
-          <div class="legal-links">
-            <a href="terms.html">Terms of Use</a>
-            <span class="separator" aria-hidden="true">|</span>
-            <a href="privacy.html">Privacy Policy</a>
+          <div class="flex space-x-4 mt-4 text-white">
+            <a href="#" class="hover:text-light-green transition duration-150"
+              ><i data-lucide="facebook" class="w-5 h-5"></i
+            ></a>
+            <a href="#" class="hover:text-light-green transition duration-150"
+              ><i data-lucide="instagram" class="w-5 h-5"></i
+            ></a>
+            <a href="#" class="hover:text-light-green transition duration-150"
+              ><i data-lucide="linkedin" class="w-5 h-5"></i
+            ></a>
           </div>
         </div>
+
+        <div>
+          <h4 class="text-lg font-bold text-white mb-4">Support</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li>
+              <a
+                href="#"
+                class="hover:text-light-green transition duration-150"
+                >Book a Consult</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >FAQs</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Insurance & Billing</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Crisis Resources</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-bold text-white mb-4">Practice</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li>
+              <a
+                href="#"
+                class="hover:text-light-green transition duration-150"
+                >About Me</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Rates & Fees</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Blog (Coming Soon)</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Accessibility</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-bold text-white mb-4">Legal</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Terms of Service</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Consent Forms</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Licensing</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 text-center text-xs text-gray-500"
+      >
+        <p class="mb-2">
+          **Important Note:** This practice operates virtually within Alberta,
+          Canada. If you are experiencing an emergency, please call 911 or the
+          Canada Suicide Crisis Helpline at 988.
+        </p>
+        <p>
+          &copy; 2024 CalgaryWellness. All rights reserved. Registered
+          Psychologist in Alberta.
+        </p>
       </div>
     </footer>
-
-    <script src="js/shared/navbar.js" defer></script>
+   
+    <script src="tailwind-config.js"></script>
   </body>
 </html>
