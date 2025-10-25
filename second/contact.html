@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Therapy.io</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-dark: #0a3225; /* Deep, Calming Forest Green (dark-green) */
+        --primary-light: #2a735e; /* Muted, Sophisticated Sage (light-green) */
+        --background-cream: #f8f4ed; /* Warm, Soft Off-White (cream) */
+        --accent-gold: #b87333; /* Rich Copper/Gold */
+        --darker-green: #051912; /* Used for footer bg */
+      }
+
+      /* Mapping existing class names to new professional variables */
+      .text-dark-green {
+        color: var(--primary-dark);
+      }
+      .bg-dark-green {
+        background-color: var(--primary-dark);
+      }
+      .text-light-green {
+        color: var(--primary-light);
+      }
+      .bg-light-green {
+        background-color: var(--primary-light);
+      }
+      .bg-cream {
+        background-color: var(--background-cream);
+      }
+      .bg-darker-green {
+        background-color: var(--darker-green);
+      }
+      .border-light-green {
+        border-color: var(--primary-light);
+      }
+      .text-accent-gold {
+        color: var(--accent-gold);
+      }
+      .active-nav {
+        font-weight: 700;
+        border-color: var(--accent-gold) !important;
+        color: var(--primary-dark) !important;
+      }
+    </style>
+  </head>
+  <body>
+    <header
+      class="sticky top-0 z-50 h-16 flex items-center justify-between px-4 sm:px-6 bg-white shadow-md border-b border-gray-100"
+    >
+      <div class="text-2xl font-extrabold text-dark-green tracking-tight">
+        <a href="index.html">Therapy.<span class="text-light-green">io</span></a>
+      </div>
+      <nav class="hidden md:flex space-x-8 text-sm font-medium">
+        <a
+          href="index.html"
+          class="text-gray-600 hover:text-dark-green transition duration-150"
+          >Home</a
+        >
+        <a
+          href="about.html"
+          class="text-gray-600 hover:text-dark-green transition duration-150"
+          >About Us</a
+        >
+        <a
+          href="services.html"
+          class="text-gray-600 hover:text-dark-green transition duration-150"
+          >Services</a
+        >
+        <a
+          href="contact.html"
+          class="active-nav border-b-2"
+          >Contact</a
+        >
+      </nav>
+      <a
+        href="booking.html"
+        class="py-2 px-4 bg-light-green text-white text-sm font-semibold rounded-lg shadow-md hover:bg-dark-green transition duration-150 hidden sm:inline-block"
+      >
+        Get Started
+      </a>
+      <button
+        class="text-sm font-semibold text-dark-green hover:opacity-80 md:hidden transition duration-150"
+      >
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </header>
+
+    <div id="contact-page" class="page-content">
+      <section class="pt-20 pb-16 sm:pt-32 sm:pb-24 px-4 sm:px-6 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-5xl md:text-6xl font-extrabold text-dark-green mb-6">
+            Contact & Support
+          </h1>
+          <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+            We're here to answer your questions about the platform, billing, and
+            technical support. For appointment scheduling, please use the "Client Login" link.
+          </p>
+        </div>
+      </section>
+
+      <section class="pb-20 sm:pb-32 px-4 sm:px-6 md:px-10 bg-cream">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div
+            class="lg:col-span-2 p-8 bg-white rounded-xl shadow-2xl border-t-4 border-light-green"
+          >
+            <h2 class="text-2xl font-bold text-dark-green mb-6">
+              Send Us a Message
+            </h2>
+            <form class="space-y-4 text-left">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    for="name"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Full Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-light-green focus:border-light-green"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-light-green focus:border-light-green"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  for="topic"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Topic</label
+                >
+                <select
+                  id="topic"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-light-green focus:border-light-green"
+                >
+                  <option>General Inquiry (Platform, Services)</option>
+                  <option>Billing & Subscriptions</option>
+                  <option>Technical Support</option>
+                  <option>Therapist Application / Careers</option>
+                  <option>Media & Partnerships</option>
+                </select>
+              </div>
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-light-green focus:border-light-green"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full py-3 bg-light-green text-white font-bold text-lg rounded-lg hover:bg-dark-green transition duration-150 shadow-lg"
+              >
+                Submit Inquiry
+              </button>
+            </form>
+          </div>
+
+          <div
+            class="lg:col-span-1 p-8 bg-white rounded-xl shadow-2xl border-b-4 border-dark-green h-fit"
+          >
+            <h2 class="text-2xl font-bold text-dark-green mb-6">
+              Direct Contact
+            </h2>
+            <div class="space-y-6">
+              <div class="flex items-start p-3 bg-cream rounded-lg">
+                <i
+                  data-lucide="mail"
+                  class="w-6 h-6 text-accent-gold mr-4 mt-1 shrink-0"
+                ></i>
+                <div>
+                  <h3 class="font-bold text-dark-green">Support Email</h3>
+                  <p class="text-gray-700">support@therapy.io</p>
+                </div>
+              </div>
+              <div class="flex items-start p-3 bg-cream rounded-lg">
+                <i
+                  data-lucide="phone"
+                  class="w-6 h-6 text-accent-gold mr-4 mt-1 shrink-0"
+                ></i>
+                <div>
+                  <h3 class="font-bold text-dark-green">Phone Support (Billing Only)</h3>
+                  <p class="text-gray-700">
+                    (800) 555-0199 
+                    <span class="block text-sm text-gray-500">(Mon-Fri, 9am-5pm MST)</span>
+                  </p>
+                </div>
+              </div>
+              
+              <div class="flex items-start p-3 bg-cream rounded-lg">
+                <i
+                  data-lucide="clock"
+                  class="w-6 h-6 text-accent-gold mr-4 mt-1 shrink-0"
+                ></i>
+                <div>
+                  <h3 class="font-bold text-dark-green">Virtual Office Hours</h3>
+                  <p class="text-gray-700">
+                    Monday to Friday: 9:00 AM - 9:00 PM <span class="block text-sm text-gray-500">Appointments can be scheduled outside these hours.</span>
+                  </p>
+                </div>
+              </div>
+              
+              <div
+                class="flex items-start p-4 bg-red-100 rounded-lg border border-red-300 shadow-md"
+              >
+                <i
+                  data-lucide="alert-triangle"
+                  class="w-6 h-6 text-red-600 mr-4 mt-1 shrink-0"
+                ></i>
+                <div>
+                  <h3 class="font-bold text-red-700">Crisis Help - READ THIS</h3>
+                  <p class="text-red-700 text-sm font-semibold">
+                    **If you are in crisis, DO NOT use this form.** Please call
+                    or text **988** (Canada/US Suicide Crisis Helpline) or 911
+                    immediately.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-20 sm:py-28 px-4 sm:px-6 bg-white border-t border-gray-200">
+          <div class="max-w-6xl mx-auto text-center">
+              <h2 class="text-3xl sm:text-4xl font-extrabold text-dark-green mb-6">
+                  Serving Calgary and All of Alberta (Virtual Office)
+              </h2>
+              <p class="text-lg text-gray-600 mb-10 max-w-3xl mx-auto">
+                  While our services are provided completely online for your convenience, we are based in and licensed to serve all residents across the province of Alberta.
+              </p>
+              
+              <div class="w-full h-80 rounded-xl overflow-hidden shadow-2xl border-4 border-light-green/50">
+                  <iframe 
+                      src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Calgary,+AB&amp;t=&amp;z=10&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" 
+                      width="100%" 
+                      height="100%" 
+                      style="border:0;" 
+                      allowfullscreen="" 
+                      loading="lazy" 
+                      referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+              </div>
+              
+              <p class="text-sm text-gray-500 mt-4">
+                  *Please note: This is a virtual practice. Physical office visits are not available.*
+              </p>
+          </div>
+      </section>
+      
+    </div>
+
+    <footer class="bg-darker-green py-16">
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-5 gap-8 border-b border-gray-700 pb-10 mb-8"
+      >
+        <div class="col-span-2 md:col-span-2">
+          <h3
+            class="text-3xl font-extrabold text-light-green mb-3 tracking-tight"
+          >
+            Therapy.<span class="text-white">io</span>
+          </h3>
+          <p class="text-sm text-gray-300 max-w-xs">
+            Professional virtual counseling serving the well-being of the Alberta
+            community.
+          </p>
+          <div class="flex space-x-4 mt-4 text-white">
+            <a href="#" class="hover:text-light-green transition duration-150"
+              ><i data-lucide="facebook" class="w-5 h-5"></i
+            ></a>
+            <a href="#" class="hover:text-light-green transition duration-150"
+              ><i data-lucide="instagram" class="w-5 h-5"></i
+            ></a>
+            <a href="#" class="hover:text-light-green transition duration-150"
+              ><i data-lucide="linkedin" class="w-5 h-5"></i
+            ></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-bold text-white mb-4">Support</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li>
+              <a
+                href="#"
+                class="hover:text-light-green transition duration-150"
+                >Book a Consult</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >FAQs</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Insurance & Billing</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Crisis Resources</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-bold text-white mb-4">Practice</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li>
+              <a
+                href="#"
+                class="hover:text-light-green transition duration-150"
+                >About Me</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Rates & Fees</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Blog (Coming Soon)</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Accessibility</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-bold text-white mb-4">Legal</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Terms of Service</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Consent Forms</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-light-green transition duration-150"
+                >Licensing</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 text-center text-xs text-gray-500"
+      >
+        <p class="mb-2">
+          **Important Note:** This practice operates virtually within Alberta,
+          Canada. If you are experiencing an emergency, please call 911 or the
+          Canada Suicide Crisis Helpline at 988.
+        </p>
+        <p>
+          &copy; 2024 Therapy.io. All rights reserved. Registered
+          Psychologist in Alberta.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
