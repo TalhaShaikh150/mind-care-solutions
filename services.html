@@ -3,73 +3,233 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Services | Therapy.io - Online Counseling</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
-         <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="assets/ribbon.png" />
 
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      :root {
+        --primary-dark: #0a3225; /* Deep, Calming Forest Green */
+        --primary-light: #2a735e; /* Muted, Sophisticated Sage */
+        --background-cream: #f8f4ed; /* Warm, Soft Off-White */
+        --accent-gold: #b87333; /* Rich Copper/Gold */
+      }
+
+      /* Mapping existing class names to new professional variables */
+      .text-dark-green {
+        color: var(--primary-dark);
+      }
+      .bg-dark-green {
+        background-color: var(--primary-dark);
+      }
+      .hover\:bg-darker-green:hover {
+        background-color: #051912; /* Slightly darker shade for hover effect */
+      }
+      .text-light-green {
+        color: var(--primary-light);
+      }
+      .bg-light-green {
+        background-color: var(--primary-light);
+      }
+      .border-light-green {
+        border-color: var(--primary-light);
+      }
+      .bg-cream {
+        background-color: var(--background-cream);
+      }
+      .border-dark-green {
+        border-color: var(--primary-dark);
+      }
+      .border-light-green\/50 {
+        border-color: rgba(42, 115, 94, 0.5);
+      }
+      .bg-dark-green\/5 {
+        background-color: rgba(10, 50, 37, 0.05);
+      }
+      .hover\:bg-dark-green\/10:hover {
+        background-color: rgba(10, 50, 37, 0.1);
+      }
+      .text-accent-orange {
+        color: var(--accent-gold);
+      }
+      .bg-accent-orange {
+        background-color: var(--accent-gold);
+      }
+      .border-accent-orange {
+        border-color: var(--accent-gold);
+      }
+      .hover\:bg-accent-orange\/90:hover {
+        background-color: rgba(184, 115, 51, 0.9);
+      }
+
+     
+
+      /* Custom Step Line Styling */
+      .step-line {
+        position: relative;
+      }
+      .step-line::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        background-color: var(--primary-light);
+        z-index: -1;
+        transform: translateX(-50%);
+      }
+      @media (min-width: 768px) {
+        .step-line::before {
+          left: 1rem;
+          transform: none;
+        }
+      }
+    </style>
   </head>
+
   <body>
+    <!--Navbar-->
     <header
-      class="sticky top-0 z-50 h-16 flex items-center justify-between px-4 sm:px-6 bg-white shadow-md border-b border-gray-100"
+      class="sticky top-0 z-50 h-16 flex items-center justify-between px-4 sm:px-6 bg-primary-dark shadow-lg border-b border-darker-green"
     >
-      <div class="text-2xl font-extrabold text-dark-green tracking-tight">
+      <div class="text-2xl font-extrabold text-white tracking-tight">
         <a href="index.html">Therapy.io</a>
       </div>
-      <nav class="hidden md:flex space-x-8 text-sm font-medium">
+      <nav class="hidden lg:flex space-x-10 text-base font-medium">
         <a
           href="index.html"
-          class="text-gray-600 hover:text-dark-green transition duration-150"
+          class="nav-link text-gray-300 hover:text-white transition duration-150 font-medium"
           >Home</a
         >
         <a
           href="about.html"
-          class="text-gray-600 hover:text-dark-green transition duration-150"
+          class="nav-link text-gray-300  hover:text-white transition duration-150 font-medium"
           >About Us</a
         >
         <a
           href="services.html"
-          class="text-gray-600 hover:text-dark-green transition duration-150 font-extrabold border-b-2 border-light-green"
+          class="nav-link  active-nav  text-white font-semibold hover:text-white transition duration-150 font-medium"
           >Services</a
         >
         <a
           href="contact.html"
-          class="text-gray-600 hover:text-dark-green transition duration-150"
+          class="nav-link text-gray-300 hover:text-white transition duration-150 font-medium"
           >Contact</a
         >
       </nav>
-      <button
-        class="py-2 px-4 bg-light-green text-white text-sm font-semibold rounded-lg shadow-md hover:bg-light-green/90 transition duration-150"
-      >
-        Get Started
-      </button>
-      <button
-        class="text-sm font-semibold text-dark-green hover:opacity-80 md:hidden transition duration-150"
-      >
-        Menu
-      </button>
+      <div class="flex items-center space-x-4">
+        <button
+          class="hidden lg:inline-block py-2.5 px-5 bg-white text-black text-base font-semibold rounded-lg shadow-md hover:bg-primary-light hover:text-white transition-al duration-150"
+        >
+          Book a Session
+        </button>
+
+        <button
+          onclick="toggleMobileMenu()"
+          class="text-base font-semibold text-white hover:opacity-80 lg:hidden transition duration-150"
+          aria-label="Toggle navigation menu"
+        >
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
     </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu lg:hidden">
+      <div
+        class="w-full h-full bg-gradient-to-b from-primary-dark to-darker-green"
+      >
+        <div class="p-6">
+          <!-- Header -->
+          <div class="flex justify-between items-center mb-8">
+            <div class="text-2xl font-extrabold text-white">Therapy.io</div>
+            <button
+              onclick="toggleMobileMenu()"
+              class="text-white hover:text-accent-orange transition duration-300"
+            >
+              <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+          </div>
+
+          <!-- Navigation -->
+          <nav class="space-y-6">
+            <a
+              href="index.html"
+              class="mobile-nav-item flex items-center space-x-4 text-lg font-semibold text-white py-4 px-4"
+            >
+              <i data-lucide="home" class="w-5 h-5"></i>
+              <span>Home</span>
+            </a>
+            <a
+              href="about.html"
+              class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300"
+            >
+              <i data-lucide="users" class="w-5 h-5"></i>
+              <span>About Us</span>
+            </a>
+            <a
+              href="services.html"
+              class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300 bg-white/10 rounded-xl"
+            >
+              <i data-lucide="heart" class="w-5 h-5"></i>
+              <span>Services</span>
+            </a>
+            <a
+              href="contact.html"
+              class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300"
+            >
+              <i data-lucide="phone" class="w-5 h-5"></i>
+              <span>Contact</span>
+            </a>
+          </nav>
+
+          <!-- Auth & CTA Section -->
+          <div class="mt-12 pt-8 border-t border-white/20">
+            <button
+              class="w-full py-4 bg-white text-black font-semibold rounded-xl hover:bg-primary-light hover:text-white transition duration-300 flex items-center justify-center space-x-3"
+            >
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+              <span>Book a Session</span>
+            </button>
+          </div>
+
+          <!-- Additional Info -->
+          <div class="mt-8 p-4 bg-white/5 rounded-xl">
+            <p class="text-gray-300 text-sm text-center">
+              Professional therapy services available 24/7
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="overlay" class="overlay" onclick="toggleMobileMenu()"></div>
+    </div>
+
+
     <div id="services-page" class="page-content">
-      <section class="py-20 sm:py-32 px-4 sm:px-6 md:px-10 bg-white">
+      <section class="py-24 sm:py-32 px-4 sm:px-8 bg-white">
         <div class="max-w-4xl mx-auto text-center">
-          <h1 class="text-5xl font-extrabold text-dark-green mb-6">
-            Our Online Therapy Services
+          <h1 class="text-5xl md:text-6xl font-extrabold text-dark-green mb-6">
+            Our Professional Online Therapy Services
           </h1>
-          <p class="text-xl text-gray-600 mb-12">
-            Flexible, confidential therapy tailored to your life. Get the
-            support you need, when and how you need it.
+          <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto">
+            Flexible, confidential, and **clinically rigorous** therapy tailored
+            to your life. Get the professional support you need, when and how
+            you need it.
           </p>
         </div>
       </section>
 
-      <section class="py-16 sm:py-24 px-4 sm:px-6 md:px-10 bg-cream">
+      <section class="py-16 sm:py-24 px-4 sm:px-8 bg-cream">
         <div class="max-w-6xl mx-auto">
           <h2
-            class="text-3xl sm:text-4xl font-bold text-dark-green text-center mb-12"
+            class="text-3xl sm:text-4xl font-extrabold text-dark-green text-center mb-12"
           >
             Dedicated Support for a Wide Range of Needs
           </h2>
@@ -77,88 +237,88 @@
             class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8"
           >
             <div
-              class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+              class="p-4 sm:p-6 text-center border-2 border-light-green rounded-xl bg-white transition duration-200 hover:shadow-xl cursor-pointer shadow-md"
             >
               <i
-                data-lucide="cloud-lightning"
-                class="w-6 h-6 text-dark-green mb-2 mx-auto"
+                data-lucide="activity"
+                class="w-7 h-7 text-dark-green mb-2 mx-auto"
               ></i>
               <p class="text-base sm:text-lg font-bold text-dark-green">
                 Stress & Anxiety
               </p>
             </div>
             <div
-              class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+              class="p-4 sm:p-6 text-center border-2 border-light-green rounded-xl bg-white transition duration-200 hover:shadow-xl cursor-pointer shadow-md"
             >
               <i
-                data-lucide="frown"
-                class="w-6 h-6 text-dark-green mb-2 mx-auto"
+                data-lucide="heart-crack"
+                class="w-7 h-7 text-dark-green mb-2 mx-auto"
               ></i>
               <p class="text-base sm:text-lg font-bold text-dark-green">
                 Depression & Mood
               </p>
             </div>
             <div
-              class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+              class="p-4 sm:p-6 text-center border-2 border-light-green rounded-xl bg-white transition duration-200 hover:shadow-xl cursor-pointer shadow-md"
             >
               <i
-                data-lucide="users"
-                class="w-6 h-6 text-dark-green mb-2 mx-auto"
+                data-lucide="group"
+                class="w-7 h-7 text-dark-green mb-2 mx-auto"
               ></i>
               <p class="text-base sm:text-lg font-bold text-dark-green">
                 Relationship Issues
               </p>
             </div>
             <div
-              class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+              class="p-4 sm:p-6 text-center border-2 border-light-green rounded-xl bg-white transition duration-200 hover:shadow-xl cursor-pointer shadow-md"
             >
               <i
-                data-lucide="trending-up"
-                class="w-6 h-6 text-dark-green mb-2 mx-auto"
+                data-lucide="shield-check"
+                class="w-7 h-7 text-dark-green mb-2 mx-auto"
               ></i>
               <p class="text-base sm:text-lg font-bold text-dark-green">
                 Grief & Trauma
               </p>
             </div>
             <div
-              class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+              class="p-4 sm:p-6 text-center border-2 border-light-green rounded-xl bg-white transition duration-200 hover:shadow-xl cursor-pointer shadow-md"
             >
               <i
-                data-lucide="sun"
-                class="w-6 h-6 text-dark-green mb-2 mx-auto"
+                data-lucide="sparkles"
+                class="w-7 h-7 text-dark-green mb-2 mx-auto"
               ></i>
               <p class="text-base sm:text-lg font-bold text-dark-green">
                 Self-Esteem & Confidence
               </p>
             </div>
             <div
-              class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+              class="p-4 sm:p-6 text-center border-2 border-light-green rounded-xl bg-white transition duration-200 hover:shadow-xl cursor-pointer shadow-md"
             >
               <i
-                data-lucide="dumbbell"
-                class="w-6 h-6 text-dark-green mb-2 mx-auto"
+                data-lucide="baby"
+                class="w-7 h-7 text-dark-green mb-2 mx-auto"
               ></i>
               <p class="text-base sm:text-lg font-bold text-dark-green">
                 Parenting Support
               </p>
             </div>
             <div
-              class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+              class="p-4 sm:p-6 text-center border-2 border-light-green rounded-xl bg-white transition duration-200 hover:shadow-xl cursor-pointer shadow-md"
             >
               <i
-                data-lucide="moon"
-                class="w-6 h-6 text-dark-green mb-2 mx-auto"
+                data-lucide="briefcase"
+                class="w-7 h-7 text-dark-green mb-2 mx-auto"
               ></i>
               <p class="text-base sm:text-lg font-bold text-dark-green">
                 Career & Life Transitions
               </p>
             </div>
             <div
-              class="p-4 sm:p-6 text-center border-2 border-dark-green rounded-xl bg-dark-green/5 transition duration-200 hover:bg-dark-green/10 cursor-pointer shadow-md hover:shadow-lg"
+              class="p-4 sm:p-6 text-center border-2 border-light-green rounded-xl bg-white transition duration-200 hover:shadow-xl cursor-pointer shadow-md"
             >
               <i
                 data-lucide="hand-heart"
-                class="w-6 h-6 text-dark-green mb-2 mx-auto"
+                class="w-7 h-7 text-dark-green mb-2 mx-auto"
               ></i>
               <p class="text-base sm:text-lg font-bold text-dark-green">
                 Addiction & Recovery
@@ -168,7 +328,7 @@
 
           <div class="text-center mt-12">
             <button
-              class="py-3 px-8 text-lg font-semibold text-white bg-dark-green border-2 border-dark-green rounded-full hover:bg-light-green hover:border-light-green transition duration-250 shadow-lg"
+              class="py-3 px-8 text-lg font-semibold text-white bg-dark-green border-2 border-dark-green rounded-full hover:bg-light-green hover:border-light-green transition duration-250 shadow-xl"
             >
               View All Specialty Areas
             </button>
@@ -176,9 +336,217 @@
         </div>
       </section>
 
-      <section class="py-16 sm:py-24 px-4 sm:px-6 md:px-10 bg-white">
+      <section class="py-16 sm:py-24 px-4 sm:px-8 bg-white">
+        <div class="max-w-6xl mx-auto">
+          <h2
+            class="text-3xl sm:text-4xl font-extrabold text-dark-green text-center mb-12"
+          >
+            Our Evidence-Based Therapeutic Approaches
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div
+              class="p-8 bg-cream rounded-xl shadow-lg border-l-4 border-light-green"
+            >
+              <i
+                data-lucide="brain-circuit"
+                class="w-8 h-8 text-accent-orange mb-3"
+              ></i>
+              <h3 class="text-xl font-bold text-dark-green mb-2">
+                Cognitive-Behavioral Therapy (CBT)
+              </h3>
+              <p class="text-base text-gray-700">
+                A highly effective, goal-oriented approach focusing on
+                challenging and changing unhelpful cognitive distortions and
+                behaviors. Excellent for **anxiety, depression, and stress
+                management**.
+              </p>
+            </div>
+            <div
+              class="p-8 bg-cream rounded-xl shadow-lg border-l-4 border-light-green"
+            >
+              <i data-lucide="zap" class="w-8 h-8 text-accent-orange mb-3"></i>
+              <h3 class="text-xl font-bold text-dark-green mb-2">
+                Trauma-Informed Care (EMDR, etc.)
+              </h3>
+              <p class="text-base text-gray-700">
+                Specialized modalities like **EMDR (Eye Movement Desensitization
+                and Reprocessing)** and trauma-focused CBT to process past
+                events and reduce their emotional impact.
+              </p>
+            </div>
+            <div
+              class="p-8 bg-cream rounded-xl shadow-lg border-l-4 border-light-green"
+            >
+              <i
+                data-lucide="users-round"
+                class="w-8 h-8 text-accent-orange mb-3"
+              ></i>
+              <h3 class="text-xl font-bold text-dark-green mb-2">
+                Emotionally Focused Therapy (EFT)
+              </h3>
+              <p class="text-base text-gray-700">
+                Primarily used for **couples and family counseling**, EFT
+                focuses on creating more secure emotional bonds and
+                restructuring negative interaction patterns.
+              </p>
+            </div>
+            <div
+              class="p-8 bg-cream rounded-xl shadow-lg border-l-4 border-light-green"
+            >
+              <i
+                data-lucide="hand-metal"
+                class="w-8 h-8 text-accent-orange mb-3"
+              ></i>
+              <h3 class="text-xl font-bold text-dark-green mb-2">
+                Dialectical Behavior Therapy (DBT)
+              </h3>
+              <p class="text-base text-gray-700">
+                Teaches essential life skills in **mindfulness, emotion
+                regulation, distress tolerance, and interpersonal
+                effectiveness**. Effective for managing intense emotions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 sm:py-24 px-4 sm:px-8 bg-cream">
+        <div class="max-w-6xl mx-auto">
+          <h2
+            class="text-3xl sm:text-4xl font-extrabold text-dark-green text-center mb-16"
+          >
+            Your Journey to Wellness: How It Works
+          </h2>
+          <div class="step-line relative">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div class="flex items-start md:col-span-1 md:col-start-1">
+                <div class="hidden md:block w-8 shrink-0"></div>
+                <div class="md:hidden w-8 shrink-0 relative mr-4">
+                  <div
+                    class="w-8 h-8 rounded-full bg-light-green text-white flex items-center justify-center font-bold text-lg absolute left-1/2 -translate-x-1/2 top-0 shadow-lg"
+                  >
+                    1
+                  </div>
+                </div>
+                <div
+                  class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-accent-gold md:ml-4 flex-grow"
+                >
+                  <h3 class="text-2xl font-bold text-dark-green mb-2">
+                    Step 1: The Initial Match
+                  </h3>
+                  <p class="text-gray-700">
+                    Complete our **confidential intake form**. We use an
+                    advanced matching algorithm to pair you with 2-3 licensed
+                    therapists who specialize in your reported needs.
+                  </p>
+                </div>
+              </div>
+
+              <div class="md:col-span-1 md:col-start-2"></div>
+
+              <div class="flex items-start md:col-span-1 md:col-start-2">
+                <div class="md:hidden w-8 shrink-0 relative mr-4">
+                  <div
+                    class="w-8 h-8 rounded-full bg-light-green text-white flex items-center justify-center font-bold text-lg absolute left-1/2 -translate-x-1/2 top-0 shadow-lg"
+                  >
+                    2
+                  </div>
+                </div>
+                <div
+                  class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-accent-gold md:mr-4 flex-grow"
+                >
+                  <h3 class="text-2xl font-bold text-dark-green mb-2">
+                    Step 2: Start Communicating
+                  </h3>
+                  <p class="text-gray-700">
+                    Immediately gain **unlimited access to your private chat
+                    room**. You can start messaging your therapist 24/7, and
+                    they will respond with meaningful guidance 1-2 times per
+                    day.
+                  </p>
+                </div>
+                <div class="hidden md:block w-8 shrink-0"></div>
+              </div>
+
+              <div class="md:col-span-1 md:col-start-1"></div>
+
+              <div class="flex items-start md:col-span-1 md:col-start-1">
+                <div class="hidden md:block w-8 shrink-0"></div>
+                <div class="md:hidden w-8 shrink-0 relative mr-4">
+                  <div
+                    class="w-8 h-8 rounded-full bg-light-green text-white flex items-center justify-center font-bold text-lg absolute left-1/2 -translate-x-1/2 top-0 shadow-lg"
+                  >
+                    3
+                  </div>
+                </div>
+                <div
+                  class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-accent-gold md:ml-4 flex-grow"
+                >
+                  <h3 class="text-2xl font-bold text-dark-green mb-2">
+                    Step 3: Schedule Live Sessions
+                  </h3>
+                  <p class="text-gray-700">
+                    Use your weekly live session credit to schedule a
+                    **45-minute video or phone call**. This is where deep
+                    clinical work and targeted strategies are often applied.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 sm:py-24 px-4 sm:px-8 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-dark-green mb-6">
+            Our Commitment to Your Privacy
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
+            We understand that safety and trust are paramount. Your sessions and
+            data are protected by clinical and technological standards.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            <div class="p-4">
+              <i data-lucide="lock" class="w-8 h-8 text-light-green mb-3"></i>
+              <h3 class="text-xl font-bold text-dark-green mb-2">
+                Encrypted Platform
+              </h3>
+              <p class="text-gray-700 text-sm">
+                All communications (video, chat, notes) are protected by
+                **end-to-end encryption** and stored on secure servers.
+              </p>
+            </div>
+            <div class="p-4">
+              <i
+                data-lucide="file-check"
+                class="w-8 h-8 text-light-green mb-3"
+              ></i>
+              <h3 class="text-xl font-bold text-dark-green mb-2">
+                Clinical Standards
+              </h3>
+              <p class="text-gray-700 text-sm">
+                We strictly adhere to Alberta's **confidentiality laws and
+                ethical guidelines** for psychological services.
+              </p>
+            </div>
+            <div class="p-4">
+              <i data-lucide="shield" class="w-8 h-8 text-light-green mb-3"></i>
+              <h3 class="text-xl font-bold text-dark-green mb-2">
+                Anonymous Payment
+              </h3>
+              <p class="text-gray-700 text-sm">
+                Billing information is handled by a third-party processor,
+                ensuring your **financial data remains separate and secure**.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 sm:py-24 px-4 sm:px-8 bg-cream">
         <div class="max-w-6xl mx-auto text-center">
-          <h2 class="text-3xl sm:text-4xl font-bold text-dark-green mb-6">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-dark-green mb-6">
             Simple, Transparent Pricing
           </h2>
           <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
@@ -187,7 +555,7 @@
           </p>
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div
-              class="bg-cream p-8 rounded-xl shadow-2xl border-2 border-light-green/50"
+              class="bg-white p-8 rounded-xl shadow-2xl border-2 border-light-green/50"
             >
               <h3 class="text-2xl font-bold text-dark-green mb-2">
                 Messaging Focused
@@ -200,22 +568,22 @@
                   <i
                     data-lucide="message-square-more"
                     class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
-                  ></i
-                  >Unlimited messaging
+                  ></i>
+                  Unlimited messaging
                 </li>
                 <li class="flex items-start">
                   <i
                     data-lucide="users-2"
                     class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
-                  ></i
-                  >1 Live Group Session / week
+                  ></i>
+                  1 Live Group Session / week
                 </li>
                 <li class="flex items-start text-gray-400">
                   <i
                     data-lucide="video-off"
                     class="w-5 h-5 text-gray-400 mr-3 mt-1 shrink-0"
-                  ></i
-                  >No scheduled live 1:1 sessions
+                  ></i>
+                  No scheduled live 1:1 sessions
                 </li>
               </ul>
               <button
@@ -226,10 +594,10 @@
             </div>
 
             <div
-              class="bg-dark-green p-8 rounded-xl shadow-2xl border-4 border-accent-orange relative"
+              class="bg-dark-green p-8 rounded-xl shadow-2xl border-4 border-accent-gold relative"
             >
               <div
-                class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent-orange text-dark-green text-sm font-bold py-1 px-4 rounded-full uppercase tracking-wider shadow-lg"
+                class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent-gold text-dark-green text-sm font-bold py-1 px-4 rounded-full uppercase tracking-wider shadow-lg"
               >
                 Recommended
               </div>
@@ -244,33 +612,33 @@
                   <i
                     data-lucide="message-square-more"
                     class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
-                  ></i
-                  >Unlimited messaging
+                  ></i>
+                  Unlimited messaging
                 </li>
                 <li class="flex items-start">
                   <i
                     data-lucide="video"
                     class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
-                  ></i
-                  ><span class="font-bold">1 Live 45-min Session</span> / week
+                  ></i>
+                  <span class="font-bold">1 Live 45-min Session</span> / week
                 </li>
                 <li class="flex items-start">
                   <i
                     data-lucide="users-2"
                     class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
-                  ></i
-                  >Unlimited Live Group Sessions
+                  ></i>
+                  Unlimited Live Group Sessions
                 </li>
               </ul>
               <button
-                class="w-full py-3 bg-accent-orange text-dark-green font-bold text-xl rounded-lg shadow-xl hover:bg-accent-orange/90 transition duration-150"
+                class="w-full py-3 bg-accent-gold text-dark-green font-bold text-xl rounded-lg shadow-xl hover:bg-accent-orange/90 transition duration-150"
               >
                 Start Now
               </button>
             </div>
 
             <div
-              class="bg-cream p-8 rounded-xl shadow-2xl border-2 border-light-green/50"
+              class="bg-white p-8 rounded-xl shadow-2xl border-2 border-light-green/50"
             >
               <h3 class="text-2xl font-bold text-dark-green mb-2">
                 Advanced Support
@@ -285,22 +653,22 @@
                   <i
                     data-lucide="message-square-more"
                     class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
-                  ></i
-                  >Unlimited messaging
+                  ></i>
+                  Unlimited messaging
                 </li>
                 <li class="flex items-start">
                   <i
                     data-lucide="video"
                     class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
-                  ></i
-                  ><span class="font-bold">2 Live 45-min Sessions</span> / week
+                  ></i>
+                  <span class="font-bold">2 Live 45-min Sessions</span> / week
                 </li>
                 <li class="flex items-start">
                   <i
                     data-lucide="users-2"
                     class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
-                  ></i
-                  >Unlimited Live Group Sessions
+                  ></i>
+                  Unlimited Live Group Sessions
                 </li>
               </ul>
               <button
@@ -316,9 +684,26 @@
           </p>
         </div>
       </section>
+
+      <section class="py-20 sm:py-28 px-4 sm:px-8 bg-dark-green text-white">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-4xl sm:text-5xl font-extrabold mb-6 text-white">
+            Ready to Start Your Journey to Wellness?
+          </h2>
+          <p class="text-xl text-gray-200 mb-10">
+            Take the first step toward a healthier mind today. Our matching
+            process is fast, confidential, and free.
+          </p>
+          <button
+            class="py-4 px-12 text-xl font-bold bg-accent-gold text-dark-green rounded-full shadow-2xl hover:bg-white hover:text-dark-green transition duration-300 transform hover:scale-[1.05]"
+          >
+            Find My Therapist Now
+          </button>
+        </div>
+      </section>
     </div>
-    <!--Footer-->
-    <footer class="bg-darker-green py-16">
+
+    <footer class="bg-dark-green py-16">
       <div
         class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-5 gap-8 border-b border-gray-700 pb-10 mb-8"
       >
@@ -326,7 +711,7 @@
           <h3
             class="text-3xl font-extrabold text-light-green mb-3 tracking-tight"
           >
-            Calgary<span class="text-white">Wellness</span>
+            Therapy.<span class="text-white">io</span>
           </h3>
           <p class="text-sm text-gray-300 max-w-xs">
             Professional virtual counseling serving the well-being of the
@@ -349,9 +734,7 @@
           <h4 class="text-lg font-bold text-white mb-4">Support</h4>
           <ul class="space-y-2 text-gray-400 text-sm">
             <li>
-              <a
-                href="#"
-                class="hover:text-light-green transition duration-150"
+              <a href="#" class="hover:text-light-green transition duration-150"
                 >Book a Consult</a
               >
             </li>
@@ -377,9 +760,7 @@
           <h4 class="text-lg font-bold text-white mb-4">Practice</h4>
           <ul class="space-y-2 text-gray-400 text-sm">
             <li>
-              <a
-                href="#"
-                class="hover:text-light-green transition duration-150"
+              <a href="#" class="hover:text-light-green transition duration-150"
                 >About Me</a
               >
             </li>
@@ -437,12 +818,12 @@
           Canada Suicide Crisis Helpline at 988.
         </p>
         <p>
-          &copy; 2024 CalgaryWellness. All rights reserved. Registered
-          Psychologist in Alberta.
+          &copy; 2024 Therapy.io. All rights reserved. Registered Psychologist
+          in Alberta.
         </p>
       </div>
     </footer>
-    
+    <script src="main.js"></script>
     <script src="tailwind-config.js"></script>
   </body>
 </html>
