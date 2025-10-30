@@ -1,29 +1,29 @@
-  // Mobile menu toggle functionality
-      function toggleMobileMenu() {
-        const menu = document.getElementById("mobileMenu");
-        const overlay = document.getElementById("overlay");
+// Mobile menu toggle functionality
+function toggleMobileMenu() {
+  const menu = document.getElementById("mobileMenu");
+  const overlay = document.getElementById("overlay");
 
-        menu.classList.toggle("open");
-        overlay.classList.toggle("open");
+  menu.classList.toggle("open");
+  overlay.classList.toggle("open");
 
-        // Prevent body scroll when menu is open
-        document.body.style.overflow = menu.classList.contains("open")
-          ? "hidden"
-          : "";
-      }
+  // Prevent body scroll when menu is open
+  document.body.style.overflow = menu.classList.contains("open")
+    ? "hidden"
+    : "";
+}
 
-      // Close menu when pressing Escape key
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-          const menu = document.getElementById("mobileMenu");
-          const overlay = document.getElementById("overlay");
+// Close menu when pressing Escape key
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    const menu = document.getElementById("mobileMenu");
+    const overlay = document.getElementById("overlay");
 
-          menu.classList.remove("open");
-          overlay.classList.remove("open");
-          document.body.style.overflow = "";
-        }
-      });
-      
+    menu.classList.remove("open");
+    overlay.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+});
+
 function toggleFAQ(element) {
   // Close all other FAQs
   document.querySelectorAll(".faq-item").forEach((item) => {
@@ -43,3 +43,4 @@ function toggleFAQ(element) {
     }
   });
 }
+document.getElementById("year").textContent = new Date().getFullYear();

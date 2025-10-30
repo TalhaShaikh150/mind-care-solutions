@@ -14,13 +14,6 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <style>
-      :root {
-        --primary-dark: #0a3225; /* Deep, Calming Forest Green */
-        --primary-light: #2a735e; /* Muted, Sophisticated Sage */
-        --background-cream: #f8f4ed; /* Warm, Soft Off-White */
-        --accent-gold: #b87333; /* Rich Copper/Gold */
-      }
-
       /* Mapping existing class names to new professional variables */
       .text-dark-green {
         color: var(--primary-dark);
@@ -360,7 +353,10 @@
             <div
               class="p-8 bg-cream rounded-xl shadow-lg border-l-4 border-light-green"
             >
-              <i data-lucide="activity" class="w-8 h-8 text-accent-orange mb-3"></i>
+              <i
+                data-lucide="activity"
+                class="w-8 h-8 text-accent-orange mb-3"
+              ></i>
               <h3 class="text-xl font-bold text-dark-green mb-2">
                 Neuroplasticity Training
               </h3>
@@ -373,10 +369,7 @@
             <div
               class="p-8 bg-cream rounded-xl shadow-lg border-l-4 border-light-green"
             >
-              <i
-                data-lucide="sun"
-                class="w-8 h-8 text-accent-orange mb-3"
-              ></i>
+              <i data-lucide="sun" class="w-8 h-8 text-accent-orange mb-3"></i>
               <h3 class="text-xl font-bold text-dark-green mb-2">
                 Mindfulness-Based Stress Reduction
               </h3>
@@ -699,126 +692,151 @@
       </section>
     </div>
 
-    <footer class="bg-dark-green py-16">
-      <div
-        class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-5 gap-8 border-b border-gray-700 pb-10 mb-8"
-      >
-        <div class="col-span-2 md:col-span-2">
-          <h3
-            class="text-3xl font-extrabold text-light-green mb-3 tracking-tight"
-          >
-            Therapy.<span class="text-white">io</span>
-          </h3>
-          <p class="text-sm text-gray-300 max-w-xs">
-            Professional virtual counseling serving the well-being of the
-            Alberta community.
-          </p>
-          <div class="flex space-x-4 mt-4 text-white">
-            <a href="#" class="hover:text-light-green transition duration-150"
-              ><i data-lucide="facebook" class="w-5 h-5"></i
-            ></a>
-            <a href="#" class="hover:text-light-green transition duration-150"
-              ><i data-lucide="instagram" class="w-5 h-5"></i
-            ></a>
-            <a href="#" class="hover:text-light-green transition duration-150"
-              ><i data-lucide="linkedin" class="w-5 h-5"></i
-            ></a>
+    <!--Footer-->
+    <footer class="bg-primary-dark text-white pt-16 pb-8">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          <div class="col-span-2">
+            <h3 class="text-2xl font-bold text-primary-light mb-4">
+              Therapy.io
+            </h3>
+            <p class="text-gray-300 mb-6 max-w-md">
+              Professional online counseling serving individuals, couples, and
+              families across Alberta. Your mental wellness is our priority.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-300 hover:text-primary-light transition duration-150"
+                aria-label="Facebook"
+              >
+                <i data-lucide="facebook" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-300 hover:text-primary-light transition duration-150"
+                aria-label="Twitter"
+              >
+                <i data-lucide="twitter" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-300 hover:text-primary-light transition duration-150"
+                aria-label="Instagram"
+              >
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-300 hover:text-primary-light transition duration-150"
+                aria-label="LinkedIn"
+              >
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="/"
+                  class="text-gray-300 hover:text-primary-light transition duration-150"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="text-gray-300 hover:text-primary-light transition duration-150"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="services.html"
+                  class="text-gray-300 hover:text-primary-light transition duration-150"
+                  >Services</a
+                >
+              </li>
+
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-gray-300 hover:text-primary-light transition duration-150"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Services</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="faq.html"
+                  class="text-gray-300 hover:text-primary-light transition duration-150"
+                >
+                  Individual Therapy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-gray-300 hover:text-primary-light transition duration-150"
+                  >Couples Counseling
+                </a>
+              </li>
+              <li>
+                <a
+                  href="privacy.html"
+                  class="text-gray-300 hover:text-primary-light transition duration-150"
+                  >Family Therapy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="terms.html"
+                  class="text-gray-300 hover:text-primary-light transition duration-150"
+                  >Specialized Treatments
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div>
-          <h4 class="text-lg font-bold text-white mb-4">Support</h4>
-          <ul class="space-y-2 text-gray-400 text-sm">
-            <li>
-              <a href="#" class="hover:text-light-green transition duration-150"
-                >Book a Consult</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-light-green transition duration-150"
-                >FAQs</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-light-green transition duration-150"
-                >Insurance & Billing</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-light-green transition duration-150"
-                >Crisis Resources</a
-              >
-            </li>
-          </ul>
+        <div class="section-divider my-8"></div>
+
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-center md:text-left"
+        >
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            &copy; <span id="year"></span> Therapy.io. All rights reserved.
+          </p>
+          <div
+            class="flex items-center space-x-4 md:space-x-6 text-sm text-gray-400"
+          >
+            <span>Licensed in Alberta, Canada</span>
+            <span class="hidden sm:inline">•</span>
+            <span class="sm:hidden">|</span>
+            <span>HIPAA Compliant</span>
+          </div>
         </div>
 
-        <div>
-          <h4 class="text-lg font-bold text-white mb-4">Practice</h4>
-          <ul class="space-y-2 text-gray-400 text-sm">
-            <li>
-              <a href="#" class="hover:text-light-green transition duration-150"
-                >About Me</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-light-green transition duration-150"
-                >Rates & Fees</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-light-green transition duration-150"
-                >Blog (Coming Soon)</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-light-green transition duration-150"
-                >Accessibility</a
-              >
-            </li>
-          </ul>
+        <div class="mt-8 text-center text-xs text-gray-500">
+          <p class="mb-2">
+            <span class="text-red-400 font-medium">EMERGENCY NOTICE:</span> If
+            you are experiencing a medical emergency or a crisis, please call
+            911 or go to your nearest emergency room.
+          </p>
+          <p>
+            Canada Suicide Crisis Helpline:
+            <strong class="text-white">1-877-303-2642 (toll-free).</strong>
+          </p>
         </div>
-
-        <div>
-          <h4 class="text-lg font-bold text-white mb-4">Legal</h4>
-          <ul class="space-y-2 text-gray-400 text-sm">
-            <li>
-              <a href="#" class="hover:text-light-green transition duration-150"
-                >Terms of Service</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-light-green transition duration-150"
-                >Privacy Policy</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-light-green transition duration-150"
-                >Consent Forms</a
-              >
-            </li>
-            <li>
-              <a href="#" class="hover:text-light-green transition duration-150"
-                >Licensing</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div
-        class="max-w-6xl mx-auto px-4 sm:px-6 text-center text-xs text-gray-500"
-      >
-        <p class="mb-2">
-          **Important Note:** This practice operates virtually within Alberta,
-          Canada. If you are experiencing an emergency, please call 911 or the
-          Canada Suicide Crisis Helpline at 988.
-        </p>
-        <p>
-          &copy; 2024 Therapy.io. All rights reserved. Registered Psychologist
-          in Alberta.
-        </p>
       </div>
     </footer>
+
     <script src="main.js"></script>
     <script src="tailwind-config.js"></script>
   </body>
