@@ -6,7 +6,7 @@
    /* Mature accent green */
    --background-cream: #fbf9f6;
    /* Softer, warmer cream */
-   --accent-gold: #c18e5e;
+   --accent-copper: #c18e5e;
    /* Sophisticated gold/ochre */
  }
 
@@ -38,6 +38,7 @@
  }
 
  .card-hover {
+  cursor: pointer;
    transition: all 0.3s ease;
  }
 
@@ -131,12 +132,12 @@
    background-color: var(--background-cream);
  }
 
- .text-accent-gold {
-   color: var(--accent-gold);
+ .text-accent-copper {
+   color: var(--accent-copper);
  }
 
- .fill-accent-gold {
-   fill: var(--accent-gold);
+ .fill-accent-copper {
+   fill: var(--accent-copper);
  }
 
  .card-gradient-bg {
@@ -149,16 +150,31 @@
    transition: all 0.3s ease;
  }
 
+
+
  .faq-answer {
    max-height: 0;
    overflow: hidden;
-   transition: max-height 0.3s ease;
+   transition: max-height 0.3s ease-out;
  }
 
  .faq-item.active .faq-answer {
    max-height: 500px;
+   transition: max-height 0.5s ease-in;
+ }
+
+ .faq-icon {
+   transition: transform 0.3s ease;
  }
 
  .faq-item.active .faq-icon {
    transform: scale(1.8) rotate(45deg);
+ }
+
+ .hidden-faq {
+   display: none;
+ }
+
+ .show-faq .hidden-faq {
+   display: block;
  }

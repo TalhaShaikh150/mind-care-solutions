@@ -5,7 +5,7 @@ tailwind.config = {
         "primary-dark": "#0a2a1a",
         "primary-light": "#1b7551",
         "background-cream": "#fbf9f6",
-        "accent-orange": "#d69e2e",
+        "accent-copper": "#C18E5E",
         "darker-green": "#2d523b",
       },
     },

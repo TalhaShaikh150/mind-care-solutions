@@ -13,76 +13,6 @@
     <link rel="icon" type="image/png" href="assets/ribbon.png" />
 
     <link rel="stylesheet" href="css/style.css" />
-    <style>
-      /* Mapping existing class names to new professional variables */
-      .text-dark-green {
-        color: var(--primary-dark);
-      }
-      .bg-dark-green {
-        background-color: var(--primary-dark);
-      }
-      .hover\:bg-darker-green:hover {
-        background-color: #051912; /* Slightly darker shade for hover effect */
-      }
-      .text-light-green {
-        color: var(--primary-light);
-      }
-      .bg-light-green {
-        background-color: var(--primary-light);
-      }
-      .border-light-green {
-        border-color: var(--primary-light);
-      }
-      .bg-cream {
-        background-color: var(--background-cream);
-      }
-      .border-dark-green {
-        border-color: var(--primary-dark);
-      }
-      .border-light-green\/50 {
-        border-color: rgba(42, 115, 94, 0.5);
-      }
-      .bg-dark-green\/5 {
-        background-color: rgba(10, 50, 37, 0.05);
-      }
-      .hover\:bg-dark-green\/10:hover {
-        background-color: rgba(10, 50, 37, 0.1);
-      }
-      .text-accent-orange {
-        color: var(--accent-gold);
-      }
-      .bg-accent-orange {
-        background-color: var(--accent-gold);
-      }
-      .border-accent-orange {
-        border-color: var(--accent-gold);
-      }
-      .hover\:bg-accent-orange\/90:hover {
-        background-color: rgba(184, 115, 51, 0.9);
-      }
-
-      /* Custom Step Line Styling */
-      .step-line {
-        position: relative;
-      }
-      .step-line::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        width: 2px;
-        background-color: var(--primary-light);
-        z-index: -1;
-        transform: translateX(-50%);
-      }
-      @media (min-width: 768px) {
-        .step-line::before {
-          left: 1rem;
-          transform: none;
-        }
-      }
-    </style>
   </head>
 
   <body>
@@ -205,7 +135,9 @@
     <div id="services-page" class="page-content">
       <section class="py-24 sm:py-32 px-4 sm:px-8 bg-white">
         <div class="max-w-4xl mx-auto text-center">
-          <h1 class="text-5xl md:text-6xl font-extrabold text-dark-green mb-6">
+          <h1
+            class="text-5xl md:text-6xl font-extrabold text-primary-dark mb-6"
+          >
             Our Professional Online Therapy Services
           </h1>
           <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto">
@@ -216,123 +148,13 @@
         </div>
       </section>
 
-      <!-- <section class="py-16 sm:py-24 px-4 sm:px-8 bg-cream">
-        <div class="max-w-6xl mx-auto">
-          <h2
-            class="text-3xl sm:text-4xl font-extrabold text-dark-green text-center mb-12"
-          >
-            Dedicated Support for a Wide Range of Needs
-          </h2>
-          <div
-            class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8"
-          >
-            <div
-              class="p-4 sm:p-6 text-center border-2 border-light-green rounded-xl bg-white transition duration-200 hover:shadow-xl cursor-pointer shadow-md"
-            >
-              <i
-                data-lucide="activity"
-                class="w-7 h-7 text-dark-green mb-2 mx-auto"
-              ></i>
-              <p class="text-base sm:text-lg font-bold text-dark-green">
-                Stress & Anxiety
-              </p>
-            </div>
-            <div
-              class="p-4 sm:p-6 text-center border-2 border-light-green rounded-xl bg-white transition duration-200 hover:shadow-xl cursor-pointer shadow-md"
-            >
-              <i
-                data-lucide="heart-crack"
-                class="w-7 h-7 text-dark-green mb-2 mx-auto"
-              ></i>
-              <p class="text-base sm:text-lg font-bold text-dark-green">
-                Depression & Mood
-              </p>
-            </div>
-            <div
-              class="p-4 sm:p-6 text-center border-2 border-light-green rounded-xl bg-white transition duration-200 hover:shadow-xl cursor-pointer shadow-md"
-            >
-              <i
-                data-lucide="group"
-                class="w-7 h-7 text-dark-green mb-2 mx-auto"
-              ></i>
-              <p class="text-base sm:text-lg font-bold text-dark-green">
-                Relationship Issues
-              </p>
-            </div>
-            <div
-              class="p-4 sm:p-6 text-center border-2 border-light-green rounded-xl bg-white transition duration-200 hover:shadow-xl cursor-pointer shadow-md"
-            >
-              <i
-                data-lucide="shield-check"
-                class="w-7 h-7 text-dark-green mb-2 mx-auto"
-              ></i>
-              <p class="text-base sm:text-lg font-bold text-dark-green">
-                Grief & Trauma
-              </p>
-            </div>
-            <div
-              class="p-4 sm:p-6 text-center border-2 border-light-green rounded-xl bg-white transition duration-200 hover:shadow-xl cursor-pointer shadow-md"
-            >
-              <i
-                data-lucide="sparkles"
-                class="w-7 h-7 text-dark-green mb-2 mx-auto"
-              ></i>
-              <p class="text-base sm:text-lg font-bold text-dark-green">
-                Self-Esteem & Confidence
-              </p>
-            </div>
-            <div
-              class="p-4 sm:p-6 text-center border-2 border-light-green rounded-xl bg-white transition duration-200 hover:shadow-xl cursor-pointer shadow-md"
-            >
-              <i
-                data-lucide="baby"
-                class="w-7 h-7 text-dark-green mb-2 mx-auto"
-              ></i>
-              <p class="text-base sm:text-lg font-bold text-dark-green">
-                Parenting Support
-              </p>
-            </div>
-            <div
-              class="p-4 sm:p-6 text-center border-2 border-light-green rounded-xl bg-white transition duration-200 hover:shadow-xl cursor-pointer shadow-md"
-            >
-              <i
-                data-lucide="briefcase"
-                class="w-7 h-7 text-dark-green mb-2 mx-auto"
-              ></i>
-              <p class="text-base sm:text-lg font-bold text-dark-green">
-                Career & Life Transitions
-              </p>
-            </div>
-            <div
-              class="p-4 sm:p-6 text-center border-2 border-light-green rounded-xl bg-white transition duration-200 hover:shadow-xl cursor-pointer shadow-md"
-            >
-              <i
-                data-lucide="hand-heart"
-                class="w-7 h-7 text-dark-green mb-2 mx-auto"
-              ></i>
-              <p class="text-base sm:text-lg font-bold text-dark-green">
-                Addiction & Recovery
-              </p>
-            </div>
-          </div>
-
-          <div class="text-center mt-12">
-            <button
-              class="py-3 px-8 text-lg font-semibold text-white bg-dark-green border-2 border-dark-green rounded-full hover:bg-light-green hover:border-light-green transition duration-250 shadow-xl"
-            >
-              View All Specialty Areas
-            </button>
-          </div>
-        </div>
-      </section> -->
-
       <!-- Variation 2: Animated Cards with Floating Elements -->
       <section
         class="py-16 px-4 bg-gradient-to-br from-background-cream to-primary-light/10 mb-16 rounded-2xl shadow-sm relative overflow-hidden"
       >
         <!-- Floating decorative elements -->
         <div
-          class="absolute top-10 left-10 w-20 h-20 bg-accent-orange/10 rounded-full floating-animation"
+          class="absolute top-10 left-10 w-20 h-20 bg-accent-copper/10 rounded-full floating-animation"
         ></div>
         <div
           class="absolute bottom-10 right-10 w-16 h-16 bg-primary-light/10 rounded-full floating-animation"
@@ -347,7 +169,7 @@
           <h2
             class="text-3xl sm:text-4xl font-extrabold text-primary-dark text-center mb-4"
           >
-            Animated Wellness Support
+            Wellness Support
           </h2>
           <p
             class="text-lg text-darker-green text-center mb-12 max-w-2xl mx-auto"
@@ -378,7 +200,7 @@
                   >8-week program</span
                 >
                 <button
-                  class="text-primary-dark hover:text-accent-orange transition-colors flex items-center"
+                  class="text-primary-dark hover:text-accent-copper transition-colors flex items-center"
                 >
                   Learn more
                   <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
@@ -409,7 +231,7 @@
                   >12-week program</span
                 >
                 <button
-                  class="text-primary-dark hover:text-accent-orange transition-colors flex items-center"
+                  class="text-primary-dark hover:text-accent-copper transition-colors flex items-center"
                 >
                   Learn more
                   <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
@@ -419,11 +241,11 @@
 
             <!-- Card 3 -->
             <div
-              class="bg-white rounded-2xl p-6 shadow-md hover-lift border-t-4 border-accent-orange"
+              class="bg-white rounded-2xl p-6 shadow-md hover-lift border-t-4 border-accent-copper"
             >
               <div class="flex items-center mb-4">
                 <div
-                  class="w-14 h-14 bg-accent-orange rounded-full flex items-center justify-center mr-4"
+                  class="w-14 h-14 bg-accent-copper rounded-full flex items-center justify-center mr-4"
                 >
                   <i data-lucide="group" class="w-7 h-7 text-white"></i>
                 </div>
@@ -436,11 +258,11 @@
                 relationships.
               </p>
               <div class="flex justify-between items-center">
-                <span class="text-sm text-accent-orange font-medium"
+                <span class="text-sm text-accent-copper font-medium"
                   >6-week program</span
                 >
                 <button
-                  class="text-primary-dark hover:text-accent-orange transition-colors flex items-center"
+                  class="text-primary-dark hover:text-accent-copper transition-colors flex items-center"
                 >
                   Learn more
                   <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
@@ -450,11 +272,11 @@
 
             <!-- Card 4 -->
             <div
-              class="bg-white rounded-2xl p-6 shadow-md hover-lift border-t-4 border-accent-orange"
+              class="bg-white rounded-2xl p-6 shadow-md hover-lift border-t-4 border-accent-copper"
             >
               <div class="flex items-center mb-4">
                 <div
-                  class="w-14 h-14 bg-accent-orange rounded-full flex items-center justify-center mr-4"
+                  class="w-14 h-14 bg-accent-copper rounded-full flex items-center justify-center mr-4"
                 >
                   <i data-lucide="shield-check" class="w-7 h-7 text-white"></i>
                 </div>
@@ -467,11 +289,11 @@
                 grieving process.
               </p>
               <div class="flex justify-between items-center">
-                <span class="text-sm text-accent-orange font-medium"
+                <span class="text-sm text-accent-copper font-medium"
                   >Custom duration</span
                 >
                 <button
-                  class="text-primary-dark hover:text-accent-orange transition-colors flex items-center"
+                  class="text-primary-dark hover:text-accent-copper transition-colors flex items-center"
                 >
                   Learn more
                   <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
@@ -502,7 +324,7 @@
                   >10-week program</span
                 >
                 <button
-                  class="text-primary-dark hover:text-accent-orange transition-colors flex items-center"
+                  class="text-primary-dark hover:text-accent-copper transition-colors flex items-center"
                 >
                   Learn more
                   <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
@@ -533,7 +355,7 @@
                   >Ongoing support</span
                 >
                 <button
-                  class="text-primary-dark hover:text-accent-orange transition-colors flex items-center"
+                  class="text-primary-dark hover:text-accent-copper transition-colors flex items-center"
                 >
                   Learn more
                   <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
@@ -551,10 +373,11 @@
           </div>
         </div>
       </section>
-      <section class="py-16 sm:py-24 px-4 sm:px-8 bg-white">
+
+      <!-- <section class="py-16 sm:py-24 px-4 sm:px-8 bg-white">
         <div class="max-w-6xl mx-auto">
           <h2
-            class="text-3xl sm:text-4xl font-extrabold text-dark-green text-center mb-12"
+            class="text-3xl sm:text-4xl font-extrabold text-primary-dark text-center mb-12"
           >
             Our Evidence-Based Therapeutic Approaches
           </h2>
@@ -564,9 +387,9 @@
             >
               <i
                 data-lucide="brain"
-                class="w-8 h-8 text-accent-orange mb-3"
+                class="w-8 h-8 text-accent-copper mb-3"
               ></i>
-              <h3 class="text-xl font-bold text-dark-green mb-2">
+              <h3 class="text-xl font-bold text-primary-dark mb-2">
                 Cognitive Behavioral Therapy (CBT)
               </h3>
               <p class="text-base text-gray-700">
@@ -580,9 +403,9 @@
             >
               <i
                 data-lucide="activity"
-                class="w-8 h-8 text-accent-orange mb-3"
+                class="w-8 h-8 text-accent-copper mb-3"
               ></i>
-              <h3 class="text-xl font-bold text-dark-green mb-2">
+              <h3 class="text-xl font-bold text-primary-dark mb-2">
                 Neuroplasticity Training
               </h3>
               <p class="text-base text-gray-700">
@@ -594,8 +417,8 @@
             <div
               class="p-8 bg-cream rounded-xl shadow-lg border-l-4 border-light-green"
             >
-              <i data-lucide="sun" class="w-8 h-8 text-accent-orange mb-3"></i>
-              <h3 class="text-xl font-bold text-dark-green mb-2">
+              <i data-lucide="sun" class="w-8 h-8 text-accent-copper mb-3"></i>
+              <h3 class="text-xl font-bold text-primary-dark mb-2">
                 Mindfulness-Based Stress Reduction
               </h3>
               <p class="text-base text-gray-700">
@@ -609,9 +432,9 @@
             >
               <i
                 data-lucide="file-text"
-                class="w-8 h-8 text-accent-orange mb-3"
+                class="w-8 h-8 text-accent-copper mb-3"
               ></i>
-              <h3 class="text-xl font-bold text-dark-green mb-2">
+              <h3 class="text-xl font-bold text-primary-dark mb-2">
                 Mental Health Therapy
               </h3>
               <p class="text-base text-gray-700">
@@ -622,88 +445,210 @@
             </div>
           </div>
         </div>
-      </section>
-
-      <section class="py-16 sm:py-24 px-4 sm:px-8 bg-cream">
+      </section> -->
+      <!-- Variation 4: Numbered Cards with Gradient Background -->
+      <section class="py-16 px-4 bg-primary-dark mb-20">
         <div class="max-w-6xl mx-auto">
           <h2
-            class="text-3xl sm:text-4xl font-extrabold text-dark-green text-center mb-16"
+            class="text-3xl sm:text-4xl font-extrabold text-white text-center mb-12"
           >
-            Your Journey to Wellness: How It Works
+            My Evidence-Based Therapeutic Approaches
           </h2>
-          <div class="step-line relative">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div class="flex items-start md:col-span-1 md:col-start-1">
-                <div class="hidden md:block w-8 shrink-0"></div>
-                <div class="md:hidden w-8 shrink-0 relative mr-4">
-                  <div
-                    class="w-8 h-8 rounded-full bg-light-green text-white flex items-center justify-center font-bold text-lg absolute left-1/2 -translate-x-1/2 top-0 shadow-lg"
-                  >
-                    1
-                  </div>
-                </div>
-                <div
-                  class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-accent-gold md:ml-4 flex-grow"
-                >
-                  <h3 class="text-2xl font-bold text-dark-green mb-2">
-                    Step 1: The Initial Assesment
-                  </h3>
-                  <p class="text-gray-700">
-                    Complete our **confidential intake form**. We use an
-                    advanced matching algorithm to pair you with 2-3 licensed
-                    therapists who specialize in your reported needs.
-                  </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!--Card-1-->
+            <div
+              class="relative p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/20 card-hover hover:bg-white/10"
+            >
+              <div
+                class="absolute -top-4 -left-4 bg-accent-copper text-white w-8 h-8 rounded-full flex items-center justify-center font-bold"
+              >
+                1
+              </div>
+              <div class="flex items-start mb-4">
+                <i
+                  data-lucide="brain"
+                  class="w-8 h-8 text-accent-copper mr-4 mt-1"
+                ></i>
+                <h3 class="text-xl font-bold text-white">
+                  Cognitive Behavioral Therapy (CBT)
+                </h3>
+              </div>
+              <p class="text-base text-gray-300">
+                CBT is a structured approach that helps patients identify and
+                change thought patterns that may be contributing to their pain
+                experience, reducing its overall impact on daily life.
+              </p>
+            </div>
+            <!--Card-2-->
+
+            <div
+              class="relative p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/20 card-hover hover:bg-white/10"
+            >
+              <div
+                class="absolute -top-4 -left-4 bg-accent-copper text-white w-8 h-8 rounded-full flex items-center justify-center font-bold"
+              >
+                2
+              </div>
+              <div class="flex items-start mb-4">
+                <i
+                  data-lucide="activity"
+                  class="w-8 h-8 text-accent-copper mr-4 mt-1"
+                ></i>
+                <h3 class="text-xl font-bold text-white">
+                  Neuroplasticity Training
+                </h3>
+              </div>
+              <p class="text-base text-gray-300">
+                Through neuroplasticity techniques, patients learn how to
+                retrain their brain's response to pain, empowering them to
+                decrease pain sensitivity and regain control over their bodies.
+              </p>
+            </div>
+
+            <!--Card-3-->
+            <div
+              class="relative p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/20 card-hover hover:bg-white/10"
+            >
+              <div
+                class="absolute -top-4 -left-4 bg-accent-copper text-white w-8 h-8 rounded-full flex items-center justify-center font-bold"
+              >
+                3
+              </div>
+              <div class="flex items-start mb-4">
+                <i
+                  data-lucide="sun"
+                  class="w-8 h-8 text-accent-copper mr-4 mt-1"
+                ></i>
+                <h3 class="text-xl font-bold text-white">
+                  Mindfulness-Based Stress Reduction
+                </h3>
+              </div>
+              <p class="text-base text-gray-300">
+                Mindfulness techniques foster relaxation and awareness,
+                supporting patients in managing stress and reducing pain-related
+                anxiety for a more balanced, pain-free life.
+              </p>
+            </div>
+            <!--Card-4-->
+
+            <div
+              class="group relative p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/20 card-hover hover:bg-white/10"
+            >
+              <div
+                class="absolute -top-4 -left-4 bg-accent-copper text-white w-8 h-8 rounded-full flex items-center justify-center font-bold"
+              >
+                4
+              </div>
+              <div class="flex items-start mb-4">
+                <i
+                  data-lucide="file-text"
+                  class="w-8 h-8 text-accent-copper mr-4 mt-1"
+                ></i>
+                <h3 class="text-xl font-bold text-white">
+                  Mental Health Therapy
+                </h3>
+              </div>
+              <p class="text-base text-gray-300">
+                Mental health therapy addresses the emotional impact of chronic
+                pain, helping individuals develop resilience and healthy coping
+                mechanisms that promote well-being.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 px-4 sm:px-8 bg-light-sage">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-16">
+            <h2
+              class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary-dark mb-4"
+            >
+              Your Journey to Wellness: How It Works
+            </h2>
+            <p class="text-lg text-darker-green max-w-2xl mx-auto">
+              A clear, straightforward approach to your wellness journey
+            </p>
+          </div>
+
+          <div class="space-y-8">
+            <!-- Step 1 -->
+            <div
+              class="flex flex-col md:flex-row rounded-2xl overflow-hidden gradient-bg card-hover shadow-sm"
+            >
+              <div
+                class="md:w-1/4 bg-primary-dark p-8 text-white flex flex-col items-center justify-center"
+              >
+                <div class="text-4xl font-bold mb-2">01</div>
+                <div class="text-lg font-medium">Assessment</div>
+              </div>
+              <div class="md:w-3/4 p-8">
+                <h3 class="text-2xl font-bold text-primary-dark mb-4">
+                  Initial Consultation
+                </h3>
+                <p class="text-darker-green mb-4">
+                  Begin by completing a brief intake form to share your goals,
+                  background, and areas of concern. This helps me understand
+                  your unique needs and tailor our sessions to best support your
+                  journey.
+                </p>
+                <div class="flex items-center text-accent-copper">
+                  <i class="fas fa-check-circle mr-2"></i>
+                  <span class="text-sm font-medium">Confidential & Secure</span>
                 </div>
               </div>
+            </div>
 
-              <div class="md:col-span-1 md:col-start-2"></div>
-
-              <div class="flex items-start md:col-span-1 md:col-start-2">
-                <div class="md:hidden w-8 shrink-0 relative mr-4">
-                  <div
-                    class="w-8 h-8 rounded-full bg-light-green text-white flex items-center justify-center font-bold text-lg absolute left-1/2 -translate-x-1/2 top-0 shadow-lg"
-                  >
-                    2
-                  </div>
-                </div>
-                <div
-                  class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-accent-gold md:mr-4 flex-grow"
-                >
-                  <h3 class="text-2xl font-bold text-dark-green mb-2">
-                    Step 2: Start Communicating
-                  </h3>
-                  <p class="text-gray-700">
-                    Immediately gain **unlimited access to your private chat
-                    room**. You can start messaging your therapist 24/7, and
-                    they will respond with meaningful guidance 1-2 times per
-                    day.
-                  </p>
-                </div>
-                <div class="hidden md:block w-8 shrink-0"></div>
+            <!-- Step 2 -->
+            <div
+              class="flex flex-col md:flex-row rounded-2xl shadow-soft overflow-hidden gradient-bg card-hover shadow-sm"
+            >
+              <div
+                class="md:w-1/4 bg-primary-light p-8 text-white flex flex-col items-center justify-center"
+              >
+                <div class="text-4xl font-bold mb-2">02</div>
+                <div class="text-lg font-medium">Connection</div>
               </div>
-
-              <div class="md:col-span-1 md:col-start-1"></div>
-
-              <div class="flex items-start md:col-span-1 md:col-start-1">
-                <div class="hidden md:block w-8 shrink-0"></div>
-                <div class="md:hidden w-8 shrink-0 relative mr-4">
-                  <div
-                    class="w-8 h-8 rounded-full bg-light-green text-white flex items-center justify-center font-bold text-lg absolute left-1/2 -translate-x-1/2 top-0 shadow-lg"
-                  >
-                    3
-                  </div>
+              <div class="md:w-3/4 p-8">
+                <h3 class="text-2xl font-bold text-primary-dark mb-4">
+                  Ongoing Communication
+                </h3>
+                <p class="text-darker-green mb-4">
+                  Once we begin, you’ll have direct access to me for support and
+                  guidance. Between sessions, you’re welcome to share updates or
+                  reflections, ensuring consistent progress and connection
+                  throughout your healing process.
+                </p>
+                <div class="flex items-center text-accent-copper">
+                  <i class="fas fa-check-circle mr-2"></i>
+                  <span class="text-sm font-medium">Consistent Support</span>
                 </div>
-                <div
-                  class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-accent-gold md:ml-4 flex-grow"
-                >
-                  <h3 class="text-2xl font-bold text-dark-green mb-2">
-                    Step 3: Schedule Live Sessions
-                  </h3>
-                  <p class="text-gray-700">
-                    Use your weekly live session credit to schedule a
-                    **45-minute video or phone call**. This is where deep
-                    clinical work and targeted strategies are often applied.
-                  </p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div
+              class="flex flex-col md:flex-row rounded-2xl overflow-hidden gradient-bg card-hover shadow-sm"
+            >
+              <div
+                class="md:w-1/4 bg-primary-dark p-8 text-white flex flex-col items-center justify-center"
+              >
+                <div class="text-4xl font-bold mb-2">03</div>
+                <div class="text-lg font-medium">Growth</div>
+              </div>
+              <div class="md:w-3/4 p-8">
+                <h3 class="text-2xl font-bold text-primary-dark mb-4">
+                  Therapeutic Sessions
+                </h3>
+                <p class="text-darker-green mb-4">
+                  Schedule your 45-minute session at a time that works best for
+                  you—either online or by phone. Each session is a safe,
+                  confidential space focused on deeper understanding, practical
+                  strategies, and meaningful growth.
+                </p>
+                <div class="flex items-center text-accent-copper">
+                  <i class="fas fa-check-circle mr-2"></i>
+                  <span class="text-sm font-medium">Flexible Scheduling</span>
                 </div>
               </div>
             </div>
@@ -713,7 +658,9 @@
 
       <section class="py-16 sm:py-24 px-4 sm:px-8 bg-white">
         <div class="max-w-4xl mx-auto text-center">
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-dark-green mb-6">
+          <h2
+            class="text-3xl sm:text-4xl font-extrabold text-primary-dark mb-6"
+          >
             Our Commitment to Your Privacy
           </h2>
           <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
@@ -723,7 +670,7 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             <div class="p-4">
               <i data-lucide="lock" class="w-8 h-8 text-light-green mb-3"></i>
-              <h3 class="text-xl font-bold text-dark-green mb-2">
+              <h3 class="text-xl font-bold text-primary-dark mb-2">
                 Encrypted Platform
               </h3>
               <p class="text-gray-700 text-sm">
@@ -736,7 +683,7 @@
                 data-lucide="file-check"
                 class="w-8 h-8 text-light-green mb-3"
               ></i>
-              <h3 class="text-xl font-bold text-dark-green mb-2">
+              <h3 class="text-xl font-bold text-primary-dark mb-2">
                 Clinical Standards
               </h3>
               <p class="text-gray-700 text-sm">
@@ -746,7 +693,7 @@
             </div>
             <div class="p-4">
               <i data-lucide="shield" class="w-8 h-8 text-light-green mb-3"></i>
-              <h3 class="text-xl font-bold text-dark-green mb-2">
+              <h3 class="text-xl font-bold text-primary-dark mb-2">
                 Anonymous Payment
               </h3>
               <p class="text-gray-700 text-sm">
@@ -757,10 +704,10 @@
           </div>
         </div>
       </section>
-
+      <!-- 
       <section class="py-16 sm:py-24 px-4 sm:px-8 bg-cream">
         <div class="max-w-6xl mx-auto text-center">
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-dark-green mb-6">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-dark mb-6">
             Simple, Transparent Pricing
           </h2>
           <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
@@ -771,7 +718,7 @@
             <div
               class="bg-white p-8 rounded-xl shadow-2xl border-2 border-light-green/50"
             >
-              <h3 class="text-2xl font-bold text-dark-green mb-2">
+              <h3 class="text-2xl font-bold text-primary-dark mb-2">
                 Messaging Focused
               </h3>
               <p class="text-sm text-gray-500 mb-6">Text and Group Support</p>
@@ -801,17 +748,17 @@
                 </li>
               </ul>
               <button
-                class="w-full py-3 bg-dark-green text-white font-semibold rounded-lg hover:bg-darker-green transition duration-150 shadow-md"
+                class="w-full py-3 bg-primary-dark text-white font-semibold rounded-lg hover:bg-darker-green transition duration-150 shadow-md"
               >
                 Select Plan
               </button>
             </div>
 
             <div
-              class="bg-dark-green p-8 rounded-xl shadow-2xl border-4 border-accent-gold relative"
+              class="bg-primary-dark p-8 rounded-xl shadow-2xl border-4 border-accent-gold relative"
             >
               <div
-                class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent-gold text-dark-green text-sm font-bold py-1 px-4 rounded-full uppercase tracking-wider shadow-lg"
+                class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent-gold text-primary-dark text-sm font-bold py-1 px-4 rounded-full uppercase tracking-wider shadow-lg"
               >
                 Recommended
               </div>
@@ -845,7 +792,7 @@
                 </li>
               </ul>
               <button
-                class="w-full py-3 bg-accent-gold text-dark-green font-bold text-xl rounded-lg shadow-xl hover:bg-accent-orange/90 transition duration-150"
+                class="w-full py-3 bg-accent-gold text-primary-dark font-bold text-xl rounded-lg shadow-xl hover:bg-accent-copper/90 transition duration-150"
               >
                 Start Now
               </button>
@@ -854,7 +801,7 @@
             <div
               class="bg-white p-8 rounded-xl shadow-2xl border-2 border-light-green/50"
             >
-              <h3 class="text-2xl font-bold text-dark-green mb-2">
+              <h3 class="text-2xl font-bold text-primary-dark mb-2">
                 Advanced Support
               </h3>
               <p class="text-sm text-gray-500 mb-6">
@@ -886,7 +833,7 @@
                 </li>
               </ul>
               <button
-                class="w-full py-3 bg-dark-green text-white font-semibold rounded-lg hover:bg-darker-green transition duration-150 shadow-md"
+                class="w-full py-3 bg-primary-dark text-white font-semibold rounded-lg hover:bg-darker-green transition duration-150 shadow-md"
               >
                 Select Plan
               </button>
@@ -897,9 +844,9 @@
             therapist's availability, and are subject to change.
           </p>
         </div>
-      </section>
+      </section> -->
 
-      <section class="py-20 sm:py-28 px-4 sm:px-8 bg-dark-green text-white">
+      <section class="py-20 sm:py-28 px-4 sm:px-8 bg-primary-dark text-white">
         <div class="max-w-4xl mx-auto text-center">
           <h2 class="text-4xl sm:text-5xl font-extrabold mb-6 text-white">
             Ready to Start Your Journey to Wellness?
@@ -909,7 +856,7 @@
             process is fast, confidential, and free.
           </p>
           <button
-            class="py-4 px-12 text-xl font-bold bg-accent-gold text-dark-green rounded-full shadow-2xl hover:bg-white hover:text-dark-green transition duration-300 transform hover:scale-[1.05]"
+            class="py-4 px-12 text-xl font-bold bg-accent-gold text-primary-dark rounded-full shadow-2xl hover:bg-white hover:text-primary-dark transition duration-300 transform hover:scale-[1.05]"
           >
             Find My Therapist Now
           </button>
