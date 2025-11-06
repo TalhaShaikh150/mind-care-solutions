@@ -11,4 +11,3 @@ tailwind.config = {
     },
   },
 };
-lucide.createIcons();

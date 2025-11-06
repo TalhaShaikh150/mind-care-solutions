@@ -24,51 +24,101 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-function toggleFAQ(element) {
-  // Close all other FAQs
-  document.querySelectorAll(".faq-item").forEach((item) => {
-    if (item !== element) {
-      item.classList.remove("active");
+// Close on Esc
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    const menu = document.getElementById("mobileMenu");
+    if (!menu.classList.contains("hidden")) toggleMobileMenu();
+  }
+});
+
+// FAQ toggle: expand/collapse with +/−
+function toggleFAQ(el) {
+  const ans = el.querySelector(".faq-answer");
+  const icon = el.querySelector(".faq-icon span");
+  const isActive = el.classList.contains("active");
+
+  // Close all others
+  document.querySelectorAll(".faq-item.active").forEach((i) => {
+    if (i !== el) {
+      i.classList.remove("active");
+      const a = i.querySelector(".faq-answer");
+      const ic = i.querySelector(".faq-icon span");
+      if (a) a.style.maxHeight = "0px";
+      if (ic) ic.textContent = "+";
+      i.setAttribute("aria-expanded", "false");
     }
   });
 
-  // Toggle current FAQ
-  element.classList.toggle("active");
+  el.classList.toggle("active");
+  if (!ans) return;
+  ans.style.overflow = "hidden";
+  ans.style.transition = "max-height .25s ease";
 
-  // Add event listener to close when clicking outside
-  document.addEventListener("click", function handleClickOutside(event) {
-    if (!element.contains(event.target)) {
-      element.classList.remove("active");
-      document.removeEventListener("click", handleClickOutside);
-    }
+  if (isActive) {
+    ans.style.maxHeight = "0px";
+    if (icon) icon.textContent = "+";
+    el.setAttribute("aria-expanded", "false");
+  } else {
+    ans.style.maxHeight = ans.scrollHeight + "px";
+    if (icon) icon.textContent = "−";
+    el.setAttribute("aria-expanded", "true");
+  }
+}
+window.toggleFAQ = toggleFAQ;
+
+// Show/hide extra FAQ block
+function initMoreFAQ() {
+  const more = document.querySelector(".hidden-faq");
+  const btn = document.getElementById("toggle-faq-btn");
+  if (!more || !btn) return;
+  more.style.display = "none";
+  btn.addEventListener("click", () => {
+    const open = more.style.display !== "none";
+    more.style.display = open ? "none" : "block";
+    btn.innerHTML = open
+      ? '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg> See More FAQ Questions'
+      : '<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg> See Fewer FAQ Questions';
   });
 }
 
-// Toggle FAQ visibility
-document
-  .getElementById("toggle-faq-btn")
-  .addEventListener("click", function () {
-    const faqContainer = document.getElementById("faq-container");
-    const toggleBtn = document.getElementById("toggle-faq-btn");
+// Init year, icons, and FAQ states
+document.addEventListener("DOMContentLoaded", () => {
+  // Year
+  const y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
 
-    if (faqContainer.classList.contains("show-faq")) {
-      // Hide additional FAQs
-      faqContainer.classList.remove("show-faq");
-      toggleBtn.innerHTML = `
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                    See More FAQ Questions
-                `;
-    } else {
-      // Show additional FAQs
-      faqContainer.classList.add("show-faq");
-      toggleBtn.innerHTML = `
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-                    </svg>
-                    See Less FAQ Questions
-                `;
+  // Icons (lucide)
+  if (window.lucide?.createIcons) {
+    window.lucide.createIcons();
+  } else {
+    // fallback if CDN hiccups
+    const s = document.createElement("script");
+    s.src = "https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js";
+    s.defer = true;
+    s.onload = () => window.lucide?.createIcons?.();
+    document.head.appendChild(s);
+  }
+
+  // Initialize FAQs collapsed
+  document
+    .querySelectorAll(".faq-answer")
+    .forEach((el) => (el.style.maxHeight = "0px"));
+  document
+    .querySelectorAll(".faq-item")
+    .forEach((el) => el.setAttribute("aria-expanded", "false"));
+
+  // Init "more" FAQ
+  initMoreFAQ();
+
+  // Close menu on resize to lg+
+  let lastW = window.innerWidth;
+  window.addEventListener("resize", () => {
+    const w = window.innerWidth;
+    if (w >= 1024 && lastW < 1024) {
+      const menu = document.getElementById("mobileMenu");
+      if (!menu.classList.contains("hidden")) toggleMobileMenu();
     }
+    lastW = w;
   });
-document.getElementById("year").textContent = new Date().getFullYear();
+});
