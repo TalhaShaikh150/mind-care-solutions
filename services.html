@@ -1,21 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services | Therapy.io - Online Counseling</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Services | Therapy.io — Online Counseling in Alberta</title>
+    <meta
+      name="description"
+      content="Confidential, flexible online therapy in Alberta. Evidence-based support for anxiety, depression, trauma, relationships, and more. Book a consultation."
+    />
+    <link rel="canonical" href="https://www.therapy.io/services.html" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0d3b2e" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Therapy.io" />
+    <meta
+      property="og:title"
+      content="Services | Therapy.io — Online Counseling"
+    />
+    <meta
+      property="og:description"
+      content="Confidential, flexible online therapy in Alberta. Evidence-based support for anxiety, depression, trauma, relationships, and more."
+    />
+    <meta property="og:url" content="https://www.therapy.io/services.html" />
+    <meta
+      property="og:image"
+      content="https://www.therapy.io/assets/og-services.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Services | Therapy.io — Online Counseling"
+    />
+    <meta
+      name="twitter:description"
+      content="Confidential, flexible online therapy in Alberta. Evidence-based support for anxiety, depression, trauma, relationships, and more."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.therapy.io/assets/og-services.jpg"
+    />
+
+    <!-- Performance: preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <link rel="dns-prefetch" href="//unpkg.com" />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com" />
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/ribbon.png" />
 
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Tailwind runtime config BEFORE CDN (required for custom colors) -->
+    <script src="tailwind-config.js" defer></script>
+
+    <!-- Tailwind CDN (remove for production after compiling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide (pinned + defer) -->
+    <script
+      src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"
+      crossorigin
+      defer
+    ></script>
   </head>
 
-  <body>
+  <body class="bg-background-cream text-gray-800">
+    <!-- Skip link -->
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white text-black px-3 py-2 rounded"
+      >Skip to content</a
+    >
+
     <!--Navbar-->
     <header
       class="sticky top-0 z-50 h-16 flex items-center justify-between px-4 sm:px-6 bg-primary-dark shadow-lg border-b border-darker-green"
@@ -23,39 +95,45 @@
       <div class="text-2xl font-extrabold text-white tracking-tight">
         <a href="index.html">Therapy.io</a>
       </div>
-      <nav class="hidden lg:flex space-x-10 text-base font-medium">
+      <nav
+        class="hidden lg:flex space-x-10 text-base font-medium"
+        aria-label="Primary"
+      >
         <a
           href="index.html"
-          class="nav-link text-gray-300 hover:text-white transition duration-150 font-medium"
+          class="nav-link text-gray-300 hover:text-white transition duration-150"
           >Home</a
         >
         <a
           href="about.html"
-          class="nav-link text-gray-300 hover:text-white transition duration-150 font-medium"
+          class="nav-link text-gray-300 hover:text-white transition duration-150"
           >About Us</a
         >
         <a
           href="services.html"
-          class="nav-link active-nav text-white font-semibold hover:text-white transition duration-150 font-medium"
+          aria-current="page"
+          class="nav-link active-nav text-white font-semibold hover:text-white transition duration-150"
           >Services</a
         >
         <a
           href="contact.html"
-          class="nav-link text-gray-300 hover:text-white transition duration-150 font-medium"
+          class="nav-link text-gray-300 hover:text-white transition duration-150"
           >Contact</a
         >
       </nav>
       <div class="flex items-center space-x-4">
-        <button
-          class="hidden lg:inline-block py-2.5 px-5 bg-white text-black text-base font-semibold rounded-lg shadow-md hover:bg-primary-light hover:text-white transition-al duration-150"
+        <a
+          href="contact.html"
+          class="hidden lg:inline-block py-2.5 px-5 bg-white text-black text-base font-semibold rounded-lg shadow-md hover:bg-primary-light hover:text-white transition-all duration-150"
         >
           Book a Session
-        </button>
+        </a>
 
         <button
           onclick="toggleMobileMenu()"
           class="text-base font-semibold text-white hover:opacity-80 lg:hidden transition duration-150"
           aria-label="Toggle navigation menu"
+          aria-expanded="false"
         >
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
@@ -74,51 +152,49 @@
             <button
               onclick="toggleMobileMenu()"
               class="text-white transition duration-300"
+              aria-label="Close menu"
             >
               <i data-lucide="x" class="w-6 h-6"></i>
             </button>
           </div>
 
           <!-- Navigation -->
-          <nav class="space-y-6">
+          <nav class="space-y-6" aria-label="Mobile">
             <a
               href="index.html"
-              class="mobile-nav-item flex items-center space-x-4 text-lg font-semibold text-white py-4 px-4"
+              class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5"
             >
-              <i data-lucide="home" class="w-5 h-5"></i>
-              <span>Home</span>
+              <i data-lucide="home" class="w-5 h-5"></i><span>Home</span>
             </a>
             <a
               href="about.html"
               class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300"
             >
-              <i data-lucide="users" class="w-5 h-5"></i>
-              <span>About Us</span>
+              <i data-lucide="users" class="w-5 h-5"></i><span>About Us</span>
             </a>
             <a
               href="services.html"
-              class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300 bg-white/10 rounded-xl"
+              class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-white py-4 px-4 bg-white/10 rounded-xl"
             >
-              <i data-lucide="heart" class="w-5 h-5"></i>
-              <span>Services</span>
+              <i data-lucide="heart" class="w-5 h-5"></i><span>Services</span>
             </a>
             <a
               href="contact.html"
               class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300"
             >
-              <i data-lucide="phone" class="w-5 h-5"></i>
-              <span>Contact</span>
+              <i data-lucide="phone" class="w-5 h-5"></i><span>Contact</span>
             </a>
           </nav>
 
-          <!-- Auth & CTA Section -->
+          <!-- CTA -->
           <div class="mt-12 pt-8 border-t border-white/20">
-            <button
+            <a
+              href="contact.html"
+              onclick="toggleMobileMenu()"
               class="w-full py-4 bg-white text-black font-semibold rounded-xl hover:bg-primary-light hover:text-white transition duration-300 flex items-center justify-center space-x-3"
             >
-              <i data-lucide="arrow-right" class="w-5 h-5"></i>
               <span>Book a Session</span>
-            </button>
+            </a>
           </div>
 
           <!-- Additional Info -->
@@ -130,25 +206,33 @@
         </div>
       </div>
     </div>
-    <div id="overlay" class="overlay" onclick="toggleMobileMenu()"></div>
+    <div
+      id="overlay"
+      class="overlay lg:hidden"
+      onclick="toggleMobileMenu()"
+      aria-hidden="true"
+    ></div>
 
-    <div id="services-page" class="page-content">
-      <section class="py-24 sm:py-32 px-4 sm:px-8 bg-white">
+    <main id="main">
+      <!-- Hero -->
+      <section class="py-16 sm:py-24 px-4 sm:px-8 bg-white">
         <div class="max-w-4xl mx-auto text-center">
           <h1
             class="text-5xl md:text-6xl font-extrabold text-primary-dark mb-6"
           >
-            Our Professional Online Therapy Services
+            My Professional Online Therapy Services
           </h1>
-          <p class="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto">
-            Flexible, confidential, and **clinically rigorous** therapy tailored
-            to your life. Get the professional support you need, when and how
-            you need it.
+          <p class="text-xl 2xl:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto">
+            <strong>Personal, confidential</strong>, and
+            <strong>clinically rigorous</strong> care
+            <strong>tailored to you.</strong> Get the support you need,
+            <strong>when and how</strong> it works best for you flexible and
+            private.
           </p>
         </div>
       </section>
 
-      <!-- Variation 2: Animated Cards with Floating Elements -->
+      <!-- Animated Cards with Floating Elements -->
       <section
         class="py-16 px-4 bg-gradient-to-br from-background-cream to-primary-light/10 mb-16 rounded-2xl shadow-sm relative overflow-hidden"
       >
@@ -165,399 +249,356 @@
           style="animation-delay: 4s"
         ></div>
 
-        <div class="max-w-6xl mx-auto relative z-10">
-          <h2
-            class="text-3xl sm:text-4xl font-extrabold text-primary-dark text-center mb-4"
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="rounded-2xl p-6 bg-white/60 backdrop-blur-sm border border-gray-200 hover-lift"
           >
-            Wellness Support
-          </h2>
-          <p
-            class="text-lg text-darker-green text-center mb-12 max-w-2xl mx-auto"
-          >
-            Our dynamic approach adapts to your unique mental health journey.
-          </p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Card 1 -->
-            <div
-              class="bg-white rounded-2xl p-6 shadow-md hover-lift border-t-4 border-primary-light"
-            >
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-14 h-14 bg-primary-light rounded-full flex items-center justify-center mr-4"
-                >
-                  <i data-lucide="activity" class="w-7 h-7 text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-primary-dark">
-                  Stress & Anxiety
-                </h3>
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-primary-light/15 text-primary-light grid place-items-center mr-4"
+              >
+                <i data-lucide="activity" class="w-6 h-6"></i>
               </div>
-              <p class="text-darker-green mb-4">
-                Learn techniques to manage daily stressors and reduce anxiety
-                effectively.
-              </p>
-              <div class="flex justify-between items-center">
-                <span class="text-sm text-primary-light font-medium"
-                  >8-week program</span
-                >
-                <button
-                  class="text-primary-dark hover:text-accent-copper transition-colors flex items-center"
-                >
-                  Learn more
-                  <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
-                </button>
-              </div>
+              <h3 class="text-xl font-bold text-primary-dark">
+                Stress & Anxiety
+              </h3>
             </div>
-
-            <!-- Card 2 -->
-            <div
-              class="bg-white rounded-2xl p-6 shadow-md hover-lift border-t-4 border-primary-light"
-            >
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-14 h-14 bg-primary-light rounded-full flex items-center justify-center mr-4"
-                >
-                  <i data-lucide="heart-crack" class="w-7 h-7 text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-primary-dark">
-                  Depression & Mood
-                </h3>
-              </div>
-              <p class="text-darker-green mb-4">
-                Compassionate support for navigating depression and mood-related
-                challenges.
-              </p>
-              <div class="flex justify-between items-center">
-                <span class="text-sm text-primary-light font-medium"
-                  >12-week program</span
-                >
-                <button
-                  class="text-primary-dark hover:text-accent-copper transition-colors flex items-center"
-                >
-                  Learn more
-                  <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
-                </button>
-              </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div
-              class="bg-white rounded-2xl p-6 shadow-md hover-lift border-t-4 border-accent-copper"
-            >
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-14 h-14 bg-accent-copper rounded-full flex items-center justify-center mr-4"
-                >
-                  <i data-lucide="group" class="w-7 h-7 text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-primary-dark">
-                  Relationship Issues
-                </h3>
-              </div>
-              <p class="text-darker-green mb-4">
-                Strengthen connections and improve communication in your
-                relationships.
-              </p>
-              <div class="flex justify-between items-center">
-                <span class="text-sm text-accent-copper font-medium"
-                  >6-week program</span
-                >
-                <button
-                  class="text-primary-dark hover:text-accent-copper transition-colors flex items-center"
-                >
-                  Learn more
-                  <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
-                </button>
-              </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div
-              class="bg-white rounded-2xl p-6 shadow-md hover-lift border-t-4 border-accent-copper"
-            >
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-14 h-14 bg-accent-copper rounded-full flex items-center justify-center mr-4"
-                >
-                  <i data-lucide="shield-check" class="w-7 h-7 text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-primary-dark">
-                  Grief & Trauma
-                </h3>
-              </div>
-              <p class="text-darker-green mb-4">
-                Healing approaches for processing trauma and navigating the
-                grieving process.
-              </p>
-              <div class="flex justify-between items-center">
-                <span class="text-sm text-accent-copper font-medium"
-                  >Custom duration</span
-                >
-                <button
-                  class="text-primary-dark hover:text-accent-copper transition-colors flex items-center"
-                >
-                  Learn more
-                  <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
-                </button>
-              </div>
-            </div>
-
-            <!-- Card 5 -->
-            <div
-              class="bg-white rounded-2xl p-6 shadow-md hover-lift border-t-4 border-primary-dark"
-            >
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-14 h-14 bg-primary-dark rounded-full flex items-center justify-center mr-4"
-                >
-                  <i data-lucide="sparkles" class="w-7 h-7 text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-primary-dark">
-                  Self-Esteem & Confidence
-                </h3>
-              </div>
-              <p class="text-darker-green mb-4">
-                Develop confidence and a positive self-image through proven
-                techniques.
-              </p>
-              <div class="flex justify-between items-center">
-                <span class="text-sm text-primary-dark font-medium"
-                  >10-week program</span
-                >
-                <button
-                  class="text-primary-dark hover:text-accent-copper transition-colors flex items-center"
-                >
-                  Learn more
-                  <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
-                </button>
-              </div>
-            </div>
-
-            <!-- Card 6 -->
-            <div
-              class="bg-white rounded-2xl p-6 shadow-md hover-lift border-t-4 border-primary-dark"
-            >
-              <div class="flex items-center mb-4">
-                <div
-                  class="w-14 h-14 bg-primary-dark rounded-full flex items-center justify-center mr-4"
-                >
-                  <i data-lucide="hand-heart" class="w-7 h-7 text-white"></i>
-                </div>
-                <h3 class="text-xl font-bold text-primary-dark">
-                  Addiction & Recovery
-                </h3>
-              </div>
-              <p class="text-darker-green mb-4">
-                Comprehensive support for substance use and behavioral addiction
-                recovery.
-              </p>
-              <div class="flex justify-between items-center">
-                <span class="text-sm text-primary-dark font-medium"
-                  >Ongoing support</span
-                >
-                <button
-                  class="text-primary-dark hover:text-accent-copper transition-colors flex items-center"
-                >
-                  Learn more
-                  <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
-                </button>
-              </div>
-            </div>
+            <p class="text-darker-green mb-4">
+              Learn techniques to manage daily stressors and reduce anxiety
+              effectively.
+            </p>
+            <a
+              href="contact.html"
+              class="inline-flex items-center font-semibold text-primary-dark hover:text-accent-copper"
+              >Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i
+            ></a>
           </div>
 
-          <div class="text-center mt-12">
-            <button
-              class="py-3 px-8 text-lg font-semibold text-primary-dark bg-white border-2 border-primary-dark rounded-full hover:bg-primary-dark hover:text-white transition duration-250 shadow-lg hover-lift pulse-animation"
+          <div
+            class="rounded-2xl p-6 bg-white/60 backdrop-blur-sm border border-gray-200 hover-lift"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-primary-light/15 text-primary-light grid place-items-center mr-4"
+              >
+                <i data-lucide="heart-crack" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-primary-dark">
+                Depression & Mood
+              </h3>
+            </div>
+            <p class="text-darker-green mb-4">
+              Compassionate support for navigating depression and mood-related
+              challenges.
+            </p>
+            <a
+              href="contact.html"
+              class="inline-flex items-center font-semibold text-primary-dark hover:text-accent-copper"
+              >Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i
+            ></a>
+          </div>
+
+          <div
+            class="rounded-2xl p-6 bg-white/60 backdrop-blur-sm border border-gray-200 hover-lift"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-accent-copper/15 text-accent-copper grid place-items-center mr-4"
+              >
+                <i data-lucide="group" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-primary-dark">
+                Relationship Issues
+              </h3>
+            </div>
+            <p class="text-darker-green mb-4">
+              Strengthen connections and improve communication in your
+              relationships.
+            </p>
+            <a
+              href="contact.html"
+              class="inline-flex items-center font-semibold text-primary-dark hover:text-accent-copper"
+              >Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i
+            ></a>
+          </div>
+
+          <div
+            class="rounded-2xl p-6 bg-white/60 backdrop-blur-sm border border-gray-200 hover-lift"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-accent-copper/15 text-accent-copper grid place-items-center mr-4"
+              >
+                <i data-lucide="shield-check" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-primary-dark">
+                Grief & Trauma
+              </h3>
+            </div>
+            <p class="text-darker-green mb-4">
+              Healing approaches for processing trauma and navigating the
+              grieving process.
+            </p>
+            <a
+              href="contact.html"
+              class="inline-flex items-center font-semibold text-primary-dark hover:text-accent-copper"
+              >Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i
+            ></a>
+          </div>
+
+          <div
+            class="rounded-2xl p-6 bg-white/60 backdrop-blur-sm border border-gray-200 hover-lift"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-primary-dark/15 text-primary-dark grid place-items-center mr-4"
+              >
+                <i data-lucide="sparkles" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-primary-dark">
+                Self‑Esteem & Confidence
+              </h3>
+            </div>
+            <p class="text-darker-green mb-4">
+              Develop confidence and a positive self‑image through proven
+              techniques.
+            </p>
+            <a
+              href="contact.html"
+              class="inline-flex items-center font-semibold text-primary-dark hover:text-accent-copper"
+              >Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i
+            ></a>
+          </div>
+
+          <div
+            class="rounded-2xl p-6 bg-white/60 backdrop-blur-sm border border-gray-200 hover-lift"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-xl bg-primary-dark/15 text-primary-dark grid place-items-center mr-4"
+              >
+                <i data-lucide="hand-heart" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-primary-dark">
+                Addiction & Recovery
+              </h3>
+            </div>
+            <p class="text-darker-green mb-4">
+              Comprehensive support for substance use and behavioral addiction
+              recovery.
+            </p>
+            <a
+              href="contact.html"
+              class="inline-flex items-center font-semibold text-primary-dark hover:text-accent-copper"
+              >Learn more <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+      <!-- Formats & Availability -->
+      <section
+        class="py-16 px-4 sm:px-8 gradient-bg rounded-2xl"
+        aria-labelledby="fa-title"
+      >
+        <div class="max-w-6xl mx-auto">
+          <h2 id="fa-title" class="sr-only">Formats & Availability</h2>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div
+              class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6"
             >
-              Schedule a Consultation
-            </button>
+              <h3 class="text-2xl font-bold text-primary-dark mb-4">
+                Session Formats
+              </h3>
+              <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start">
+                  <i
+                    data-lucide="video"
+                    class="w-5 h-5 text-primary-light mr-3 mt-1"
+                  ></i
+                  >Secure video sessions (Google Meet)
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-lucide="phone"
+                    class="w-5 h-5 text-primary-light mr-3 mt-1"
+                  ></i
+                  >Phone sessions
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-lucide="map-pin"
+                    class="w-5 h-5 text-primary-light mr-3 mt-1"
+                  ></i
+                  >In‑person (limited; inquire)
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-lucide="clock"
+                    class="w-5 h-5 text-primary-light mr-3 mt-1"
+                  ></i
+                  >Typical duration: 50 minutes
+                </li>
+                <li class="flex items-start">
+                  <i
+                    data-lucide="calendar"
+                    class="w-5 h-5 text-primary-light mr-3 mt-1"
+                  ></i
+                  >Frequency: weekly or bi‑weekly
+                </li>
+              </ul>
+              <div class="mt-6">
+                <a
+                  href="contact.html"
+                  class="inline-flex items-center px-5 py-3 bg-primary-dark text-white rounded-lg hover:bg-primary-light transition"
+                >
+                  Inquire about availability
+                  <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6"
+            >
+              <h3 class="text-2xl font-bold text-primary-dark mb-4">
+                Hours & Availability
+              </h3>
+              <div class="grid grid-cols-2 gap-3 text-gray-700">
+                <div
+                  class="p-3 rounded-lg bg-background-cream border border-gray-200 flex items-center justify-between"
+                >
+                  <span>Mon–Thu</span><strong>9:00–18:00</strong>
+                </div>
+                <div
+                  class="p-3 rounded-lg bg-background-cream border border-gray-200 flex items-center justify-between"
+                >
+                  <span>Fri</span><strong>9:00–17:00</strong>
+                </div>
+                <div
+                  class="p-3 rounded-lg bg-background-cream border border-gray-200 flex items-center justify-between"
+                >
+                  <span>Evenings</span><strong>By request</strong>
+                </div>
+                <div
+                  class="p-3 rounded-lg bg-background-cream border border-gray-200 flex items-center justify-between"
+                >
+                  <span>Weekends</span><strong>Limited</strong>
+                </div>
+              </div>
+              <p class="text-sm text-gray-600 mt-3">
+                Time zone: Alberta (MT). Virtual sessions available
+                province‑wide.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- <section class="py-16 sm:py-24 px-4 sm:px-8 bg-white">
-        <div class="max-w-6xl mx-auto">
-          <h2
-            class="text-3xl sm:text-4xl font-extrabold text-primary-dark text-center mb-12"
-          >
-            Our Evidence-Based Therapeutic Approaches
-          </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div
-              class="p-8 bg-cream rounded-xl shadow-lg border-l-4 border-light-green"
-            >
-              <i
-                data-lucide="brain"
-                class="w-8 h-8 text-accent-copper mb-3"
-              ></i>
-              <h3 class="text-xl font-bold text-primary-dark mb-2">
-                Cognitive Behavioral Therapy (CBT)
-              </h3>
-              <p class="text-base text-gray-700">
-                CBT is a structured approach that helps patients identify and
-                change thought patterns that may be contributing to their pain
-                experience, reducing its overall impact on daily life.
-              </p>
-            </div>
-            <div
-              class="p-8 bg-cream rounded-xl shadow-lg border-l-4 border-light-green"
-            >
-              <i
-                data-lucide="activity"
-                class="w-8 h-8 text-accent-copper mb-3"
-              ></i>
-              <h3 class="text-xl font-bold text-primary-dark mb-2">
-                Neuroplasticity Training
-              </h3>
-              <p class="text-base text-gray-700">
-                Through neuroplasticity techniques, patients learn how to
-                retrain their brain's response to pain, empowering them to
-                decrease pain sensitivity and regain control over their bodies.
-              </p>
-            </div>
-            <div
-              class="p-8 bg-cream rounded-xl shadow-lg border-l-4 border-light-green"
-            >
-              <i data-lucide="sun" class="w-8 h-8 text-accent-copper mb-3"></i>
-              <h3 class="text-xl font-bold text-primary-dark mb-2">
-                Mindfulness-Based Stress Reduction
-              </h3>
-              <p class="text-base text-gray-700">
-                Mindfulness techniques foster relaxation and awareness,
-                supporting patients in managing stress and reducing pain-related
-                anxiety for a more balanced, pain-free life.
-              </p>
-            </div>
-            <div
-              class="p-8 bg-cream rounded-xl shadow-lg border-l-4 border-light-green"
-            >
-              <i
-                data-lucide="file-text"
-                class="w-8 h-8 text-accent-copper mb-3"
-              ></i>
-              <h3 class="text-xl font-bold text-primary-dark mb-2">
-                Mental Health Therapy
-              </h3>
-              <p class="text-base text-gray-700">
-                Mental health therapy addresses the emotional impact of chronic
-                pain, helping individuals develop resilience and healthy coping
-                mechanisms that promote well-being.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      <!-- Variation 4: Numbered Cards with Gradient Background -->
+      <!-- Evidence-Based Approaches -->
       <section class="py-16 px-4 bg-primary-dark">
         <div class="max-w-6xl mx-auto">
           <h2
             class="text-3xl sm:text-4xl font-extrabold text-white text-center mb-12"
           >
-            My Evidence-Based Therapeutic Approaches
+            My Evidence‑Based Therapeutic Approaches
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!--Card-1-->
             <div
-              class="relative p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/20 card-hover hover:bg-white/10"
+              class="relative p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/10 transition-colors duration-300 cursor-pointer"
             >
               <div
                 class="absolute -top-4 -left-4 bg-accent-copper text-white w-8 h-8 rounded-full flex items-center justify-center font-bold"
               >
                 1
               </div>
-              <div class="flex items-start mb-4">
+              <div class="flex items-center mb-4">
                 <i
                   data-lucide="brain"
-                  class="w-8 h-8 text-accent-copper mr-4 mt-1"
+                  class="w-10 h-10 text-accent-copper mr-4 mt-1"
                 ></i>
                 <h3 class="text-xl font-bold text-white">
                   Cognitive Behavioral Therapy (CBT)
                 </h3>
               </div>
               <p class="text-base text-gray-300">
-                CBT is a structured approach that helps patients identify and
-                change thought patterns that may be contributing to their pain
-                experience, reducing its overall impact on daily life.
+                Identify and change patterns that contribute to distress and
+                reduce their impact on daily life.
               </p>
             </div>
-            <!--Card-2-->
 
             <div
-              class="relative p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/20 card-hover hover:bg-white/10"
+              class="relative p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/10 transition-colors duration-300 cursor-pointer"
             >
               <div
                 class="absolute -top-4 -left-4 bg-accent-copper text-white w-8 h-8 rounded-full flex items-center justify-center font-bold"
               >
                 2
               </div>
-              <div class="flex items-start mb-4">
+              <div class="flex items-center mb-4">
                 <i
                   data-lucide="activity"
-                  class="w-8 h-8 text-accent-copper mr-4 mt-1"
+                  class="w-10 h-10 text-accent-copper mr-4 mt-1"
                 ></i>
                 <h3 class="text-xl font-bold text-white">
                   Neuroplasticity Training
                 </h3>
               </div>
               <p class="text-base text-gray-300">
-                Through neuroplasticity techniques, patients learn how to
-                retrain their brain's response to pain, empowering them to
-                decrease pain sensitivity and regain control over their bodies.
+                Retrain the brain’s responses to promote resilience and reduce
+                symptom intensity.
               </p>
             </div>
 
-            <!--Card-3-->
             <div
-              class="relative p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/20 card-hover hover:bg-white/10"
+              class="relative p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/10 transition-colors duration-300 cursor-pointer"
             >
               <div
                 class="absolute -top-4 -left-4 bg-accent-copper text-white w-8 h-8 rounded-full flex items-center justify-center font-bold"
               >
                 3
               </div>
-              <div class="flex items-start mb-4">
+              <div class="flex items-center mb-4">
                 <i
                   data-lucide="sun"
-                  class="w-8 h-8 text-accent-copper mr-4 mt-1"
+                  class="w-10 h-10 text-accent-copper mr-4 mt-1"
                 ></i>
                 <h3 class="text-xl font-bold text-white">
-                  Mindfulness-Based Stress Reduction
+                  Mindfulness‑Based Stress Reduction
                 </h3>
               </div>
               <p class="text-base text-gray-300">
-                Mindfulness techniques foster relaxation and awareness,
-                supporting patients in managing stress and reducing pain-related
-                anxiety for a more balanced, pain-free life.
+                Build awareness and relaxation practices to manage stress and
+                anxiety.
               </p>
             </div>
-            <!--Card-4-->
 
             <div
-              class="group relative p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/20 card-hover hover:bg-white/10"
+              class="relative p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/10 transition-colors duration-300 cursor-pointer"
             >
               <div
                 class="absolute -top-4 -left-4 bg-accent-copper text-white w-8 h-8 rounded-full flex items-center justify-center font-bold"
               >
                 4
               </div>
-              <div class="flex items-start mb-4">
+              <div class="flex items-center mb-4">
                 <i
                   data-lucide="file-text"
-                  class="w-8 h-8 text-accent-copper mr-4 mt-1"
+                  class="w-10 h-10 text-accent-copper mr-4 mt-1"
                 ></i>
                 <h3 class="text-xl font-bold text-white">
                   Mental Health Therapy
                 </h3>
               </div>
               <p class="text-base text-gray-300">
-                Mental health therapy addresses the emotional impact of chronic
-                pain, helping individuals develop resilience and healthy coping
-                mechanisms that promote well-being.
+                Emotion-focused, trauma-informed, and integrative approaches
+                tailored to your goals.
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- What to Expect -->
       <section class="py-20 px-4 sm:px-8 gradient-bg">
         <div class="max-w-6xl mx-auto">
           <div class="text-center mb-16">
@@ -572,9 +613,8 @@
           </div>
 
           <div class="space-y-8">
-            <!-- Step 1 -->
             <div
-              class="flex flex-col md:flex-row rounded-2xl overflow-hidden bg-white card-hover shadow-sm"
+              class="flex flex-col md:flex-row rounded-2xl overflow-hidden bg-white hover-lift"
             >
               <div
                 class="md:w-1/4 bg-primary-dark p-8 text-white flex flex-col items-center justify-center"
@@ -586,21 +626,20 @@
                   Initial Consultation
                 </h3>
                 <p class="text-darker-green mb-4">
-                  We begin with an in-depth assessment to understand your
-                  background, concerns, and goals. This first session helps
-                  identify your emotional, cognitive, and behavioral patterns so
-                  we can create a foundation for meaningful change.
+                  We begin with an in‑depth assessment to understand your
+                  background, concerns, and goals.
                 </p>
                 <div class="flex items-center text-accent-copper">
-                  <i data-lucide="circle-check-big" class="mr-2"></i>
-                  <span class="text-sm font-medium">Confidential & Secure</span>
+                  <i data-lucide="circle-check-big" class="mr-2"></i
+                  ><span class="text-sm font-medium"
+                    >Confidential & Secure</span
+                  >
                 </div>
               </div>
             </div>
 
-            <!-- Step 2 -->
             <div
-              class="flex flex-col md:flex-row rounded-2xl shadow-soft overflow-hidden bg-white card-hover shadow-sm"
+              class="flex flex-col md:flex-row rounded-2xl overflow-hidden bg-white hover-lift"
             >
               <div
                 class="md:w-1/4 bg-primary-light p-8 text-white flex flex-col items-center justify-center"
@@ -612,21 +651,18 @@
                   Collaborative Treatment Plan
                 </h3>
                 <p class="text-darker-green mb-4">
-                  Together, we outline a clear therapeutic roadmap tailored to
-                  your individual needs. This plan integrates evidence based
-                  approaches such as CBT, EMDR, and mindfulness techniques to
-                  support your growth and healing at a comfortable pace.
+                  We build a roadmap that integrates evidence‑based approaches
+                  at a comfortable pace.
                 </p>
                 <div class="flex items-center text-accent-copper">
-                  <i data-lucide="circle-check-big" class="mr-2"></i>
-                  <span class="text-sm font-medium">Consistent Support</span>
+                  <i data-lucide="circle-check-big" class="mr-2"></i
+                  ><span class="text-sm font-medium">Consistent Support</span>
                 </div>
               </div>
             </div>
 
-            <!-- Step 3 -->
             <div
-              class="flex flex-col md:flex-row rounded-2xl overflow-hidden bg-white card-hover shadow-sm"
+              class="flex flex-col md:flex-row rounded-2xl overflow-hidden bg-white hover-lift"
             >
               <div
                 class="md:w-1/4 bg-primary-dark p-8 text-white flex flex-col items-center justify-center"
@@ -638,14 +674,12 @@
                   Ongoing Support & Reflection
                 </h3>
                 <p class="text-darker-green mb-4">
-                  Each session builds on your progress, focusing on emotional
-                  awareness, resilience, and practical coping strategies. We
-                  regularly review goals to ensure continued growth, clarity,
-                  and long-term wellbeing.
+                  We review progress regularly and refine strategies for
+                  long‑term wellbeing.
                 </p>
                 <div class="flex items-center text-accent-copper">
-                  <i data-lucide="circle-check-big" class="mr-2"></i>
-                  <span class="text-sm font-medium">Flexible Scheduling</span>
+                  <i data-lucide="circle-check-big" class="mr-2"></i
+                  ><span class="text-sm font-medium">Flexible Scheduling</span>
                 </div>
               </div>
             </div>
@@ -653,6 +687,7 @@
         </div>
       </section>
 
+      <!-- Privacy Commitment -->
       <section class="py-16 sm:py-24 px-4 sm:px-8 bg-white">
         <div class="max-w-5xl mx-auto text-center">
           <h2
@@ -661,8 +696,8 @@
             My Commitment to Your Privacy
           </h2>
           <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
-            I understand that safety and trust are paramount. Your sessions and
-            data are protected by clinical and technological standards.
+            Safety and trust are paramount. Your sessions and data are protected
+            by clinical and technological standards.
           </p>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             <div class="px-6 py-10 bg-primary-dark">
@@ -671,9 +706,8 @@
                 Encrypted Platform
               </h3>
               <p class="text-gray-200 text-sm">
-                All video sessions are conducted through Google Meet, ensuring
-                end-to-end encryption and secure storage of all communications
-                for your privacy.
+                Video sessions via Google Meet with end‑to‑end encryption for
+                your privacy.
               </p>
             </div>
             <div class="px-6 py-10 bg-primary-dark">
@@ -681,13 +715,12 @@
                 data-lucide="file-check"
                 class="w-8 h-8 text-accent-copper mb-3"
               ></i>
-              <h3 class="text-xl md:text-2xl font-bold mb-2 text-white">
+              <h3 class="text-xl md:text-2xl font-bold text-white mb-2">
                 Clinical Standards
               </h3>
               <p class="text-gray-200 text-sm">
-                Each session follows Alberta’s ethical and confidentiality
-                standards, ensuring a safe, respectful, and professional
-                experience.
+                Alberta’s ethical and confidentiality standards guide every
+                session.
               </p>
             </div>
             <div class="px-6 py-10 bg-primary-dark">
@@ -698,158 +731,14 @@
               <h3 class="text-xl md:text-2xl font-bold text-white mb-2">
                 Flexible Payment Options
               </h3>
-              <p class="text-gray-200 text-sm">
-                Payments can be made easily through e-transfer, providing a
-                smooth and secure payment experience.
+              <p class="text-gray-2 00 text-sm">
+                Easy e‑transfer payments with immediate receipts.
               </p>
             </div>
           </div>
         </div>
       </section>
-
-      <!--Pricing-->
-      <!-- 
-      <section class="py-16 sm:py-24 px-4 sm:px-8 bg-cream">
-        <div class="max-w-6xl mx-auto text-center">
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-dark mb-6">
-            Simple, Transparent Pricing
-          </h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
-            Choose the plan that best fits your communication preferences and
-            budget. All plans include unlimited messaging.
-          </p>
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div
-              class="bg-white p-8 rounded-xl shadow-2xl border-2 border-light-green/50"
-            >
-              <h3 class="text-2xl font-bold text-primary-dark mb-2">
-                Messaging Focused
-              </h3>
-              <p class="text-sm text-gray-500 mb-6">Text and Group Support</p>
-              <p class="text-5xl font-extrabold text-light-green mb-1">$65</p>
-              <p class="text-base text-gray-500 mb-8">per week*</p>
-              <ul class="text-left space-y-4 mb-10 text-gray-700 font-medium">
-                <li class="flex items-start">
-                  <i
-                    data-lucide="message-square-more"
-                    class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
-                  ></i>
-                  Unlimited messaging
-                </li>
-                <li class="flex items-start">
-                  <i
-                    data-lucide="users-2"
-                    class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
-                  ></i>
-                  1 Live Group Session / week
-                </li>
-                <li class="flex items-start text-gray-400">
-                  <i
-                    data-lucide="video-off"
-                    class="w-5 h-5 text-gray-400 mr-3 mt-1 shrink-0"
-                  ></i>
-                  No scheduled live 1:1 sessions
-                </li>
-              </ul>
-              <button
-                class="w-full py-3 bg-primary-dark text-white font-semibold rounded-lg hover:bg-darker-green transition duration-150 shadow-md"
-              >
-                Select Plan
-              </button>
-            </div>
-
-            <div
-              class="bg-primary-dark p-8 rounded-xl shadow-2xl border-4 border-accent-gold relative"
-            >
-              <div
-                class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent-gold text-primary-dark text-sm font-bold py-1 px-4 rounded-full uppercase tracking-wider shadow-lg"
-              >
-                Recommended
-              </div>
-              <h3 class="text-2xl font-bold text-white mb-2">Standard Live</h3>
-              <p class="text-sm text-gray-200 mb-6">
-                Our best value for live support
-              </p>
-              <p class="text-6xl font-extrabold text-light-green mb-1">$95</p>
-              <p class="text-base text-gray-300 mb-8">per week*</p>
-              <ul class="text-left space-y-4 mb-10 text-white font-medium">
-                <li class="flex items-start">
-                  <i
-                    data-lucide="message-square-more"
-                    class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
-                  ></i>
-                  Unlimited messaging
-                </li>
-                <li class="flex items-start">
-                  <i
-                    data-lucide="video"
-                    class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
-                  ></i>
-                  <span class="font-bold">1 Live 45-min Session</span> / week
-                </li>
-                <li class="flex items-start">
-                  <i
-                    data-lucide="users-2"
-                    class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
-                  ></i>
-                  Unlimited Live Group Sessions
-                </li>
-              </ul>
-              <button
-                class="w-full py-3 bg-accent-gold text-primary-dark font-bold text-xl rounded-lg shadow-xl hover:bg-accent-copper/90 transition duration-150"
-              >
-                Start Now
-              </button>
-            </div>
-
-            <div
-              class="bg-white p-8 rounded-xl shadow-2xl border-2 border-light-green/50"
-            >
-              <h3 class="text-2xl font-bold text-primary-dark mb-2">
-                Advanced Support
-              </h3>
-              <p class="text-sm text-gray-500 mb-6">
-                Higher frequency live sessions
-              </p>
-              <p class="text-5xl font-extrabold text-light-green mb-1">$130</p>
-              <p class="text-base text-gray-500 mb-8">per week*</p>
-              <ul class="text-left space-y-4 mb-10 text-gray-700 font-medium">
-                <li class="flex items-start">
-                  <i
-                    data-lucide="message-square-more"
-                    class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
-                  ></i>
-                  Unlimited messaging
-                </li>
-                <li class="flex items-start">
-                  <i
-                    data-lucide="video"
-                    class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
-                  ></i>
-                  <span class="font-bold">2 Live 45-min Sessions</span> / week
-                </li>
-                <li class="flex items-start">
-                  <i
-                    data-lucide="users-2"
-                    class="w-5 h-5 text-light-green mr-3 mt-1 shrink-0"
-                  ></i>
-                  Unlimited Live Group Sessions
-                </li>
-              </ul>
-              <button
-                class="w-full py-3 bg-primary-dark text-white font-semibold rounded-lg hover:bg-darker-green transition duration-150 shadow-md"
-              >
-                Select Plan
-              </button>
-            </div>
-          </div>
-          <p class="text-sm text-gray-500 mt-8">
-            *Billed every 4 weeks. Exact rates depend on your location,
-            therapist's availability, and are subject to change.
-          </p>
-        </div>
-      </section> -->
-    </div>
+    </main>
 
     <!--Footer-->
     <footer class="bg-primary-dark text-white pt-16 pb-8">
@@ -866,32 +755,28 @@
             <div class="flex space-x-4">
               <a
                 href="#"
-                class="text-gray-300 hover:text-primary-light transition duration-150"
+                class="text-gray-300 hover:text-accent-copper transition duration-150"
                 aria-label="Facebook"
-              >
-                <i data-lucide="facebook" class="w-5 h-5"></i>
-              </a>
+                ><i data-lucide="facebook" class="w-5 h-5"></i
+              ></a>
               <a
                 href="#"
-                class="text-gray-300 hover:text-primary-light transition duration-150"
+                class="text-gray-300 hover:text-accent-copper transition duration-150"
                 aria-label="Twitter"
-              >
-                <i data-lucide="twitter" class="w-5 h-5"></i>
-              </a>
+                ><i data-lucide="twitter" class="w-5 h-5"></i
+              ></a>
               <a
                 href="#"
-                class="text-gray-300 hover:text-primary-light transition duration-150"
+                class="text-gray-300 hover:text-accent-copper transition duration-150"
                 aria-label="Instagram"
-              >
-                <i data-lucide="instagram" class="w-5 h-5"></i>
-              </a>
+                ><i data-lucide="instagram" class="w-5 h-5"></i
+              ></a>
               <a
                 href="#"
-                class="text-gray-300 hover:text-primary-light transition duration-150"
+                class="text-gray-300 hover:text-accent-copper transition duration-150"
                 aria-label="LinkedIn"
-              >
-                <i data-lucide="linkedin" class="w-5 h-5"></i>
-              </a>
+                ><i data-lucide="linkedin" class="w-5 h-5"></i
+              ></a>
             </div>
           </div>
           <div>
@@ -899,30 +784,29 @@
             <ul class="space-y-2">
               <li>
                 <a
-                  href="/"
-                  class="text-gray-300 hover:text-primary-light transition duration-150"
+                  href="index.html"
+                  class="text-gray-300 hover:text-accent-copper transition duration-150"
                   >Home</a
                 >
               </li>
               <li>
                 <a
                   href="about.html"
-                  class="text-gray-300 hover:text-primary-light transition duration-150"
+                  class="text-gray-300 hover:text-accent-copper transition duration-150"
                   >About Us</a
                 >
               </li>
               <li>
                 <a
                   href="services.html"
-                  class="text-gray-300 hover:text-primary-light transition duration-150"
+                  class="text-gray-300 hover:text-accent-copper transition duration-150"
                   >Services</a
                 >
               </li>
-
               <li>
                 <a
                   href="contact.html"
-                  class="text-gray-300 hover:text-primary-light transition duration-150"
+                  class="text-gray-300 hover:text-accent-copper transition duration-150"
                   >Contact</a
                 >
               </li>
@@ -934,31 +818,30 @@
               <li>
                 <a
                   href="faq.html"
-                  class="text-gray-300 hover:text-primary-light transition duration-150"
+                  class="text-gray-300 hover:text-accent-copper transition duration-150"
+                  >Individual Therapy</a
                 >
-                  Individual Therapy
-                </a>
               </li>
               <li>
                 <a
                   href="contact.html"
-                  class="text-gray-300 hover:text-primary-light transition duration-150"
-                  >Couples Counseling
-                </a>
+                  class="text-gray-300 hover:text-accent-copper transition duration-150"
+                  >Couples Counseling</a
+                >
               </li>
               <li>
                 <a
                   href="privacy.html"
-                  class="text-gray-300 hover:text-primary-light transition duration-150"
-                  >Family Therapy
-                </a>
+                  class="text-gray-300 hover:text-accent-copper transition duration-150"
+                  >Family Therapy</a
+                >
               </li>
               <li>
                 <a
                   href="terms.html"
-                  class="text-gray-300 hover:text-primary-light transition duration-150"
-                  >Specialized Treatments
-                </a>
+                  class="text-gray-300 hover:text-accent-copper transition duration-150"
+                  >Specialized Treatments</a
+                >
               </li>
             </ul>
           </div>
@@ -996,7 +879,124 @@
       </div>
     </footer>
 
-    <script src="main.js"></script>
-    <script src="tailwind-config.js"></script>
+    <!-- Structured Data: Organization, WebPage (Services), Breadcrumbs, Service catalog -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.therapy.io/#org",
+            "name": "Therapy.io",
+            "url": "https://www.therapy.io/",
+            "logo": "https://www.therapy.io/assets/ribbon.png"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.therapy.io/services.html#webpage",
+            "url": "https://www.therapy.io/services.html",
+            "name": "Services | Therapy.io — Online Counseling",
+            "isPartOf": { "@id": "https://www.therapy.io/#org" },
+            "description": "Confidential, flexible online therapy in Alberta. Evidence-based support for anxiety, depression, trauma, relationships, and more."
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.therapy.io/services.html#breadcrumbs",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.therapy.io/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://www.therapy.io/services.html"
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "@id": "https://www.therapy.io/#catalog",
+            "name": "Therapy Services",
+            "url": "https://www.therapy.io/services.html",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.therapy.io/#service-anxiety",
+                  "name": "Stress & Anxiety Therapy",
+                  "areaServed": "Alberta, Canada",
+                  "serviceType": "Psychotherapy",
+                  "provider": { "@id": "https://www.therapy.io/#org" }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.therapy.io/#service-depression",
+                  "name": "Depression & Mood Support",
+                  "areaServed": "Alberta, Canada",
+                  "serviceType": "Psychotherapy",
+                  "provider": { "@id": "https://www.therapy.io/#org" }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.therapy.io/#service-relationships",
+                  "name": "Relationship Therapy",
+                  "areaServed": "Alberta, Canada",
+                  "serviceType": "Psychotherapy",
+                  "provider": { "@id": "https://www.therapy.io/#org" }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.therapy.io/#service-trauma",
+                  "name": "Grief & Trauma Therapy",
+                  "areaServed": "Alberta, Canada",
+                  "serviceType": "Psychotherapy",
+                  "provider": { "@id": "https://www.therapy.io/#org" }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.therapy.io/#service-esteem",
+                  "name": "Self-Esteem & Confidence Coaching",
+                  "areaServed": "Alberta, Canada",
+                  "serviceType": "Psychotherapy",
+                  "provider": { "@id": "https://www.therapy.io/#org" }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.therapy.io/#service-addiction",
+                  "name": "Addiction & Recovery Support",
+                  "areaServed": "Alberta, Canada",
+                  "serviceType": "Psychotherapy",
+                  "provider": { "@id": "https://www.therapy.io/#org" }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <!-- App scripts -->
+    <script src="main.js" defer></script>
+    <!-- Fallback init (icons/year + menu) if main.js doesn't define them -->
   </body>
 </html>

@@ -112,30 +112,7 @@
  }
 
  /* Tailwind Customization */
- .text-primary-dark {
-   color: var(--primary-dark);
- }
-
- .text-primary-light {
-   color: var(--primary-light);
- }
-
- .bg-primary-dark {
-   background-color: var(--primary-dark);
- }
-
- .bg-primary-light {
-   background-color: var(--primary-light);
- }
-
- .bg-background-cream {
-   background-color: var(--background-cream);
- }
-
- .text-accent-copper {
-   color: var(--accent-copper);
- }
-
+ 
  .fill-accent-copper {
    fill: var(--accent-copper);
  }
@@ -150,8 +127,6 @@
    transition: all 0.3s ease;
  }
 
-
-
  .faq-answer {
    max-height: 0;
    overflow: hidden;
@@ -163,12 +138,9 @@
    transition: max-height 0.5s ease-in;
  }
 
- .faq-icon {
-   transition: transform 0.3s ease;
- }
 
  .faq-item.active .faq-icon {
-   transform: scale(1.8) rotate(45deg);
+   transform: scale(1.8),rotate(20deg);
  }
 
  .hidden-faq {

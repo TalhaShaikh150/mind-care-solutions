@@ -1,61 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us | Therapy.io - Professional Online Counseling</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <link rel="icon" type="image/png" href="assets/ribbon.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <title>About | Therapy.io — Online Therapy in Alberta</title>
+    <meta
+      name="description"
+      content="Learn about my approach to online therapy in Alberta: trauma‑informed, evidence‑based, and compassionate care tailored to your goals."
+    />
+    <link rel="canonical" href="https://www.therapy.io/about.html" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0d3b2e" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Therapy.io" />
+    <meta
+      property="og:title"
+      content="About | Therapy.io — Online Therapy in Alberta"
+    />
+    <meta
+      property="og:description"
+      content="Trauma‑informed, evidence‑based online therapy in Alberta. Learn about my philosophy and practice."
+    />
+    <meta property="og:url" content="https://www.therapy.io/about.html" />
+    <meta
+      property="og:image"
+      content="https://www.therapy.io/assets/og-about.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="About | Therapy.io — Online Therapy in Alberta"
+    />
+    <meta
+      name="twitter:description"
+      content="Trauma‑informed, evidence‑based online therapy in Alberta. Learn about my philosophy and practice."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.therapy.io/assets/og-about.jpg"
+    />
+
+    <!-- Performance: preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <link rel="dns-prefetch" href="//unpkg.com" />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com" />
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/ribbon.png" />
+
+    <!-- Preload key image (improves LCP if used above the fold) -->
+    <link rel="preload" as="image" href="assets/profile.png" />
+
+    <!-- Your CSS -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Tailwind config BEFORE CDN (required for custom colors) -->
+    <script src="tailwind-config.js" defer></script>
+
+    <!-- Tailwind CDN (remove for production after compiling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide (pinned + defer) -->
+    <script
+      src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"
+      crossorigin
+      defer
+    ></script>
   </head>
 
-  <body class="text-gray-800">
-    <!--Navbar-->
+  <body class="bg-background-cream text-gray-800">
+    <!-- Skip link -->
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white text-black px-3 py-2 rounded"
+      >Skip to content</a
+    >
+
+    <!-- Navbar -->
     <header
       class="sticky top-0 z-50 h-16 flex items-center justify-between px-4 sm:px-6 bg-primary-dark shadow-lg border-b border-darker-green"
     >
       <div class="text-2xl font-extrabold text-white tracking-tight">
         <a href="index.html">Therapy.io</a>
       </div>
-      <nav class="hidden lg:flex space-x-10 text-base font-medium">
+      <nav
+        class="hidden lg:flex space-x-10 text-base font-medium"
+        aria-label="Primary"
+      >
         <a
           href="index.html"
-          class="nav-link text-gray-300 hover:text-white transition duration-150 font-medium"
+          class="nav-link text-gray-300 hover:text-white transition duration-150"
           >Home</a
         >
         <a
           href="about.html"
-          class="nav-link active-nav text-white font-semibold hover:text-white transition duration-150 font-medium"
-          >About Us</a
+          aria-current="page"
+          class="nav-link active-nav text-white font-semibold transition duration-150"
+          >About</a
         >
         <a
           href="services.html"
-          class="nav-link text-gray-300 hover:text-white transition duration-150 font-medium"
+          class="nav-link text-gray-300 hover:text-white transition duration-150"
           >Services</a
         >
         <a
           href="contact.html"
-          class="nav-link text-gray-300 hover:text-white transition duration-150 font-medium"
+          class="nav-link text-gray-300 hover:text-white transition duration-150"
           >Contact</a
         >
       </nav>
       <div class="flex items-center space-x-4">
-        <button
-          class="hidden lg:inline-block py-2.5 px-5 bg-white text-black text-base font-semibold rounded-lg shadow-md hover:bg-primary-light hover:text-white transition-al duration-150"
+        <a
+          href="contact.html#intake"
+          class="hidden lg:inline-block py-2.5 px-5 bg-white text-black text-base font-semibold rounded-lg shadow-md hover:bg-primary-light hover:text-white transition-all duration-150"
         >
           Book a Session
-        </button>
-
+        </a>
         <button
           onclick="toggleMobileMenu()"
           class="text-base font-semibold text-white hover:opacity-80 lg:hidden transition duration-150"
           aria-label="Toggle navigation menu"
+          aria-expanded="false"
         >
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
@@ -68,95 +149,95 @@
         class="w-full h-full bg-gradient-to-b from-primary-dark to-darker-green"
       >
         <div class="p-6">
-          <!-- Header -->
           <div class="flex justify-between items-center mb-8">
             <div class="text-2xl font-extrabold text-white">Therapy.io</div>
             <button
               onclick="toggleMobileMenu()"
               class="text-white transition duration-300"
+              aria-label="Close menu"
             >
               <i data-lucide="x" class="w-6 h-6"></i>
             </button>
           </div>
 
-          <!-- Navigation -->
-          <nav class="space-y-6">
+          <nav class="space-y-6" aria-label="Mobile">
             <a
               href="index.html"
-              class="mobile-nav-item flex items-center space-x-4 text-lg font-semibold text-gray-300 py-4 px-4"
+              class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-gray-300 rounded-xl hover:text-white hover:bg-white/5 py-4 px-4"
             >
-              <i data-lucide="home" class="w-5 h-5"></i>
-              <span>Home</span>
+              <i data-lucide="home" class="w-5 h-5"></i><span>Home</span>
             </a>
             <a
               href="about.html"
-              class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-white hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300 bg-white/10 rounded-xl"
+              class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-white py-4 px-4 bg-white/10 rounded-xl"
             >
-              <i data-lucide="users" class="w-5 h-5"></i>
-              <span>About Us</span>
+              <i data-lucide="users" class="w-5 h-5"></i><span>About</span>
             </a>
             <a
               href="services.html"
               class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300"
             >
-              <i data-lucide="heart" class="w-5 h-5"></i>
-              <span>Services</span>
+              <i data-lucide="heart" class="w-5 h-5"></i><span>Services</span>
             </a>
             <a
               href="contact.html"
               class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300"
             >
-              <i data-lucide="phone" class="w-5 h-5"></i>
-              <span>Contact</span>
+              <i data-lucide="phone" class="w-5 h-5"></i><span>Contact</span>
             </a>
           </nav>
 
-          <!-- Auth & CTA Section -->
           <div class="mt-12 pt-8 border-t border-white/20">
-            <button
+            <a
+              href="contact.html#intake"
+              onclick="toggleMobileMenu()"
               class="w-full py-4 bg-white text-black font-semibold rounded-xl hover:bg-primary-light hover:text-white transition duration-300 flex items-center justify-center space-x-3"
             >
-              <i data-lucide="arrow-right" class="w-5 h-5"></i>
               <span>Book a Session</span>
-            </button>
+            </a>
           </div>
 
-          <!-- Additional Info -->
           <div class="mt-8 p-4 bg-white/5 rounded-xl">
             <p class="text-gray-300 text-sm text-center">
-              Professional therapy services available 24/7
+              Professional online therapy across Alberta
             </p>
           </div>
         </div>
       </div>
     </div>
-    <div id="overlay" class="overlay" onclick="toggleMobileMenu()"></div>
+    <div
+      id="overlay"
+      class="overlay lg:hidden"
+      onclick="toggleMobileMenu()"
+      aria-hidden="true"
+    ></div>
 
-    <div id="about-page" class="page-content">
-      <section class="py-24 sm:py-32 px-4 sm:px-8 bg-white">
-        <div class="max-w-7xl mx-auto my-12 text-center">
+    <main id="main">
+      <!-- Hero -->
+      <section class="py-16 sm:py-24 px-4 sm:px-8 bg-white">
+        <div class="max-w-7xl mx-auto text-center">
           <h1
             class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-primary-dark mb-6 leading-snug"
           >
-            My Mission: Your <span class="text-sage-accent">Well-being</span>
+            My Mission: Your <span class="text-sage-accent">Well‑being</span>
           </h1>
           <p class="text-xl 2xl:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto">
             My mission is to bridge the science of medicine with the art of
-            psychotherapy, offering a compassionate, trauma-informed space where
+            psychotherapy offering a compassionate, trauma‑informed space where
             healing and growth unfold through the integration of mind, body, and
             heart.
           </p>
         </div>
 
         <div
-          class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-16"
+          class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center my-16"
         >
           <div class="order-2 md:order-1">
             <h2 class="text-4xl font-bold text-primary-dark mb-4">About Me</h2>
             <p class="text-gray-700 text-lg mb-6 leading-relaxed">
               I am a Master Practitioner in Clinical Counselling and
               Psychotherapy with an international background as a Family
-              Physician. With over 15+ years of combined experience in medicine
+              Physician. With over 15 years of combined experience in medicine
               and mental health, I specialize in trauma recovery, emotional
               regulation, and holistic healing.
             </p>
@@ -165,112 +246,98 @@
               class="text-gray-700 text-lg leading-relaxed border-l-4 border-accent-copper pl-4 italic"
             >
               Integrating Polyvagal Theory, CBT, Somatic Therapy, EMDR, and
-              Trauma-Informed approaches, I support individuals, couples, and
-              families in restoring safety, balance, and connection. My practice
-              offers a compassionate and supportive space for healing,
-              self-discovery, and meaningful growth.
+              trauma‑informed approaches, I support individuals and couples in
+              restoring safety, balance, and connection. My practice offers a
+              compassionate and supportive space for healing, self‑discovery,
+              and meaningful growth.
             </p>
           </div>
           <div
-            class="order-1 md:order-2 bg-soft-vanilla rounded-2xl flex items-center justify-center p-6"
+            class="order-1 md:order-2 bg-soft-vanilla rounded-2xl flex items-center justify-center p-6 hover-lift"
           >
             <img
               src="assets/profile.png"
-              alt="Counsellor portrait"
+              alt="Portrait of Dr. Bushra, Licensed Clinical Counsellor"
+              width="800"
+              height="800"
+              decoding="async"
               class="w-[80%] object-cover rounded-full border-4 border-sage-accent/20"
             />
           </div>
         </div>
       </section>
 
-      <section class="py-20 md:py-32 px-4 md:px-8 bg-primary-dark">
+      <!-- The Therapeutic Difference -->
+      <section class="py-20 md:py-28 px-4 md:px-8 bg-primary-dark">
         <div class="max-w-5xl mx-auto text-center">
-          <!-- Header -->
           <div class="mb-16">
             <h2
-              class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white max-w-5xl mb-6 leading-snug"
+              class="text-4xl sm:text-6xl md:text-6xl font-extrabold text-white mb-6 leading-snug"
             >
               The Therapeutic Difference
             </h2>
             <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Three foundational elements that define my unique therapeutic
-              methodology and ensure meaningful, lasting results.
+              Three facets that shape my work and help create lasting results.
             </p>
           </div>
 
-          <!-- Circular Layout -->
-          <div class="relative">
-            <!-- Center Circle -->
-
-            <!-- Outer Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-20">
-              <!-- Card 1 -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+              class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition"
+            >
               <div
-                class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl shadow-lg card-hover hover:bg-white/10"
+                class="bg-accent-copper/20 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto"
               >
-                <div
-                  class="bg-accent-copper/20 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto"
-                >
-                  <i
-                    data-lucide="heart"
-                    class="w-10 h-10 text-accent-copper"
-                  ></i>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-4">
-                  Holistic & Compassionate
-                </h3>
-                <p class="text-gray-300 leading-relaxed">
-                  Integrating mind, body, and heart to foster balance,
-                  resilience, and lasting healing.
-                </p>
+                <i data-lucide="heart" class="w-10 h-10 text-accent-copper"></i>
               </div>
+              <h3 class="text-2xl font-bold text-white mb-4">
+                Holistic & Compassionate
+              </h3>
+              <p class="text-gray-300">
+                Integrating mind, body, and heart to foster balance, resilience,
+                and healing.
+              </p>
+            </div>
 
-              <!-- Card 2 -->
+            <div
+              class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl md:mt-12 hover:bg-white/10 transition"
+            >
               <div
-                class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl shadow-lg card-hover border border-soft-vanilla md:mt-12 hover:bg-white/10"
+                class="bg-accent-copper/20 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto"
               >
-                <div
-                  class="bg-accent-copper/20 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md"
-                >
-                  <i
-                    data-lucide="book-open-check"
-                    class="w-10 h-10 text-accent-copper"
-                  ></i>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-4">
-                  Professional & Evidence-Based
-                </h3>
-                <p class="text-gray-300 leading-relaxed">
-                  Blending medical insight with modern psychotherapy for
-                  whole-person healing.
-                </p>
+                <i
+                  data-lucide="book-open-check"
+                  class="w-10 h-10 text-accent-copper"
+                ></i>
               </div>
+              <h3 class="text-2xl font-bold text-white mb-4">Evidence‑Based</h3>
+              <p class="text-gray-300">
+                Blending medical insight with modern psychotherapy for
+                whole‑person healing.
+              </p>
+            </div>
 
-              <!-- Card 3 -->
+            <div
+              class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition"
+            >
               <div
-                class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl shadow-lg card-hover hover:bg-white/10"
+                class="bg-accent-copper/20 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto"
               >
-                <div
-                  class="bg-accent-copper/20 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-md"
-                >
-                  <i
-                    data-lucide="users"
-                    class="w-10 h-10 text-accent-copper"
-                  ></i>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-4">
-                  Warm & Inviting
-                </h3>
-                <p class="text-gray-300 leading-relaxed">
-                  A welcoming space where you can feel safe to heal, reconnect,
-                  and grow with support and understanding.
-                </p>
+                <i data-lucide="users" class="w-10 h-10 text-accent-copper"></i>
               </div>
+              <h3 class="text-2xl font-bold text-white mb-4">
+                Warm & Inviting
+              </h3>
+              <p class="text-gray-300">
+                A calm, non‑judgmental space for reconnection, growth, and
+                change.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- Diversity & Inclusion -->
       <section class="py-24 sm:py-32 px-4 sm:px-8 bg-white">
         <div
           class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
@@ -280,34 +347,32 @@
               Commitment to Diversity & Inclusion
             </h2>
             <p class="text-gray-700 text-lg mb-6 leading-relaxed">
-              Mental wellness is deeply personal and influenced by culture,
-              identity, and life experiences. I believe that effective therapy
-              starts with a safe, inclusive, and affirming space where you feel
-              truly understood and supported.
+              Effective therapy begins with a safe, inclusive, and affirming
+              space where you feel truly understood and supported.
             </p>
             <ul class="space-y-3 text-lg text-gray-700">
               <li class="flex items-start">
                 <i
                   data-lucide="check-circle"
                   class="w-5 h-5 text-sage-accent mr-3 mt-1 flex-shrink-0"
-                ></i>
-                <span class="font-medium"
-                  >Respect for Individual Beliefs and Values</span
+                ></i
+                ><span class="font-medium"
+                  >Respect for individual beliefs and values</span
                 >
               </li>
               <li class="flex items-start">
                 <i
                   data-lucide="check-circle"
                   class="w-5 h-5 text-sage-accent mr-3 mt-1 flex-shrink-0"
-                ></i>
-                <span class="font-medium">Cultural and Ethnic Identity</span>
+                ></i
+                ><span class="font-medium">Cultural and ethnic identity</span>
               </li>
               <li class="flex items-start">
                 <i
                   data-lucide="check-circle"
                   class="w-5 h-5 text-sage-accent mr-3 mt-1 flex-shrink-0"
-                ></i>
-                <span class="font-medium">Grounded & Reassuring</span>
+                ></i
+                ><span class="font-medium">Grounded & reassuring care</span>
               </li>
             </ul>
           </div>
@@ -322,13 +387,13 @@
         </div>
       </section>
 
-      <!-- Variation 2: Split Background -->
+      <!-- Split Background: Profile -->
       <section class="py-24 sm:py-32 px-4 sm:px-8">
         <div class="max-w-6xl mx-auto">
           <div
             class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-lg"
           >
-            <!-- Left Side - Dark Background -->
+            <!-- Left -->
             <div class="bg-primary-dark p-8 lg:p-12 text-white">
               <div
                 class="flex flex-col items-center text-center h-full justify-center"
@@ -341,9 +406,7 @@
                     class="w-12 h-12 text-accent-copper"
                   ></i>
                 </div>
-
-                <h3 class="text-2xl font-bold">Dr.Bushra</h3>
-                <!-- <p class="text-sage-accent font-semibold mt-1">Founder & CEO</p> -->
+                <h3 class="text-2xl font-bold">Dr. Bushra</h3>
                 <p class="text-gray-300 text-sm mt-2">
                   Licensed Clinical Counsellor
                 </p>
@@ -357,12 +420,11 @@
               </div>
             </div>
 
-            <!-- Right Side - Light Background -->
-            <div class="p-8 lg:p-12">
+            <!-- Right -->
+            <div class="p-8 lg:p-12 bg-white">
               <h2 class="text-3xl font-bold text-primary-dark mb-6">
                 Driven by a Personal Commitment to Care
               </h2>
-
               <div class="space-y-6">
                 <div class="relative">
                   <div
@@ -374,34 +436,30 @@
                     My work is guided by the belief that healing unfolds when we
                     reconnect with our body’s wisdom, compassion, and capacity
                     for resilience. By combining medical insight with
-                    evidence-based therapies, I aim to help clients move beyond
-                    survival toward genuine connection, peace, and self-trust.
+                    evidence‑based therapies, I help clients move beyond
+                    survival toward connection, peace, and self‑trust.
                   </blockquote>
                 </div>
 
                 <p class="text-gray-700">
-                  Dr. Bushra Registered Master Practitioner in Clinical
-                  Counselling and Mindfulness-Based Therapies, she upholds our
-                  commitment to ethical, evidence-based, and research-driven
-                  practice.
+                  Registered Master Practitioner in Clinical Counselling and
+                  Mindfulness‑Based Therapies, upholding a commitment to
+                  ethical, evidence‑based, and research‑informed practice.
                 </p>
 
                 <div
                   class="flex items-center gap-4 pt-6 border-t border-gray-200"
                 >
                   <div class="flex items-center gap-2 text-sm text-gray-600">
-                    <i
-                      data-lucide="award"
-                      class="w-4 h-4 text-forest-green"
-                    ></i>
-                    <span>Licensed Clinical Counsellor</span>
+                    <i data-lucide="award" class="w-4 h-4 text-forest-green"></i
+                    ><span>Licensed Clinical Counsellor</span>
                   </div>
                   <div class="flex items-center gap-2 text-sm text-gray-600">
                     <i
                       data-lucide="book-open"
                       class="w-4 h-4 text-forest-green"
-                    ></i>
-                    <span>Research-Driven</span>
+                    ></i
+                    ><span>Research‑Driven</span>
                   </div>
                 </div>
               </div>
@@ -410,7 +468,7 @@
         </div>
       </section>
 
-      <!-- Variation 5: Dark Theme -->
+      <!-- Philosophy -->
       <section class="py-24 sm:py-32 px-4 sm:px-8 bg-primary-dark">
         <div class="max-w-7xl mx-auto">
           <div class="text-center mb-16">
@@ -418,18 +476,16 @@
               My Philosophy
             </h2>
             <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-              Healing is a deeply personal journey one that unfolds at its own
-              pace. My role is to offer guidance, understanding, and support as
-              you move toward greater clarity.
+              Healing unfolds at its own pace. My role is to offer guidance,
+              understanding, and support as you move toward greater clarity.
             </p>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Card 1 -->
             <div
-              class="group p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 cursor-pointer"
+              class="p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition"
             >
               <div
-                class="w-16 h-16 bg-accent-copper/20 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-300"
+                class="w-16 h-16 bg-accent-copper/20 rounded-2xl flex items-center justify-center mb-6"
               >
                 <i
                   data-lucide="handshake"
@@ -438,18 +494,16 @@
               </div>
               <h3 class="text-2xl font-bold text-white mb-4">Safety</h3>
               <p class="text-gray-300">
-                Emotional and physical safety are the foundation of all healing.
-                I create a secure, supportive environment where clients can
-                explore their experiences at their own pace.
+                Emotional and physical safety form the foundation of all
+                healing.
               </p>
             </div>
 
-            <!-- Card 2 -->
             <div
-              class="group p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 cursor-pointer"
+              class="p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition"
             >
               <div
-                class="w-16 h-16 bg-accent-copper/20 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-300"
+                class="w-16 h-16 bg-accent-copper/20 rounded-2xl flex items-center justify-center mb-6"
               >
                 <i
                   data-lucide="graduation-cap"
@@ -458,18 +512,16 @@
               </div>
               <h3 class="text-2xl font-bold text-white mb-4">Integration</h3>
               <p class="text-gray-300">
-                Drawing on both medical knowledge and psychotherapy, I view
-                wellness as the integration of mind, body, and emotion. This
-                holistic approach promotes balance and long-term resilience.
+                I integrate medical knowledge and psychotherapy for whole‑person
+                wellness.
               </p>
             </div>
 
-            <!-- Card 3 -->
             <div
-              class="group p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 cursor-pointer"
+              class="p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition"
             >
               <div
-                class="w-16 h-16 bg-accent-copper/20 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-300"
+                class="w-16 h-16 bg-accent-copper/20 rounded-2xl flex items-center justify-center mb-6"
               >
                 <i
                   data-lucide="mountain"
@@ -478,36 +530,35 @@
               </div>
               <h3 class="text-2xl font-bold text-white mb-4">Growth</h3>
               <p class="text-gray-300">
-                Healing is not only about reducing distress, but about
-                rediscovering strength, self compassion, and meaning. I support
-                clients in growing beyond survival toward confidence, peace, and
-                fulfillment.
+                Beyond symptom relief toward confidence, peace, and meaning.
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- CTA -->
       <section class="py-24 sm:py-32 px-4 sm:px-8 cta-gradient">
         <div class="max-w-5xl mx-auto text-center">
           <h2 class="text-5xl sm:text-6xl font-extrabold mb-6">
-            If You’re Ready To Begin Your Healing Journey.
+            If You’re Ready to Begin Your Healing Journey
           </h2>
           <p class="text-xl text-primary-dark mb-12 max-w-3xl mx-auto">
-            Every healing journey begins with a single step. I would be honoured
-            to walk beside you as you move toward greater clarity, balance, and
-            connection.
+            Every healing journey begins with a single step. I’d be honoured to
+            walk beside you as you move toward clarity, balance, and connection.
           </p>
           <a
-            href="#"
-            class="p-4 sm:py-4 sm:px-8 bg-primary-dark text-white font-bold text-md sm:text-xl rounded-xl shadow-2xl shadow-accent-copper/40 hover:bg-primary-light hover:text-white transition-all duration-300 transform active:scale-95"
+            href="contact.html#intake"
+            class="inline-flex items-center py-3.5 px-8 bg-primary-dark text-white font-bold text-lg rounded-xl shadow-2xl shadow-accent-copper/40 hover:bg-primary-light transition"
           >
-            Start Your Intake Form Now
+            Start Your Intake Form
+            <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
           </a>
         </div>
       </section>
-    </div>
-    <!--Footer-->
+    </main>
+
+    <!-- Footer -->
     <footer class="bg-primary-dark text-white pt-16 pb-8">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
@@ -516,38 +567,34 @@
               Therapy.io
             </h3>
             <p class="text-gray-300 mb-6 max-w-md">
-              Professional online counseling serving individuals, couples, and
-              families across Alberta. Your mental wellness is our priority.
+              Professional online counseling serving individuals and couples
+              across Alberta. Your mental wellness is my priority.
             </p>
             <div class="flex space-x-4">
               <a
                 href="#"
-                class="text-gray-300 hover:text-primary-light transition duration-150"
+                class="text-gray-300 hover:text-accent-copper transition duration-150"
                 aria-label="Facebook"
-              >
-                <i data-lucide="facebook" class="w-5 h-5"></i>
-              </a>
+                ><i data-lucide="facebook" class="w-5 h-5"></i
+              ></a>
               <a
                 href="#"
-                class="text-gray-300 hover:text-primary-light transition duration-150"
+                class="text-gray-300 hover:text-accent-copper transition duration-150"
                 aria-label="Twitter"
-              >
-                <i data-lucide="twitter" class="w-5 h-5"></i>
-              </a>
+                ><i data-lucide="twitter" class="w-5 h-5"></i
+              ></a>
               <a
                 href="#"
-                class="text-gray-300 hover:text-primary-light transition duration-150"
+                class="text-gray-300 hover:text-accent-copper transition duration-150"
                 aria-label="Instagram"
-              >
-                <i data-lucide="instagram" class="w-5 h-5"></i>
-              </a>
+                ><i data-lucide="instagram" class="w-5 h-5"></i
+              ></a>
               <a
                 href="#"
-                class="text-gray-300 hover:text-primary-light transition duration-150"
+                class="text-gray-300 hover:text-accent-copper transition duration-150"
                 aria-label="LinkedIn"
-              >
-                <i data-lucide="linkedin" class="w-5 h-5"></i>
-              </a>
+                ><i data-lucide="linkedin" class="w-5 h-5"></i
+              ></a>
             </div>
           </div>
           <div>
@@ -555,30 +602,29 @@
             <ul class="space-y-2">
               <li>
                 <a
-                  href="/"
-                  class="text-gray-300 hover:text-primary-light transition duration-150"
+                  href="index.html"
+                  class="text-gray-300 hover:text-accent-copper transition duration-150"
                   >Home</a
                 >
               </li>
               <li>
                 <a
                   href="about.html"
-                  class="text-gray-300 hover:text-primary-light transition duration-150"
-                  >About Us</a
+                  class="text-gray-300 hover:text-accent-copper transition duration-150"
+                  >About</a
                 >
               </li>
               <li>
                 <a
                   href="services.html"
-                  class="text-gray-300 hover:text-primary-light transition duration-150"
+                  class="text-gray-300 hover:text-accent-copper transition duration-150"
                   >Services</a
                 >
               </li>
-
               <li>
                 <a
                   href="contact.html"
-                  class="text-gray-300 hover:text-primary-light transition duration-150"
+                  class="text-gray-300 hover:text-accent-copper transition duration-150"
                   >Contact</a
                 >
               </li>
@@ -590,31 +636,30 @@
               <li>
                 <a
                   href="faq.html"
-                  class="text-gray-300 hover:text-primary-light transition duration-150"
+                  class="text-gray-300 hover:text-accent-copper transition duration-150"
+                  >Individual Therapy</a
                 >
-                  Individual Therapy
-                </a>
               </li>
               <li>
                 <a
                   href="contact.html"
-                  class="text-gray-300 hover:text-primary-light transition duration-150"
-                  >Couples Counseling
-                </a>
+                  class="text-gray-300 hover:text-accent-copper transition duration-150"
+                  >Couples Counseling</a
+                >
               </li>
               <li>
                 <a
                   href="privacy.html"
-                  class="text-gray-300 hover:text-primary-light transition duration-150"
-                  >Family Therapy
-                </a>
+                  class="text-gray-300 hover:text-accent-copper transition duration-150"
+                  >Family Therapy</a
+                >
               </li>
               <li>
                 <a
                   href="terms.html"
-                  class="text-gray-300 hover:text-primary-light transition duration-150"
-                  >Specialized Treatments
-                </a>
+                  class="text-gray-300 hover:text-accent-copper transition duration-150"
+                  >Specialized Treatments</a
+                >
               </li>
             </ul>
           </div>
@@ -646,13 +691,67 @@
           </p>
           <p>
             Canada Suicide Crisis Helpline:
-            <strong class="text-white">1-877-303-2642 (toll-free).</strong>
+            <strong class="text-white">1‑877‑303‑2642</strong> (toll‑free).
           </p>
         </div>
       </div>
     </footer>
 
-    <script src="tailwind-config.js"></script>
-    <script src="main.js"></script>
+    <!-- JSON-LD: AboutPage + Organization + Person + Breadcrumbs -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.therapy.io/#org",
+            "name": "Therapy.io",
+            "url": "https://www.therapy.io/",
+            "logo": "https://www.therapy.io/assets/ribbon.png",
+            "sameAs": []
+          },
+          {
+            "@type": "Person",
+            "@id": "https://www.therapy.io/#person",
+            "name": "Dr. Bushra",
+            "jobTitle": "Licensed Clinical Counsellor",
+            "image": "https://www.therapy.io/assets/profile.png",
+            "url": "https://www.therapy.io/about.html",
+            "worksFor": { "@id": "https://www.therapy.io/#org" }
+          },
+          {
+            "@type": "AboutPage",
+            "@id": "https://www.therapy.io/about.html#webpage",
+            "url": "https://www.therapy.io/about.html",
+            "name": "About | Therapy.io — Online Therapy in Alberta",
+            "isPartOf": { "@id": "https://www.therapy.io/#org" },
+            "about": { "@id": "https://www.therapy.io/#person" },
+            "primaryImageOfPage": "https://www.therapy.io/assets/og-about.jpg"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.therapy.io/about.html#breadcrumbs",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.therapy.io/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About",
+                "item": "https://www.therapy.io/about.html"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <!-- Scripts -->
+    <script src="main.js" defer></script>
+   
   </body>
 </html>

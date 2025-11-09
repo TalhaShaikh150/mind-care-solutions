@@ -1,95 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us | Therapy.io</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Contact & Intake | Therapy.io — Online Therapy in Alberta</title>
+    <meta
+      name="description"
+      content="Contact me with questions or complete the secure intake form to book your first session. Confidential, evidence‑based online therapy across Alberta."
+    />
+    <link rel="canonical" href="https://www.therapy.io/contact.html" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0d3b2e" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Therapy.io" />
+    <meta
+      property="og:title"
+      content="Contact & Intake | Therapy.io — Online Therapy in Alberta"
+    />
+    <meta
+      property="og:description"
+      content="Send a message or complete the secure intake form to get started. Confidential online therapy across Alberta."
+    />
+    <meta property="og:url" content="https://www.therapy.io/contact.html" />
+    <meta
+      property="og:image"
+      content="https://www.therapy.io/assets/og-contact.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Contact & Intake | Therapy.io — Online Therapy in Alberta"
+    />
+    <meta
+      name="twitter:description"
+      content="Send a message or complete the secure intake form to get started. Confidential online therapy across Alberta."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.therapy.io/assets/og-contact.jpg"
+    />
+
+    <!-- Performance: preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <link rel="dns-prefetch" href="//unpkg.com" />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com" />
+
+    <!-- Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/ribbon.png" />
 
+    <!-- Your CSS -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Tailwind config BEFORE CDN (required for custom colors) -->
+    <script src="tailwind-config.js" defer></script>
+
+    <!-- Tailwind CDN (remove in production after compiling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide (pinned + defer) -->
+    <script
+      src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"
+      crossorigin
+      defer
+    ></script>
+
     <style>
       :root {
-        --primary-dark: #0a3225; /* Deep, Calming Forest Green (dark-green) */
-        --primary-light: #2a735e; /* Muted, Sophisticated Sage (light-green) */
-        --background-cream: #f8f4ed; /* Warm, Soft Off-White (cream) */
-        --accent-gold: #b87333; /* Rich Copper/Gold */
-        --darker-green: #051912; /* Used for footer bg */
+        scroll-behavior: smooth;
       }
 
-      /* Mapping existing class names to new professional variables */
-      .text-dark-green {
-        color: var(--primary-dark);
+     
+
+      /* Helpers */
+      .hover-lift {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
-      .bg-dark-green {
-        background-color: var(--primary-dark);
+      .hover-lift:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
       }
-      .text-light-green {
-        color: var(--primary-light);
+      .muted {
+        color: #6b7280;
       }
-      .bg-light-green {
-        background-color: var(--primary-light);
+
+      /* Tabs */
+      .tab-btn {
+        border: 1px solid #e5e7eb;
+        padding: 0.75rem 1.5rem;
+        margin: 0 0.25rem;
       }
-      .bg-cream {
-        background-color: var(--background-cream);
+      .tab-btn[aria-selected="true"] {
+        background: #0d3b2e;
+        color: #fff;
+        border-color: #0d3b2e;
       }
-      .bg-darker-green {
-        background-color: var(--darker-green);
+
+      /* Stepper */
+      .step-dot {
+        width: 26px;
+        height: 26px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        font-weight: 700;
       }
-      .border-light-green {
-        border-color: var(--primary-light);
+      .step-active {
+        background: rgba(31, 157, 115, 0.12);
+        color: #0d3b2e;
+        border: 2px solid #1f9d73;
       }
-      .text-accent-gold {
-        color: var(--accent-gold);
+      .step-done {
+        background: #1f9d73;
+        color: #fff;
+        border: 2px solid #1f9d73;
+      }
+      .step-next {
+        background: #fff;
+        color: #6b7280;
+        border: 2px solid #e5e7eb;
+      }
+
+      /* Hero gradient */
+      .gradient-hero {
+        background: radial-gradient(
+            900px 380px at 90% -10%,
+            rgba(31, 157, 115, 0.1),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 380px at -10% 110%,
+            rgba(184, 115, 51, 0.08),
+            transparent 60%
+          ),
+          #fff;
+      }
+
+      /* Button spacing fixes */
+      .btn-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+        min-height: 3rem;
+      }
+
+      .btn-primary {
+        background: #0d3b2e;
+        color: white;
+        border: 1px solid #0d3b2e;
+      }
+
+      .btn-primary:hover {
+        background: #1f9d73;
+        border-color: #1f9d73;
+      }
+
+      .btn-secondary {
+        background: white;
+        color: #0d3b2e;
+        border: 1px solid #0d3b2e;
+      }
+
+      .btn-secondary:hover {
+        background: #0d3b2e;
+        color: white;
+      }
+
+      .btn-full {
+        width: 100%;
+      }
+
+      /* Form button spacing */
+      .form-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+        gap: 1rem;
+      }
+
+      .form-actions .btn {
+        flex: 0 0 auto;
+      }
+
+      .step-indicator {
+        flex: 1;
+        text-align: center;
+        color: #6b7280;
+        font-size: 0.875rem;
+      }
+
+      /* Mobile responsive adjustments */
+      @media (max-width: 640px) {
+        .form-actions {
+          flex-direction: column;
+          gap: 0.75rem;
+        }
+
+        .form-actions .btn {
+          width: 100%;
+        }
+
+        .step-indicator {
+          order: -1;
+        }
+
+        .btn-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .btn-container .btn {
+          width: 100%;
+          max-width: 280px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          transition: none !important;
+          animation: none !important;
+        }
       }
     </style>
   </head>
-  <body>
-    <!--Navbar-->
+
+  <body class="bg-background-cream text-gray-800">
+    <!-- Skip link -->
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white text-black px-3 py-2 rounded"
+      >Skip to content</a
+    >
+
+    <!-- Navbar -->
     <header
       class="sticky top-0 z-50 h-16 flex items-center justify-between px-4 sm:px-6 bg-primary-dark shadow-lg border-b border-darker-green"
     >
       <div class="text-2xl font-extrabold text-white tracking-tight">
         <a href="index.html">Therapy.io</a>
       </div>
-      <nav class="hidden lg:flex space-x-10 text-base font-medium">
+      <nav
+        class="hidden lg:flex space-x-10 text-base font-medium"
+        aria-label="Primary"
+      >
         <a
           href="index.html"
-          class="nav-link text-gray-300 hover:text-white transition duration-150 font-medium"
+          class="nav-link text-gray-300 hover:text-white transition duration-150"
           >Home</a
         >
         <a
           href="about.html"
-          class="nav-link text-gray-300 hover:text-white transition duration-150 font-medium"
-          >About Us</a
+          class="nav-link text-gray-300 hover:text-white transition duration-150"
+          >About</a
         >
         <a
           href="services.html"
-          class="nav-link text-gray-300 font-medium hover:text-white transition duration-150 font-medium"
+          class="nav-link text-gray-300 hover:text-white transition duration-150"
           >Services</a
         >
         <a
           href="contact.html"
-          class="nav-link active-nav text-white font-semibold hover:text-white transition duration-150 font-medium"
-          >Contact</a
+          aria-current="page"
+          class="nav-link active-nav text-white font-semibold transition duration-150"
+          >Contact & Intake</a
         >
       </nav>
       <div class="flex items-center space-x-4">
-        <button
-          class="hidden lg:inline-block py-2.5 px-5 bg-white text-black text-base font-semibold rounded-lg shadow-md hover:bg-primary-light hover:text-white transition-al duration-150"
+        <a
+          href="#intake"
+          class="hidden lg:inline-block py-2.5 px-5 bg-white text-black text-base font-semibold rounded-lg shadow-md hover:bg-primary-light hover:text-white transition-all duration-150"
         >
-          Book a Session
-        </button>
-
+          Start Intake
+        </a>
         <button
           onclick="toggleMobileMenu()"
           class="text-base font-semibold text-white hover:opacity-80 lg:hidden transition duration-150"
           aria-label="Toggle navigation menu"
+          aria-expanded="false"
         >
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
@@ -102,255 +319,1096 @@
         class="w-full h-full bg-gradient-to-b from-primary-dark to-darker-green"
       >
         <div class="p-6">
-          <!-- Header -->
           <div class="flex justify-between items-center mb-8">
             <div class="text-2xl font-extrabold text-white">Therapy.io</div>
             <button
               onclick="toggleMobileMenu()"
               class="text-white transition duration-300"
+              aria-label="Close menu"
             >
               <i data-lucide="x" class="w-6 h-6"></i>
             </button>
           </div>
 
-          <!-- Navigation -->
-          <nav class="space-y-6">
+          <nav class="space-y-6" aria-label="Mobile">
             <a
               href="index.html"
-              class="mobile-nav-item flex items-center space-x-4 text-lg font-semibold text-white py-4 px-4"
+              class="flex items-center space-x-4 text-lg font-medium text-gray-300 py-4 px-4"
             >
-              <i data-lucide="home" class="w-5 h-5"></i>
-              <span>Home</span>
+              <i data-lucide="home" class="w-5 h-5"></i><span>Home</span>
             </a>
             <a
               href="about.html"
-              class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300"
+              class="flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300"
             >
-              <i data-lucide="users" class="w-5 h-5"></i>
-              <span>About Us</span>
+              <i data-lucide="users" class="w-5 h-5"></i><span>About</span>
             </a>
             <a
               href="services.html"
-              class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300"
+              class="flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300"
             >
-              <i data-lucide="heart" class="w-5 h-5"></i>
-              <span>Services</span>
+              <i data-lucide="heart" class="w-5 h-5"></i><span>Services</span>
             </a>
             <a
               href="contact.html"
-              class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300 bg-white/10 rounded-xl"
+              class="flex items-center space-x-4 text-lg font-medium text-white py-4 px-4 bg-white/10 rounded-xl"
             >
-              <i data-lucide="phone" class="w-5 h-5"></i>
-              <span>Contact</span>
+              <i data-lucide="phone" class="w-5 h-5"></i
+              ><span>Contact & Intake</span>
             </a>
           </nav>
 
-          <!-- Auth & CTA Section -->
           <div class="mt-12 pt-8 border-t border-white/20">
-            <button
+            <a
+              href="#intake"
+              onclick="toggleMobileMenu()"
               class="w-full py-4 bg-white text-black font-semibold rounded-xl hover:bg-primary-light hover:text-white transition duration-300 flex items-center justify-center space-x-3"
             >
-              <i data-lucide="arrow-right" class="w-5 h-5"></i>
-              <span>Book a Session</span>
-            </button>
+              <i data-lucide="file-input" class="w-5 h-5"></i
+              ><span>Start Intake</span>
+            </a>
           </div>
 
-          <!-- Additional Info -->
           <div class="mt-8 p-4 bg-white/5 rounded-xl">
             <p class="text-gray-300 text-sm text-center">
-              Professional therapy services available 24/7
+              Professional online therapy across Alberta
             </p>
           </div>
         </div>
       </div>
     </div>
-    <div id="overlay" class="overlay" onclick="toggleMobileMenu()"></div>
+    <div
+      id="overlay"
+      class="overlay lg:hidden"
+      onclick="toggleMobileMenu()"
+      aria-hidden="true"
+    ></div>
 
-    <div id="contact-page" class="page-content">
-      <section class="pt-20 pb-16 sm:pt-32 sm:pb-24 px-4 sm:px-6 bg-white">
+    <main id="main">
+      <!-- Hero -->
+      <section class="gradient-hero pt-20 pb-16 sm:pt-28 sm:pb-24 px-4 sm:px-6">
         <div class="max-w-4xl mx-auto text-center">
-          <h1 class="text-5xl md:text-6xl font-extrabold text-dark-green mb-6">
-            Contact & Support
+          <h1
+            class="text-5xl md:text-6xl font-extrabold text-primary-dark mb-4"
+          >
+            Contact & Intake
           </h1>
-          <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-            We're here to answer your questions about the platform, billing, and
-            technical support. For appointment scheduling, please use the
-            "Client Login" link.
+          <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+            Have a question or ready to begin? Send a quick message or complete
+            the secure intake form to book your first session.
           </p>
+          <div class="mt-8 btn-container">
+            <a
+              href="#intake"
+              class="tab-btn btn"
+              id="tab-intake"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-intake"
+            >
+              Start Intake
+              <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+            </a>
+            <a
+              href="#contact"
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-message"
+              id="tab-message"
+              class="tab-btn btn"
+            >
+              Send a Message
+            </a>
+          </div>
         </div>
       </section>
 
-      <section class="pb-20 sm:pb-32 px-4 sm:px-6 md:px-10 bg-cream">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <!-- Tabs Switcher -->
+      <section class="p-4 sm:p-6 pb-6">
+        <div class="max-w-6xl mx-auto">
           <div
-            class="lg:col-span-2 p-8 bg-white rounded-xl shadow-2xl border-t-4 border-light-green"
+            role="tablist"
+            aria-label="Contact or Intake"
+            class="flex gap-2 justify-center"
           >
-            <h2 class="text-2xl font-bold text-dark-green mb-6">
-              Send Us a Message
+            <!-- <button
+                id="tab-message"
+                class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold"
+                role="tab"
+                aria-selected="true"
+                aria-controls="panel-message"
+              >
+                Message
+              </button> -->
+            <!-- <button
+              class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold"
+                id="tab-intake"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-intake"
+              >
+                Intake
+              </button> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel: Message -->
+      <section
+        id="panel-message"
+        class="px-4 sm:px-6 pb-16"
+        role="tabpanel"
+        aria-labelledby="tab-message"
+      >
+        <div
+          class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12"
+          id="contact"
+        >
+          <!-- Form -->
+          <div
+            class="lg:col-span-2 p-6 sm:p-8 bg-white rounded-2xl shadow-sm border border-gray-200"
+          >
+            <h2 class="text-2xl font-bold text-primary-dark mb-6">
+              Send a Message
             </h2>
-            <form class="space-y-4 text-left">
+            <form
+              id="contactForm"
+              class="space-y-4 text-left"
+              action="https://formspree.io/f/your-contact-id"
+              method="POST"
+              novalidate
+            >
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label
-                    for="name"
-                    class="block text-sm font-medium text-gray-700 mb-1"
+                    for="cName"
+                    class="block text-sm font-semibold text-gray-700 mb-1"
                     >Full Name</label
                   >
                   <input
                     type="text"
-                    id="name"
-                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-light-green focus:border-light-green"
+                    id="cName"
+                    name="name"
+                    required
+                    autocomplete="name"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light"
+                    placeholder="Your name"
                   />
                 </div>
                 <div>
                   <label
-                    for="email"
-                    class="block text-sm font-medium text-gray-700 mb-1"
-                    >Email Address</label
+                    for="cEmail"
+                    class="block text-sm font-semibold text-gray-700 mb-1"
+                    >Email</label
                   >
                   <input
                     type="email"
-                    id="email"
-                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-light-green focus:border-light-green"
+                    id="cEmail"
+                    name="email"
+                    required
+                    autocomplete="email"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light"
+                    placeholder="you@example.com"
                   />
                 </div>
               </div>
-              <div>
-                <label
-                  for="topic"
-                  class="block text-sm font-medium text-gray-700 mb-1"
-                  >Topic</label
-                >
-                <select
-                  id="topic"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-light-green focus:border-light-green"
-                >
-                  <option>General Inquiry (Platform, Services)</option>
-                  <option>Billing & Subscriptions</option>
-                  <option>Technical Support</option>
-                  <option>Therapist Application / Careers</option>
-                  <option>Media & Partnerships</option>
-                </select>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    for="cPhone"
+                    class="block text-sm font-semibold text-gray-700 mb-1"
+                    >Phone (optional)</label
+                  >
+                  <input
+                    type="tel"
+                    id="cPhone"
+                    name="phone"
+                    inputmode="tel"
+                    autocomplete="tel"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light"
+                    placeholder="+1 (___) ___‑____"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="cTopic"
+                    class="block text-sm font-semibold text-gray-700 mb-1"
+                    >Topic</label
+                  >
+                  <select
+                    id="cTopic"
+                    name="topic"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light"
+                  >
+                    <option>General Inquiry</option>
+                    <option>Booking / Availability</option>
+                    <option>Billing</option>
+                    <option>Technical</option>
+                    <option>Other</option>
+                  </select>
+                </div>
               </div>
               <div>
                 <label
-                  for="message"
-                  class="block text-sm font-medium text-gray-700 mb-1"
+                  for="cMessage"
+                  class="block text-sm font-semibold text-gray-700 mb-1"
                   >Message</label
                 >
                 <textarea
-                  id="message"
-                  rows="4"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-light-green focus:border-light-green"
+                  id="cMessage"
+                  name="message"
+                  rows="5"
+                  required
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light"
+                  placeholder="How can I help?"
                 ></textarea>
               </div>
-              <button
-                type="submit"
-                class="w-full py-3 bg-light-green text-white font-bold text-lg rounded-lg hover:bg-dark-green transition duration-150 shadow-lg"
-              >
-                Submit Inquiry
-              </button>
+              <div class="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  id="cConsent"
+                  required
+                  class="mt-1 accent-primary-light"
+                />
+                <label for="cConsent" class="text-sm text-gray-700"
+                  >I consent to be contacted regarding my inquiry.</label
+                >
+              </div>
+              <div class="mt-6">
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-full sm:w-auto"
+                >
+                  Submit Inquiry
+                </button>
+              </div>
+              <div
+                id="contactStatus"
+                class="text-sm mt-2"
+                role="status"
+                aria-live="polite"
+              ></div>
             </form>
           </div>
 
+          <!-- Contact Info -->
           <div
-            class="lg:col-span-1 p-8 bg-white rounded-xl shadow-2xl border-b-4 border-dark-green h-fit"
+            class="lg:col-span-1 p-6 sm:p-8 bg-white rounded-2xl shadow-sm border border-gray-200 h-fit"
           >
-            <h2 class="text-2xl font-bold text-dark-green mb-6">
-              Direct Contact
+            <h2 class="text-2xl font-bold text-primary-dark mb-6">
+              Contact Details
             </h2>
-            <div class="space-y-6">
-              <div class="flex items-start p-3 bg-cream rounded-lg">
-                <i
-                  data-lucide="mail"
-                  class="w-6 h-6 text-accent-gold mr-4 mt-1 shrink-0"
-                ></i>
-                <div>
-                  <h3 class="font-bold text-dark-green">Support Email</h3>
-                  <p class="text-gray-700">abdulshaikh2008@hotmail.com</p>
-                </div>
-              </div>
-              <div class="flex items-start p-3 bg-cream rounded-lg">
-                <i
-                  data-lucide="phone"
-                  class="w-6 h-6 text-accent-gold mr-4 mt-1 shrink-0"
-                ></i>
-                <div>
-                  <h3 class="font-bold text-dark-green">
-                    Phone Support (Billing Only)
-                  </h3>
-                  <p class="text-gray-700">
-                    587-7176727
-                    <span class="block text-sm text-gray-500"
-                      >(Mon-Fri, 9am-5pm MST)</span
-                    >
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-start p-3 bg-cream rounded-lg">
-                <i
-                  data-lucide="clock"
-                  class="w-6 h-6 text-accent-gold mr-4 mt-1 shrink-0"
-                ></i>
-                <div>
-                  <h3 class="font-bold text-dark-green">
-                    Virtual Office Hours
-                  </h3>
-                  <p class="text-gray-700">
-                    Monday to Saturday: Flexible Hours
-                    <span class="block text-sm text-gray-500"
-                      >Appointments can be scheduled outside these hours.</span
-                    >
-                  </p>
-                </div>
-              </div>
-
+            <div class="space-y-4 sm:space-y-5">
+              <!-- Email -->
               <div
-                class="flex items-start p-4 bg-red-100 rounded-lg border border-red-300 shadow-md"
+                class="p-4 sm:p-5 rounded-xl bg-background-cream border border-gray-200"
               >
-                <i
-                  data-lucide="alert-triangle"
-                  class="w-6 h-6 text-red-600 mr-4 mt-1 shrink-0"
-                ></i>
-                <div>
-                  <h3 class="font-bold text-red-700">
-                    Crisis Help - READ THIS
-                  </h3>
-                  <p class="text-red-700 text-sm font-semibold">
-                    If you are in crisis, DO NOT use this form.** Please call or
-                    text **988** (Canada/US Suicide Crisis Helpline) or 911
-                    immediately..
+                <div class="flex items-center mb-3">
+                  <i
+                    data-lucide="mail"
+                    class="w-5 h-5 text-accent-copper mr-3 flex-shrink-0"
+                  ></i>
+                  <h3 class="font-bold text-primary-dark text-lg">Email</h3>
+                </div>
+                <div class="pl-8">
+                  <a
+                    href="mailto:abdulshaikh2008@hotmail.com"
+                    class="text-primary-dark hover:text-primary-light transition-colors duration-200 text-base font-medium break-all"
+                  >
+                    abdulshaikh2008@hotmail.com
+                  </a>
+                  <p class="text-gray-600 text-sm mt-1">
+                    Best for inquiries and follow‑ups
                   </p>
                 </div>
               </div>
+
+              <!-- Phone -->
+              <div
+                class="p-4 sm:p-5 rounded-xl bg-background-cream border border-gray-200"
+              >
+                <div class="flex items-center mb-3">
+                  <i
+                    data-lucide="phone"
+                    class="w-5 h-5 text-accent-copper mr-3 flex-shrink-0"
+                  ></i>
+                  <h3 class="font-bold text-primary-dark text-lg">Phone</h3>
+                </div>
+                <div class="pl-8">
+                  <a
+                    href="tel:5877176727"
+                    class="text-primary-dark hover:text-primary-light transition-colors duration-200 text-base font-medium"
+                  >
+                    587‑717‑6727
+                  </a>
+                  <p class="text-gray-600 text-sm mt-1">
+                    Mon–Fri, 9:00–17:00 MT<br class="sm:hidden" />
+                    <span class="text-xs">(voicemail available)</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Hours -->
+              <div
+                class="p-4 sm:p-5 rounded-xl bg-background-cream border border-gray-200"
+              >
+                <div class="flex items-center mb-3">
+                  <i
+                    data-lucide="clock"
+                    class="w-5 h-5 text-accent-copper mr-3 flex-shrink-0"
+                  ></i>
+                  <h3 class="font-bold text-primary-dark text-lg">Hours</h3>
+                </div>
+                <div class="pl-8">
+                  <div class="text-gray-700 text-sm space-y-2">
+                    <div class="flex justify-between items-center">
+                      <span class="text-gray-600">Mon–Thu</span>
+                      <strong class="text-primary-dark">9:00–18:00</strong>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-gray-600">Friday</span>
+                      <strong class="text-primary-dark">9:00–17:00</strong>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-gray-600">Evenings</span>
+                      <strong class="text-primary-dark">By request</strong>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-gray-600">Weekends</span>
+                      <strong class="text-primary-dark">Limited</strong>
+                    </div>
+                  </div>
+                  <p
+                    class="text-gray-500 text-xs mt-3 border-t border-gray-200 pt-2"
+                  >
+                    Time zone: Alberta (MT)
+                  </p>
+                </div>
+              </div>
+
+              <!-- Additional Contact Methods -->
             </div>
           </div>
         </div>
       </section>
 
+      <!-- Panel: Intake -->
       <section
-        class="py-20 sm:py-28 px-4 sm:px-6 bg-white border-t border-gray-200"
+        id="panel-intake"
+        class="px-4 sm:px-6 pb-20 hidden"
+        role="tabpanel"
+        aria-labelledby="tab-intake"
       >
-        <div class="max-w-6xl mx-auto text-center">
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-dark-green mb-6">
-            Serving Calgary and All of Alberta (Virtual Office)
-          </h2>
-          <p class="text-lg text-gray-600 mb-10 max-w-3xl mx-auto">
-            While our services are provided completely online for your
-            convenience, we are based in and licensed to serve all residents
-            across the province of Alberta.
-          </p>
+        <!-- Stepper -->
+        <div class="max-w-3xl mx-auto mb-4" id="intake">
+          <div class="flex items-center justify-between">
+            <div class="flex flex-col items-center">
+              <div id="dot-1" class="step-dot step-active">1</div>
+              <div class="text-xs mt-2 muted">About You</div>
+            </div>
+            <div class="h-[2px] w-full mx-2 bg-gray-200"></div>
+            <div class="flex flex-col items-center">
+              <div id="dot-2" class="step-dot step-next">2</div>
+              <div class="text-xs mt-2 muted">Background</div>
+            </div>
+            <div class="h-[2px] w-full mx-2 bg-gray-200"></div>
+            <div class="flex flex-col items-center">
+              <div id="dot-3" class="step-dot step-next">3</div>
+              <div class="text-xs mt-2 muted">Concerns & Goals</div>
+            </div>
+            <div class="h-[2px] w-full mx-2 bg-gray-200"></div>
+            <div class="flex flex-col items-center">
+              <div id="dot-4" class="step-dot step-next">4</div>
+              <div class="text-xs mt-2 muted">Consent</div>
+            </div>
+          </div>
+        </div>
 
-          <p class="text-sm text-gray-500 mt-4">
-            *Please note: This is a virtual practice. Physical office visits are
-            not available.*
-          </p>
+        <!-- Intake form (multi-step) -->
+        <form
+          id="intakeForm"
+          class="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-8 space-y-8"
+          method="POST"
+          action="https://formspree.io/f/your-intake-id"
+          novalidate
+        >
+          <input
+            type="text"
+            name="website"
+            id="website"
+            class="hidden"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+          />
+          <div
+            id="formStatus"
+            class="text-sm"
+            role="status"
+            aria-live="polite"
+          ></div>
+          <div id="draftStatus" class="text-xs text-gray-500">Autosaving…</div>
+
+          <!-- Step 1 -->
+          <fieldset data-step="1" class="space-y-4">
+            <legend class="text-xl font-bold text-primary-dark">
+              About You
+            </legend>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label
+                  for="fullName"
+                  class="block text-sm font-semibold text-gray-700"
+                  >Full Name *</label
+                >
+                <input
+                  id="fullName"
+                  name="fullName"
+                  type="text"
+                  required
+                  autocomplete="name"
+                  class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+                />
+              </div>
+              <div>
+                <label
+                  for="dob"
+                  class="block text-sm font-semibold text-gray-700"
+                  >Date of Birth</label
+                >
+                <input
+                  id="dob"
+                  name="dob"
+                  type="date"
+                  max="9999-12-31"
+                  class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+                />
+              </div>
+              <div>
+                <label
+                  for="phone"
+                  class="block text-sm font-semibold text-gray-700"
+                  >Phone</label
+                >
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  inputmode="tel"
+                  autocomplete="tel"
+                  placeholder="+1 (___) ___‑____"
+                  class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+                />
+              </div>
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-semibold text-gray-700"
+                  >Email *</label
+                >
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  autocomplete="email"
+                  class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+                />
+              </div>
+              <div class="sm:col-span-2">
+                <span class="block text-sm font-semibold text-gray-700 mb-1"
+                  >Preferred Contact Method</span
+                >
+                <div class="flex flex-wrap gap-4">
+                  <label class="inline-flex items-center gap-2"
+                    ><input
+                      type="checkbox"
+                      name="contactMethod"
+                      value="Phone"
+                      class="accent-primary-light"
+                    />
+                    <span>Phone</span></label
+                  >
+                  <label class="inline-flex items-center gap-2"
+                    ><input
+                      type="checkbox"
+                      name="contactMethod"
+                      value="Email"
+                      class="accent-primary-light"
+                    />
+                    <span>Email</span></label
+                  >
+                  <label class="inline-flex items-center gap-2"
+                    ><input
+                      type="checkbox"
+                      name="contactMethod"
+                      value="Text"
+                      class="accent-primary-light"
+                    />
+                    <span>Text</span></label
+                  >
+                </div>
+              </div>
+              <div class="sm:col-span-2">
+                <label
+                  for="address"
+                  class="block text-sm font-semibold text-gray-700"
+                  >Address (optional)</label
+                >
+                <input
+                  id="address"
+                  name="address"
+                  type="text"
+                  autocomplete="street-address"
+                  class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-actions" data-controls="1">
+            <span class="step-indicator">Step 1 of 4</span>
+            <button type="button" class="btn btn-primary" data-next>
+              Next
+            </button>
+          </div>
+
+          <hr class="border-gray-100" />
+
+          <!-- Step 2 -->
+          <fieldset data-step="2" class="space-y-4 hidden">
+            <legend class="text-xl font-bold text-primary-dark">
+              Background
+            </legend>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label
+                  for="occupation"
+                  class="block text-sm font-semibold text-gray-700"
+                  >Occupation / Student Status</label
+                >
+                <input
+                  id="occupation"
+                  name="occupation"
+                  type="text"
+                  class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+                />
+              </div>
+              <div>
+                <label
+                  for="relationshipStatus"
+                  class="block text-sm font-semibold text-gray-700"
+                  >Relationship Status</label
+                >
+                <select
+                  id="relationshipStatus"
+                  name="relationshipStatus"
+                  class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 bg-white focus:ring-2 focus:ring-primary-light"
+                >
+                  <option value="">Select</option>
+                  <option>Single</option>
+                  <option>Married</option>
+                  <option>Partnered</option>
+                  <option>Divorced</option>
+                  <option>Widowed</option>
+                  <option>Prefer not to say</option>
+                </select>
+              </div>
+              <div>
+                <label
+                  for="children"
+                  class="block text-sm font-semibold text-gray-700"
+                  >Children (if any)</label
+                >
+                <input
+                  id="children"
+                  name="children"
+                  type="text"
+                  class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+                />
+              </div>
+              <div>
+                <label
+                  for="referredBy"
+                  class="block text-sm font-semibold text-gray-700"
+                  >Referred By (if applicable)</label
+                >
+                <input
+                  id="referredBy"
+                  name="referredBy"
+                  type="text"
+                  class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label
+                  for="emgName"
+                  class="block text-sm font-semibold text-gray-700"
+                  >Emergency Contact Name</label
+                >
+                <input
+                  id="emgName"
+                  name="emgName"
+                  type="text"
+                  class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+                />
+              </div>
+              <div>
+                <label
+                  for="emgPhone"
+                  class="block text-sm font-semibold text-gray-700"
+                  >Emergency Contact Phone</label
+                >
+                <input
+                  id="emgPhone"
+                  name="emgPhone"
+                  type="tel"
+                  inputmode="tel"
+                  class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+                />
+              </div>
+              <div>
+                <label
+                  for="emgRelation"
+                  class="block text-sm font-semibold text-gray-700"
+                  >Relationship</label
+                >
+                <input
+                  id="emgRelation"
+                  name="emgRelation"
+                  type="text"
+                  class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-actions hidden" data-controls="2">
+            <button type="button" class="btn btn-secondary" data-prev>
+              Back
+            </button>
+            <span class="step-indicator">Step 2 of 4</span>
+            <button type="button" class="btn btn-primary" data-next>
+              Next
+            </button>
+          </div>
+
+          <hr class="border-gray-100 hidden" />
+
+          <!-- Step 3 -->
+          <fieldset data-step="3" class="space-y-4 hidden">
+            <legend class="text-xl font-bold text-primary-dark">
+              Concerns & Goals
+            </legend>
+            <div class="grid gap-3 sm:grid-cols-2">
+              <label class="inline-flex items-center gap-2"
+                ><input
+                  type="checkbox"
+                  name="concerns"
+                  value="Anxiety or stress"
+                  class="accent-primary-light"
+                /><span>Anxiety or stress</span></label
+              >
+              <label class="inline-flex items-center gap-2"
+                ><input
+                  type="checkbox"
+                  name="concerns"
+                  value="Depression or low mood"
+                  class="accent-primary-light"
+                /><span>Depression or low mood</span></label
+              >
+              <label class="inline-flex items-center gap-2"
+                ><input
+                  type="checkbox"
+                  name="concerns"
+                  value="Trauma or PTSD"
+                  class="accent-primary-light"
+                /><span>Trauma or PTSD</span></label
+              >
+              <label class="inline-flex items-center gap-2"
+                ><input
+                  type="checkbox"
+                  name="concerns"
+                  value="Relationship or family concerns"
+                  class="accent-primary-light"
+                /><span>Relationship or family concerns</span></label
+              >
+              <label class="inline-flex items-center gap-2"
+                ><input
+                  type="checkbox"
+                  name="concerns"
+                  value="Grief or loss"
+                  class="accent-primary-light"
+                /><span>Grief or loss</span></label
+              >
+              <label class="inline-flex items-center gap-2"
+                ><input
+                  type="checkbox"
+                  name="concerns"
+                  value="Emotional regulation"
+                  class="accent-primary-light"
+                /><span>Emotional regulation</span></label
+              >
+              <label class="inline-flex items-center gap-2"
+                ><input
+                  type="checkbox"
+                  name="concerns"
+                  value="Self-esteem or identity"
+                  class="accent-primary-light"
+                /><span>Self‑esteem or identity</span></label
+              >
+              <label class="inline-flex items-center gap-2"
+                ><input
+                  type="checkbox"
+                  name="concerns"
+                  value="Workplace or academic stress"
+                  class="accent-primary-light"
+                /><span>Workplace or academic stress</span></label
+              >
+              <div class="sm:col-span-2">
+                <label class="inline-flex items-center gap-2">
+                  <input
+                    type="checkbox"
+                    id="concernOther"
+                    name="concerns"
+                    value="Other"
+                    class="accent-primary-light"
+                  /><span>Other (please specify)</span>
+                </label>
+                <input
+                  id="concernOtherText"
+                  name="concernOtherText"
+                  type="text"
+                  class="mt-2 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light hidden"
+                  placeholder="Please specify"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="presentingDesc"
+                class="block text-sm font-semibold text-gray-700"
+                >Briefly describe what brings you to counselling at this
+                time</label
+              >
+              <textarea
+                id="presentingDesc"
+                name="presentingDesc"
+                rows="4"
+                class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+                placeholder="Share anything you feel comfortable sharing"
+              ></textarea>
+            </div>
+
+            <div>
+              <label
+                for="goals"
+                class="block text-sm font-semibold text-gray-700"
+                >What would you like to achieve through therapy?</label
+              >
+              <textarea
+                id="goals"
+                name="goals"
+                rows="4"
+                class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+              ></textarea>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <span class="block text-sm font-semibold text-gray-700 mb-1"
+                  >Are you currently taking any medications?</span
+                >
+                <div class="flex items-center gap-4">
+                  <label class="inline-flex items-center gap-2"
+                    ><input
+                      type="radio"
+                      name="medsNow"
+                      value="Yes"
+                      class="accent-primary-light"
+                    /><span>Yes</span></label
+                  >
+                  <label class="inline-flex items-center gap-2"
+                    ><input
+                      type="radio"
+                      name="medsNow"
+                      value="No"
+                      class="accent-primary-light"
+                      checked
+                    /><span>No</span></label
+                  >
+                </div>
+              </div>
+              <div id="medListWrap" class="hidden">
+                <label
+                  for="medications"
+                  class="block text-sm font-semibold text-gray-700"
+                  >If yes, please list</label
+                >
+                <input
+                  id="medications"
+                  name="medications"
+                  type="text"
+                  class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+                />
+              </div>
+
+              <div class="sm:col-span-2">
+                <span class="block text-sm font-semibold text-gray-700 mb-1"
+                  >Have you attended counselling before?</span
+                >
+                <div class="flex items-center gap-4">
+                  <label class="inline-flex items-center gap-2"
+                    ><input
+                      type="radio"
+                      name="therapyBefore"
+                      value="Yes"
+                      class="accent-primary-light"
+                    /><span>Yes</span></label
+                  >
+                  <label class="inline-flex items-center gap-2"
+                    ><input
+                      type="radio"
+                      name="therapyBefore"
+                      value="No"
+                      class="accent-primary-light"
+                      checked
+                    /><span>No</span></label
+                  >
+                </div>
+              </div>
+              <div id="prevHelpfulWrap" class="sm:col-span-2 hidden">
+                <label
+                  for="prevHelpful"
+                  class="block text-sm font-semibold text-gray-700"
+                  >If yes, what was helpful or unhelpful?</label
+                >
+                <textarea
+                  id="prevHelpful"
+                  name="prevHelpful"
+                  rows="3"
+                  class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+                ></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-actions hidden" data-controls="3">
+            <button type="button" class="btn btn-secondary" data-prev>
+              Back
+            </button>
+            <span class="step-indicator">Step 3 of 4</span>
+            <button type="button" class="btn btn-primary" data-next>
+              Next
+            </button>
+          </div>
+
+          <hr class="border-gray-100 hidden" />
+
+          <!-- Step 4 -->
+          <fieldset data-step="4" class="space-y-4 hidden">
+            <legend class="text-xl font-bold text-primary-dark">
+              Consent & Submit
+            </legend>
+            <p class="text-gray-700">
+              I understand that my information will remain confidential and will
+              only be shared with my written consent or as required by law
+              (e.g., risk of harm to self or others).
+            </p>
+            <label class="inline-flex items-start gap-3">
+              <input
+                type="checkbox"
+                id="consent"
+                name="consent"
+                class="mt-1 accent-primary-light"
+                required
+              />
+              <span
+                >I have read and agree to the confidentiality statement.</span
+              >
+            </label>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label
+                  for="signature"
+                  class="block text-sm font-semibold text-gray-700"
+                  >Signature (typed name) *</label
+                >
+                <input
+                  id="signature"
+                  name="signature"
+                  type="text"
+                  required
+                  placeholder="Type your full name"
+                  autocomplete="name"
+                  class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+                />
+              </div>
+              <div>
+                <label
+                  for="sigDate"
+                  class="block text-sm font-semibold text-gray-700"
+                  >Date *</label
+                >
+                <input
+                  id="sigDate"
+                  name="sigDate"
+                  type="date"
+                  required
+                  class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+                />
+              </div>
+            </div>
+
+            <div
+              class="rounded-xl bg-background-cream border border-gray-200 p-4 text-sm text-gray-700"
+            >
+              By submitting, you consent to secure storage of your form for the
+              purpose of providing care.
+            </div>
+          </fieldset>
+
+          <div class="form-actions hidden" data-controls="4">
+            <button type="button" class="btn btn-secondary" data-prev>
+              Back
+            </button>
+            <span class="step-indicator">Step 4 of 4</span>
+            <button id="submitBtn" type="submit" class="btn btn-primary">
+              Submit Intake Form
+            </button>
+          </div>
+        </form>
+
+        <div
+          class="max-w-3xl mx-auto mt-4 flex items-center justify-between text-xs text-gray-500"
+        >
+          <button id="clearDraft" class="underline hover:text-primary-dark">
+            Clear saved draft
+          </button>
+          <span>Auto‑save is on</span>
         </div>
       </section>
-    </div>
+    </main>
 
-    <!--Footer-->
+    <section
+      class="py-20 sm:py-28 px-4 sm:px-6 bg-white border-t border-gray-200"
+    >
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-dark-green mb-6">
+          Serving Calgary and All of Alberta (Virtual Office)
+        </h2>
+        <p class="text-lg text-gray-600 mb-10 max-w-3xl mx-auto">
+          While our services are provided completely online for your
+          convenience, we are based in and licensed to serve all residents
+          across the province of Alberta.
+        </p>
+
+        <p class="text-sm text-gray-500 mt-4">
+          *Please note: This is a virtual practice. Physical office visits are
+          not available.*
+        </p>
+      </div>
+    </section>
+    <!-- Process & What to Expect Section -->
+    <section class="py-16 px-4 sm:px-6 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-primary-dark mb-4">
+            Your Therapy Journey
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            A clear, supportive process from first contact to ongoing care
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8">
+          <!-- Step 1 -->
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-white font-bold text-xl">1</span>
+            </div>
+            <h3 class="text-lg font-semibold text-primary-dark mb-2">
+              Initial Contact
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Complete the intake form or send a message. I'll respond within
+              24-48 hours.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-white font-bold text-xl">2</span>
+            </div>
+            <h3 class="text-lg font-semibold text-primary-dark mb-2">
+              Free Consultation
+            </h3>
+            <p class="text-gray-600 text-sm">
+              15-minute video call to discuss your needs and ensure we're a good
+              fit.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-white font-bold text-xl">3</span>
+            </div>
+            <h3 class="text-lg font-semibold text-primary-dark mb-2">
+              First Session
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Comprehensive assessment and collaborative goal setting.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-white font-bold text-xl">4</span>
+            </div>
+            <h3 class="text-lg font-semibold text-primary-dark mb-2">
+              Ongoing Support
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Regular sessions tailored to your unique needs and progress.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <div class="bg-background-cream rounded-2xl p-8 max-w-2xl mx-auto">
+            <i
+              data-lucide="heart"
+              class="w-12 h-12 text-accent-copper mx-auto mb-4"
+            ></i>
+            <h3 class="text-xl font-bold text-primary-dark mb-2">
+              Comfort & Safety First
+            </h3>
+            <p class="text-gray-700">
+              Your comfort and sense of safety are my top priorities. We'll move
+              at your pace, and you're always in control of your therapy
+              journey.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
     <footer class="bg-primary-dark text-white pt-16 pb-8">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
@@ -359,38 +1417,34 @@
               Therapy.io
             </h3>
             <p class="text-gray-300 mb-6 max-w-md">
-              Professional online counseling serving individuals, couples, and
-              families across Alberta. Your mental wellness is our priority.
+              Professional online counseling serving individuals and couples
+              across Alberta. Your mental wellness is my priority.
             </p>
             <div class="flex space-x-4">
               <a
                 href="#"
                 class="text-gray-300 hover:text-primary-light transition duration-150"
                 aria-label="Facebook"
-              >
-                <i data-lucide="facebook" class="w-5 h-5"></i>
-              </a>
+                ><i data-lucide="facebook" class="w-5 h-5"></i
+              ></a>
               <a
                 href="#"
                 class="text-gray-300 hover:text-primary-light transition duration-150"
                 aria-label="Twitter"
-              >
-                <i data-lucide="twitter" class="w-5 h-5"></i>
-              </a>
+                ><i data-lucide="twitter" class="w-5 h-5"></i
+              ></a>
               <a
                 href="#"
                 class="text-gray-300 hover:text-primary-light transition duration-150"
                 aria-label="Instagram"
-              >
-                <i data-lucide="instagram" class="w-5 h-5"></i>
-              </a>
+                ><i data-lucide="instagram" class="w-5 h-5"></i
+              ></a>
               <a
                 href="#"
                 class="text-gray-300 hover:text-primary-light transition duration-150"
                 aria-label="LinkedIn"
-              >
-                <i data-lucide="linkedin" class="w-5 h-5"></i>
-              </a>
+                ><i data-lucide="linkedin" class="w-5 h-5"></i
+              ></a>
             </div>
           </div>
           <div>
@@ -398,7 +1452,7 @@
             <ul class="space-y-2">
               <li>
                 <a
-                  href="/"
+                  href="index.html"
                   class="text-gray-300 hover:text-primary-light transition duration-150"
                   >Home</a
                 >
@@ -407,7 +1461,7 @@
                 <a
                   href="about.html"
                   class="text-gray-300 hover:text-primary-light transition duration-150"
-                  >About Us</a
+                  >About</a
                 >
               </li>
               <li>
@@ -417,12 +1471,11 @@
                   >Services</a
                 >
               </li>
-
               <li>
                 <a
                   href="contact.html"
                   class="text-gray-300 hover:text-primary-light transition duration-150"
-                  >Contact</a
+                  >Contact & Intake</a
                 >
               </li>
             </ul>
@@ -434,30 +1487,29 @@
                 <a
                   href="faq.html"
                   class="text-gray-300 hover:text-primary-light transition duration-150"
+                  >Individual Therapy</a
                 >
-                  Individual Therapy
-                </a>
               </li>
               <li>
                 <a
                   href="contact.html"
                   class="text-gray-300 hover:text-primary-light transition duration-150"
-                  >Couples Counseling
-                </a>
+                  >Couples Counseling</a
+                >
               </li>
               <li>
                 <a
                   href="privacy.html"
                   class="text-gray-300 hover:text-primary-light transition duration-150"
-                  >Family Therapy
-                </a>
+                  >Family Therapy</a
+                >
               </li>
               <li>
                 <a
                   href="terms.html"
                   class="text-gray-300 hover:text-primary-light transition duration-150"
-                  >Specialized Treatments
-                </a>
+                  >Specialized Treatments</a
+                >
               </li>
             </ul>
           </div>
@@ -489,13 +1541,314 @@
           </p>
           <p>
             Canada Suicide Crisis Helpline:
-            <strong class="text-white">1-877-303-2642 (toll-free).</strong>
+            <strong class="text-white">1‑877‑303‑2642</strong> (toll‑free).
           </p>
         </div>
       </div>
     </footer>
 
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ContactPage",
+            "@id": "https://www.therapy.io/contact.html#webpage",
+            "url": "https://www.therapy.io/contact.html",
+            "name": "Contact & Intake | Therapy.io",
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "Therapy.io",
+              "url": "https://www.therapy.io/"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.therapy.io/contact.html#breadcrumbs",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.therapy.io/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Contact & Intake",
+                "item": "https://www.therapy.io/contact.html"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <!-- Scripts -->
+    <script>
+      // Year + icons
+
+      // Tabs
+      (function () {
+        const tabMsg = document.getElementById("tab-message");
+        const tabInt = document.getElementById("tab-intake");
+        const panelMsg = document.getElementById("panel-message");
+        const panelInt = document.getElementById("panel-intake");
+
+        function setTab(which) {
+          const message = which === "message";
+          tabMsg.setAttribute("aria-selected", message ? "true" : "false");
+          tabInt.setAttribute("aria-selected", message ? "false" : "true");
+          panelMsg.classList.toggle("hidden", !message);
+          panelInt.classList.toggle("hidden", message);
+          if (!message) history.replaceState(null, "", "#intake");
+          else history.replaceState(null, "", "#contact");
+        }
+
+        tabMsg.addEventListener("click", () => setTab("message"));
+        tabInt.addEventListener("click", () => setTab("intake"));
+
+        // Deep link
+        const hash = (location.hash || "").replace("#", "");
+        setTab(hash === "intake" ? "intake" : "contact");
+      })();
+
+      // Contact form demo handler (replace with your endpoint if needed)
+      (function () {
+        const form = document.getElementById("contactForm");
+        const status = document.getElementById("contactStatus");
+        if (!form) return;
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          if (!form.reportValidity()) return;
+          status.textContent = "Sending...";
+          status.className = "text-sm mt-2 text-gray-600";
+          await new Promise((r) => setTimeout(r, 700));
+          status.textContent = "Thanks — I'll reply within 1–2 business days.";
+          status.className = "text-sm mt-2 text-green-600";
+          form.reset();
+        });
+      })();
+
+      // Intake multi-step + autosave
+      (function () {
+        const form = document.getElementById("intakeForm");
+        if (!form) return;
+
+        const steps = Array.from(form.querySelectorAll("fieldset[data-step]"));
+        const controls = Array.from(form.querySelectorAll("[data-controls]"));
+        const dots = [1, 2, 3, 4].map((n) =>
+          document.getElementById("dot-" + n)
+        );
+        let current = 1;
+
+        const status = document.getElementById("formStatus");
+        const draftStatus = document.getElementById("draftStatus");
+
+        function showStep(n) {
+          current = n;
+          steps.forEach((fs) =>
+            fs.classList.toggle("hidden", Number(fs.dataset.step) !== n)
+          );
+          controls.forEach((c) =>
+            c.classList.toggle("hidden", Number(c.dataset.controls) !== n)
+          );
+          dots.forEach((dot, i) => {
+            const idx = i + 1;
+            dot.className =
+              "step-dot " +
+              (idx < n ? "step-done" : idx === n ? "step-active" : "step-next");
+            dot.textContent = idx < n ? "✓" : String(idx);
+          });
+          status.textContent = "";
+          status.className = "text-sm";
+        }
+
+        function nextStep() {
+          if (current < steps.length) showStep(current + 1);
+        }
+        function prevStep() {
+          if (current > 1) showStep(current - 1);
+        }
+
+        // Wire buttons
+        form.querySelectorAll("[data-next]").forEach((b) =>
+          b.addEventListener("click", () => {
+            if (current === 1) {
+              const name = form.fullName?.value.trim();
+              const email = form.email?.value.trim();
+              if (!name || !email) {
+                status.textContent =
+                  "Please complete Full Name and Email to continue.";
+                status.className = "text-sm mt-2 text-red-600";
+                return;
+              }
+            }
+            nextStep();
+          })
+        );
+        form
+          .querySelectorAll("[data-prev]")
+          .forEach((b) => b.addEventListener("click", prevStep));
+
+        // Toggle "Other" concerns
+        const concernOther = document.getElementById("concernOther");
+        const concernOtherText = document.getElementById("concernOtherText");
+        concernOther?.addEventListener("change", () => {
+          concernOtherText.classList.toggle("hidden", !concernOther.checked);
+          if (concernOther.checked) concernOtherText.focus();
+          if (!concernOther.checked) concernOtherText.value = "";
+          saveDraft();
+        });
+
+        // Toggle medication list
+        const medWrap = document.getElementById("medListWrap");
+        form.querySelectorAll('input[name="medsNow"]').forEach((r) => {
+          r.addEventListener("change", () => {
+            medWrap.classList.toggle("hidden", r.value !== "Yes" || !r.checked);
+            saveDraft();
+          });
+        });
+
+        // Toggle previous therapy textarea
+        const prevWrap = document.getElementById("prevHelpfulWrap");
+        form.querySelectorAll('input[name="therapyBefore"]').forEach((r) => {
+          r.addEventListener("change", () => {
+            prevWrap.classList.toggle(
+              "hidden",
+              r.value !== "Yes" || !r.checked
+            );
+            saveDraft();
+          });
+        });
+
+        // Auto-save to localStorage
+        const STORAGE_KEY = "intakeDraft-v1";
+        function saveDraft() {
+          const data = Object.fromEntries(new FormData(form));
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+            draftStatus.textContent = "Saved";
+            setTimeout(() => (draftStatus.textContent = "Autosaving…"), 1500);
+          } catch {}
+        }
+        function loadDraft() {
+          try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) return;
+            const data = JSON.parse(raw);
+            for (const [k, v] of Object.entries(data)) {
+              const el = form.elements[k];
+              if (!el) continue;
+              if (el instanceof RadioNodeList) {
+                [...el].forEach((input) => {
+                  if (Array.isArray(data[k])) {
+                    input.checked = data[k].includes(input.value);
+                  } else {
+                    input.checked = input.value === v;
+                  }
+                });
+              } else if (el.type === "checkbox") {
+                el.checked = !!v;
+              } else {
+                el.value = v;
+              }
+            }
+            if (form.medsNow?.value === "Yes")
+              medWrap.classList.remove("hidden");
+            if (form.therapyBefore?.value === "Yes")
+              prevWrap.classList.remove("hidden");
+            if (concernOther?.checked)
+              concernOtherText.classList.remove("hidden");
+          } catch {}
+        }
+        form.addEventListener("input", saveDraft, { passive: true });
+        form.addEventListener("change", saveDraft);
+        document.getElementById("clearDraft")?.addEventListener("click", () => {
+          localStorage.removeItem(STORAGE_KEY);
+          location.reload();
+        });
+
+        loadDraft();
+        showStep(1);
+
+        // Validate contact prefs before submit
+        function validateContact() {
+          const methods = Array.from(
+            form.querySelectorAll('input[name="contactMethod"]:checked')
+          );
+          const hasMethod = methods.length > 0;
+          const hasOneContact =
+            form.email.value.trim() !== "" || form.phone.value.trim() !== "";
+          if (!hasMethod) {
+            status.textContent =
+              "Please select at least one preferred contact method.";
+            status.className = "text-sm mt-2 text-red-600";
+            return false;
+          }
+          if (!hasOneContact) {
+            status.textContent =
+              "Please provide at least one contact detail: phone or email.";
+            status.className = "text-sm mt-2 text-red-600";
+            return false;
+          }
+          return true;
+        }
+
+        // Submit
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          if (!form.reportValidity()) return;
+          if (!validateContact()) {
+            showStep(1);
+            return;
+          }
+          if (form.website && form.website.value) return;
+
+          const submitBtn = document.getElementById("submitBtn");
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Submitting...";
+
+          try {
+            const action = form.getAttribute("action") || "";
+            if (!action) {
+              await new Promise((r) => setTimeout(r, 700));
+              status.textContent =
+                "Thank you! Your intake form has been submitted.";
+              status.className = "text-sm mt-2 text-green-600";
+              localStorage.removeItem("intakeDraft-v1");
+              form.reset();
+              showStep(1);
+              return;
+            }
+            const res = await fetch(action, {
+              method: "POST",
+              headers: { Accept: "application/json" },
+              body: new FormData(form),
+            });
+            if (res.ok) {
+              status.textContent =
+                "Thank you! Your intake form has been submitted.";
+              status.className = "text-sm mt-2 text-green-600";
+              localStorage.removeItem("intakeDraft-v1");
+              form.reset();
+              showStep(1);
+            } else {
+              status.textContent =
+                "Something went wrong. Please try again or contact me directly.";
+              status.className = "text-sm mt-2 text-red-600";
+            }
+          } catch {
+            status.textContent = "Network error. Please try again.";
+            status.className = "text-sm mt-2 text-red-600";
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Submit Intake Form";
+          }
+        });
+      })();
+    </script>
     <script src="main.js"></script>
-    <script src="tailwind-config.js"></script>
   </body>
 </html>
