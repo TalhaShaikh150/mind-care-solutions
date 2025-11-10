@@ -67,10 +67,9 @@
     <!-- Your CSS -->
     <link rel="stylesheet" href="css/style.css" />
 
-    
     <!-- Tailwind CDN (remove in production after compiling) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Tailwind config BEFORE CDN (required for custom colors) -->
     <script src="js/tailwind-config.js"></script>
     <!-- Lucide (pinned + defer) -->
@@ -79,7 +78,6 @@
       crossorigin
       defer
     ></script>
-
   </head>
 
   <body class="bg-background-cream text-gray-800">
@@ -226,7 +224,7 @@
             the secure intake form to book your first session.
           </p>
           <div class="mt-8 btn-container">
-              <a
+            <a
               href="#contact"
               role="tab"
               aria-selected="true"
@@ -247,7 +245,6 @@
               Start Intake
               <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
             </a>
-          
           </div>
         </div>
       </section>
@@ -300,7 +297,13 @@
             <h2 class="text-2xl font-bold text-primary-dark mb-6">
               Send a Message
             </h2>
-            <form id="contactForm" class="space-y-4 text-left" novalidate>
+            <form
+              action="https://formspree.io/f/mkgkngzy"
+              method="POST"
+              id="contactForm"
+              class="space-y-4 text-left"
+              novalidate
+            >
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label
@@ -317,7 +320,10 @@
                     class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light"
                     placeholder="Your name"
                   />
-                  <span class="error-message" id="cName-error"></span>
+                  <span
+                    class="error-message text-red-600 text-sm mt-1"
+                    id="cName-error"
+                  ></span>
                 </div>
                 <div>
                   <label
@@ -334,7 +340,10 @@
                     class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light"
                     placeholder="you@example.com"
                   />
-                  <span class="error-message" id="cEmail-error"></span>
+                  <span
+                    class="error-message text-red-600 text-sm mt-1"
+                    id="cEmail-error"
+                  ></span>
                 </div>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -342,7 +351,7 @@
                   <label
                     for="cPhone"
                     class="block text-sm font-semibold text-gray-700 mb-1"
-                    >Phone (optional)</label
+                    >Phone *</label
                   >
                   <input
                     type="tel"
@@ -354,7 +363,10 @@
                     class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light"
                     placeholder="+1 (___) ___‑____"
                   />
-                  <span class="error-message" id="cPhone-error"></span>
+                  <span
+                    class="error-message text-red-600 text-sm mt-1"
+                    id="cPhone-error"
+                  ></span>
                 </div>
                 <div>
                   <label
@@ -369,13 +381,18 @@
                     class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light"
                   >
                     <option value="">Select a topic</option>
-                    <option>General Inquiry</option>
-                    <option>Booking / Availability</option>
-                    <option>Billing</option>
-                    <option>Technical</option>
-                    <option>Other</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Booking / Availability">
+                      Booking / Availability
+                    </option>
+                    <option value="Billing">Billing</option>
+                    <option value="Technical">Technical</option>
+                    <option value="Other">Other</option>
                   </select>
-                  <span class="error-message" id="cTopic-error"></span>
+                  <span
+                    class="error-message text-red-600 text-sm mt-1"
+                    id="cTopic-error"
+                  ></span>
                 </div>
               </div>
               <div>
@@ -392,19 +409,26 @@
                   class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light"
                   placeholder="How can I help?"
                 ></textarea>
-                <span class="error-message" id="cMessage-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="cMessage-error"
+                ></span>
               </div>
               <div class="flex items-start gap-3">
                 <input
                   type="checkbox"
                   id="cConsent"
+                  name="cConsent"
                   required
                   class="mt-1 accent-primary-light"
                 />
                 <label for="cConsent" class="text-sm text-gray-700"
                   >I consent to be contacted regarding my inquiry. *</label
                 >
-                <span class="error-message" id="cConsent-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="cConsent-error"
+                ></span>
               </div>
               <div class="mt-6">
                 <button
@@ -517,8 +541,6 @@
                   </p>
                 </div>
               </div>
-
-              <!-- Additional Contact Methods -->
             </div>
           </div>
         </div>
@@ -559,6 +581,8 @@
         <!-- Intake form (multi-step) -->
         <form
           id="intakeForm"
+          action="https://formspree.io/f/xgvrwrzk"
+          method="POST"
           class="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-8 space-y-8"
           novalidate
         >
@@ -599,7 +623,10 @@
                   autocomplete="name"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
-                <span class="error-message" id="fullName-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="fullName-error"
+                ></span>
               </div>
               <div>
                 <label
@@ -616,7 +643,10 @@
                   max="9999-12-31"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
-                <span class="error-message" id="dob-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="dob-error"
+                ></span>
               </div>
               <div>
                 <label
@@ -634,7 +664,10 @@
                   placeholder="+1 (___) ___‑____"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
-                <span class="error-message" id="phone-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="phone-error"
+                ></span>
               </div>
               <div>
                 <label
@@ -650,7 +683,10 @@
                   autocomplete="email"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
-                <span class="error-message" id="email-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="email-error"
+                ></span>
               </div>
               <div class="sm:col-span-2">
                 <span class="block text-sm font-semibold text-gray-700 mb-1"
@@ -685,7 +721,10 @@
                     <span>Text</span></label
                   >
                 </div>
-                <span class="error-message" id="contactMethod-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="contactMethod-error"
+                ></span>
               </div>
               <div class="sm:col-span-2">
                 <label
@@ -700,7 +739,10 @@
                   autocomplete="street-address"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
-                <span class="error-message" id="address-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="address-error"
+                ></span>
               </div>
             </div>
           </fieldset>
@@ -733,7 +775,10 @@
                   required
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
-                <span class="error-message" id="occupation-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="occupation-error"
+                ></span>
               </div>
               <div>
                 <label
@@ -748,15 +793,15 @@
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 bg-white focus:ring-2 focus:ring-primary-light"
                 >
                   <option value="">Select</option>
-                  <option>Single</option>
-                  <option>Married</option>
-                  <option>Partnered</option>
-                  <option>Divorced</option>
-                  <option>Widowed</option>
-                  <option>Prefer not to say</option>
+                  <option value="Single">Single</option>
+                  <option value="Married">Married</option>
+                  <option value="Partnered">Partnered</option>
+                  <option value="Divorced">Divorced</option>
+                  <option value="Widowed">Widowed</option>
+                  <option value="Prefer not to say">Prefer not to say</option>
                 </select>
                 <span
-                  class="error-message"
+                  class="error-message text-red-600 text-sm mt-1"
                   id="relationshipStatus-error"
                 ></span>
               </div>
@@ -772,7 +817,10 @@
                   type="text"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
-                <span class="error-message" id="children-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="children-error"
+                ></span>
               </div>
               <div>
                 <label
@@ -786,7 +834,10 @@
                   type="text"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
-                <span class="error-message" id="referredBy-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="referredBy-error"
+                ></span>
               </div>
             </div>
 
@@ -804,7 +855,10 @@
                   required
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
-                <span class="error-message" id="emgName-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="emgName-error"
+                ></span>
               </div>
               <div>
                 <label
@@ -820,7 +874,10 @@
                   inputmode="tel"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
-                <span class="error-message" id="emgPhone-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="emgPhone-error"
+                ></span>
               </div>
               <div>
                 <label
@@ -835,7 +892,10 @@
                   required
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
-                <span class="error-message" id="emgRelation-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="emgRelation-error"
+                ></span>
               </div>
             </div>
           </fieldset>
@@ -939,10 +999,16 @@
                   class="mt-2 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light hidden"
                   placeholder="Please specify"
                 />
-                <span class="error-message" id="concernOtherText-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="concernOtherText-error"
+                ></span>
               </div>
             </div>
-            <span class="error-message" id="concerns-error"></span>
+            <span
+              class="error-message text-red-600 text-sm mt-1"
+              id="concerns-error"
+            ></span>
 
             <div>
               <label
@@ -959,7 +1025,10 @@
                 class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 placeholder="Share anything you feel comfortable sharing"
               ></textarea>
-              <span class="error-message" id="presentingDesc-error"></span>
+              <span
+                class="error-message text-red-600 text-sm mt-1"
+                id="presentingDesc-error"
+              ></span>
             </div>
 
             <div>
@@ -975,7 +1044,10 @@
                 required
                 class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
               ></textarea>
-              <span class="error-message" id="goals-error"></span>
+              <span
+                class="error-message text-red-600 text-sm mt-1"
+                id="goals-error"
+              ></span>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -1002,7 +1074,10 @@
                     /><span>No</span></label
                   >
                 </div>
-                <span class="error-message" id="medsNow-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="medsNow-error"
+                ></span>
               </div>
               <div id="medListWrap" class="hidden">
                 <label
@@ -1016,7 +1091,10 @@
                   type="text"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
-                <span class="error-message" id="medications-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="medications-error"
+                ></span>
               </div>
 
               <div class="sm:col-span-2">
@@ -1042,7 +1120,10 @@
                     /><span>No</span></label
                   >
                 </div>
-                <span class="error-message" id="therapyBefore-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="therapyBefore-error"
+                ></span>
               </div>
               <div id="prevHelpfulWrap" class="sm:col-span-2 hidden">
                 <label
@@ -1056,7 +1137,10 @@
                   rows="3"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 ></textarea>
-                <span class="error-message" id="prevHelpful-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="prevHelpful-error"
+                ></span>
               </div>
             </div>
           </fieldset>
@@ -1095,7 +1179,10 @@
                 >I have read and agree to the confidentiality statement. *</span
               >
             </label>
-            <span class="error-message" id="consent-error"></span>
+            <span
+              class="error-message text-red-600 text-sm mt-1"
+              id="consent-error"
+            ></span>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
@@ -1113,7 +1200,10 @@
                   autocomplete="name"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
-                <span class="error-message" id="signature-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="signature-error"
+                ></span>
               </div>
               <div>
                 <label
@@ -1128,7 +1218,10 @@
                   required
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
-                <span class="error-message" id="sigDate-error"></span>
+                <span
+                  class="error-message text-red-600 text-sm mt-1"
+                  id="sigDate-error"
+                ></span>
               </div>
             </div>
 

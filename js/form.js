@@ -1,16 +1,3 @@
-// Supabase Configuration
-const SUPABASE_URL = "https://lticyftewgjlypfkeanf.supabase.co";
-const SUPABASE_ANON_KEY =
-  "";
-
-// Import Supabase (ES6 module)
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-
-// Initialize Supabase client
-const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-console.log("Supabase initialized:", supabase);
-
 // Enhanced phone validation function
 function isValidPhone(phone) {
   if (!phone) return false;
@@ -121,81 +108,90 @@ function setupPhoneFormatting() {
   });
 }
 
-// Function to save contact form to Supabase
-async function saveContactToSupabase(formData) {
+// Function to submit contact form to Formspree
+async function submitContactToFormspree(formData) {
   try {
-    const { data, error } = await supabase
-      .from("contact_submissions")
-      .insert([
-        {
-          name: formData.get("name"),
-          email: formData.get("email"),
-          phone: formData.get("phone"),
-          topic: formData.get("topic"),
-          message: formData.get("message"),
-          consent: formData.get("cConsent") === "on",
-        },
-      ])
-      .select();
+    // Replace with your actual Formspree endpoint for contact form
+    const response = await fetch("https://formspree.io/f/mkgkngzy", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        topic: formData.get("topic"),
+        message: formData.get("message"),
+        consent: formData.get("cConsent") === "on",
+        _subject: "New Contact Form Submission",
+        _format: "plain",
+      }),
+    });
 
-    if (error) throw error;
-    return { success: true, data };
+    if (!response.ok) throw new Error("Form submission failed");
+    return { success: true };
   } catch (error) {
-    console.error("Error saving contact form:", error);
+    console.error("Error submitting contact form:", error);
     return { success: false, error: error.message };
   }
 }
 
-// Function to save intake form to Supabase
-async function saveIntakeToSupabase(formData) {
+// Function to submit intake form to Formspree
+async function submitIntakeToFormspree(formData) {
   try {
     // Get all form data
     const contactMethods = Array.from(formData.getAll("contactMethod"));
     const concerns = Array.from(formData.getAll("concerns"));
 
-    const { data, error } = await supabase
-      .from("intake_submissions")
-      .insert([
-        {
-          // Step 1: About You
-          full_name: formData.get("fullName"),
-          date_of_birth: formData.get("dob") || null,
-          phone: formData.get("phone"),
-          email: formData.get("email"),
-          contact_method: contactMethods,
-          address: formData.get("address"),
+    // Replace with your actual Formspree endpoint for intake form
+    const response = await fetch("https://formspree.io/f/xgvrwrzk", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // Step 1: About You
+        full_name: formData.get("fullName"),
+        date_of_birth: formData.get("dob") || null,
+        phone: formData.get("phone"),
+        email: formData.get("email"),
+        contact_method: contactMethods.join(", "),
+        address: formData.get("address"),
 
-          // Step 2: Background
-          occupation: formData.get("occupation"),
-          relationship_status: formData.get("relationshipStatus"),
-          children: formData.get("children"),
-          referred_by: formData.get("referredBy"),
-          emergency_contact_name: formData.get("emgName"),
-          emergency_contact_phone: formData.get("emgPhone"),
-          emergency_contact_relationship: formData.get("emgRelation"),
+        // Step 2: Background
+        occupation: formData.get("occupation"),
+        relationship_status: formData.get("relationshipStatus"),
+        children: formData.get("children"),
+        referred_by: formData.get("referredBy"),
+        emergency_contact_name: formData.get("emgName"),
+        emergency_contact_phone: formData.get("emgPhone"),
+        emergency_contact_relationship: formData.get("emgRelation"),
 
-          // Step 3: Concerns & Goals
-          concerns: concerns,
-          concern_other: formData.get("concernOtherText"),
-          presenting_description: formData.get("presentingDesc"),
-          therapy_goals: formData.get("goals"),
-          current_medications: formData.get("medsNow") === "Yes",
-          medications_list: formData.get("medications"),
-          previous_therapy: formData.get("therapyBefore") === "Yes",
-          previous_therapy_notes: formData.get("prevHelpful"),
+        // Step 3: Concerns & Goals
+        concerns: concerns.join(", "),
+        concern_other: formData.get("concernOtherText"),
+        presenting_description: formData.get("presentingDesc"),
+        therapy_goals: formData.get("goals"),
+        current_medications: formData.get("medsNow") === "Yes",
+        medications_list: formData.get("medications"),
+        previous_therapy: formData.get("therapyBefore") === "Yes",
+        previous_therapy_notes: formData.get("prevHelpful"),
 
-          // Step 4: Consent
-          consent_given: formData.get("consent") === "on",
-          signature: formData.get("signature"),
-          signature_date: formData.get("sigDate"),
-        },
-      ])
-      .select();
+        // Step 4: Consent
+        consent_given: formData.get("consent") === "on",
+        signature: formData.get("signature"),
+        signature_date: formData.get("sigDate"),
 
-    if (error) throw error;
-    return { success: true, data };
+        _subject: "New Intake Form Submission",
+        _format: "plain",
+      }),
+    });
+
+    if (!response.ok) throw new Error("Form submission failed");
+    return { success: true };
   } catch (error) {
-    console.error("Error saving intake form:", error);
+    console.error("Error submitting intake form:", error);
     return { success: false, error: error.message };
   }
 }
@@ -474,8 +470,8 @@ document.addEventListener("keydown", (e) => {
     try {
       const formData = new FormData(form);
 
-      // Save to Supabase
-      const result = await saveContactToSupabase(formData);
+      // Submit to Formspree
+      const result = await submitContactToFormspree(formData);
 
       if (result.success) {
         // Show success modal
@@ -596,7 +592,16 @@ document.addEventListener("keydown", (e) => {
         isValid = false;
       }
 
-   if (!phone) { showIntakeError("phone", "Phone number is required"); isValid = false; } else if (!isValidPhone(phone)) { showIntakeError("phone", "Please enter a valid phone number (10-15 digits)"); isValid = false; }
+      if (!phone) {
+        showIntakeError("phone", "Phone number is required");
+        isValid = false;
+      } else if (!isValidPhone(phone)) {
+        showIntakeError(
+          "phone",
+          "Please enter a valid phone number (10-15 digits)"
+        );
+        isValid = false;
+      }
 
       if (contactMethods.length === 0) {
         showIntakeError(
@@ -605,104 +610,96 @@ document.addEventListener("keydown", (e) => {
         );
         isValid = false;
       }
-    } 
-   else if (step === 2) {
-  // Validate Step 2 - Background
-  const occupation = form.occupation?.value.trim();
-  const relationshipStatus = form.relationshipStatus?.value;
-  const children = form.children?.value.trim();
-  const referredBy = form.referredBy?.value.trim();
+    } else if (step === 2) {
+      // Validate Step 2 - Background
+      const occupation = form.occupation?.value.trim();
+      const relationshipStatus = form.relationshipStatus?.value;
+      const children = form.children?.value.trim();
+      const referredBy = form.referredBy?.value.trim();
 
-  const emgName = form.emgName?.value.trim();
-  const emgPhone = form.emgPhone?.value.trim();
-  const emgRelation = form.emgRelation?.value.trim();
+      const emgName = form.emgName?.value.trim();
+      const emgPhone = form.emgPhone?.value.trim();
+      const emgRelation = form.emgRelation?.value.trim();
 
-  // Occupation validation
-  if (!occupation) {
-    showIntakeError(
-      "occupation",
-      "Occupation or student status is required"
-    );
-    isValid = false;
-  } else if (occupation.length < 2) {
-    showIntakeError(
-      "occupation",
-      "Please provide a valid occupation or student status"
-    );
-    isValid = false;
-  }
+      // Occupation validation
+      if (!occupation) {
+        showIntakeError(
+          "occupation",
+          "Occupation or student status is required"
+        );
+        isValid = false;
+      } else if (occupation.length < 2) {
+        showIntakeError(
+          "occupation",
+          "Please provide a valid occupation or student status"
+        );
+        isValid = false;
+      }
 
-  // Relationship status validation
-  if (!relationshipStatus) {
-    showIntakeError(
-      "relationshipStatus",
-      "Please select your relationship status"
-    );
-    isValid = false;
-  }
+      // Relationship status validation
+      if (!relationshipStatus) {
+        showIntakeError(
+          "relationshipStatus",
+          "Please select your relationship status"
+        );
+        isValid = false;
+      }
 
-  // Children validation (optional but if provided, must be reasonable)
-  if (children && children.length > 50) {
-    showIntakeError(
-      "children",
-      "Please provide a brief description about children"
-    );
-    isValid = false;
-  }
+      // Children validation (optional but if provided, must be reasonable)
+      if (children && children.length > 50) {
+        showIntakeError(
+          "children",
+          "Please provide a brief description about children"
+        );
+        isValid = false;
+      }
 
-  // Referred by validation (optional but if provided, must be reasonable)
-  if (referredBy && referredBy.length > 100) {
-    showIntakeError(
-      "referredBy",
-      "Referral source description is too long"
-    );
-    isValid = false;
-  }
+      // Referred by validation (optional but if provided, must be reasonable)
+      if (referredBy && referredBy.length > 100) {
+        showIntakeError(
+          "referredBy",
+          "Referral source description is too long"
+        );
+        isValid = false;
+      }
 
-  // Emergency contact validation - ALL REQUIRED
-  if (!emgName) {
-    showIntakeError(
-      "emgName",
-      "Emergency contact name is required"
-    );
-    isValid = false;
-  } else if (emgName.length < 2) {
-    showIntakeError(
-      "emgName",
-      "Please provide a valid emergency contact name"
-    );
-    isValid = false;
-  }
+      // Emergency contact validation - ALL REQUIRED
+      if (!emgName) {
+        showIntakeError("emgName", "Emergency contact name is required");
+        isValid = false;
+      } else if (emgName.length < 2) {
+        showIntakeError(
+          "emgName",
+          "Please provide a valid emergency contact name"
+        );
+        isValid = false;
+      }
 
-  if (!emgPhone) {
-    showIntakeError(
-      "emgPhone",
-      "Emergency contact phone is required"
-    );
-    isValid = false;
-  } else if (!isValidPhone(emgPhone)) {
-    showIntakeError(
-      "emgPhone",
-      "Please enter a valid emergency contact phone number"
-    );
-    isValid = false;
-  }
+      if (!emgPhone) {
+        showIntakeError("emgPhone", "Emergency contact phone is required");
+        isValid = false;
+      } else if (!isValidPhone(emgPhone)) {
+        showIntakeError(
+          "emgPhone",
+          "Please enter a valid emergency contact phone number"
+        );
+        isValid = false;
+      }
 
-  if (!emgRelation) {
-    showIntakeError(
-      "emgRelation",
-      "Emergency contact relationship is required"
-    );
-    isValid = false;
-  } else if (emgRelation.length < 2) {
-    showIntakeError(
-      "emgRelation",
-      "Please provide a valid relationship description"
-    );
-    isValid = false;
-  }
-  
-} else if (step === 3) {
+      if (!emgRelation) {
+        showIntakeError(
+          "emgRelation",
+          "Emergency contact relationship is required"
+        );
+        isValid = false;
+      } else if (emgRelation.length < 2) {
+        showIntakeError(
+          "emgRelation",
+          "Please provide a valid relationship description"
+        );
+        isValid = false;
+      }
+    } else if (step === 3) {
       // Validate Step 3
       const concerns = Array.from(
         form.querySelectorAll('input[name="concerns"]:checked')
@@ -1048,8 +1045,8 @@ document.addEventListener("keydown", (e) => {
     try {
       const formData = new FormData(form);
 
-      // Save to Supabase
-      const result = await saveIntakeToSupabase(formData);
+      // Submit to Formspree
+      const result = await submitIntakeToFormspree(formData);
 
       if (result.success) {
         showSuccessModal(
@@ -1080,5 +1077,5 @@ document.addEventListener("keydown", (e) => {
 // Initialize phone formatting when the page loads
 document.addEventListener("DOMContentLoaded", function () {
   setupPhoneFormatting();
-  console.log("Form validation and Supabase integration loaded");
+  console.log("Form validation and Formspree integration loaded");
 });
