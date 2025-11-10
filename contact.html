@@ -67,12 +67,12 @@
     <!-- Your CSS -->
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- Tailwind config BEFORE CDN (required for custom colors) -->
-    <script src="tailwind-config.js" defer></script>
-
+    
     <!-- Tailwind CDN (remove in production after compiling) -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    
+    <!-- Tailwind config BEFORE CDN (required for custom colors) -->
+    <script src="js/tailwind-config.js"></script>
     <!-- Lucide (pinned + defer) -->
     <script
       src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"
@@ -80,178 +80,6 @@
       defer
     ></script>
 
-    <style>
-      :root {
-        scroll-behavior: smooth;
-      }
-
-     
-
-      /* Helpers */
-      .hover-lift {
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-      .hover-lift:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-      }
-      .muted {
-        color: #6b7280;
-      }
-
-      /* Tabs */
-      .tab-btn {
-        border: 1px solid #e5e7eb;
-        padding: 0.75rem 1.5rem;
-        margin: 0 0.25rem;
-      }
-      .tab-btn[aria-selected="true"] {
-        background: #0d3b2e;
-        color: #fff;
-        border-color: #0d3b2e;
-      }
-
-      /* Stepper */
-      .step-dot {
-        width: 26px;
-        height: 26px;
-        border-radius: 999px;
-        display: grid;
-        place-items: center;
-        font-weight: 700;
-      }
-      .step-active {
-        background: rgba(31, 157, 115, 0.12);
-        color: #0d3b2e;
-        border: 2px solid #1f9d73;
-      }
-      .step-done {
-        background: #1f9d73;
-        color: #fff;
-        border: 2px solid #1f9d73;
-      }
-      .step-next {
-        background: #fff;
-        color: #6b7280;
-        border: 2px solid #e5e7eb;
-      }
-
-      /* Hero gradient */
-      .gradient-hero {
-        background: radial-gradient(
-            900px 380px at 90% -10%,
-            rgba(31, 157, 115, 0.1),
-            transparent 60%
-          ),
-          radial-gradient(
-            900px 380px at -10% 110%,
-            rgba(184, 115, 51, 0.08),
-            transparent 60%
-          ),
-          #fff;
-      }
-
-      /* Button spacing fixes */
-      .btn-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        justify-content: center;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0.75rem 1.5rem;
-        border-radius: 0.5rem;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.2s ease;
-        white-space: nowrap;
-        min-height: 3rem;
-      }
-
-      .btn-primary {
-        background: #0d3b2e;
-        color: white;
-        border: 1px solid #0d3b2e;
-      }
-
-      .btn-primary:hover {
-        background: #1f9d73;
-        border-color: #1f9d73;
-      }
-
-      .btn-secondary {
-        background: white;
-        color: #0d3b2e;
-        border: 1px solid #0d3b2e;
-      }
-
-      .btn-secondary:hover {
-        background: #0d3b2e;
-        color: white;
-      }
-
-      .btn-full {
-        width: 100%;
-      }
-
-      /* Form button spacing */
-      .form-actions {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 1.5rem;
-        padding-top: 1rem;
-        gap: 1rem;
-      }
-
-      .form-actions .btn {
-        flex: 0 0 auto;
-      }
-
-      .step-indicator {
-        flex: 1;
-        text-align: center;
-        color: #6b7280;
-        font-size: 0.875rem;
-      }
-
-      /* Mobile responsive adjustments */
-      @media (max-width: 640px) {
-        .form-actions {
-          flex-direction: column;
-          gap: 0.75rem;
-        }
-
-        .form-actions .btn {
-          width: 100%;
-        }
-
-        .step-indicator {
-          order: -1;
-        }
-
-        .btn-container {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .btn-container .btn {
-          width: 100%;
-          max-width: 280px;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        * {
-          transition: none !important;
-          animation: none !important;
-        }
-      }
-    </style>
   </head>
 
   <body class="bg-background-cream text-gray-800">
@@ -398,6 +226,16 @@
             the secure intake form to book your first session.
           </p>
           <div class="mt-8 btn-container">
+              <a
+              href="#contact"
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-message"
+              id="tab-message"
+              class="tab-btn btn"
+            >
+              Send a Message
+            </a>
             <a
               href="#intake"
               class="tab-btn btn"
@@ -409,16 +247,7 @@
               Start Intake
               <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
             </a>
-            <a
-              href="#contact"
-              role="tab"
-              aria-selected="true"
-              aria-controls="panel-message"
-              id="tab-message"
-              class="tab-btn btn"
-            >
-              Send a Message
-            </a>
+          
           </div>
         </div>
       </section>
@@ -471,19 +300,13 @@
             <h2 class="text-2xl font-bold text-primary-dark mb-6">
               Send a Message
             </h2>
-            <form
-              id="contactForm"
-              class="space-y-4 text-left"
-              action="https://formspree.io/f/your-contact-id"
-              method="POST"
-              novalidate
-            >
+            <form id="contactForm" class="space-y-4 text-left" novalidate>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label
                     for="cName"
                     class="block text-sm font-semibold text-gray-700 mb-1"
-                    >Full Name</label
+                    >Full Name *</label
                   >
                   <input
                     type="text"
@@ -494,12 +317,13 @@
                     class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light"
                     placeholder="Your name"
                   />
+                  <span class="error-message" id="cName-error"></span>
                 </div>
                 <div>
                   <label
                     for="cEmail"
                     class="block text-sm font-semibold text-gray-700 mb-1"
-                    >Email</label
+                    >Email *</label
                   >
                   <input
                     type="email"
@@ -510,6 +334,7 @@
                     class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light"
                     placeholder="you@example.com"
                   />
+                  <span class="error-message" id="cEmail-error"></span>
                 </div>
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -522,37 +347,42 @@
                   <input
                     type="tel"
                     id="cPhone"
+                    required
                     name="phone"
                     inputmode="tel"
                     autocomplete="tel"
                     class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light"
                     placeholder="+1 (___) ___‑____"
                   />
+                  <span class="error-message" id="cPhone-error"></span>
                 </div>
                 <div>
                   <label
                     for="cTopic"
                     class="block text-sm font-semibold text-gray-700 mb-1"
-                    >Topic</label
+                    >Topic *</label
                   >
                   <select
                     id="cTopic"
                     name="topic"
+                    required
                     class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light"
                   >
+                    <option value="">Select a topic</option>
                     <option>General Inquiry</option>
                     <option>Booking / Availability</option>
                     <option>Billing</option>
                     <option>Technical</option>
                     <option>Other</option>
                   </select>
+                  <span class="error-message" id="cTopic-error"></span>
                 </div>
               </div>
               <div>
                 <label
                   for="cMessage"
                   class="block text-sm font-semibold text-gray-700 mb-1"
-                  >Message</label
+                  >Message *</label
                 >
                 <textarea
                   id="cMessage"
@@ -562,6 +392,7 @@
                   class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light"
                   placeholder="How can I help?"
                 ></textarea>
+                <span class="error-message" id="cMessage-error"></span>
               </div>
               <div class="flex items-start gap-3">
                 <input
@@ -571,8 +402,9 @@
                   class="mt-1 accent-primary-light"
                 />
                 <label for="cConsent" class="text-sm text-gray-700"
-                  >I consent to be contacted regarding my inquiry.</label
+                  >I consent to be contacted regarding my inquiry. *</label
                 >
+                <span class="error-message" id="cConsent-error"></span>
               </div>
               <div class="mt-6">
                 <button
@@ -728,8 +560,6 @@
         <form
           id="intakeForm"
           class="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-100 p-6 sm:p-8 space-y-8"
-          method="POST"
-          action="https://formspree.io/f/your-intake-id"
           novalidate
         >
           <input
@@ -769,36 +599,42 @@
                   autocomplete="name"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
+                <span class="error-message" id="fullName-error"></span>
               </div>
               <div>
                 <label
                   for="dob"
                   class="block text-sm font-semibold text-gray-700"
-                  >Date of Birth</label
+                  >Date of Birth *</label
                 >
+
                 <input
                   id="dob"
                   name="dob"
                   type="date"
+                  required
                   max="9999-12-31"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
+                <span class="error-message" id="dob-error"></span>
               </div>
               <div>
                 <label
                   for="phone"
                   class="block text-sm font-semibold text-gray-700"
-                  >Phone</label
+                  >Phone *</label
                 >
                 <input
                   id="phone"
                   name="phone"
                   type="tel"
+                  required
                   inputmode="tel"
                   autocomplete="tel"
                   placeholder="+1 (___) ___‑____"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
+                <span class="error-message" id="phone-error"></span>
               </div>
               <div>
                 <label
@@ -814,10 +650,11 @@
                   autocomplete="email"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
+                <span class="error-message" id="email-error"></span>
               </div>
               <div class="sm:col-span-2">
                 <span class="block text-sm font-semibold text-gray-700 mb-1"
-                  >Preferred Contact Method</span
+                  >Preferred Contact Method *</span
                 >
                 <div class="flex flex-wrap gap-4">
                   <label class="inline-flex items-center gap-2"
@@ -848,6 +685,7 @@
                     <span>Text</span></label
                   >
                 </div>
+                <span class="error-message" id="contactMethod-error"></span>
               </div>
               <div class="sm:col-span-2">
                 <label
@@ -862,6 +700,7 @@
                   autocomplete="street-address"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
+                <span class="error-message" id="address-error"></span>
               </div>
             </div>
           </fieldset>
@@ -885,24 +724,27 @@
                 <label
                   for="occupation"
                   class="block text-sm font-semibold text-gray-700"
-                  >Occupation / Student Status</label
+                  >Occupation / Student Status *</label
                 >
                 <input
                   id="occupation"
                   name="occupation"
                   type="text"
+                  required
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
+                <span class="error-message" id="occupation-error"></span>
               </div>
               <div>
                 <label
                   for="relationshipStatus"
                   class="block text-sm font-semibold text-gray-700"
-                  >Relationship Status</label
+                  >Relationship Status *</label
                 >
                 <select
                   id="relationshipStatus"
                   name="relationshipStatus"
+                  required
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 bg-white focus:ring-2 focus:ring-primary-light"
                 >
                   <option value="">Select</option>
@@ -913,8 +755,12 @@
                   <option>Widowed</option>
                   <option>Prefer not to say</option>
                 </select>
+                <span
+                  class="error-message"
+                  id="relationshipStatus-error"
+                ></span>
               </div>
-              <div>
+              <div id="childrenField" class="hidden">
                 <label
                   for="children"
                   class="block text-sm font-semibold text-gray-700"
@@ -926,6 +772,7 @@
                   type="text"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
+                <span class="error-message" id="children-error"></span>
               </div>
               <div>
                 <label
@@ -939,6 +786,7 @@
                   type="text"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
+                <span class="error-message" id="referredBy-error"></span>
               </div>
             </div>
 
@@ -947,41 +795,47 @@
                 <label
                   for="emgName"
                   class="block text-sm font-semibold text-gray-700"
-                  >Emergency Contact Name</label
+                  >Emergency Contact Name *</label
                 >
                 <input
                   id="emgName"
                   name="emgName"
                   type="text"
+                  required
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
+                <span class="error-message" id="emgName-error"></span>
               </div>
               <div>
                 <label
                   for="emgPhone"
                   class="block text-sm font-semibold text-gray-700"
-                  >Emergency Contact Phone</label
+                  >Emergency Contact Phone *</label
                 >
                 <input
                   id="emgPhone"
                   name="emgPhone"
                   type="tel"
+                  required
                   inputmode="tel"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
+                <span class="error-message" id="emgPhone-error"></span>
               </div>
               <div>
                 <label
                   for="emgRelation"
                   class="block text-sm font-semibold text-gray-700"
-                  >Relationship</label
+                  >Relationship *</label
                 >
                 <input
                   id="emgRelation"
                   name="emgRelation"
                   type="text"
+                  required
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
+                <span class="error-message" id="emgRelation-error"></span>
               </div>
             </div>
           </fieldset>
@@ -1085,43 +939,49 @@
                   class="mt-2 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light hidden"
                   placeholder="Please specify"
                 />
+                <span class="error-message" id="concernOtherText-error"></span>
               </div>
             </div>
+            <span class="error-message" id="concerns-error"></span>
 
             <div>
               <label
                 for="presentingDesc"
                 class="block text-sm font-semibold text-gray-700"
-                >Briefly describe what brings you to counselling at this
-                time</label
+                >Briefly describe what brings you to counselling at this time
+                *</label
               >
               <textarea
                 id="presentingDesc"
                 name="presentingDesc"
                 rows="4"
+                required
                 class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 placeholder="Share anything you feel comfortable sharing"
               ></textarea>
+              <span class="error-message" id="presentingDesc-error"></span>
             </div>
 
             <div>
               <label
                 for="goals"
                 class="block text-sm font-semibold text-gray-700"
-                >What would you like to achieve through therapy?</label
+                >What would you like to achieve through therapy? *</label
               >
               <textarea
                 id="goals"
                 name="goals"
                 rows="4"
+                required
                 class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
               ></textarea>
+              <span class="error-message" id="goals-error"></span>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <span class="block text-sm font-semibold text-gray-700 mb-1"
-                  >Are you currently taking any medications?</span
+                  >Are you currently taking any medications? *</span
                 >
                 <div class="flex items-center gap-4">
                   <label class="inline-flex items-center gap-2"
@@ -1142,6 +1002,7 @@
                     /><span>No</span></label
                   >
                 </div>
+                <span class="error-message" id="medsNow-error"></span>
               </div>
               <div id="medListWrap" class="hidden">
                 <label
@@ -1155,11 +1016,12 @@
                   type="text"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
+                <span class="error-message" id="medications-error"></span>
               </div>
 
               <div class="sm:col-span-2">
                 <span class="block text-sm font-semibold text-gray-700 mb-1"
-                  >Have you attended counselling before?</span
+                  >Have you attended counselling before? *</span
                 >
                 <div class="flex items-center gap-4">
                   <label class="inline-flex items-center gap-2"
@@ -1180,6 +1042,7 @@
                     /><span>No</span></label
                   >
                 </div>
+                <span class="error-message" id="therapyBefore-error"></span>
               </div>
               <div id="prevHelpfulWrap" class="sm:col-span-2 hidden">
                 <label
@@ -1193,6 +1056,7 @@
                   rows="3"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 ></textarea>
+                <span class="error-message" id="prevHelpful-error"></span>
               </div>
             </div>
           </fieldset>
@@ -1228,9 +1092,10 @@
                 required
               />
               <span
-                >I have read and agree to the confidentiality statement.</span
+                >I have read and agree to the confidentiality statement. *</span
               >
             </label>
+            <span class="error-message" id="consent-error"></span>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
@@ -1248,6 +1113,7 @@
                   autocomplete="name"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
+                <span class="error-message" id="signature-error"></span>
               </div>
               <div>
                 <label
@@ -1262,6 +1128,7 @@
                   required
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
                 />
+                <span class="error-message" id="sigDate-error"></span>
               </div>
             </div>
 
@@ -1281,6 +1148,12 @@
             <button id="submitBtn" type="submit" class="btn btn-primary">
               Submit Intake Form
             </button>
+            <div
+              id="toast"
+              class="fixed bottom-5 right-5 bg-green-600 text-white px-4 py-2 rounded shadow-lg opacity-0 transition-opacity duration-300 z-50"
+            >
+              Form submitted successfully!
+            </div>
           </div>
         </form>
 
@@ -1408,6 +1281,55 @@
         </div>
       </div>
     </section>
+    <!-- Success Modal -->
+    <div
+      id="successModal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+    >
+      <div class="bg-white rounded-2xl p-8 max-w-md mx-4 shadow-xl">
+        <div class="text-center">
+          <!-- Success Icon -->
+          <div
+            class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <i data-lucide="check" class="w-8 h-8 text-green-600"></i>
+          </div>
+
+          <!-- Success Message -->
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
+          <p class="text-gray-600 mb-6" id="modalMessage">
+            Your form has been submitted successfully. We'll get back to you
+            soon.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <button id="modalCloseBtn" class="btn btn-primary px-6 py-2">
+              Close
+            </button>
+            <button id="modalNewFormBtn" class="btn btn-secondary px-6 py-2">
+              Submit Another Form
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success Message Banner -->
+    <div
+      id="successBanner"
+      class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 hidden transition-all duration-300"
+    >
+      <div class="flex items-center gap-3">
+        <i data-lucide="check-circle" class="w-5 h-5 text-white"></i>
+        <span id="bannerMessage" class="font-medium"
+          >Form submitted successfully!</span
+        >
+        <button id="closeBanner" class="text-white hover:text-gray-200 ml-2">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
     <!-- Footer -->
     <footer class="bg-primary-dark text-white pt-16 pb-8">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -1586,269 +1508,7 @@
     </script>
 
     <!-- Scripts -->
-    <script>
-      // Year + icons
-
-      // Tabs
-      (function () {
-        const tabMsg = document.getElementById("tab-message");
-        const tabInt = document.getElementById("tab-intake");
-        const panelMsg = document.getElementById("panel-message");
-        const panelInt = document.getElementById("panel-intake");
-
-        function setTab(which) {
-          const message = which === "message";
-          tabMsg.setAttribute("aria-selected", message ? "true" : "false");
-          tabInt.setAttribute("aria-selected", message ? "false" : "true");
-          panelMsg.classList.toggle("hidden", !message);
-          panelInt.classList.toggle("hidden", message);
-          if (!message) history.replaceState(null, "", "#intake");
-          else history.replaceState(null, "", "#contact");
-        }
-
-        tabMsg.addEventListener("click", () => setTab("message"));
-        tabInt.addEventListener("click", () => setTab("intake"));
-
-        // Deep link
-        const hash = (location.hash || "").replace("#", "");
-        setTab(hash === "intake" ? "intake" : "contact");
-      })();
-
-      // Contact form demo handler (replace with your endpoint if needed)
-      (function () {
-        const form = document.getElementById("contactForm");
-        const status = document.getElementById("contactStatus");
-        if (!form) return;
-        form.addEventListener("submit", async (e) => {
-          e.preventDefault();
-          if (!form.reportValidity()) return;
-          status.textContent = "Sending...";
-          status.className = "text-sm mt-2 text-gray-600";
-          await new Promise((r) => setTimeout(r, 700));
-          status.textContent = "Thanks — I'll reply within 1–2 business days.";
-          status.className = "text-sm mt-2 text-green-600";
-          form.reset();
-        });
-      })();
-
-      // Intake multi-step + autosave
-      (function () {
-        const form = document.getElementById("intakeForm");
-        if (!form) return;
-
-        const steps = Array.from(form.querySelectorAll("fieldset[data-step]"));
-        const controls = Array.from(form.querySelectorAll("[data-controls]"));
-        const dots = [1, 2, 3, 4].map((n) =>
-          document.getElementById("dot-" + n)
-        );
-        let current = 1;
-
-        const status = document.getElementById("formStatus");
-        const draftStatus = document.getElementById("draftStatus");
-
-        function showStep(n) {
-          current = n;
-          steps.forEach((fs) =>
-            fs.classList.toggle("hidden", Number(fs.dataset.step) !== n)
-          );
-          controls.forEach((c) =>
-            c.classList.toggle("hidden", Number(c.dataset.controls) !== n)
-          );
-          dots.forEach((dot, i) => {
-            const idx = i + 1;
-            dot.className =
-              "step-dot " +
-              (idx < n ? "step-done" : idx === n ? "step-active" : "step-next");
-            dot.textContent = idx < n ? "✓" : String(idx);
-          });
-          status.textContent = "";
-          status.className = "text-sm";
-        }
-
-        function nextStep() {
-          if (current < steps.length) showStep(current + 1);
-        }
-        function prevStep() {
-          if (current > 1) showStep(current - 1);
-        }
-
-        // Wire buttons
-        form.querySelectorAll("[data-next]").forEach((b) =>
-          b.addEventListener("click", () => {
-            if (current === 1) {
-              const name = form.fullName?.value.trim();
-              const email = form.email?.value.trim();
-              if (!name || !email) {
-                status.textContent =
-                  "Please complete Full Name and Email to continue.";
-                status.className = "text-sm mt-2 text-red-600";
-                return;
-              }
-            }
-            nextStep();
-          })
-        );
-        form
-          .querySelectorAll("[data-prev]")
-          .forEach((b) => b.addEventListener("click", prevStep));
-
-        // Toggle "Other" concerns
-        const concernOther = document.getElementById("concernOther");
-        const concernOtherText = document.getElementById("concernOtherText");
-        concernOther?.addEventListener("change", () => {
-          concernOtherText.classList.toggle("hidden", !concernOther.checked);
-          if (concernOther.checked) concernOtherText.focus();
-          if (!concernOther.checked) concernOtherText.value = "";
-          saveDraft();
-        });
-
-        // Toggle medication list
-        const medWrap = document.getElementById("medListWrap");
-        form.querySelectorAll('input[name="medsNow"]').forEach((r) => {
-          r.addEventListener("change", () => {
-            medWrap.classList.toggle("hidden", r.value !== "Yes" || !r.checked);
-            saveDraft();
-          });
-        });
-
-        // Toggle previous therapy textarea
-        const prevWrap = document.getElementById("prevHelpfulWrap");
-        form.querySelectorAll('input[name="therapyBefore"]').forEach((r) => {
-          r.addEventListener("change", () => {
-            prevWrap.classList.toggle(
-              "hidden",
-              r.value !== "Yes" || !r.checked
-            );
-            saveDraft();
-          });
-        });
-
-        // Auto-save to localStorage
-        const STORAGE_KEY = "intakeDraft-v1";
-        function saveDraft() {
-          const data = Object.fromEntries(new FormData(form));
-          try {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-            draftStatus.textContent = "Saved";
-            setTimeout(() => (draftStatus.textContent = "Autosaving…"), 1500);
-          } catch {}
-        }
-        function loadDraft() {
-          try {
-            const raw = localStorage.getItem(STORAGE_KEY);
-            if (!raw) return;
-            const data = JSON.parse(raw);
-            for (const [k, v] of Object.entries(data)) {
-              const el = form.elements[k];
-              if (!el) continue;
-              if (el instanceof RadioNodeList) {
-                [...el].forEach((input) => {
-                  if (Array.isArray(data[k])) {
-                    input.checked = data[k].includes(input.value);
-                  } else {
-                    input.checked = input.value === v;
-                  }
-                });
-              } else if (el.type === "checkbox") {
-                el.checked = !!v;
-              } else {
-                el.value = v;
-              }
-            }
-            if (form.medsNow?.value === "Yes")
-              medWrap.classList.remove("hidden");
-            if (form.therapyBefore?.value === "Yes")
-              prevWrap.classList.remove("hidden");
-            if (concernOther?.checked)
-              concernOtherText.classList.remove("hidden");
-          } catch {}
-        }
-        form.addEventListener("input", saveDraft, { passive: true });
-        form.addEventListener("change", saveDraft);
-        document.getElementById("clearDraft")?.addEventListener("click", () => {
-          localStorage.removeItem(STORAGE_KEY);
-          location.reload();
-        });
-
-        loadDraft();
-        showStep(1);
-
-        // Validate contact prefs before submit
-        function validateContact() {
-          const methods = Array.from(
-            form.querySelectorAll('input[name="contactMethod"]:checked')
-          );
-          const hasMethod = methods.length > 0;
-          const hasOneContact =
-            form.email.value.trim() !== "" || form.phone.value.trim() !== "";
-          if (!hasMethod) {
-            status.textContent =
-              "Please select at least one preferred contact method.";
-            status.className = "text-sm mt-2 text-red-600";
-            return false;
-          }
-          if (!hasOneContact) {
-            status.textContent =
-              "Please provide at least one contact detail: phone or email.";
-            status.className = "text-sm mt-2 text-red-600";
-            return false;
-          }
-          return true;
-        }
-
-        // Submit
-        form.addEventListener("submit", async (e) => {
-          e.preventDefault();
-          if (!form.reportValidity()) return;
-          if (!validateContact()) {
-            showStep(1);
-            return;
-          }
-          if (form.website && form.website.value) return;
-
-          const submitBtn = document.getElementById("submitBtn");
-          submitBtn.disabled = true;
-          submitBtn.textContent = "Submitting...";
-
-          try {
-            const action = form.getAttribute("action") || "";
-            if (!action) {
-              await new Promise((r) => setTimeout(r, 700));
-              status.textContent =
-                "Thank you! Your intake form has been submitted.";
-              status.className = "text-sm mt-2 text-green-600";
-              localStorage.removeItem("intakeDraft-v1");
-              form.reset();
-              showStep(1);
-              return;
-            }
-            const res = await fetch(action, {
-              method: "POST",
-              headers: { Accept: "application/json" },
-              body: new FormData(form),
-            });
-            if (res.ok) {
-              status.textContent =
-                "Thank you! Your intake form has been submitted.";
-              status.className = "text-sm mt-2 text-green-600";
-              localStorage.removeItem("intakeDraft-v1");
-              form.reset();
-              showStep(1);
-            } else {
-              status.textContent =
-                "Something went wrong. Please try again or contact me directly.";
-              status.className = "text-sm mt-2 text-red-600";
-            }
-          } catch {
-            status.textContent = "Network error. Please try again.";
-            status.className = "text-sm mt-2 text-red-600";
-          } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = "Submit Intake Form";
-          }
-        });
-      })();
-    </script>
-    <script src="main.js"></script>
+    <script src="js/form.js" type="module"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

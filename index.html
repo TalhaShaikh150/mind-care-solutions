@@ -67,19 +67,18 @@
     <!-- Your CSS -->
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- Tailwind runtime config (must be before CDN) -->
-    <script src="tailwind-config.js" defer></script>
-
+    
     <!-- Tailwind CDN (for dev). For production, compile and remove this script. -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    
+    <!-- Tailwind runtime config (must be before CDN) -->
+    <script src="js/tailwind-config.js"></script>
     <!-- Lucide (pinned + defer) -->
     <script
       src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"
       crossorigin
       defer
     ></script>
-
   </head>
   <body class="bg-background-cream min-h-screen flex flex-col text-gray-800">
     <!-- Skip link -->
@@ -108,7 +107,7 @@
         <a
           href="about.html"
           class="nav-link text-gray-300 hover:text-white transition duration-150"
-          >About Us</a
+          >About</a
         >
         <a
           href="services.html"
@@ -118,7 +117,7 @@
         <a
           href="contact.html"
           class="nav-link text-gray-300 hover:text-white transition duration-150"
-          >Contact</a
+          >Contact & Intake</a
         >
       </nav>
       <div class="flex items-center space-x-4">
@@ -170,7 +169,7 @@
               class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300"
             >
               <i data-lucide="users" class="w-5 h-5"></i>
-              <span>About Us</span>
+              <span>About</span>
             </a>
             <a
               href="services.html"
@@ -184,7 +183,7 @@
               class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300"
             >
               <i data-lucide="phone" class="w-5 h-5"></i>
-              <span>Contact</span>
+              <span>Contact & Intake </span>
             </a>
           </nav>
 
@@ -390,8 +389,6 @@
               </p>
             </div>
           </div>
-
-          
         </div>
       </section>
 
@@ -435,10 +432,7 @@
               </p>
               <div
                 class="flex items-center text-white/60 text-sm hover:text-white hover:translate-x-2 cursor-pointer transition-all duration-400"
-              >
-                
-
-              </div>
+              ></div>
             </div>
             <div
               class="card-gradient-bg p-8 rounded-2xl text-white transition-all duration-300 hover:shadow-2xl card-hover-scale flex flex-col relative overflow-hidden hover:translate-y-[-10px] cursor-pointer"
@@ -463,10 +457,7 @@
               </p>
               <div
                 class="flex items-center text-white/60 text-sm hover:text-white hover:translate-x-2 cursor-pointer transition-all duration-400"
-              >
-                
-
-              </div>
+              ></div>
             </div>
 
             <div
@@ -490,10 +481,7 @@
               </p>
               <div
                 class="flex items-center text-white/60 text-sm hover:text-white hover:translate-x-2 cursor-pointer transition-all duration-400"
-              >
-                
-
-              </div>
+              ></div>
             </div>
             <div
               class="card-gradient-bg p-8 rounded-2xl text-white transition-all duration-300 hover:shadow-2xl card-hover-scale flex flex-col relative overflow-hidden hover:translate-y-[-10px] cursor-pointer"
@@ -518,10 +506,7 @@
               </p>
               <div
                 class="flex items-center text-white/60 text-sm hover:text-white hover:translate-x-2 cursor-pointer transition-all duration-400"
-              >
-                
-
-              </div>
+              ></div>
             </div>
 
             <div
@@ -547,10 +532,7 @@
               </p>
               <div
                 class="flex items-center text-white/60 text-sm hover:text-white hover:translate-x-2 cursor-pointer transition-all duration-400"
-              >
-                
-
-              </div>
+              ></div>
             </div>
 
             <div
@@ -576,10 +558,7 @@
               </p>
               <div
                 class="flex items-center text-white/60 text-sm hover:text-white hover:translate-x-2 cursor-pointer transition-all duration-400"
-              >
-                
-
-              </div>
+              ></div>
             </div>
 
             <div
@@ -603,10 +582,7 @@
               </p>
               <div
                 class="flex items-center text-white/60 text-sm hover:text-white hover:translate-x-2 cursor-pointer transition-all duration-400"
-              >
-                
-
-              </div>
+              ></div>
             </div>
 
             <div
@@ -631,10 +607,7 @@
               </p>
               <div
                 class="flex items-center text-white/60 text-sm hover:text-white hover:translate-x-2 cursor-pointer transition-all duration-400"
-              >
-                
-
-              </div>
+              ></div>
             </div>
 
             <div
@@ -658,10 +631,7 @@
               </p>
               <div
                 class="flex items-center text-white/60 text-sm hover:text-white hover:translate-x-2 cursor-pointer transition-all duration-400"
-              >
-                
-
-              </div>
+              ></div>
             </div>
           </div>
 
@@ -1334,7 +1304,7 @@
                 <a
                   href="about.html"
                   class="text-gray-300 hover:text-accent-copper transition duration-150"
-                  >About Us</a
+                  >About</a
                 >
               </li>
               <li>
@@ -1348,7 +1318,7 @@
                 <a
                   href="contact.html"
                   class="text-gray-300 hover:text-accent-copper transition duration-150"
-                  >Contact</a
+                  >Contact & Intake</a
                 >
               </li>
             </ul>
@@ -1521,6 +1491,6 @@
     </script>
 
     <!-- App JS -->
-    <script src="main.js" defer></script>
+    <script src="js/main.js" defer></script>
   </body>
 </html>

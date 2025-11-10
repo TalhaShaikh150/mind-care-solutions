@@ -66,11 +66,10 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- Tailwind runtime config BEFORE CDN (required for custom colors) -->
-    <script src="tailwind-config.js" defer></script>
-
     <!-- Tailwind CDN (remove for production after compiling) -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind runtime config BEFORE CDN (required for custom colors) -->
+    <script src="js/tailwind-config.js"></script>
 
     <!-- Lucide (pinned + defer) -->
     <script
@@ -107,7 +106,7 @@
         <a
           href="about.html"
           class="nav-link text-gray-300 hover:text-white transition duration-150"
-          >About Us</a
+          >About</a
         >
         <a
           href="services.html"
@@ -118,8 +117,8 @@
         <a
           href="contact.html"
           class="nav-link text-gray-300 hover:text-white transition duration-150"
-          >Contact</a
-        >
+          >Contact & Intake
+        </a>
       </nav>
       <div class="flex items-center space-x-4">
         <a
@@ -170,7 +169,7 @@
               href="about.html"
               class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300"
             >
-              <i data-lucide="users" class="w-5 h-5"></i><span>About Us</span>
+              <i data-lucide="users" class="w-5 h-5"></i><span>About</span>
             </a>
             <a
               href="services.html"
@@ -182,7 +181,8 @@
               href="contact.html"
               class="mobile-nav-item flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300"
             >
-              <i data-lucide="phone" class="w-5 h-5"></i><span>Contact</span>
+              <i data-lucide="phone" class="w-5 h-5"></i
+              ><span>Contact & Intake </span>
             </a>
           </nav>
 
@@ -793,7 +793,7 @@
                 <a
                   href="about.html"
                   class="text-gray-300 hover:text-accent-copper transition duration-150"
-                  >About Us</a
+                  >About</a
                 >
               </li>
               <li>
@@ -807,8 +807,8 @@
                 <a
                   href="contact.html"
                   class="text-gray-300 hover:text-accent-copper transition duration-150"
-                  >Contact</a
-                >
+                  >Contact & Intake
+                </a>
               </li>
             </ul>
           </div>
@@ -996,7 +996,7 @@
     </script>
 
     <!-- App scripts -->
-    <script src="main.js" defer></script>
+    <script src="js/main.js" defer></script>
     <!-- Fallback init (icons/year + menu) if main.js doesn't define them -->
   </body>
 </html>

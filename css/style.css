@@ -9,7 +9,18 @@
    --accent-copper: #c18e5e;
    /* Sophisticated gold/ochre */
  }
+/* Change selection color instead of disabling */
+::selection {
+  background: var(--primary-light); /* Your primary color */
+  color: white;
+  text-shadow: none;
+}
 
+::-moz-selection {
+  background: #1f9d73; /* Your primary color */
+  color: white;
+  text-shadow: none;
+}
  body {
    font-family: "Inter", sans-serif;
    scroll-behavior: smooth;
@@ -38,7 +49,7 @@
  }
 
  .card-hover {
-  cursor: pointer;
+   cursor: pointer;
    transition: all 0.3s ease;
  }
 
@@ -112,7 +123,7 @@
  }
 
  /* Tailwind Customization */
- 
+
  .fill-accent-copper {
    fill: var(--accent-copper);
  }
@@ -140,7 +151,7 @@
 
 
  .faq-item.active .faq-icon {
-   transform: scale(1.8),rotate(20deg);
+   transform: scale(1.8), rotate(20deg);
  }
 
  .hidden-faq {
@@ -149,4 +160,190 @@
 
  .show-faq .hidden-faq {
    display: block;
+ }
+
+ /*Contact Page*/
+
+ /* Tabs */
+ .tab-btn {
+   border: 1px solid #e5e7eb;
+   padding: 0.75rem 1.5rem;
+   margin: 0 0.25rem;
+ }
+
+ .tab-btn[aria-selected="true"] {
+   background: #0d3b2e;
+   color: #fff;
+   border-color: #0d3b2e;
+ }
+
+ /* Modal and Banner Styles */
+ .modal-enter {
+   opacity: 0;
+   transform: scale(0.95);
+ }
+
+ .modal-enter-active {
+   opacity: 1;
+   transform: scale(1);
+   transition: opacity 200ms ease-out, transform 200ms ease-out;
+ }
+
+ .banner-slide-down {
+   animation: slideDown 0.3s ease-out;
+ }
+
+ @keyframes slideDown {
+   from {
+     transform: translate(-50%, -100%);
+     opacity: 0;
+   }
+
+   to {
+     transform: translate(-50%, 0);
+     opacity: 1;
+   }
+ }
+
+
+ /* Stepper */
+ .step-dot {
+   width: 26px;
+   height: 26px;
+   border-radius: 999px;
+   display: grid;
+   justify-content: center;
+   place-items: center;
+   font-weight: 700;
+ }
+
+ .step-active {
+   text-align: center;
+   background: rgba(31, 157, 115, 0.12);
+   color: #0d3b2e;
+   border: 2px solid #1f9d73;
+ }
+
+ .step-done {
+   background: #1f9d73;
+   color: #fff;
+   border: 2px solid #1f9d73;
+ }
+
+ .step-next {
+   background: #fff;
+   color: #6b7280;
+   border: 2px solid #e5e7eb;
+ }
+
+ /* Button spacing fixes */
+
+ .btn {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   padding: 0.75rem 1.5rem;
+   border-radius: 0.5rem;
+   font-weight: 600;
+   text-decoration: none;
+   transition: all 0.2s ease;
+   white-space: nowrap;
+   min-height: 3rem;
+ }
+
+ .btn-primary {
+   background: #0d3b2e;
+   color: white;
+   border: 1px solid #0d3b2e;
+ }
+
+ .btn-primary:hover {
+   background: var(--primary-light);
+   border-color: #1f9d73;
+ }
+
+ .btn-secondary {
+   background: white;
+   color: #0d3b2e;
+   border: 1px solid #0d3b2e;
+ }
+
+ .btn-secondary:hover {
+   background: var(--primary-dark);
+   color: white;
+ }
+
+ .btn-full {
+   width: 100%;
+ }
+
+ /* Form button spacing */
+ .form-actions {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 1.5rem;
+   padding-top: 1rem;
+   gap: 1rem;
+ }
+
+ .form-actions .btn {
+   flex: 0 0 auto;
+ }
+
+ .step-indicator {
+   flex: 1;
+   text-align: center;
+   color: #6b7280;
+   font-size: 0.875rem;
+ }
+
+ /* Validation Styles */
+ .error-message {
+   color: #dc2626;
+   font-size: 0.75rem;
+   margin-top: 0.25rem;
+   display: block;
+ }
+
+ .error-field {
+   border-color: #dc2626 !important;
+   box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+ }
+
+ .success-field {
+   border-color: #16a34a !important;
+ }
+
+ /* Mobile responsive adjustments */
+ @media (max-width: 640px) {
+   .form-actions {
+     flex-direction: column;
+     gap: 0.75rem;
+   }
+
+   .form-actions .btn {
+     width: 100%;
+   }
+
+   .step-indicator {
+     order: -1;
+   }
+
+   .btn-container {
+     flex-direction: column;
+     align-items: center;
+   }
+
+   .btn-container .btn {
+     width: 100%;
+     max-width: 280px;
+   }
+ }
+
+ @media (prefers-reduced-motion: reduce) {
+   * {
+     transition: none !important;
+     animation: none !important;
+   }
  }
