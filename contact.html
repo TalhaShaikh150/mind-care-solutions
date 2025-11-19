@@ -1,44 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-CA">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Contact & Intake | MindCare — Online Therapy in Alberta</title>
+    <!-- Primary Meta Tags -->
+    <title>Contact & Intake | MindCare — Online Therapy & Counseling in Alberta | Book Your Session</title>
     <meta
       name="description"
-      content="Contact me with questions or complete the secure intake form to book your first session. Confidential, evidence‑based online therapy across Alberta."
+      content="Contact MindCare for professional online therapy in Alberta. Complete our secure intake form for PTSD, anxiety, depression, trauma & relationship counseling. Licensed therapist serving Calgary & Alberta."
+    />
+    <meta
+      name="keywords"
+      content="contact therapist Alberta, online counseling intake form, mental health appointment booking, PTSD therapy Alberta, anxiety counseling Calgary, depression treatment intake, trauma therapy contact, relationship counseling booking, licensed clinical counsellor Alberta, MindCare contact, secure therapy intake, book therapy session Alberta"
     />
     <link rel="canonical" href="https://www.therapy.io/contact.html" />
     <meta name="robots" content="index,follow" />
     <meta name="theme-color" content="#0d3b2e" />
+
+    <!-- Author and Copyright -->
+    <meta name="author" content="MindCare Professional Therapy" />
+    <meta name="copyright" content="MindCare" />
+
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="CA-AB" />
+    <meta name="geo.placename" content="Calgary" />
+    <meta name="geo.position" content="51.0447;-114.0719" />
+    <meta name="ICBM" content="51.0447, -114.0719" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="MindCare" />
     <meta
       property="og:title"
-      content="Contact & Intake | MindCare — Online Therapy in Alberta"
+      content="Contact & Intake | MindCare — Online Therapy & Counseling in Alberta | Book Your Session"
     />
     <meta
       property="og:description"
-      content="Send a message or complete the secure intake form to get started. Confidential online therapy across Alberta."
+      content="Contact MindCare for professional online therapy in Alberta. Complete our secure intake form for PTSD, anxiety, depression, trauma & relationship counseling."
     />
     <meta property="og:url" content="https://www.therapy.io/contact.html" />
     <meta
       property="og:image"
       content="https://www.therapy.io/assets/og-contact.jpg"
     />
+    <meta property="og:locale" content="en_CA" />
+    <meta property="og:country-name" content="Canada" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Contact & Intake | MindCare — Online Therapy in Alberta"
+      content="Contact & Intake | MindCare — Online Therapy & Counseling in Alberta | Book Your Session"
     />
     <meta
       name="twitter:description"
-      content="Send a message or complete the secure intake form to get started. Confidential online therapy across Alberta."
+      content="Contact MindCare for professional online therapy in Alberta. Complete our secure intake form for PTSD, anxiety, depression, trauma & relationship counseling."
     />
     <meta
       name="twitter:image"
@@ -54,6 +71,10 @@
     <link rel="dns-prefetch" href="//unpkg.com" />
     <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
     <link rel="dns-prefetch" href="//cdn.tailwindcss.com" />
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
 
     <!-- Fonts -->
     <link
@@ -134,7 +155,7 @@
           aria-label="Toggle navigation menu"
           aria-expanded="false"
         >
-          <i data-lucide="menu" class="w-6 h-6"></i>
+          <i data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i>
         </button>
       </div>
     </header>
@@ -152,7 +173,7 @@
               class="text-white transition duration-300"
               aria-label="Close menu"
             >
-              <i data-lucide="x" class="w-6 h-6"></i>
+              <i data-lucide="x" class="w-6 h-6" aria-hidden="true"></i>
             </button>
           </div>
 
@@ -161,25 +182,25 @@
               href="index.html"
               class="flex items-center space-x-4 text-lg font-medium text-gray-300 py-4 px-4"
             >
-              <i data-lucide="home" class="w-5 h-5"></i><span>Home</span>
+              <i data-lucide="home" class="w-5 h-5" aria-hidden="true"></i><span>Home</span>
             </a>
             <a
               href="about.html"
               class="flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300"
             >
-              <i data-lucide="users" class="w-5 h-5"></i><span>About</span>
+              <i data-lucide="users" class="w-5 h-5" aria-hidden="true"></i><span>About</span>
             </a>
             <a
               href="services.html"
               class="flex items-center space-x-4 text-lg font-medium text-gray-300 hover:text-white py-4 px-4 hover:bg-white/5 rounded-xl transition duration-300"
             >
-              <i data-lucide="heart" class="w-5 h-5"></i><span>Services</span>
+              <i data-lucide="heart" class="w-5 h-5" aria-hidden="true"></i><span>Services</span>
             </a>
             <a
               href="contact.html"
               class="flex items-center space-x-4 text-lg font-medium text-white py-4 px-4 bg-white/10 rounded-xl"
             >
-              <i data-lucide="phone" class="w-5 h-5"></i
+              <i data-lucide="phone" class="w-5 h-5" aria-hidden="true"></i
               ><span>Contact & Intake</span>
             </a>
           </nav>
@@ -190,8 +211,7 @@
               onclick="toggleMobileMenu()"
               class="w-full py-4 bg-white text-black font-semibold rounded-xl hover:bg-primary-light hover:text-white transition duration-300 flex items-center justify-center space-x-3"
             >
-              <i data-lucide="file-input" class="w-5 h-5"></i
-              ><span>Start Intake</span>
+              <i data-lucide="file-input" class="w-5 h-5" aria-hidden="true"></i><span>Start Intake</span>
             </a>
           </div>
 
@@ -220,8 +240,7 @@
             Contact & Intake
           </h1>
           <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-            Have a question or ready to begin? Send a quick message or complete
-            the secure intake form to book your first session.
+            Ready to begin your therapy journey in Alberta? Contact MindCare for professional online counseling services including PTSD treatment, anxiety therapy, depression counseling, and trauma recovery. Complete our secure intake form to book your first session with a licensed clinical counsellor.
           </p>
           <div class="mt-8 btn-container">
             <a
@@ -243,8 +262,31 @@
               aria-controls="panel-intake"
             >
               Start Intake
-              <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+              <i data-lucide="arrow-right" class="w-4 h-4 ml-2" aria-hidden="true"></i>
             </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Enhanced Content Section -->
+      <section class="py-12 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="bg-primary-light/5 p-6 rounded-2xl">
+              <i data-lucide="shield-check" class="w-8 h-8 text-primary-light mx-auto mb-4" aria-hidden="true"></i>
+              <h3 class="text-xl font-bold text-primary-dark mb-2">Secure & Confidential</h3>
+              <p class="text-gray-600">All communications and intake forms are encrypted and HIPAA compliant</p>
+            </div>
+            <div class="bg-primary-light/5 p-6 rounded-2xl">
+              <i data-lucide="clock" class="w-8 h-8 text-primary-light mx-auto mb-4" aria-hidden="true"></i>
+              <h3 class="text-xl font-bold text-primary-dark mb-2">Quick Response</h3>
+              <p class="text-gray-600">Typically respond within 24 hours to schedule your therapy session</p>
+            </div>
+            <div class="bg-primary-light/5 p-6 rounded-2xl">
+              <i data-lucide="heart" class="w-8 h-8 text-primary-light mx-auto mb-4" aria-hidden="true"></i>
+              <h3 class="text-xl font-bold text-primary-dark mb-2">Expert Care</h3>
+              <p class="text-gray-600">Licensed Alberta therapist specializing in trauma, anxiety, and relationship issues</p>
+            </div>
           </div>
         </div>
       </section>
@@ -257,24 +299,7 @@
             aria-label="Contact or Intake"
             class="flex gap-2 justify-center"
           >
-            <!-- <button
-                id="tab-message"
-                class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold"
-                role="tab"
-                aria-selected="true"
-                aria-controls="panel-message"
-              >
-                Message
-              </button> -->
-            <!-- <button
-              class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold"
-                id="tab-intake"
-                role="tab"
-                aria-selected="false"
-                aria-controls="panel-intake"
-              >
-                Intake
-              </button> -->
+            <!-- Tabs will be handled by JavaScript -->
           </div>
         </div>
       </section>
@@ -295,8 +320,10 @@
             class="lg:col-span-2 p-6 sm:p-8 bg-white rounded-2xl shadow-sm border border-gray-200"
           >
             <h2 class="text-2xl font-bold text-primary-dark mb-6">
-              Send a Message
+              Send a Message to MindCare Therapy
             </h2>
+            <p class="text-gray-600 mb-6">Contact our Alberta counseling practice for questions about PTSD therapy, anxiety treatment, depression counseling, or to schedule your first session.</p>
+            
             <form
               action="https://formspree.io/f/mkgkngzy"
               method="POST"
@@ -372,7 +399,7 @@
                   <label
                     for="cTopic"
                     class="block text-sm font-semibold text-gray-700 mb-1"
-                    >Topic *</label
+                    >Therapy Interest *</label
                   >
                   <select
                     id="cTopic"
@@ -380,11 +407,14 @@
                     required
                     class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light"
                   >
-                    <option value="">Select a topic</option>
+                    <option value="">Select therapy focus</option>
+                    <option value="Anxiety Therapy">Anxiety Therapy</option>
+                    <option value="Depression Counseling">Depression Counseling</option>
+                    <option value="Trauma & PTSD Treatment">Trauma & PTSD Treatment</option>
+                    <option value="Relationship Counseling">Relationship Counseling</option>
+                    <option value="Motor Vehicle Accident">Motor Vehicle Accident Assessment</option>
                     <option value="General Inquiry">General Inquiry</option>
-                    <option value="Booking / Availability">
-                      Booking / Availability
-                    </option>
+                    <option value="Booking / Availability">Booking / Availability</option>
                     <option value="Billing">Billing</option>
                     <option value="Technical">Technical</option>
                     <option value="Other">Other</option>
@@ -407,7 +437,7 @@
                   rows="5"
                   required
                   class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-light focus:border-primary-light"
-                  placeholder="How can I help?"
+                  placeholder="Tell us about your therapy needs or questions..."
                 ></textarea>
                 <span
                   class="error-message text-red-600 text-sm mt-1"
@@ -423,7 +453,7 @@
                   class="mt-1 accent-primary-light"
                 />
                 <label for="cConsent" class="text-sm text-gray-700"
-                  >I consent to be contacted regarding my inquiry. *</label
+                  >I consent to be contacted regarding my therapy inquiry. *</label
                 >
                 <span
                   class="error-message text-red-600 text-sm mt-1"
@@ -435,7 +465,7 @@
                   type="submit"
                   class="btn btn-primary btn-full sm:w-auto"
                 >
-                  Submit Inquiry
+                  Submit Therapy Inquiry
                 </button>
               </div>
               <div
@@ -452,7 +482,7 @@
             class="lg:col-span-1 p-6 sm:p-8 bg-white rounded-2xl shadow-sm border border-gray-200 h-fit"
           >
             <h2 class="text-2xl font-bold text-primary-dark mb-6">
-              Contact Details
+              Contact MindCare Alberta
             </h2>
             <div class="space-y-4 sm:space-y-5">
               <!-- Email -->
@@ -463,6 +493,7 @@
                   <i
                     data-lucide="mail"
                     class="w-5 h-5 text-accent-copper mr-3 flex-shrink-0"
+                    aria-hidden="true"
                   ></i>
                   <h3 class="font-bold text-primary-dark text-lg">Email</h3>
                 </div>
@@ -474,7 +505,7 @@
                     info.mindcarecounselling.com
                   </a>
                   <p class="text-gray-600 text-sm mt-1">
-                    Best for inquiries and follow‑ups
+                    Best for therapy inquiries and follow‑ups
                   </p>
                 </div>
               </div>
@@ -487,6 +518,7 @@
                   <i
                     data-lucide="phone"
                     class="w-5 h-5 text-accent-copper mr-3 flex-shrink-0"
+                    aria-hidden="true"
                   ></i>
                   <h3 class="font-bold text-primary-dark text-lg">Phone</h3>
                 </div>
@@ -499,7 +531,7 @@
                   </a>
                   <p class="text-gray-600 text-sm mt-1">
                     Mon–Fri, 9:00–17:00 MT<br class="sm:hidden" />
-                    <span class="text-xs">(voicemail available)</span>
+                    <span class="text-xs">(voicemail available for therapy appointments)</span>
                   </p>
                 </div>
               </div>
@@ -512,8 +544,9 @@
                   <i
                     data-lucide="clock"
                     class="w-5 h-5 text-accent-copper mr-3 flex-shrink-0"
+                    aria-hidden="true"
                   ></i>
-                  <h3 class="font-bold text-primary-dark text-lg">Hours</h3>
+                  <h3 class="font-bold text-primary-dark text-lg">Therapy Hours</h3>
                 </div>
                 <div class="pl-8">
                   <div class="text-gray-700 text-sm space-y-2">
@@ -537,7 +570,29 @@
                   <p
                     class="text-gray-500 text-xs mt-3 border-t border-gray-200 pt-2"
                   >
-                    Time zone: Alberta (MT)
+                    Time zone: Alberta (MT) - Serving Calgary and all Alberta
+                  </p>
+                </div>
+              </div>
+
+              <!-- Service Area -->
+              <div
+                class="p-4 sm:p-5 rounded-xl bg-background-cream border border-gray-200"
+              >
+                <div class="flex items-center mb-3">
+                  <i
+                    data-lucide="map-pin"
+                    class="w-5 h-5 text-accent-copper mr-3 flex-shrink-0"
+                    aria-hidden="true"
+                  ></i>
+                  <h3 class="font-bold text-primary-dark text-lg">Service Area</h3>
+                </div>
+                <div class="pl-8">
+                  <p class="text-primary-dark text-base font-medium">
+                    Online Therapy Across Alberta
+                  </p>
+                  <p class="text-gray-600 text-sm mt-1">
+                    Serving Calgary, Edmonton, and all Alberta residents through secure online counseling sessions
                   </p>
                 </div>
               </div>
@@ -578,6 +633,12 @@
           </div>
         </div>
 
+        <!-- Intake form header with SEO content -->
+        <div class="max-w-3xl mx-auto mb-8 text-center">
+          <h2 class="text-3xl font-bold text-primary-dark mb-4">Secure Therapy Intake Form</h2>
+          <p class="text-gray-600">Complete this confidential form to begin your therapy journey with MindCare. Our licensed Alberta therapist specializes in PTSD treatment, anxiety therapy, depression counseling, and trauma recovery.</p>
+        </div>
+
         <!-- Intake form (multi-step) -->
         <form
           id="intakeForm"
@@ -601,13 +662,15 @@
             role="status"
             aria-live="polite"
           ></div>
-          <div id="draftStatus" class="text-xs text-gray-500">Autosaving…</div>
+          <div id="draftStatus" class="text-xs text-gray-500">Autosaving therapy intake…</div>
 
           <!-- Step 1 -->
           <fieldset data-step="1" class="space-y-4">
             <legend class="text-xl font-bold text-primary-dark">
-              About You
+              Personal Information
             </legend>
+            <p class="text-gray-600 text-sm mb-4">This information helps us provide personalized care for your therapy needs in Alberta.</p>
+            
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label
@@ -730,7 +793,7 @@
                 <label
                   for="address"
                   class="block text-sm font-semibold text-gray-700"
-                  >Address (optional)</label
+                  >Alberta Address (optional)</label
                 >
                 <input
                   id="address"
@@ -738,6 +801,7 @@
                   type="text"
                   autocomplete="street-address"
                   class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+                  placeholder="City and province helpful for Alberta therapy services"
                 />
                 <span
                   class="error-message text-red-600 text-sm mt-1"
@@ -759,8 +823,10 @@
           <!-- Step 2 -->
           <fieldset data-step="2" class="space-y-4 hidden">
             <legend class="text-xl font-bold text-primary-dark">
-              Background
+              Background Information
             </legend>
+            <p class="text-gray-600 text-sm mb-4">Understanding your background helps us tailor your therapy experience.</p>
+            
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label
@@ -915,8 +981,10 @@
           <!-- Step 3 -->
           <fieldset data-step="3" class="space-y-4 hidden">
             <legend class="text-xl font-bold text-primary-dark">
-              Concerns & Goals
+              Therapy Concerns & Goals
             </legend>
+            <p class="text-gray-600 text-sm mb-4">Share what brings you to therapy. Our Alberta counselor specializes in these areas:</p>
+            
             <div class="grid gap-3 sm:grid-cols-2">
               <label class="inline-flex items-center gap-2"
                 ><input
@@ -982,6 +1050,14 @@
                   class="accent-primary-light"
                 /><span>Workplace or academic stress</span></label
               >
+              <label class="inline-flex items-center gap-2"
+                ><input
+                  type="checkbox"
+                  name="concerns"
+                  value="Motor vehicle accident recovery"
+                  class="accent-primary-light"
+                /><span>Motor vehicle accident recovery</span></label
+              >
               <div class="sm:col-span-2">
                 <label class="inline-flex items-center gap-2">
                   <input
@@ -1014,8 +1090,7 @@
               <label
                 for="presentingDesc"
                 class="block text-sm font-semibold text-gray-700"
-                >Briefly describe what brings you to counselling at this time
-                *</label
+                >Briefly describe what brings you to counselling at this time *</label
               >
               <textarea
                 id="presentingDesc"
@@ -1023,7 +1098,7 @@
                 rows="4"
                 required
                 class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
-                placeholder="Share anything you feel comfortable sharing"
+                placeholder="Share anything you feel comfortable sharing about your therapy needs"
               ></textarea>
               <span
                 class="error-message text-red-600 text-sm mt-1"
@@ -1043,6 +1118,7 @@
                 rows="4"
                 required
                 class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
+                placeholder="Your therapy goals help us create a personalized treatment plan"
               ></textarea>
               <span
                 class="error-message text-red-600 text-sm mt-1"
@@ -1160,12 +1236,12 @@
           <!-- Step 4 -->
           <fieldset data-step="4" class="space-y-4 hidden">
             <legend class="text-xl font-bold text-primary-dark">
-              Consent & Submit
+              Consent & Submit Your Therapy Intake
             </legend>
             <p class="text-gray-700">
               I understand that my information will remain confidential and will
               only be shared with my written consent or as required by law
-              (e.g., risk of harm to self or others).
+              (e.g., risk of harm to self or others). All therapy sessions with MindCare in Alberta are conducted with strict confidentiality.
             </p>
             <label class="inline-flex items-start gap-3">
               <input
@@ -1176,7 +1252,7 @@
                 required
               />
               <span
-                >I have read and agree to the confidentiality statement. *</span
+                >I have read and agree to the confidentiality statement for Alberta therapy services. *</span
               >
             </label>
             <span
@@ -1229,7 +1305,7 @@
               class="rounded-xl bg-background-cream border border-gray-200 p-4 text-sm text-gray-700"
             >
               By submitting, you consent to secure storage of your form for the
-              purpose of providing care.
+              purpose of providing mental health care through MindCare's Alberta counseling services.
             </div>
           </fieldset>
 
@@ -1239,13 +1315,13 @@
             </button>
             <span class="step-indicator">Step 4 of 4</span>
             <button id="submitBtn" type="submit" class="btn btn-primary">
-              Submit Intake Form
+              Submit Therapy Intake Form
             </button>
             <div
               id="toast"
               class="fixed bottom-5 right-5 bg-green-600 text-white px-4 py-2 rounded shadow-lg opacity-0 transition-opacity duration-300 z-50"
             >
-              Form submitted successfully!
+              Therapy intake submitted successfully!
             </div>
           </div>
         </form>
@@ -1256,13 +1332,32 @@
           <button id="clearDraft" class="underline hover:text-primary-dark">
             Clear saved draft
           </button>
-          <span>Auto‑save is on</span>
+          <span>Auto‑save is on for your therapy intake</span>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+          <h2 class="text-3xl font-bold text-primary-dark text-center mb-12">Therapy Intake FAQ</h2>
+          <div class="space-y-6">
+            <div class="bg-background-cream rounded-2xl p-6">
+              <h3 class="text-xl font-bold text-primary-dark mb-3">How soon can I schedule my first therapy session?</h3>
+              <p class="text-gray-600">We typically respond to intake forms within 24 hours and can often schedule your first therapy session within the same week, depending on availability.</p>
+            </div>
+            <div class="bg-background-cream rounded-2xl p-6">
+              <h3 class="text-xl font-bold text-primary-dark mb-3">Is the intake form secure for sharing personal information?</h3>
+              <p class="text-gray-600">Yes, our intake forms are encrypted and HIPAA compliant. Your information remains confidential and secure, following Alberta's privacy regulations for mental health services.</p>
+            </div>
+            <div class="bg-background-cream rounded-2xl p-6">
+              <h3 class="text-xl font-bold text-primary-dark mb-3">Do you accept insurance for therapy sessions?</h3>
+              <p class="text-gray-600">Many insurance plans cover counseling with a Registered Clinical Counsellor. We provide receipts that you can submit to your insurance provider for reimbursement.</p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
-   
-  
     <!-- Success Modal -->
     <div
       id="successModal"
@@ -1274,14 +1369,13 @@
           <div
             class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
           >
-            <i data-lucide="check" class="w-8 h-8 text-green-600"></i>
+            <i data-lucide="check" class="w-8 h-8 text-green-600" aria-hidden="true"></i>
           </div>
 
           <!-- Success Message -->
           <h3 class="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
           <p class="text-gray-600 mb-6" id="modalMessage">
-            Your form has been submitted successfully. We'll get back to you
-            soon.
+            Your therapy intake form has been submitted successfully. We'll contact you within 24 hours to schedule your first session.
           </p>
 
           <!-- Action Buttons -->
@@ -1303,16 +1397,17 @@
       class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 hidden transition-all duration-300"
     >
       <div class="flex items-center gap-3">
-        <i data-lucide="check-circle" class="w-5 h-5 text-white"></i>
+        <i data-lucide="check-circle" class="w-5 h-5 text-white" aria-hidden="true"></i>
         <span id="bannerMessage" class="font-medium"
-          >Form submitted successfully!</span
+          >Therapy intake submitted successfully!</span
         >
         <button id="closeBanner" class="text-white hover:text-gray-200 ml-2">
-          <i data-lucide="x" class="w-4 h-4"></i>
+          <i data-lucide="x" class="w-4 h-4" aria-hidden="true"></i>
         </button>
       </div>
     </div>
-   <!--Footer-->
+   
+    <!--Footer-->
     <footer class="bg-primary-dark text-white pt-16 pb-8">
       <div class="max-w-6xl mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
@@ -1327,25 +1422,25 @@
                 href="#"
                 class="text-gray-300 hover:text-accent-copper transition duration-150"
                 aria-label="Facebook"
-                ><i data-lucide="facebook" class="w-5 h-5"></i
+                ><i data-lucide="facebook" class="w-5 h-5" aria-hidden="true"></i
               ></a>
               <a
                 href="#"
                 class="text-gray-300 hover:text-accent-copper transition duration-150"
                 aria-label="Twitter"
-                ><i data-lucide="twitter" class="w-5 h-5"></i
+                ><i data-lucide="twitter" class="w-5 h-5" aria-hidden="true"></i
               ></a>
               <a
                 href="#"
                 class="text-gray-300 hover:text-accent-copper transition duration-150"
                 aria-label="Instagram"
-                ><i data-lucide="instagram" class="w-5 h-5"></i
+                ><i data-lucide="instagram" class="w-5 h-5" aria-hidden="true"></i
               ></a>
               <a
                 href="#"
                 class="text-gray-300 hover:text-accent-copper transition duration-150"
                 aria-label="LinkedIn"
-                ><i data-lucide="linkedin" class="w-5 h-5"></i
+                ><i data-lucide="linkedin" class="w-5 h-5" aria-hidden="true"></i
               ></a>
             </div>
           </div>
@@ -1450,42 +1545,72 @@
       </div>
     </footer>
 
-    <!-- JSON-LD -->
+    <!-- Enhanced JSON-LD -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "ContactPage",
-            "@id": "https://www.therapy.io/contact.html#webpage",
-            "url": "https://www.therapy.io/contact.html",
-            "name": "Contact & Intake | MindCare",
-            "isPartOf": {
-              "@type": "WebSite",
-              "name": "MindCare",
-              "url": "https://www.therapy.io/"
-            }
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ContactPage",
+          "@id": "https://www.therapy.io/contact.html#webpage",
+          "url": "https://www.therapy.io/contact.html",
+          "name": "Contact & Intake | MindCare — Online Therapy & Counseling in Alberta | Book Your Session",
+          "description": "Contact MindCare for professional online therapy in Alberta. Complete our secure intake form for PTSD, anxiety, depression, trauma & relationship counseling.",
+          "isPartOf": {
+            "@type": "WebSite",
+            "name": "MindCare",
+            "url": "https://www.therapy.io/"
+          }
+        },
+        {
+          "@type": "MedicalBusiness",
+          "@id": "https://www.therapy.io/#organization",
+          "name": "MindCare",
+          "url": "https://www.therapy.io/",
+          "telephone": "+1-587-717-6727",
+          "email": "info.mindcarecounselling.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "Alberta",
+            "addressCountry": "Canada"
           },
-          {
-            "@type": "BreadcrumbList",
-            "@id": "https://www.therapy.io/contact.html#breadcrumbs",
+          "areaServed": "Alberta",
+          "medicalSpecialty": ["Psychotherapy", "MentalHealth"],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Therapy Services",
             "itemListElement": [
               {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://www.therapy.io/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Contact & Intake",
-                "item": "https://www.therapy.io/contact.html"
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Therapy Intake Process",
+                  "description": "Secure online intake form for new therapy clients in Alberta"
+                }
               }
             ]
           }
-        ]
-      }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.therapy.io/contact.html#breadcrumbs",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.therapy.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Contact & Intake",
+              "item": "https://www.therapy.io/contact.html"
+            }
+          ]
+        }
+      ]
+    }
     </script>
 
     <!-- Scripts -->
