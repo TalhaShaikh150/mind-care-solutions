@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Contact & Intake | MindCare — Online Therapy in Alberta</title>
+    <title>Contact | MindCare — Online Therapy in Alberta</title>
     <meta
       name="description"
       content="Contact me with questions or complete the secure intake form to book your first session. Confidential, evidence‑based online therapy across Alberta."
@@ -18,7 +18,7 @@
     <meta property="og:site_name" content="MindCare" />
     <meta
       property="og:title"
-      content="Contact & Intake | MindCare — Online Therapy in Alberta"
+      content="Contact | MindCare — Online Therapy in Alberta"
     />
     <meta
       property="og:description"
@@ -34,7 +34,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Contact & Intake | MindCare — Online Therapy in Alberta"
+      content="Contact | MindCare — Online Therapy in Alberta"
     />
     <meta
       name="twitter:description"
@@ -118,16 +118,17 @@
           href="contact.html"
           aria-current="page"
           class="nav-link active-nav text-white font-semibold transition duration-150"
-          >Contact & Intake</a
+          >Contact</a
         >
       </nav>
       <div class="flex items-center space-x-4">
         <a
-          href="#intake"
-          class="hidden lg:inline-block py-2.5 px-5 bg-white text-black text-base font-semibold rounded-lg shadow-md hover:bg-primary-light hover:text-white transition-all duration-150"
+          id="desktop-book-btn"
+          class="hidden lg:inline-block py-2.5 px-5 bg-white text-black text-base font-semibold rounded-lg shadow-md hover:bg-primary-light hover:text-white transition-all duration-150 cursor-pointer"
         >
-          Start Intake
+          Book a Session
         </a>
+
         <button
           onclick="toggleMobileMenu()"
           class="text-base font-semibold text-white hover:opacity-80 lg:hidden transition duration-150"
@@ -179,19 +180,17 @@
               href="contact.html"
               class="flex items-center space-x-4 text-lg font-medium text-white py-4 px-4 bg-white/10 rounded-xl"
             >
-              <i data-lucide="phone" class="w-5 h-5"></i
-              ><span>Contact & Intake</span>
+              <i data-lucide="phone" class="w-5 h-5"></i><span>Contact</span>
             </a>
           </nav>
 
           <div class="mt-12 pt-8 border-t border-white/20">
             <a
-              href="#intake"
-              onclick="toggleMobileMenu()"
-              class="w-full py-4 bg-white text-black font-semibold rounded-xl hover:bg-primary-light hover:text-white transition duration-300 flex items-center justify-center space-x-3"
+              id="mobile-book-btn"
+              class="w-full py-4 bg-white text-black font-semibold rounded-xl hover:bg-primary-light hover:text-white transition duration-300 flex items-center justify-center space-x-3 cursor-pointer"
             >
               <i data-lucide="file-input" class="w-5 h-5"></i
-              ><span>Start Intake</span>
+              ><span>Book a session</span>
             </a>
           </div>
 
@@ -217,7 +216,7 @@
           <h1
             class="text-5xl md:text-6xl font-extrabold text-primary-dark mb-4"
           >
-            Contact & Intake
+            Contact
           </h1>
           <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
             Have a question or ready to begin? Send a quick message or complete
@@ -242,7 +241,7 @@
               aria-selected="false"
               aria-controls="panel-intake"
             >
-              Start Intake
+              Book Now
               <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
             </a>
           </div>
@@ -256,26 +255,7 @@
             role="tablist"
             aria-label="Contact or Intake"
             class="flex gap-2 justify-center"
-          >
-            <!-- <button
-                id="tab-message"
-                class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold"
-                role="tab"
-                aria-selected="true"
-                aria-controls="panel-message"
-              >
-                Message
-              </button> -->
-            <!-- <button
-              class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold"
-                id="tab-intake"
-                role="tab"
-                aria-selected="false"
-                aria-controls="panel-intake"
-              >
-                Intake
-              </button> -->
-          </div>
+          ></div>
         </div>
       </section>
 
@@ -385,8 +365,6 @@
                     <option value="Booking / Availability">
                       Booking / Availability
                     </option>
-                    <option value="Billing">Billing</option>
-                    <option value="Technical">Technical</option>
                     <option value="Other">Other</option>
                   </select>
                   <span
@@ -601,7 +579,6 @@
             role="status"
             aria-live="polite"
           ></div>
-          <div id="draftStatus" class="text-xs text-gray-500">Autosaving…</div>
 
           <!-- Step 1 -->
           <fieldset data-step="1" class="space-y-4">
@@ -846,7 +823,7 @@
                 <label
                   for="emgName"
                   class="block text-sm font-semibold text-gray-700"
-                  >Emergency Contact Name *</label
+                  >Emergency Contact Name</label
                 >
                 <input
                   id="emgName"
@@ -864,7 +841,7 @@
                 <label
                   for="emgPhone"
                   class="block text-sm font-semibold text-gray-700"
-                  >Emergency Contact Phone *</label
+                  >Emergency Contact Phone</label
                 >
                 <input
                   id="emgPhone"
@@ -883,7 +860,7 @@
                 <label
                   for="emgRelation"
                   class="block text-sm font-semibold text-gray-700"
-                  >Relationship *</label
+                  >Relationship</label
                 >
                 <input
                   id="emgRelation"
@@ -1014,8 +991,8 @@
               <label
                 for="presentingDesc"
                 class="block text-sm font-semibold text-gray-700"
-                >Briefly describe what brings you to counselling at this time
-                *</label
+                >Briefly describe what brings you to counselling at this time?
+                </label
               >
               <textarea
                 id="presentingDesc"
@@ -1035,13 +1012,14 @@
               <label
                 for="goals"
                 class="block text-sm font-semibold text-gray-700"
-                >What would you like to achieve through therapy? *</label
+                >What would you like to achieve through therapy?</label
               >
               <textarea
                 id="goals"
                 name="goals"
                 rows="4"
                 required
+                placeholder="Examples: Manage anxiety, improve mood, build confidence, work through trauma, enhance relationships..."
                 class="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-primary-light"
               ></textarea>
               <span
@@ -1053,7 +1031,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <span class="block text-sm font-semibold text-gray-700 mb-1"
-                  >Are you currently taking any medications? *</span
+                  >Are you currently taking any medications?</span
                 >
                 <div class="flex items-center gap-4">
                   <label class="inline-flex items-center gap-2"
@@ -1261,8 +1239,6 @@
       </section>
     </main>
 
-   
-  
     <!-- Success Modal -->
     <div
       id="successModal"
@@ -1377,7 +1353,7 @@
                 <a
                   href="contact.html"
                   class="text-gray-300 hover:text-accent-copper transition duration-150"
-                  >Contact & Intake</a
+                  >Contact</a
                 >
               </li>
             </ul>
@@ -1458,7 +1434,7 @@
             "@type": "ContactPage",
             "@id": "https://www.therapy.io/contact.html#webpage",
             "url": "https://www.therapy.io/contact.html",
-            "name": "Contact & Intake | MindCare",
+            "name": "Contact | MindCare",
             "isPartOf": {
               "@type": "WebSite",
               "name": "MindCare",
@@ -1478,7 +1454,7 @@
               {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Contact & Intake",
+                "name": "Contact",
                 "item": "https://www.therapy.io/contact.html"
               }
             ]
@@ -1490,5 +1466,118 @@
     <!-- Scripts -->
     <script src="js/form.js" type="module"></script>
     <script src="js/main.js"></script>
+
+    <!-- Custom script for handling Book a Session buttons -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get all Book a Session buttons
+        const desktopBookBtn = document.getElementById("desktop-book-btn");
+        const mobileBookBtn = document.getElementById("mobile-book-btn");
+        const tabIntake = document.getElementById("tab-intake");
+        const tabMessage = document.getElementById("tab-message");
+
+        // Function to switch to intake form and update button style
+        function switchToIntakeForm() {
+          // Hide message panel and show intake panel
+          document.getElementById("panel-message").classList.add("hidden");
+          document.getElementById("panel-intake").classList.remove("hidden");
+
+          // Update tab states
+          tabMessage.setAttribute("aria-selected", "false");
+          tabIntake.setAttribute("aria-selected", "true");
+
+          // Update button styles
+          tabMessage.classList.remove("bg-primary-dark", "text-white");
+          tabMessage.classList.add(
+            "bg-white",
+            "text-primary-dark",
+            "border",
+            "border-gray-300"
+          );
+
+          tabIntake.classList.remove(
+            "bg-white",
+            "text-primary-dark",
+            "border",
+            "border-gray-300"
+          );
+          tabIntake.classList.add("bg-primary-dark", "text-white");
+
+          // Scroll to intake form
+          document
+            .getElementById("intake")
+            .scrollIntoView({ behavior: "smooth" });
+        }
+
+        // Function to switch to message form and reset button styles
+        function switchToMessageForm() {
+          // Hide intake panel and show message panel
+          document.getElementById("panel-intake").classList.add("hidden");
+          document.getElementById("panel-message").classList.remove("hidden");
+
+          // Update tab states
+          tabIntake.setAttribute("aria-selected", "false");
+          tabMessage.setAttribute("aria-selected", "true");
+
+          // Reset button styles to default
+          tabIntake.classList.remove("bg-primary-dark", "text-white");
+          tabIntake.classList.add(
+            "bg-white",
+            "text-primary-dark",
+            "border",
+            "border-gray-300"
+          );
+
+          tabMessage.classList.remove(
+            "bg-white",
+            "text-primary-dark",
+            "border",
+            "border-gray-300"
+          );
+          tabMessage.classList.add("bg-primary-dark", "text-white");
+
+          // Scroll to contact form
+          document
+            .getElementById("contact")
+            .scrollIntoView({ behavior: "smooth" });
+        }
+
+        // Add event listeners to Book a Session buttons
+        if (desktopBookBtn) {
+          desktopBookBtn.addEventListener("click", switchToIntakeForm);
+        }
+
+        if (mobileBookBtn) {
+          mobileBookBtn.addEventListener("click", function () {
+            switchToIntakeForm();
+            // Close mobile menu after clicking
+            toggleMobileMenu();
+          });
+        }
+
+        // Add event listeners to tab buttons
+        if (tabMessage) {
+          tabMessage.addEventListener("click", switchToMessageForm);
+        }
+
+        if (tabIntake) {
+          tabIntake.addEventListener("click", switchToIntakeForm);
+        }
+      });
+
+      // Mobile menu toggle function
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const overlay = document.getElementById("overlay");
+
+        if (mobileMenu.classList.contains("mobile-menu-open")) {
+          mobileMenu.classList.remove("mobile-menu-open");
+          overlay.classList.add("hidden");
+        } else {
+          mobileMenu.classList.add("mobile-menu-open");
+          overlay.classList.remove("hidden");
+        }
+      }
+    </script>
   </body>
 </html>

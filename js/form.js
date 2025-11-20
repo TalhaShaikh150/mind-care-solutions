@@ -663,117 +663,129 @@ document.addEventListener("keydown", (e) => {
         isValid = false;
       }
 
-      // Emergency contact validation - ALL REQUIRED
-      if (!emgName) {
-        showIntakeError("emgName", "Emergency contact name is required");
-        isValid = false;
-      } else if (emgName.length < 2) {
-        showIntakeError(
-          "emgName",
-          "Please provide a valid emergency contact name"
-        );
-        isValid = false;
-      }
+      // Emergency contact validation - ALL OPTIONAL
+      // If ANY emergency contact field is filled, validate all filled fields
 
-      if (!emgPhone) {
-        showIntakeError("emgPhone", "Emergency contact phone is required");
-        isValid = false;
-      } else if (!isValidPhone(emgPhone)) {
-        showIntakeError(
-          "emgPhone",
-          "Please enter a valid emergency contact phone number"
-        );
-        isValid = false;
-      }
+      const hasEmergencyContact = emgName || emgPhone || emgRelation;
 
-      if (!emgRelation) {
-        showIntakeError(
-          "emgRelation",
-          "Emergency contact relationship is required"
-        );
-        isValid = false;
-      } else if (emgRelation.length < 2) {
-        showIntakeError(
-          "emgRelation",
-          "Please provide a valid relationship description"
-        );
-        isValid = false;
+      if (hasEmergencyContact) {
+        // If name is provided, validate it
+        if (emgName) {
+          if (emgName.length < 2) {
+            showIntakeError(
+              "emgName",
+              "Please provide a valid emergency contact name"
+            );
+            isValid = false;
+          } else if (emgName.length > 50) {
+            showIntakeError("emgName", "Emergency contact name is too long");
+            isValid = false;
+          }
+        }
+
+        // If phone is provided, validate it
+        if (emgPhone) {
+          if (!isValidPhone(emgPhone)) {
+            showIntakeError(
+              "emgPhone",
+              "Please enter a valid emergency contact phone number"
+            );
+            isValid = false;
+          }
+        }
+
+        // If relation is provided, validate it
+        if (emgRelation) {
+          if (emgRelation.length < 2) {
+            showIntakeError(
+              "emgRelation",
+              "Please provide a valid relationship description"
+            );
+            isValid = false;
+          } else if (emgRelation.length > 30) {
+            showIntakeError(
+              "emgRelation",
+              "Relationship description is too long"
+            );
+            isValid = false;
+          }
+        }
+
+        
+        const filledFields = [emgName, emgPhone, emgRelation].filter(
+          Boolean
+        ).length;
+        if (filledFields > 0 && filledFields < 3) {
+          console.warn("Partial emergency contact information provided");
+          
+        }
       }
     } else if (step === 3) {
-      // Validate Step 3
-      const concerns = Array.from(
-        form.querySelectorAll('input[name="concerns"]:checked')
-      );
-      const presentingDesc = form.presentingDesc?.value.trim();
-      const goals = form.goals?.value.trim();
-      const medsNow = form.querySelector('input[name="medsNow"]:checked');
-      const therapyBefore = form.querySelector(
-        'input[name="therapyBefore"]:checked'
-      );
+  // Validate Step 3
+  const concerns = Array.from(
+    form.querySelectorAll('input[name="concerns"]:checked')
+  );
+  const presentingDesc = form.presentingDesc?.value.trim();
+  const goals = form.goals?.value.trim();
+  const medsNow = form.querySelector('input[name="medsNow"]:checked');
+  const therapyBefore = form.querySelector(
+    'input[name="therapyBefore"]:checked'
+  );
 
-      if (concerns.length === 0) {
-        showIntakeError("concerns", "Please select at least one concern");
-        isValid = false;
-      }
+  if (concerns.length === 0) {
+    showIntakeError("concerns", "Please select at least one concern");
+    isValid = false;
+  }
 
-      if (!presentingDesc) {
-        showIntakeError(
-          "presentingDesc",
-          "Please describe what brings you to counselling"
-        );
-        isValid = false;
-      } else if (presentingDesc.length < 10) {
-        showIntakeError(
-          "presentingDesc",
-          "Please provide more details (at least 10 characters)"
-        );
-        isValid = false;
-      }
+  // Presenting description - OPTIONAL but if provided, validate length
+  if (presentingDesc && presentingDesc.length < 10) {
+    showIntakeError(
+      "presentingDesc",
+      "Please provide more details (at least 10 characters)"
+    );
+    isValid = false;
+  }
 
-      if (!goals) {
-        showIntakeError(
-          "goals",
-          "Please describe what you would like to achieve through therapy"
-        );
-        isValid = false;
-      } else if (goals.length < 10) {
-        showIntakeError(
-          "goals",
-          "Please provide more details about your goals (at least 10 characters)"
-        );
-        isValid = false;
-      }
+  // Goals - OPTIONAL but if provided, validate length
+  if (goals && goals.length < 10) {
+    showIntakeError(
+      "goals",
+      "Please provide more details about your goals (at least 10 characters)"
+    );
+    isValid = false;
+  }
 
-      if (!medsNow) {
-        showIntakeError(
-          "medsNow",
-          "Please indicate if you are currently taking any medications"
-        );
-        isValid = false;
-      }
+  if (!medsNow) {
+    showIntakeError(
+      "medsNow",
+      "Please indicate if you are currently taking any medications"
+    );
+    isValid = false;
+  }
 
-      if (!therapyBefore) {
-        showIntakeError(
-          "therapyBefore",
-          "Please indicate if you have attended counselling before"
-        );
-        isValid = false;
-      }
+  if (!therapyBefore) {
+    showIntakeError(
+      "therapyBefore",
+      "Please indicate if you have attended counselling before"
+    );
+    isValid = false;
+  }
 
-      // Validate "Other" concern text if checked
-      const concernOther = document.getElementById("concernOther");
-      const concernOtherText = document.getElementById("concernOtherText");
-      if (
-        concernOther?.checked &&
-        (!concernOtherText.value || concernOtherText.value.trim().length === 0)
-      ) {
-        showIntakeError(
-          "concernOtherText",
-          "Please specify your other concern"
-        );
-        isValid = false;
-      }
-    } else if (step === 4) {
+  // Validate "Other" concern text if checked
+  const concernOther = document.getElementById("concernOther");
+  const concernOtherText = document.getElementById("concernOtherText");
+  if (
+    concernOther?.checked &&
+    (!concernOtherText.value || concernOtherText.value.trim().length === 0)
+  ) {
+    showIntakeError(
+      "concernOtherText",
+      "Please specify your other concern"
+    );
+    isValid = false;
+  }
+} 
+else if (step === 4) {
       // Validate Step 4
       const consent = form.consent?.checked;
       const signature = form.signature?.value.trim();
@@ -1014,22 +1026,7 @@ document.addEventListener("keydown", (e) => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Validate all steps before submission
-    let allValid = true;
-    for (let i = 1; i <= 4; i++) {
-      if (!validateStep(i)) {
-        allValid = false;
-        showStep(i);
-        break;
-      }
-    }
-
-    if (!allValid) {
-      status.textContent =
-        "Please fix the errors in the form before submitting.";
-      status.className = "text-sm mt-2 text-red-600";
-      return;
-    }
+  
 
     if (!validateContact()) {
       showStep(1);
